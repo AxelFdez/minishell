@@ -6,7 +6,10 @@ LST = linked_list/
 CC = gcc 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS =  
+SRCS =  srcs/minishell.c \
+		srcs/ft_parsing.c \
+		srcs/ft_error.c \
+		srcs/ft_quotes.c
 
 OBJECT_FILES = $(SRCS:.c=.o)
 HEADER = -I./includes
@@ -22,7 +25,7 @@ $(NAME): $(OBJECT_FILES)
 	cp linked_list/lst.a $(NAME)
 	cp libft/libft.a $(NAME)
 	@echo "$(YELLOW)\n<<<<< Creating $(NAME) exec file ! ... >>>>>$(DEFAULT)"
-	$(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a linked_list/lst.a
+	$(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a linked_list/lst.a -lreadline
 	@echo "$(GREEN)\n<<<<< $(NAME) created ! ... >>>>>\n$(DEFAULT)"
 #------------------------------------------------------------------------------
 clean: 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim_free_s1.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chmassa <chrisdev427@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 10:03:58 by chmassa           #+#    #+#             */
-/*   Updated: 2023/03/15 11:42:04 by chmassa          ###   ########.fr       */
+/*   Updated: 2023/03/15 11:41:59 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static size_t	str_end(char const *s1, char const *set)
 	return (i);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim_free_s1(char const *s1, char const *set)
 {
 	char	*str;
 	size_t	start;
@@ -63,5 +63,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str = ft_substr(s1, start, (end - start) + 1);
 	if (!str)
 		return (NULL);
+	free((char *)s1);
 	return (str);
 }
