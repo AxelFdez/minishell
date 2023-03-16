@@ -3,15 +3,15 @@
 NAME = minishell
 LIBFT = libft/
 LST = linked_list/
-CC = gcc 
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS =  
+SRCS =  srcs/main.c
 
 OBJECT_FILES = $(SRCS:.c=.o)
 HEADER = -I./includes
 
-all: $(NAME) 
+all: $(NAME)
 .c.o:
 	@$(CC) $(CFLAGS) $(HEADER) -c $< -o $(<:.c=.o)
 
@@ -22,10 +22,10 @@ $(NAME): $(OBJECT_FILES)
 	cp linked_list/lst.a $(NAME)
 	cp libft/libft.a $(NAME)
 	@echo "$(YELLOW)\n<<<<< Creating $(NAME) exec file ! ... >>>>>$(DEFAULT)"
-	$(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a linked_list/lst.a
+	$(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a linked_list/lst.a -lreadline
 	@echo "$(GREEN)\n<<<<< $(NAME) created ! ... >>>>>\n$(DEFAULT)"
 #------------------------------------------------------------------------------
-clean: 
+clean:
 	@echo "$(RED)\n<<<<< deleting $(NAME) obj. files ! ... >>>>>$(DEFAULT)"
 	rm -rf $(OBJECT_FILES)
 	@echo "$(GREEN)<<<<< clean from $(NAME) done ! >>>>>\n$(DEFAULT)"
@@ -41,7 +41,7 @@ fclean: clean
 re: fclean all
 	@echo "$(GREEN)\n<<<<< $(NAME) make re done ! >>>>>\n$(DEFAULT)"
 #------------------------------------------------------------------------------
- 
+
 
 #COLORS
 RED = \033[1;31m

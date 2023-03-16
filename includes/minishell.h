@@ -9,9 +9,9 @@
 # include <readline/readline.h>
 # include <readline/history.h>
 # include <fcntl.h>
+# include "../libft/libft.h"
+# include "../linked_list/lst.h"
 
-
-void	parsing(char *input);
 
 
 
