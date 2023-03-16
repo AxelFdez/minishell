@@ -16,10 +16,10 @@
 
 typedef struct s_parsing
 {
-	char			*input;
-	char			*prompt;
-	char			*tmp;
-	t_list			*lst_cmdline;
+	int		i;
+	char	*input;
+	char	*prompt;
+	t_list	*lst_cmdline;
 }				t_parsing;
 
 
@@ -27,8 +27,11 @@ typedef struct s_parsing
 void	ft_parsing(char *input);
 void	ft_get_cmdline(t_parsing *parse);
 void	ft_quotes(t_parsing *parse);
-void	ft_fill_lst(t_list **lst, t_parsing *parse, int start, int len);
+void	ft_fill_lst(t_list **lst, t_parsing *parse, int len, int start);
 void	ft_error(char *err_mess);
+int		is_close_herringbone(t_parsing *parse);
+int		is_open_herringbone(t_parsing *parse);
+int		is_pipe(t_parsing *parse);
 
 
 
