@@ -19,9 +19,10 @@ typedef struct s_parsing
 	char			*input;
 	char			*prompt;
 	char			*tmp;
+	char			*cmd;
+	char			*path_cmd;
 	t_list			*lst_cmdline;
 }				t_parsing;
-
 
 
 void	ft_parsing(char *input);
