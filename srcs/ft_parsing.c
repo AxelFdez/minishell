@@ -19,14 +19,16 @@ int	is_cmd(int c)
 	return (0);
 }
 
-// static void	is_string(t_parsing *parse, char c)
-// {
-// 	while (parse->input[parse->i] != c)
-// 	{
-// 		parse->i++;
-// 		parse->len++;
-// 	}
-// }
+static void	is_string(t_parsing *parse, char c)
+{
+	while (parse->input[parse->i] != c)
+	{
+		parse->i++;
+		parse->len++;
+		ft_fill_lst(&parse->lst_cmdline, parse, parse->i - parse->len);
+		parse->len = 0;
+	}
+}
 
 
 static void	ft_parseur(t_parsing *parse)
@@ -44,6 +46,8 @@ static void	ft_parseur(t_parsing *parse)
 				return ;
 		else if (parse->input[parse->i] == '|' && !is_pipe(parse))
 				return ;
+		else if (parse->input[parse->i] == '\"')
+			is_string(parse, '\"');
 		else if (!is_cmd(parse->input[parse->i]))
 		{puts("AAA");
 			printf("i = %d\n", parse->i);
