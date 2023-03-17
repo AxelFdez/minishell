@@ -49,10 +49,9 @@ static void	ft_parseur(t_parsing *parse)
 		else if (parse->input[parse->i] == '\"')
 			is_string(parse, '\"');
 		else if (!is_cmd(parse->input[parse->i]))
-		{puts("AAA");
+		{
 			printf("i = %d\n", parse->i);
-
-			while (parse->input[parse->i] && parse->input[parse->i] != ' ' && !is_cmd(parse->input[parse->i]))
+			while (parse->input[parse->i] && !is_cmd(parse->input[parse->i]) && parse->input[parse->i] != ' ')
 			{
 				parse->len++;
 				parse->i++;
@@ -61,7 +60,6 @@ static void	ft_parseur(t_parsing *parse)
 			ft_fill_lst(&parse->lst_cmdline, parse, parse->i - parse->len);
 			parse->len = 0;
 		}
-
 			parse->i++;
 	}
 	ft_lstprint_from_head(parse->lst_cmdline);
@@ -90,46 +88,6 @@ void	*args_list(t_parsing *parse)
 			}
 			i++;
 		}
-	// 	j = 0;
-	// 	while (input[i] == '<')
-	// 	{
-	// 		tab[k][j] = input[i];
-	// 		j++;
-	// 		i++;
-	// 		if (input[i] != '<')
-	// 		{
-	// 			tab[k][j] = '\0';
-	// 			k++;
-	// 		}
-	// 	}
-	// 	j = 0;
-	// 	while (input[i] == '>')
-	// 	{
-	// 		tab[k][j] = input[i];
-	// 		j++;
-	// 		i++;
-	// 		if (input[i] != '>')
-	// 		{
-	// 			tab[k][j] = '\0';
-	// 			k++;
-	// 		}
-	// 	}
-	// 	j = 0;
-	// 	while (input[i] == '|')
-	// 	{
-	// 		tab[k][j] = input[i];
-	// 		j++;
-	// 		i++;
-	// 		if (input[i] != '|')
-	// 		{
-	// 			tab[k][j] = '\0';
-	// 			k++;
-	// 		}
-	// 	}
-	// 	i++;
-	// }
-	// j = 0;
-	// tab[k][j] = '\0';
 	i++;
 	}
 	return (list_arg);
@@ -143,9 +101,6 @@ void	ft_get_cmdline(t_parsing *parse)
 	ft_quotes(parse);
 	i = 0;
 	parse->input = ft_strtrim_free_s1(parse->input, " ");
-	args_list(parse);
-	ft_lstprint_from_head(parse->lst_cmdline);
-	exit(EXIT_FAILURE);
 	ft_parseur(parse);
 	printf("input = %s\n", parse->input);
 	free(parse->input);
