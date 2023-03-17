@@ -21,12 +21,19 @@ int	is_cmd(int c)
 
 static void	is_string(t_parsing *parse, char c)
 {
-	while (parse->input[parse->i] != c)
+	while (parse->input[parse->i])
 	{
+		// parse->i++;
+
+		if (parse->input[parse->i] == c)
+		{
+			ft_fill_lst(&parse->lst_cmdline, parse, parse->i - parse->len);
+			parse->len = 0;
+			// parse->i++;
+			return ;
+		}
 		parse->i++;
 		parse->len++;
-		ft_fill_lst(&parse->lst_cmdline, parse, parse->i - parse->len);
-		parse->len = 0;
 	}
 }
 
@@ -42,27 +49,43 @@ static void	ft_parseur(t_parsing *parse)
 	{
 		if (parse->input[parse->i] == '<' && !is_open_herringbone(parse))
 				return ;
-		else if (parse->input[parse->i] == '>' && !is_close_herringbone(parse))
+	 	else if (parse->input[parse->i] == '>' && !is_close_herringbone(parse))
 				return ;
-		else if (parse->input[parse->i] == '|' && !is_pipe(parse))
+	 	else if (parse->input[parse->i] == '|' && !is_pipe(parse))
 				return ;
-		else if (parse->input[parse->i] == '\"')
+	 	else if (parse->input[parse->i] == '\"')
+		{
+			parse->i++;
 			is_string(parse, '\"');
-		else if (!is_cmd(parse->input[parse->i]))
+		}
+	 	else if (parse->input[parse->i] == '\'')
+		{
+			parse->i++;
+			is_string(parse, '\'');
+		}
+		
+	 	else if (!is_cmd(parse->input[parse->i]) && parse->input[parse->i] != ' ')
 		{puts("AAA");
 			printf("i = %d\n", parse->i);
 
-			while (parse->input[parse->i] && parse->input[parse->i] != ' ' && !is_cmd(parse->input[parse->i]))
+			while (parse->input[parse->i])
 			{
 				parse->len++;
 				parse->i++;
+				if (parse->input[parse->i] == ' ' || parse->input[parse->i] == '\0' || is_cmd(parse->input[parse->i] || parse->input[parse->i] == '\"'))
+				{puts("BBB");
+					ft_fill_lst(&parse->lst_cmdline, parse, parse->i - parse->len);
+					parse->len = 0;
+			printf("i = %d\n", parse->i);
+
+					break ;
+				}
 			}
+
 			printf("len = %d\n", parse->len);
-			ft_fill_lst(&parse->lst_cmdline, parse, parse->i - parse->len);
-			parse->len = 0;
 		}
-	
-			parse->i++;
+		else
+				parse->i++;
 	}
 	ft_lstprint_from_head(parse->lst_cmdline);
 }

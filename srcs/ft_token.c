@@ -30,6 +30,7 @@ int	is_open_herringbone(t_parsing *parse)
 	{
 		parse->len = 2;
 		ft_fill_lst(&parse->lst_cmdline, parse, 0);
+		parse->i += 2;
 	}
 	if ((parse->input[parse->i] == '<' && parse->input[parse->i +2] == '<')
 		|| (parse->input[parse->i] == '<' && parse->input[parse->i -2] == '<'))
