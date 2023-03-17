@@ -17,6 +17,7 @@ int main()
         parse.input = readline("minishell$ ");
 		// parsing ici
 	    // printf("%s\n", input);
+        add_history(parse.input);
         if (!parse.input || !strcmp(parse.input, "")) {
             break;
         }
@@ -26,7 +27,6 @@ int main()
         // Affiche l'entrée utilisateur et l'ajoute à l'historique
         // printf("Vous avez entré : %s\n", input);
 		//ajoute la ligne en historique
-        // add_history(input);
         // Libère la mémoire allouée pour l'entrée utilisateur
         // free(parse.input);
     }

@@ -9,6 +9,7 @@ CFLAGS = -Wall -Wextra -Werror
 SRCS =  srcs/minishell.c \
 		srcs/ft_parsing.c \
 		srcs/ft_error.c \
+		srcs/ft_token.c \
 		srcs/ft_quotes.c
 
 OBJECT_FILES = $(SRCS:.c=.o)
