@@ -23,9 +23,6 @@ typedef struct s_parsing
 	char			*path_cmd;
 	t_list			*lst_cmdline;
 	int		i;
-	char	*input;
-	char	*prompt;
-	t_list	*lst_cmdline;
 }				t_parsing;
 
 
