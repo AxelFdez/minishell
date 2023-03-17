@@ -26,7 +26,7 @@ void	ft_lstprint_from_head(t_list *lst)
 	tmp = lst;
 	while(tmp)
 	{
-		printf("node[%d] value|%s|\n", node, tmp->str);
+		printf("node[%d] value[%s]\n", node, tmp->str);
 		tmp = tmp->next;
 		node++;
 	}
