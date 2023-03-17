@@ -1,7 +1,7 @@
 # Makefile
 
 NAME = libft.a
-CC = gcc 
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I
 
 SRCS = srcs/str/ft_split.c srcs/str/ft_strjoin.c srcs/str/ft_strjoin_free_s1.c srcs/str/ft_strtrim.c srcs/str/ft_strtrim_free_s1.c srcs/str/ft_substr.c srcs/str/ft_striteri.c srcs/str/ft_strmapi.c srcs/str/ft_strnstr.c srcs/str/ft_strrchr.c srcs/str/ft_itoa.c srcs/str/ft_atoi.c srcs/str/ft_atoi_base.c \
@@ -19,9 +19,9 @@ OBJECT_FILES = $(SRCS:.c=.o)
 
 HEADER = ./
 
-	
-all: $(NAME)  
-.c.o: 
+
+all: $(NAME)
+.c.o:
 	$(CC) $(CFLAGS) $(HEADER) -c  $< -o $(<:.c=.o)
 
 $(NAME): $(OBJECT_FILES)
