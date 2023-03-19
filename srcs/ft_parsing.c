@@ -1,11 +1,11 @@
 
 #include "../includes/minishell.h"
 
-void	ft_fill_lst(t_list **lst, t_parsing *parse, int start)
+void	ft_fill_lst(t_list **lst, t_parsing *parse, int start, int len)
 {
 	t_list	*new;
 
-	new = ft_lstnew(ft_substr(parse->input, start, parse->len));
+	new = ft_lstnew(ft_substr(parse->input, start, len));
 	ft_lstadd_back(lst, new);
 
  }
@@ -124,85 +124,197 @@ void	*args_list(t_parsing *parse)
 // 	return (tab);
 // }
 
-char **isolate_dquotes(char *input)
+// char **isolate_dquotes(char *input)
+// {
+// 	char **tab;
+// 	int i;
+// 	int j;
+// 	int quotes;
+// 	int start;
+
+// 	quotes = 0;
+// 	i = 0;
+// 	while (input[i])
+// 	{
+// 		if (input[i] == '"')
+// 			quotes++;
+// 		i++;
+// 	}
+// 	printf("quotes = %d\n", quotes);
+// 	if (quotes == 0)
+// 		quotes = 2;
+// 	tab = malloc(sizeof(char *) * ((quotes / 2) + 1));
+// 	if (!tab)
+// 		perror("malloc error");
+// 	i = 0;
+// 	j = 0;
+// 	start = 0;
+// 	while (input[i])
+// 	{
+// 		if (input[i] != '"')
+// 		{
+// 			start = i;
+// 			while (input[i] != '"')
+// 			{
+// 				if (input[i + 1] == '"'|| input[i + 1] == '\0' )
+// 					break;
+// 				i++;
+// 			}
+// 			tab[j] = ft_substr(input, start, i - start + 1);
+// 			j++;
+// 		}
+// 		if (input[i] == '"')
+// 		{
+// 			start = i;
+// 			i++;
+// 			while (input[i] != '"')
+// 				i++;
+// 			tab[j] = ft_substr(input, start, i - start + 1);
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// 	tab[j] = 0;
+// 	return (tab);
+// }
+
+void isolate_dquotes(t_parsing *parse)
 {
-	char **tab;
 	int i;
-	int j;
-	int quotes;
 	int start;
 
-	quotes = 0;
 	i = 0;
-	while (input[i])
+	start = 0;
+	while (parse->input[i])
 	{
-		if (input[i] == '"')
-			quotes++;
-		i++;
-	}
-	printf("quotes = %d\n", quotes);
-	if (quotes == 0)
-		quotes = 2;
-	tab = malloc(sizeof(char *) * ((quotes / 2) + 1));
-	if (!tab)
-		perror("malloc error");
-	i = 0;
-	j = 0;
-	while (input[i])
-	{
-		if (input[i] != '"')
+		if (parse->input[i] != '"')
 		{
 			start = i;
-			while (input[i] != '"')
+			while (parse->input[i] != '"')
 			{
-				if (input[i + 1] == '"' || input[i + 1] == '\0')
+				if (parse->input[i + 1] == '"'|| parse->input[i + 1] == '\0' )
 					break;
 				i++;
 			}
-			tab[j] = ft_substr(input, start, i - start + 1);
-			j++;
+			ft_fill_lst(&parse->lst_cmdline, parse, start, i - start + 1);
 		}
-		else if (input[i] == '"')
+		if (parse->input[i] == '"')
 		{
 			start = i;
 			i++;
-			while (input[i] != '"')
-			{
-				if (input[i] == '"' || input[i] == '\0')
-					break;
+			while (parse->input[i] != '"')
 				i++;
-			}
-			printf("start = %d\n", start);
-			printf("i = %d\n", i);
-			tab[j] = ft_substr(input, start, i - start + 1);
-			j++;
+			ft_fill_lst(&parse->lst_cmdline, parse, start, i - start + 1);
 		}
 		i++;
 	}
-	tab[j] = 0;
-	return (tab);
+}
+
+// void isolate_squote(t_parsing *parse)
+// {
+// 	int i;
+// 	t_list *temp;
+
+// 	i = 0;
+// 	temp = parse->lst_cmdline;
+// 	while (temp)
+// 	{
+// 		if (ft_strchr(temp->str, '"') == NULL)
+// 		{
+// 			if (ft_strchr(temp->str, '\'') != NULL)
+// 			{
+
+// 			}
+// 		}
+// 		temp = temp->next;
+// 	}
+// }
+
+int is_dquote_inside_squote(char *input, int quote_pos)
+{
+	int i;
+	int squote;
+
+	i = 0;
+	squote = 0;
+	while (i < quote_pos)
+	{
+		if (input[i] == 39)
+			squote++;
+	}
+	squote = squote % 2;
+	return (squote);
+}
+
+int is_squote_inside_dquote(char *input, int quote_pos)
+{
+	int i;
+	int dquote;
+
+	i = 0;
+	dquote = 0;
+	while (i < quote_pos)
+	{
+		if (input[i] == '"')
+			dquote++;
+	}
+	dquote = dquote % 2;
+	return (dquote);
+}
+
+
+void	parsing_quotes(t_parsing *parse)
+{
+	int i;
+	int start;
+
+	i = 0;
+	start = 0;
+	while (parse->input[i])
+	{
+		if (parse->input[i] == '"' && is_dquote_inside_squote(parse->input, i) == 0)
+		{
+			start = i;
+			i++;
+			while (parse->input[i] != '"')
+			{
+				// if (parse->input[i + 1] == '"')
+				// 	break ;
+				i++;
+			}
+			ft_fill_lst(&parse->lst_cmdline, parse, start, i - start + 1);
+		}
+		else if (parse->input[i] == 39 && is_squote_inside_dquote(parse->input, i) == 0)
+		{
+			start = i;
+			i++;
+			while (parse->input[i] != 39)
+				i++;
+			ft_fill_lst(&parse->lst_cmdline, parse, start, i - start + 1);
+		}
+		i++;
+	}
 }
 
 void	ft_get_cmdline(t_parsing *parse)
 {
-	int		i = 0;
-	char **split_input;
+	//int		i = 0;
+	//char **split_input = NULL;
 	parse->lst_cmdline = NULL;
 
 	ft_quotes(parse);
 	//i = 0;
 	parse->input = ft_strtrim_free_s1(parse->input, " ");
-	// decouper args entre quotes et doubles quotes,
 	//split_input = quotes_args(parse->input);
-	split_input = isolate_dquotes(parse->input);
+	// decouper args entre quotes et doubles quotes,
+	if (ft_strchr(parse->input, '"') != NULL || ft_strchr(parse->input, 39) != NULL)
+		parsing_quotes(parse);
+	//isolate_dquotes(parse);
+	ft_lstprint_from_head(parse->lst_cmdline);
+	//split_input = isolate_squote(split_input);
 	// decouper selon les espaces (seulement args sans quotes),
 	// split_input = ft_split(parse->input, ' ');
 	// split_input = ft_split(parse->input, '|');
-	while (split_input[i])
-	{
-		printf("arg[%d] = |%s|\n", i, split_input[i]);
-		i++;
-	}
 	// interpreter ou non les quotes
 	// decouper selon les chevrons ou pipes
 	//ft_parseur(parse);
