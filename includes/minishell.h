@@ -12,8 +12,6 @@
 # include "../libft/libft.h"
 # include "../linked_list/lst.h"
 
-
-
 typedef struct s_parsing
 {
 	int		i;
@@ -21,9 +19,8 @@ typedef struct s_parsing
 	char	*input;
 	char	*prompt;
 	t_list	*lst_cmdline;
+	t_list	*lst_env;
 }				t_parsing;
-
-
 
 void	ft_parsing(char *input);
 void	ft_get_cmdline(t_parsing *parse);
@@ -33,10 +30,7 @@ void	ft_error(char *err_mess);
 int		is_close_herringbone(t_parsing *parse);
 int		is_open_herringbone(t_parsing *parse);
 int		is_pipe(t_parsing *parse);
-
-
-
-
-
+int		ft_check_syntax(t_parsing *parse);
+void	ft_initialization(t_parsing *parse);
 
 #endif

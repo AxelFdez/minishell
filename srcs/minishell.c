@@ -1,37 +1,37 @@
 #include "../includes/minishell.h"
 
-
-
-
-
-
-int main()
+static void	ft_retrieve_env(t_parsing *parse, char **env)
 {
-    // char *input;
-    t_parsing   parse;
-    // int   db_coat = 0;
+	int	i;
+	t_list	*new;
 
-    // Boucle de lecture d'entrée utilisateur
-    while (1) {
-        // Utilise readline pour lire l'entrée utilisateur
-        parse.input = readline("minishell$ ");
-		// parsing ici
-	    // printf("%s\n", input);
-        add_history(parse.input);
-        if (!parse.input || !strcmp(parse.input, "")) {
-            break;
-        }
+	parse->lst_env = NULL;
+	i = 0;
+	while (env[i])
+	{
+		new = ft_lstnew(env[i]);
+		ft_lstadd_back(&parse->lst_env, new);
+		i++;
+	}
+}
 
-        ft_get_cmdline(&parse);
-        // Si l'utilisateur entre une chaîne vide, quitte la boucle
-        // Affiche l'entrée utilisateur et l'ajoute à l'historique
-        // printf("Vous avez entré : %s\n", input);
-		//ajoute la ligne en historique
-        // Libère la mémoire allouée pour l'entrée utilisateur
-        // free(parse.input);
-    }
-    
-    puts("end");
-    system("leaks minishell");
-    return 0;
+int	main(int ac, char **av, char **env)
+{
+	t_parsing	parse;
+
+	(void)av;
+	ft_retrieve_env(&parse, env);
+	if (ac == 1)
+	{
+		while (1)
+		{
+			parse.input = readline("minishell$ ");
+			add_history(parse.input);
+			if (ft_check_syntax(&parse))
+				ft_get_cmdline(&parse);
+		}
+	}
+	puts("end");
+	system("leaks minishell");
+	return (0);
 }
