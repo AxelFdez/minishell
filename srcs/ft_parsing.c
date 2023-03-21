@@ -67,28 +67,19 @@ void	ft_fill_lst(t_list **lst, t_parsing *parse, int start, int len)
 
 void	*args_list(t_parsing *parse)
 {
-	int	i;
-	int j;
-	char temp[256];
-	t_list *list_arg = NULL;
-
-	i = 0;
-	while (parse->input[i])
+	while (parse->input[parse->i])
 	{
-		j = 0;
-		while (ft_isalnum(parse->input[i]) == 1)
+		// parse->i++;
+
+		if (parse->input[parse->i] == c)
 		{
-			temp[j] = parse->input[i];
-			j++;
-			if (ft_isalpha(parse->input[i + 1]) == 0)
-			{
-				temp[j + 1] = '\0';
-				ft_lstadd_back(&parse->lst_cmdline, ft_lstnew(temp));
-				break;
-			}
-			i++;
+			ft_fill_lst(&parse->lst_cmdline, parse, parse->i - parse->len);
+			parse->len = 0;
+			// parse->i++;
+			return ;
 		}
-	i++;
+		parse->i++;
+		parse->len++;
 	}
 	return (list_arg);
 }
@@ -187,26 +178,45 @@ void isolate_dquotes(t_parsing *parse)
 	start = 0;
 	while (parse->input[i])
 	{
-		if (parse->input[i] != '"')
+		if (parse->input[parse->i] == '<' && !is_open_herringbone(parse))
+				return ;
+	 	else if (parse->input[parse->i] == '>' && !is_close_herringbone(parse))
+				return ;
+	 	else if (parse->input[parse->i] == '|' && !is_pipe(parse))
+				return ;
+	 	else if (parse->input[parse->i] == '\"')
 		{
-			start = i;
-			while (parse->input[i] != '"')
+			parse->i++;
+			is_string(parse, '\"');
+		}
+	 	else if (parse->input[parse->i] == '\'')
+		{
+			parse->i++;
+			is_string(parse, '\'');
+		}
+
+	 	else if (!is_cmd(parse->input[parse->i]) && parse->input[parse->i] != ' ')
+		{puts("AAA");
+			printf("i = %d\n", parse->i);
+
+			while (parse->input[parse->i])
 			{
-				if (parse->input[i + 1] == '"'|| parse->input[i + 1] == '\0' )
-					break;
-				i++;
+				parse->len++;
+				parse->i++;
+				if (parse->input[parse->i] == ' ' || parse->input[parse->i] == '\0' || is_cmd(parse->input[parse->i] || parse->input[parse->i] == '\"'))
+				{puts("BBB");
+					ft_fill_lst(&parse->lst_cmdline, parse, parse->i - parse->len);
+					parse->len = 0;
+			printf("i = %d\n", parse->i);
+
+					break ;
+				}
 			}
-			ft_fill_lst(&parse->lst_cmdline, parse, start, i - start + 1);
+
+			printf("len = %d\n", parse->len);
 		}
-		if (parse->input[i] == '"')
-		{
-			start = i;
-			i++;
-			while (parse->input[i] != '"')
-				i++;
-			ft_fill_lst(&parse->lst_cmdline, parse, start, i - start + 1);
-		}
-		i++;
+		else
+				parse->i++;
 	}
 }
 
