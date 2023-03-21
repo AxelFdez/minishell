@@ -1,7 +1,7 @@
 
 #include "../includes/minishell.h"
 
-static int	is_meta_char(int c)
+int	is_meta_char(int c)
 {
 	if (c == '|' || c == '<' || c == '>')
 		return (1);
@@ -78,6 +78,8 @@ void	ft_get_cmdline(t_parsing *parse)
 {
 	parse->input = ft_strtrim_free_s1(parse->input, " ");
 	ft_parseur(parse);
+	ft_echo(parse);
+	exit (0);
 	ft_lstprint_from_head(parse->lst_cmdline);
 	ft_lstdel_all(&parse->lst_cmdline);
 	free(parse->input);

@@ -18,6 +18,7 @@ typedef struct s_parsing
 	int		j;
 	int		k;
 	char	c;
+	char	*meta[6];
 	int		len;
 	int		quote_to_del;
 	char	*input;
@@ -37,5 +38,8 @@ int		is_pipe(t_parsing *parse);
 int		ft_check_syntax(t_parsing *parse);
 void	ft_initialization(t_parsing *parse);
 void	ft_strdel_quotes(t_parsing *parse, char *str);
+int		is_meta_char(int c);
 
+
+void	ft_echo(t_parsing *parse);
 #endif
