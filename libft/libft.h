@@ -6,7 +6,7 @@
 /*   By: chmassa <chrisdev427@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:21:09 by chmassa           #+#    #+#             */
-/*   Updated: 2023/03/15 11:45:14 by chmassa          ###   ########.fr       */
+/*   Updated: 2023/03/21 12:04:18 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int		ft_atoi(const char *str);
 int		ft_atoi_base(const char *str, const char *base);
 int		ft_strncmp(const char *s1, const char *s2,	size_t n);
 int		ft_strcmp(const char *s1, const char *s2);
-int	ft_found_char(const char *s, char c);
+int		ft_found_char(const char *s, char c);
 //----------------------------------------------------------------------
 //------ memory --------------------------------------------------------
 //----------------------------------------------------------------------

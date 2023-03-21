@@ -20,12 +20,14 @@ int	main(int ac, char **av, char **env)
 	t_parsing	parse;
 
 	(void)av;
-	ft_retrieve_env(&parse, env);
 	if (ac == 1)
 	{
+		ft_initialization(&parse);
+		ft_retrieve_env(&parse, env);
 		while (1)
 		{
 			parse.input = readline("minishell$ ");
+			ft_quotes(&parse);
 			add_history(parse.input);
 			if (ft_check_syntax(&parse))
 				ft_get_cmdline(&parse);

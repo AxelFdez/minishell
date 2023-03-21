@@ -15,7 +15,11 @@
 typedef struct s_parsing
 {
 	int		i;
+	int		j;
+	int		k;
+	char	c;
 	int		len;
+	int		quote_to_del;
 	char	*input;
 	char	*prompt;
 	t_list	*lst_cmdline;
@@ -32,5 +36,6 @@ int		is_open_herringbone(t_parsing *parse);
 int		is_pipe(t_parsing *parse);
 int		ft_check_syntax(t_parsing *parse);
 void	ft_initialization(t_parsing *parse);
+void	ft_strdel_quotes(t_parsing *parse, char *str);
 
 #endif

@@ -71,5 +71,6 @@ int	ft_check_syntax(t_parsing *parse)
 		return (0);
 	}
 	free(s);
+	parse->i = 0;
 	return (1);
 }
