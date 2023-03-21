@@ -267,24 +267,31 @@ void	parsing_quotes(t_parsing *parse)
 {
 	int i;
 	int start;
+	//int end;
 
 	i = 0;
 	start = 0;
-	while (parse->input[i])
+
+	while (1)
 	{
-		if (parse->input[i] == '"' && is_dquote_inside_squote(parse->input, i) == 0)
+		if (parse->input[i + 1] == '\0')
+			break;
+		if (parse->input[i] != '"' && parse->input[i] != 39 && parse->input[i])
+		{
+			start = i;
+			while (parse->input[i] != '"' && parse->input[i] != 39 && parse->input[i])
+				i++;
+			ft_fill_lst(&parse->lst_cmdline, parse, start, i - start);
+		}
+		if (parse->input[i] == '"')
 		{
 			start = i;
 			i++;
 			while (parse->input[i] != '"')
-			{
-				// if (parse->input[i + 1] == '"')
-				// 	break ;
 				i++;
-			}
 			ft_fill_lst(&parse->lst_cmdline, parse, start, i - start + 1);
 		}
-		else if (parse->input[i] == 39 && is_squote_inside_dquote(parse->input, i) == 0)
+		if (parse->input[i] == 39)
 		{
 			start = i;
 			i++;
@@ -292,8 +299,28 @@ void	parsing_quotes(t_parsing *parse)
 				i++;
 			ft_fill_lst(&parse->lst_cmdline, parse, start, i - start + 1);
 		}
-		i++;
-	}
+		//ft_fill_lst(&parse->lst_cmdline, parse, start, i - start + 1);
+		// if (parse->input[i] == '"' && is_dquote_inside_squote(parse->input, i) == 0)
+		// {
+		// 	start = i;
+		// 	i++;
+		// 	while (parse->input[i] != '"')
+		// 	{
+		// 		// if (parse->input[i + 1] == '"')
+		// 		// 	break ;
+		// 		i++;
+		// 	}
+		// 	ft_fill_lst(&parse->lst_cmdline, parse, start, i - start + 1);
+		// }
+		// else if (parse->input[i] == 39 && is_squote_inside_dquote(parse->input, i) == 0)
+		// {
+		// 	start = i;
+		// 	i++;
+		// 	while (parse->input[i] != 39)
+		// 		i++;
+		// 	ft_fill_lst(&parse->lst_cmdline, parse, start, i - start + 1);
+		// }
+		}
 }
 
 void	ft_get_cmdline(t_parsing *parse)
@@ -307,10 +334,10 @@ void	ft_get_cmdline(t_parsing *parse)
 	parse->input = ft_strtrim_free_s1(parse->input, " ");
 	//split_input = quotes_args(parse->input);
 	// decouper args entre quotes et doubles quotes,
-	if (ft_strchr(parse->input, '"') != NULL || ft_strchr(parse->input, 39) != NULL)
-		parsing_quotes(parse);
+	//if (ft_strchr(parse->input, '"') != NULL || ft_strchr(parse->input, 39) != NULL)
+	parsing_quotes(parse);
 	//isolate_dquotes(parse);
-	ft_lstprint_from_head(parse->lst_cmdline);
+	//ft_lstprint_from_head(parse->lst_cmdline);
 	//split_input = isolate_squote(split_input);
 	// decouper selon les espaces (seulement args sans quotes),
 	// split_input = ft_split(parse->input, ' ');
@@ -318,6 +345,6 @@ void	ft_get_cmdline(t_parsing *parse)
 	// interpreter ou non les quotes
 	// decouper selon les chevrons ou pipes
 	//ft_parseur(parse);
-	printf("input = %s\n", parse->input);
+	//printf("input = %s\n", parse->input);
 	free(parse->input);
 }
