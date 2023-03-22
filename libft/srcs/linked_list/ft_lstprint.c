@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_position.c                               :+:      :+:    :+:   */
+/*   lstprint.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chmassa <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/23 12:16:19 by chmassa           #+#    #+#             */
-/*   Updated: 2023/01/05 15:09:00 by chmassa          ###   ########.fr       */
+/*   Created: 2022/12/23 12:12:15 by chmassa           #+#    #+#             */
+/*   Updated: 2023/01/05 15:20:08 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
+#include "libft.h"
 
-void	ft_lstadd_position(t_list **lst, t_list *new, int position)
+void	ft_lstprint(t_list *lst)
 {
-	int		i;
 	t_list	*tmp;
 
-	if (!(*lst))
+	if (!lst)
+	{
+		ft_putstr("Empty list\n");
 		return ;
-	if (position < 2 || position > ft_lstsize(*lst))
-		return ;
-	i = 2;
-	tmp = *lst;
+	}
+	tmp = lst;
 	while (tmp)
 	{
-		if (i == position)
-		{
-			new->next = tmp->next;
-			tmp->next = new;
-			new->prev = tmp;
-			tmp->next->next->prev = tmp->next;
-		}
+		ft_printf("%s\n", tmp->str);
 		tmp = tmp->next;
-		i++;
 	}
 }

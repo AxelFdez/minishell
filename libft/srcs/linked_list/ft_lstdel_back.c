@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstdel_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chmassa <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: chmassa <chrisdev427@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/18 17:08:28 by chmassa           #+#    #+#             */
-/*   Updated: 2023/01/05 15:08:16 by chmassa          ###   ########.fr       */
+/*   Created: 2022/12/23 12:08:22 by chmassa           #+#    #+#             */
+/*   Updated: 2023/03/22 11:06:51 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
+#include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstdel_back(t_list **lst)
 {
 	t_list	*tmp;
 
 	if (!(*lst))
-	{
-		*lst = new;
 		return ;
+	tmp = *lst;
+	if (tmp->next == NULL)
+	{
+		free(tmp);
+		*lst = NULL;
 	}
-	tmp = ft_lstlast(*lst);
-	tmp->next = new;
-	new->prev = tmp;
-
+	else
+	{
+		while (tmp)
+		{
+			if (tmp->next->next == NULL)
+			{
+				tmp->next->prev = NULL;
+				tmp->next = NULL;
+				free(tmp->next);
+			}
+			tmp = tmp->next;
+		}
+	}
 }

@@ -14,6 +14,10 @@ SRCS =  srcs/minishell.c \
 		srcs/ft_initialization.c \
 		srcs/ft_fill_lst.c \
 		srcs/built-in/ft_echo.c \
+		srcs/built-in/ft_env.c \
+		srcs/built-in/ft_pwd.c \
+		srcs/built-in/ft_export.c \
+		srcs/built-in/ft_check_built_in.c \
 		srcs/ft_quotes.c
 
 OBJECT_FILES = $(SRCS:.c=.o)
@@ -26,11 +30,10 @@ all: $(NAME)
 $(NAME): $(OBJECT_FILES)
 	@echo "$(YELLOW)\n<<<<< libft compiling ... >>>>>\n$(DEFAULT)"
 	$(MAKE) -C $(LIBFT)
-	$(MAKE) -C $(LST)
-	cp linked_list/lst.a $(NAME)
+	# cp linked_list/lst.a $(NAME)
 	cp libft/libft.a $(NAME)
 	@echo "$(YELLOW)\n<<<<< Creating $(NAME) exec file ! ... >>>>>$(DEFAULT)"
-	$(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a linked_list/lst.a -lreadline
+	$(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -lreadline
 	@echo "$(GREEN)\n<<<<< $(NAME) created ! ... >>>>>\n$(DEFAULT)"
 #------------------------------------------------------------------------------
 clean: 
@@ -38,7 +41,6 @@ clean:
 	rm -rf $(OBJECT_FILES)
 	@echo "$(GREEN)<<<<< clean from $(NAME) done ! >>>>>\n$(DEFAULT)"
 	$(MAKE) clean -C $(LIBFT)
-	$(MAKE) clean -C $(LST)
 #------------------------------------------------------------------------------
 fclean: clean
 	@echo "$(RED)<<<<< deleting $(NAME) exec ! >>>>>\n$(DEFAULT)"

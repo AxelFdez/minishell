@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_sortlst_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chmassa <chrisdev427@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/06 18:47:06 by chmassa           #+#    #+#             */
-/*   Updated: 2023/01/05 09:52:59 by chmassa          ###   ########.fr       */
+/*   Created: 2023/03/22 15:36:35 by chmassa           #+#    #+#             */
+/*   Updated: 2023/03/22 18:58:42 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
+#include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+void	ft_sortlst_str(t_list **lst)
 {
-	int	nb_element;
+	t_list	*tmp;
+	char	*tmp_str;
 
-	nb_element = 0;
-	while (lst)
+	tmp = *lst;
+	while (tmp)
 	{
-		nb_element++;
-		lst = lst->next;
+		if (tmp->next != NULL && ft_strcmp(tmp->str, tmp->next->str) >= 0)
+		{
+			tmp_str = tmp->str;
+			tmp->str = tmp->next->str;
+			tmp->next->str = tmp_str;
+			tmp = *lst;
+		}
+		else
+			tmp = tmp->next;
 	}
-	return (nb_element);
 }

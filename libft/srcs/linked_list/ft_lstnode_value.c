@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint_from_tail.c                                  :+:      :+:    :+:   */
+/*   ft_lstnode_value.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chmassa <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/23 12:12:15 by chmassa           #+#    #+#             */
-/*   Updated: 2023/01/05 15:21:00 by chmassa          ###   ########.fr       */
+/*   Created: 2023/01/06 13:01:48 by chmassa           #+#    #+#             */
+/*   Updated: 2023/01/06 13:21:11 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
+#include "libft.h"
 
-void	ft_lstprint_from_tail(t_list *lst)
+int	ft_lstnode_value(t_list **lst, int node)
 {
-	t_list	*tmp;
-	int		node;
+	int	value;
+	int	position;
 
-	node = ft_lstsize(lst);;
-
-	if (!lst)
+	position = 1;
+	while (*lst)
 	{
-		puts("Empty list");
-		return ;
+		if (position == node)
+		{
+			value = (*lst)->str;
+		}
+		*lst = (*lst)->next;
+		position ++;
 	}
-	tmp = ft_lstlast(lst);
-	while(tmp)
-	{
-		printf("node[%d] value|%s|\n", node, tmp->str);
-		tmp = tmp->prev;
-		node--;
-	}
+	return (value);
 }

@@ -7,3 +7,13 @@ save du 21/03 :
 
 save du 21/03 -2- :
 - built-in "echo" en cours .
+
+save du 22/03 :
+- built-in "echo" ok, le comportement a l'air bon, pousser encore les tests...
+- built-in "env" ok .
+- built-in "pwd" ok .
+- built-in "export" en cours, lorsque 'export' est entré dans bash sans aucun arguments,
+  il retourne la liste des variables d'environnement trié dans l'ordre alphabetique.
+  Cette partie semble ok.
+  
+  

@@ -10,7 +10,6 @@
 # include <readline/history.h>
 # include <fcntl.h>
 # include "../libft/libft.h"
-# include "../linked_list/lst.h"
 
 typedef struct s_parsing
 {
@@ -39,7 +38,11 @@ int		ft_check_syntax(t_parsing *parse);
 void	ft_initialization(t_parsing *parse);
 void	ft_strdel_quotes(t_parsing *parse, char *str);
 int		is_meta_char(int c);
+void	ft_check_built_in(t_parsing *parse);
 
 
-void	ft_echo(t_parsing *parse);
+void	ft_echo(t_list *tmp, t_parsing *parse, int nl);
+void	ft_env(t_parsing *parse);
+void	ft_pwd(t_parsing *parse);
+void	ft_export(t_parsing *parse);
 #endif

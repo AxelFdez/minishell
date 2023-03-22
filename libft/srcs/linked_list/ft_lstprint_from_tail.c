@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstprint_from_tail.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chmassa <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/23 12:08:22 by chmassa           #+#    #+#             */
-/*   Updated: 2023/01/07 11:20:45 by chmassa          ###   ########.fr       */
+/*   Created: 2022/12/23 12:12:15 by chmassa           #+#    #+#             */
+/*   Updated: 2023/01/05 15:21:00 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
+#include "libft.h"
 
-void	ft_lstdel_back(t_list **lst)
+void	ft_lstprint_from_tail(t_list *lst)
 {
 	t_list	*tmp;
+	int		node;
 
-	if (!(*lst))
+	node = ft_lstsize(lst);;
+
+	if (!lst)
+	{
+		puts("Empty list");
 		return ;
-	tmp = *lst;
-	if (tmp->next == NULL)
-	{
-		free(tmp);
-		*lst = NULL;
 	}
-	else
+	tmp = ft_lstlast(lst);
+	while(tmp)
 	{
-		while (tmp)
-		{
-			if (tmp->next->next == NULL)
-			{
-				tmp->next->prev = NULL;
-				tmp->next = NULL;
-				free(tmp->next);
-			}
-			tmp = tmp->next;
-		}
+		printf("node[%d] value|%s|\n", node, tmp->str);
+		tmp = tmp->prev;
+		node--;
 	}
 }

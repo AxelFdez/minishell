@@ -6,7 +6,7 @@
 /*   By: chmassa <chrisdev427@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:21:09 by chmassa           #+#    #+#             */
-/*   Updated: 2023/03/21 12:04:18 by chmassa          ###   ########.fr       */
+/*   Updated: 2023/03/22 15:36:54 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,13 @@
 #  define BUFFER_SIZE 42
 # endif
 
+//**** struct lst *************************************************************
+typedef struct s_list
+{
+	char			*str;
+	struct s_list	*prev;
+	struct s_list	*next;
+}				t_list;
 //----------------------------------------------------------------------
 //------ str -----------------------------------------------------------
 //----------------------------------------------------------------------
@@ -52,6 +59,8 @@ int		ft_atoi_base(const char *str, const char *base);
 int		ft_strncmp(const char *s1, const char *s2,	size_t n);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_found_char(const char *s, char c);
+int		ft_strscmp(char **strtab, char *s);
+
 //----------------------------------------------------------------------
 //------ memory --------------------------------------------------------
 //----------------------------------------------------------------------
@@ -108,5 +117,30 @@ int		ft_print_x(unsigned int n, char *base);
 int		ft_print_u(unsigned int n);
 int		ft_print_p(unsigned long long int n, char *base);
 int		ft_print_di(int nb);
+
+//-----------------------------------------------------------------------------
+//------ linked lists ---------------------------------------------------------
+//-----------------------------------------------------------------------------
+//**** lst new node ************************************************************
+t_list	*ft_lstnew(char *str);
+//**** lst new tools ***********************************************************
+t_list	*ft_lstcpy(t_list **lst);
+t_list	*ft_lstlast(t_list *lst);
+int		ft_lstsize(t_list *lst);
+void	ft_sortlst_str(t_list **lst);
+
+//***** lstadd *****************************************************************
+void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_position(t_list **lst, t_list *new, int position);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+//***** lstdel *****************************************************************
+void	ft_lstdel_front(t_list **lst);
+void	ft_lstdel_back(t_list **lst);
+void	ft_lstdel_position(t_list **lst, int position);
+void	ft_lstdel_all(t_list **lst);
+//***** lstprint ***************************************************************
+void	ft_lstprint(t_list *lst);
+void	ft_lstprint_from_head(t_list *lst);
+void	ft_lstprint_from_tail(t_list *lst);
 
 #endif

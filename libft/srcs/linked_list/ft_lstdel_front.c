@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint_from_head.c                            :+:      :+:    :+:   */
+/*   ft_lstdel_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chmassa <chrisdev427@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/23 12:12:15 by chmassa           #+#    #+#             */
-/*   Updated: 2023/03/21 14:11:29 by chmassa          ###   ########.fr       */
+/*   Created: 2022/12/23 12:11:01 by chmassa           #+#    #+#             */
+/*   Updated: 2023/03/22 11:06:56 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
+#include "libft.h"
 
-void	ft_lstprint_from_head(t_list *lst)
+void	ft_lstdel_front(t_list **lst)
 {
-	t_list	*tmp;
-	int		node;
-
-	if (!lst)
-	{
-		puts("Empty list");
+	if (!(*lst))
 		return ;
-	}
-	node = 1;
-	tmp = lst;
-	puts("-- list -------------------------------------------------------");
-	while (tmp)
+	if ((*lst)->next)
 	{
-		printf("node[%d] [%s]\n", node, tmp->str);
-		tmp = tmp->next;
-		node++;
+		free((*lst));
+		*lst = (*lst)->next;
+		(*lst)->prev = NULL;
 	}
-	puts("---------------------------------------------------------------");
+	else
+	{
+		free((*lst));
+		*lst = NULL;
+	}
 }
