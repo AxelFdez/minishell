@@ -6,3 +6,4 @@ save du 21/03 :
 
 save du 23/03 (Axel) :
 - Implementation de l'exec simple d'une commande avec l'env et chemin absolu
+- Mise em place des pipes (35%)

@@ -1,1 +1,11 @@
-
+total 104
+-rw-r--r--   1 axelfernandez  staff   2139 23 mar 21:26 Makefile
+-rw-r--r--   1 axelfernandez  staff     12 17 mar 20:47 README.md
+drwxr-xr-x   3 axelfernandez  staff     96 23 mar 21:07 includes
+drwxr-xr-x   6 axelfernandez  staff    192 23 mar 21:16 libft
+drwxr-xr-x  35 axelfernandez  staff   1120 23 mar 21:16 linked_list
+-rwxr-xr-x   1 axelfernandez  staff  36374 23 mar 21:26 minishell
+-rw-r--r--   1 axelfernandez  staff      0 23 mar 21:36 out.txt
+-rw-r--r--   1 axelfernandez  staff    319 23 mar 21:07 save_info.txt
+drwxr-xr-x  26 axelfernandez  staff    832 23 mar 21:16 srcs
+-rw-r--r--   1 axelfernandez  staff     25 23 mar 21:34 test.txt

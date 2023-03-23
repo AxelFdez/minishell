@@ -32,6 +32,7 @@ typedef struct s_parsing
 	t_list	*lst_env;
 	char	**command;
 	int		lst_target;
+	int		pfd[2];
 }				t_parsing;
 
 

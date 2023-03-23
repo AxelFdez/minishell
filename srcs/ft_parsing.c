@@ -35,6 +35,7 @@ static void	is_no_quote_string(t_parsing *parse)
 {
 	char	c;
 
+	(void)c;
 	while (parse->input[parse->i] && !is_meta_char(parse->input[parse->i])
 		&& parse->input[parse->i] != ' ')
 	{

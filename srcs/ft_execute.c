@@ -80,7 +80,6 @@ void	cmd_lst_to_tab(t_parsing *parse)
 	parse->command[i] = 0;
 }
 
-
 void	parsing_cmd(t_parsing *parse)
 {
 	int i;
@@ -89,18 +88,94 @@ void	parsing_cmd(t_parsing *parse)
 	cmd_lst_to_tab(parse);
 	if (access(parse->command[0], F_OK))
 		parse->command[0] = path_of_command(parse);
-	// while (i < parse->lst_target)
-	// {
-	// 	ft_lstdel_front(&parse->lst_cmdline);
-	// 	i++;
-	// }
+	while (i < parse->lst_target)
+	{
+		ft_lstdel_front(&parse->lst_cmdline);
+		i++;
+	}
 }
 
+void is_pipe_out(t_parsing *parse, int first_middle_or_last_pipe, int which_pfd)
+{
+	pipe(parse->pfd);
+	if (first_middle_or_last_pipe == 0 && which_pfd == 0)
+	{
+		dup2(parse->pfd[1], STDOUT_FILENO);
+		close(parse->pfd[0]);
+		first_middle_or_last_pipe++;
+	}
+	else if (first_middle_or_last_pipe == 1 && which_pfd == 0)
+	{
+		dup2(parse->pfd[0], STDIN_FILENO);
+		dup2(parse->pfd[1], STDOUT_FILENO);
+		close(parse->pfd[0]);
+		close(parse->pfd[1]);
+	}
+	else if (first_middle_or_last_pipe == 1 && which_pfd == 1)
+	{
+		dup2(parse->pfd[0], STDIN_FILENO);
+		dup2(parse->pfd[1], STDOUT_FILENO);
+		close(parse->pfd[0]);
+		close(parse->pfd[1]);
+	}
+	else if (first_middle_or_last_pipe == 2)
+	{
+		dup2(parse->pfd[0], STDIN_FILENO);
+		close(parse->pfd[0]);
+		close(parse->pfd[1]);
+	}
+}
+
+void	one_pipe(t_parsing *parse)
+{
+	pid_t	child;
+	int		pfd[2];
+
+	pipe(pfd);
+	child = fork();
+	if (child == -1)
+		perror("Fork error");
+	else if (child == 0)
+	{
+		dup2(pfd[1], STDOUT_FILENO);
+		close(pfd[1]);
+		execve(parse->command[0], parse->command, parse->env);
+		perror("command not found");
+	}
+	parsing_cmd(parse);
+	dup2(pfd[0], STDIN_FILENO);
+	close(pfd[1]);
+	wait(NULL);
+	execve(parse->command[0], parse->command, parse->env);
+	perror("command not found");
+}
+
+void	pipex(t_parsing *parse)
+{
+	// int		i;
+	// int		temp_fd;
+	ft_lstdel_front(&parse->lst_cmdline);
+	// compter le nombre de pipe jusqu'a un separateur / fin
+	one_pipe(parse);
+	// iterrer de i jusqu-a nb pipe
+	// temp_fd = 0;
+
+	// temp_fd = first_pipe(temp_fd, argv, env);
+	// i = 3;
+	// while (i < argc - 3)
+	// {
+	// 	temp_fd = middle_pipe(i, temp_fd, argv, env);
+	// 	i++;
+	// }
+	// 	last_pipe(argc, temp_fd, argv, env);
+}
 
 void execute_cmd(t_parsing *parse)
 {
 	//ignore meta_characters (delete meta char when executed ?)
-	//one_cmdecg
+	// 1- watch on redirection
+	// 2 execute cmd
+	// 3 where ?
 
 	pid_t child;
 	child = fork();
@@ -109,6 +184,9 @@ void execute_cmd(t_parsing *parse)
 	else if (child == 0)
 	{
 		parsing_cmd(parse);
+		// ft_lstprint_from_head(parse->lst_cmdline);
+		// if (parse->lst_cmdline->str[0] == '|')
+		// 	pipex(parse);
 		//printf("path = %s\n", parse->command[0]);
 		// exit(EXIT_FAILURE);
 	// 	int i = 0;
@@ -117,6 +195,7 @@ void execute_cmd(t_parsing *parse)
 	// 	printf("cmd[%d] = %s\n", i, parse->command[i]);
 	// 	i++;
 	// }
+	// ft_lstprint_from_head(parse->lst_cmdline);
 	//  exit(EXIT_FAILURE);
 		execve(parse->command[0], parse->command, parse->env);
 		perror("command not found");

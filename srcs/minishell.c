@@ -15,7 +15,6 @@ static void	ft_retrieve_env(t_parsing *parse, char **env)
 	}
 }
 
-
 int	main(int ac, char **av, char **env)
 {
 	t_parsing	parse;
@@ -35,17 +34,7 @@ int	main(int ac, char **av, char **env)
 			add_history(parse.input);
 			if (ft_check_syntax(&parse))
 				ft_get_cmdline(&parse);
-			int i = 0;
-			t_list *temp;
-			temp = parse.lst_cmdline;
-			while (temp)
-			{
-				if (strchr(temp->str, "|") != NULL)
-					execute_pipe_cmd(&parse);
-				temp = temp->next;
-				if (temp == NULL)
-					execute_cmd(&parse);
-			}
+			execute_cmd(&parse);
 			ft_lstdel_all(&parse.lst_cmdline);
 			parse.lst_target = 0;
 		}
