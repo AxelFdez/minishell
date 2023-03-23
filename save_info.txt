@@ -1,0 +1,8 @@
+save du 21/03 :
+- Readline et historique ok .
+- Quotes non fermees et prompte associe ok .
+- Recup de la ligne de commande dans une liste chainee ok .
+- Recup de la variable d'environnement dans une liste chainee ok .
+
+save du 23/03 (Axel) :
+- Implementation de l'exec simple d'une commande avec l'env et chemin absolu

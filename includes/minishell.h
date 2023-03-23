@@ -11,15 +11,29 @@
 # include "../linked_list/lst.h"
 # include <signal.h>
 
+typedef struct s_cmd
+{
+	char	*path;
+	char	**cmd;
+}	t_cmd;
+
 typedef struct s_parsing
 {
 	int		i;
+	int		j;
+	int		k;
+	char	c;
 	int		len;
+	int		quote_to_del;
 	char	*input;
 	char	*prompt;
+	char	**env;
 	t_list	*lst_cmdline;
 	t_list	*lst_env;
+	char	**command;
+	int		lst_target;
 }				t_parsing;
+
 
 void	rl_replace_line(const char *text, int clear_undo);
 
@@ -34,6 +48,11 @@ int		is_pipe(t_parsing *parse);
 int		ft_check_syntax(t_parsing *parse);
 void	ft_initialization(t_parsing *parse);
 void	handle_signals(int sig);
+void	ft_strdel_quotes(t_parsing *parse, char *str);
 void	signals_(void);
+char	*path_of_command(t_parsing *parse);
+void	cmd_lst_to_tab(t_parsing *parse);
+void	parsing_cmd(t_parsing *parse);
+void execute_cmd(t_parsing *parse);
 
 #endif

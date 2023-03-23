@@ -15,7 +15,8 @@ SRCS =  srcs/minishell.c \
 		srcs/ft_initialization.c \
 		srcs/ft_fill_lst.c \
 		srcs/ft_quotes.c \
-		srcs/ft_signals.c
+		srcs/ft_signals.c \
+		srcs/ft_execute.c
 
 OBJECT_FILES = $(SRCS:.c=.o)
 HEADER = -I./includes
