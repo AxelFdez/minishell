@@ -6,7 +6,7 @@ CFLAGS = -Wall -Wextra -Werror -I
 
 SRCS = srcs/str/ft_split.c srcs/str/ft_strjoin.c srcs/str/ft_strjoin_free_s1.c srcs/str/ft_strtrim.c srcs/str/ft_strtrim_free_s1.c srcs/str/ft_substr.c srcs/str/ft_striteri.c srcs/str/ft_strmapi.c srcs/str/ft_strnstr.c srcs/str/ft_strrchr.c srcs/str/ft_itoa.c srcs/str/ft_atoi.c srcs/str/ft_atoi_base.c \
 	   srcs/str/ft_strchr.c srcs/str/ft_strlcpy.c srcs/str/ft_found_char.c srcs/str/ft_strlcat.c srcs/str/ft_strncmp.c srcs/str/ft_strcmp.c srcs/str/ft_strdup.c srcs/str/ft_strlen.c srcs/str/ft_bzero.c srcs/str/ft_strrev.c srcs/str/ft_strcpy.c srcs/str/get_next_line.c srcs/str/ft_str_chr.c srcs/str/ft_str_rchr.c \
-	   srcs/to/ft_tolower.c srcs/to/ft_toupper.c \
+	   srcs/to/ft_tolower.c srcs/to/ft_toupper.c srcs/str/ft_strstr.c \
 	   srcs/print/ft_putendl_fd.c srcs/print/ft_putstr_fd.c srcs/print/ft_putchar_fd.c srcs/print/ft_putnbr_fd.c srcs/print/ft_putendl.c srcs/print/ft_putstr.c srcs/print/ft_putchar.c srcs/print/ft_putnbr.c \
 	   srcs/print/ft_print_strs_array.c srcs/print/ft_putnbr_base.c \
 	   srcs/mem/ft_calloc.c srcs/mem/ft_memchr.c srcs/mem/ft_memmove.c srcs/mem/ft_memcmp.c srcs/mem/ft_memset.c srcs/mem/ft_memcpy.c \

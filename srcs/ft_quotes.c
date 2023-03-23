@@ -44,5 +44,4 @@ void	ft_quotes(t_parsing *parse)
 		ft_prompt(parse, '\"');
 	if (sgl_q != 0 && sgl_q % 2 != 0)
 		ft_prompt(parse, '\'');
-	
 }

@@ -9,6 +9,7 @@
 # include <fcntl.h>
 # include "../libft/libft.h"
 # include "../linked_list/lst.h"
+# include <signal.h>
 
 typedef struct s_parsing
 {
@@ -19,6 +20,8 @@ typedef struct s_parsing
 	t_list	*lst_cmdline;
 	t_list	*lst_env;
 }				t_parsing;
+
+void	rl_replace_line(const char *text, int clear_undo);
 
 void	ft_parsing(char *input);
 void	ft_get_cmdline(t_parsing *parse);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint_from_head.c                                  :+:      :+:    :+:   */
+/*   ft_lstprint_from_head.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chmassa <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: chmassa <chrisdev427@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 12:12:15 by chmassa           #+#    #+#             */
-/*   Updated: 2023/01/05 11:45:29 by chmassa          ###   ########.fr       */
+/*   Updated: 2023/03/20 18:27:57 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void	ft_lstprint_from_head(t_list *lst)
 	}
 	node = 1;
 	tmp = lst;
-	while(tmp)
+	while (tmp)
 	{
-		printf("node[%d] value[%s]\n", node, tmp->str);
+		printf("node[%d] [%s]\n", node, tmp->str);
 		tmp = tmp->next;
 		node++;
 	}
