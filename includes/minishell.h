@@ -33,5 +33,7 @@ int		is_open_herringbone(t_parsing *parse);
 int		is_pipe(t_parsing *parse);
 int		ft_check_syntax(t_parsing *parse);
 void	ft_initialization(t_parsing *parse);
+void	handle_signals(int sig);
+void	signals_(void);
 
 #endif
