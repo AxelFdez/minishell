@@ -186,7 +186,7 @@ void execute_cmd(t_parsing *parse)
 		parsing_cmd(parse);
 		// ft_lstprint_from_head(parse->lst_cmdline);
 		// if (parse->lst_cmdline->str[0] == '|')
-		// 	pipex(parse);
+		//pipex(parse);
 		//printf("path = %s\n", parse->command[0]);
 		// exit(EXIT_FAILURE);
 	// 	int i = 0;
