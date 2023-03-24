@@ -19,6 +19,19 @@ int ft_lst_strchr_meta(t_list *list)
 	return (1);
 }
 
+// check_herringbone(t_parsing *parse)
+// {
+// 	if (ft_strcmp(parse->lst_cmdline->str, "<") == 0)
+// 		input_redirection();
+// 	else if (ft_strcmp(parse->lst_cmdline->str, ">") == 0)
+// 		output_redirection();
+// 	else if (ft_strcmp(parse->lst_cmdline->str, "<<") == 0)
+// 		ft_heredoc();
+// 	else if (ft_strcmp(parse->lst_cmdline->str, ">>") == 0)
+// 		ft_append();
+
+// }
+
 void execute_cmd(t_parsing *parse)
 {
 	// 1- watch on redirection
@@ -26,10 +39,13 @@ void execute_cmd(t_parsing *parse)
 	// 3 where ?
 	pid_t child;
 	child = fork();
+
 	if (child < 0)
 		perror("fork error\n");
 	else if (child == 0)
 	{
+		// redirection here
+		//check_herringbone(parse);
 		parsing_cmd(parse);
 		if (ft_lst_strchr_meta(parse->lst_cmdline) == 0)
 			pipex(parse);
@@ -45,6 +61,7 @@ void execute_cmd(t_parsing *parse)
 		perror("command not found");
 	}
 	wait(NULL);
+	// printf("cmd = %s\n", parse->command[0]);
 		// int i = 0;
 		// while (parse->command[i])
 		// {

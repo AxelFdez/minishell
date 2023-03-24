@@ -39,6 +39,7 @@ int	main(int ac, char **av, char **env)
 				execute_cmd(&parse);
 				ft_lstdel_all(&parse.lst_cmdline);
 			}
+			//system("leaks minishell");
 		}
 	}
 	puts("end");
