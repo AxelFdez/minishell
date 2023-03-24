@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chmassa <chrisdev427@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/23 12:11:01 by chmassa           #+#    #+#             */
-/*   Updated: 2023/03/13 15:16:38 by chmassa          ###   ########.fr       */
+/*   Created: 2022/11/18 17:08:28 by chmassa           #+#    #+#             */
+/*   Updated: 2023/03/22 11:06:06 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
+#include "libft.h"
 
-void	ft_lstdel_front(t_list **lst)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
+	t_list	*tmp;
+
 	if (!(*lst))
+	{
+		*lst = new;
 		return ;
-	if ((*lst)->next)
-	{
-		free((*lst));
-		*lst = (*lst)->next;
-		(*lst)->prev = NULL;
 	}
-	else
-	{
-		free((*lst));
-		*lst = NULL;
-	}
+	tmp = ft_lstlast(*lst);
+	tmp->next = new;
+	new->prev = tmp;
 }

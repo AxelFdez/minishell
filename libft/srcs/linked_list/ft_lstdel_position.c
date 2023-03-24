@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdel_position.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chmassa <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: chmassa <chrisdev427@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 12:14:49 by chmassa           #+#    #+#             */
-/*   Updated: 2023/01/05 15:21:33 by chmassa          ###   ########.fr       */
+/*   Updated: 2023/03/22 11:06:59 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
+#include "libft.h"
 
 void	ft_lstdel_position(t_list **lst, int position)
 {

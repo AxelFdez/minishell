@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strscmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chmassa <chrisdev427@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/30 14:08:25 by chmassa           #+#    #+#             */
-/*   Updated: 2023/03/13 14:49:04 by chmassa          ###   ########.fr       */
+/*   Created: 2023/03/22 09:03:01 by chmassa           #+#    #+#             */
+/*   Updated: 2023/03/23 12:58:02 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
+#include "libft.h"
 
-t_list	*ft_lstcpy(t_list **lst)
+int	ft_strscmp(char **strtab, char *s)
 {
-	t_list	*lstcpy;
-	t_list	*tmp;
-	t_list	*new;
+	int	i;
 
-	tmp = *lst;
-	while (tmp)
+	i = 0;
+	while (strtab[i])
 	{
-		new = ft_lstnew(tmp->str);
-		ft_lstadd_back(&lstcpy, new);
-		tmp = tmp->next;
+		if (ft_strcmp(s, strtab[i]) == 0)
+			return (1);
+		i++;
 	}
-
-
-	return (lstcpy);
+	return (0);
 }

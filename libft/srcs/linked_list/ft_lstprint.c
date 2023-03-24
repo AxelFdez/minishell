@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   lstprint.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chmassa <chrisdev427@gmail.com>            +#+  +:+       +#+        */
+/*   By: chmassa <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/06 18:21:49 by chmassa           #+#    #+#             */
-/*   Updated: 2023/01/05 17:10:03 by chmassa          ###   ########.fr       */
+/*   Created: 2022/12/23 12:12:15 by chmassa           #+#    #+#             */
+/*   Updated: 2023/01/05 15:20:08 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
+#include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstprint(t_list *lst)
 {
-	if (!(*lst))
+	t_list	*tmp;
+
+	if (!lst)
 	{
-		new->next = *lst;
-		*lst = new;
+		ft_putstr("Empty list\n");
+		return ;
 	}
-	else
+	tmp = lst;
+	while (tmp)
 	{
-		new->next = *lst;
-		*lst = new;
-		new->next->prev = new;
+		ft_printf("%s\n", tmp->str);
+		tmp = tmp->next;
 	}
 }

@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnode_value.c                                       :+:      :+:    :+:   */
+/*   ft_lstcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chmassa <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: chmassa <chrisdev427@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/06 13:01:48 by chmassa           #+#    #+#             */
-/*   Updated: 2023/01/06 13:21:11 by chmassa          ###   ########.fr       */
+/*   Created: 2022/12/30 14:08:25 by chmassa           #+#    #+#             */
+/*   Updated: 2023/03/22 15:05:14 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
+#include "libft.h"
 
-int	ft_lstnode_value(t_list **lst, int node)
+t_list	*ft_lstcpy(t_list **lst)
 {
-	int	value;
-	int	position;
+	t_list	*lstcpy;
+	t_list	*tmp;
+	t_list	*new;
 
-	position = 1;
-	while (*lst)
+	tmp = *lst;
+	lstcpy = NULL;
+	while (tmp)
 	{
-		if (position == node)
-		{
-			value = (*lst)->str;
-		}
-		*lst = (*lst)->next;
-		position ++;
+		new = ft_lstnew(tmp->str);
+		ft_lstadd_back(&lstcpy, new);
+		tmp = tmp->next;
 	}
-	return (value);
+	return (lstcpy);
 }

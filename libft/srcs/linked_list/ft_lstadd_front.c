@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel_all.c                                      :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chmassa <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: chmassa <chrisdev427@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/23 12:07:14 by chmassa           #+#    #+#             */
-/*   Updated: 2023/01/05 09:53:33 by chmassa          ###   ########.fr       */
+/*   Created: 2022/11/06 18:21:49 by chmassa           #+#    #+#             */
+/*   Updated: 2023/03/22 11:06:28 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
+#include "libft.h"
 
-void	ft_lstdel_all(t_list **lst)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list	*tmp;
-
 	if (!(*lst))
-		return ;
-	while (*lst)
 	{
-		tmp = *lst;
-		*lst = (*lst)->next;
-		free (tmp);
+		new->next = *lst;
+		*lst = new;
+	}
+	else
+	{
+		new->next = *lst;
+		*lst = new;
+		new->next->prev = new;
 	}
 }

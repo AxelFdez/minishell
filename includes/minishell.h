@@ -8,7 +8,6 @@
 # include <readline/history.h>
 # include <fcntl.h>
 # include "../libft/libft.h"
-# include "../linked_list/lst.h"
 # include <signal.h>
 
 typedef struct s_cmd
@@ -22,7 +21,11 @@ typedef struct s_parsing
 	int		i;
 	int		j;
 	int		k;
+	int		dollar;
+	char	*str_tmp;
+	char	var_name[1024];
 	char	c;
+	char	*meta[6];
 	int		len;
 	int		quote_to_del;
 	char	*input;
@@ -64,5 +67,14 @@ void	last_pipe(t_parsing *parse, int temp_fd);
 void	pipex(t_parsing *parse);
 int		ft_lst_strchr_meta(t_list *list);
 void	cmd_lst_to_tab(t_parsing *parse);
+int		is_meta_char(int c);
+void	ft_check_built_in(t_parsing *parse);
+void	ft_echo(t_list *tmp, t_parsing *parse);
+void	ft_env(t_parsing *parse);
+int		ft_pwd(void);
+void	ft_export(t_parsing *parse);
+void	ft_print_sorted_env(t_parsing *parse);
+void	ft_handle_dollar_no_quotes(t_parsing *parse);
+void	ft_handle_dollar_in_str(t_parsing *parse);
 
 #endif

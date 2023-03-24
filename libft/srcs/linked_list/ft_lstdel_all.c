@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_position.c                               :+:      :+:    :+:   */
+/*   ft_lstdel_all.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chmassa <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/23 12:16:19 by chmassa           #+#    #+#             */
-/*   Updated: 2023/01/05 15:09:00 by chmassa          ###   ########.fr       */
+/*   Created: 2022/12/23 12:07:14 by chmassa           #+#    #+#             */
+/*   Updated: 2023/01/05 09:53:33 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
+#include "libft.h"
 
-void	ft_lstadd_position(t_list **lst, t_list *new, int position)
+void	ft_lstdel_all(t_list **lst)
 {
-	int		i;
 	t_list	*tmp;
 
 	if (!(*lst))
 		return ;
-	if (position < 2 || position > ft_lstsize(*lst))
-		return ;
-	i = 2;
-	tmp = *lst;
-	while (tmp)
+	while (*lst)
 	{
-		if (i == position)
-		{
-			new->next = tmp->next;
-			tmp->next = new;
-			new->prev = tmp;
-			tmp->next->next->prev = tmp->next;
-		}
-		tmp = tmp->next;
-		i++;
+		tmp = *lst;
+		*lst = (*lst)->next;
+		free (tmp);
 	}
 }

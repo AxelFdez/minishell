@@ -18,7 +18,14 @@ SRCS =  srcs/minishell.c \
 		srcs/ft_signals.c \
 		srcs/ft_execute.c \
 		srcs/ft_pipex.c \
-		srcs/ft_pipex_utils.c
+		srcs/ft_pipex_utils.c \
+		srcs/built-in/ft_echo.c \
+		srcs/built-in/ft_env.c \
+		srcs/built-in/ft_pwd.c \
+		srcs/built-in/ft_export.c \
+		srcs/built-in/ft_check_built_in.c \
+		srcs/built-in/ft_print_sorted_env.c \
+		srcs/built-in/ft_handle_dollar.c
 
 OBJECT_FILES = $(SRCS:.c=.o)
 HEADER = -I./includes
@@ -30,12 +37,10 @@ all: $(NAME)
 $(NAME): $(OBJECT_FILES)
 	@echo "$(YELLOW)\n<<<<< libft compiling ... >>>>>\n$(DEFAULT)"
 	$(MAKE) -C $(LIBFT)
-	$(MAKE) -C $(LST)
 	# cp linked_list/lst.a $(NAME)
 	# cp libft/libft.a $(NAME)
 	@echo "$(YELLOW)\n<<<<< Creating $(NAME) exec file ! ... >>>>>$(DEFAULT)"
-	# $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a linked_list/lst.a -L /opt/homebrew/Cellar/readline/8.2.1/lib/ -lreadline
-	$(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a linked_list/lst.a -L /Users/axfernan/homebrew/Cellar/readline/8.2.1/lib/ -lreadline
+	$(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -L /Users/axfernan/homebrew/Cellar/readline/8.2.1/lib/ -lreadline
 	@echo "$(GREEN)\n<<<<< $(NAME) created ! ... >>>>>\n$(DEFAULT)"
 #------------------------------------------------------------------------------
 clean:
@@ -43,13 +48,11 @@ clean:
 	rm -rf $(OBJECT_FILES)
 	@echo "$(GREEN)<<<<< clean from $(NAME) done ! >>>>>\n$(DEFAULT)"
 	$(MAKE) clean -C $(LIBFT)
-	$(MAKE) clean -C $(LST)
 #------------------------------------------------------------------------------
 fclean: clean
 	@echo "$(RED)<<<<< deleting $(NAME) exec ! >>>>>\n$(DEFAULT)"
 	rm -rf $(NAME)
 	$(MAKE) fclean -C $(LIBFT)
-	$(MAKE) fclean -C $(LST)
 	@echo "$(GREEN)<<<<< fclean from $(NAME) done ! >>>>>\n$(DEFAULT)"
 #------------------------------------------------------------------------------
 re: fclean all
