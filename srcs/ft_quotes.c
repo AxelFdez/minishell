@@ -39,7 +39,7 @@ static void	ft_prompt(t_parsing *parse, char c)
 	parse->input = ft_strjoin_free_s1(parse->input, "\n");
 	while (1)
 	{
-		tmp = readline("> ");
+		tmp = readline("\033[1;31m>\033[0m ");
 		parse->prompt = ft_strjoin_free_s1(parse->prompt, tmp);
 		free(tmp);
 		if (ft_found_char(tmp, c))

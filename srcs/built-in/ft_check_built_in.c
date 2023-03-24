@@ -15,7 +15,8 @@ void	ft_check_built_in(t_parsing *parse)
 			ft_pwd();
 		if (ft_strcmp(tmp->str, "echo") == 0)
 			ft_echo(tmp, parse);
-		
+		if (ft_strcmp(tmp->str, "cd") == 0)
+			ft_cd(parse);
 		tmp = tmp->next;
 	}
 }
