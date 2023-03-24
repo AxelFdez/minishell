@@ -32,7 +32,6 @@ typedef struct s_parsing
 	t_list	*lst_env;
 	char	**command;
 	int		lst_target;
-	int		pfd[2];
 }				t_parsing;
 
 
@@ -54,6 +53,15 @@ void	signals_(void);
 char	*path_of_command(t_parsing *parse);
 void	cmd_lst_to_tab(t_parsing *parse);
 void	parsing_cmd(t_parsing *parse);
-void execute_cmd(t_parsing *parse);
+void	execute_cmd(t_parsing *parse);
+char	*path_of_command(t_parsing *parse);
+int		count_pipe_until_sep(t_list *list);
+void	one_pipe(t_parsing *parse);
+int		first_pipe(t_parsing *parse, int temp_fd);
+int		middle_pipe(t_parsing *parse, int pipe_temp);
+void	last_pipe(t_parsing *parse, int temp_fd);
+void	pipex(t_parsing *parse);
+int		ft_lst_strchr_meta(t_list *list);
+void	cmd_lst_to_tab(t_parsing *parse);
 
 #endif

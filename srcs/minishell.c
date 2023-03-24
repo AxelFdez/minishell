@@ -34,9 +34,11 @@ int	main(int ac, char **av, char **env)
 			add_history(parse.input);
 			if (ft_check_syntax(&parse))
 				ft_get_cmdline(&parse);
-			execute_cmd(&parse);
-			ft_lstdel_all(&parse.lst_cmdline);
-			parse.lst_target = 0;
+			if (parse.lst_cmdline)
+			{
+				execute_cmd(&parse);
+				ft_lstdel_all(&parse.lst_cmdline);
+			}
 		}
 	}
 	puts("end");
