@@ -16,6 +16,9 @@ typedef struct s_parsing
 	int		i;
 	int		j;
 	int		k;
+	int		dollar;
+	char	*str_tmp;
+	char	var_name[1024];
 	char	c;
 	char	*meta[6];
 	int		len;
@@ -41,8 +44,11 @@ int		is_meta_char(int c);
 void	ft_check_built_in(t_parsing *parse);
 
 
-void	ft_echo(t_list *tmp, t_parsing *parse, int nl);
+void	ft_echo(t_list *tmp, t_parsing *parse);
 void	ft_env(t_parsing *parse);
-void	ft_pwd(t_parsing *parse);
+int		ft_pwd(void);
 void	ft_export(t_parsing *parse);
+void	ft_print_sorted_env(t_parsing *parse);
+void	ft_handle_dollar_no_quotes(t_parsing *parse);
+void	ft_handle_dollar_in_str(t_parsing *parse);
 #endif

@@ -18,6 +18,8 @@ SRCS =  srcs/minishell.c \
 		srcs/built-in/ft_pwd.c \
 		srcs/built-in/ft_export.c \
 		srcs/built-in/ft_check_built_in.c \
+		srcs/built-in/ft_print_sorted_env.c \
+		srcs/built-in/ft_handle_dollar.c \
 		srcs/ft_quotes.c
 
 OBJECT_FILES = $(SRCS:.c=.o)

@@ -1,22 +1,17 @@
 #include "../../includes/minishell.h"
 
-void	ft_pwd(t_parsing *parse)
+int	ft_pwd(void)
 {
-	t_list	*tmp;
+	char	buffer[4096];
+	char	*cwd;
 
-	if (!parse->lst_env)
+	cwd = getcwd(buffer, sizeof(buffer));
+
+	if (cwd == NULL) 
 	{
-		ft_putstr_fd("Error print pwd\n", 2);
-		return ;
+		perror("getcwd");
+		return (1);
 	}
-	tmp = parse->lst_env;
-	while (tmp)
-	{
-		if (ft_strnstr(tmp->str, "PWD=", ft_strlen(tmp->str)))
-		{
-			ft_printf("%s\n", ft_strchr(tmp->str, '/'));
-			break ;
-		}
-		tmp = tmp->next;
-	}
+	ft_printf("%s\n", cwd);
+	return (0);
 }
