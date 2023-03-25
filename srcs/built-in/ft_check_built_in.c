@@ -11,6 +11,8 @@ void	ft_check_built_in(t_parsing *parse)
 			ft_env(parse);
 		if (ft_strcmp(tmp->str, "export") == 0 && tmp->next == NULL)
 			ft_print_sorted_env(parse);
+		if (ft_strcmp(tmp->str, "export") == 0 && tmp->next != NULL)
+			ft_export(parse);
 		if ((ft_strcmp(tmp->str, "pwd") == 0 || ft_strcmp(tmp->str, "PWD") == 0) && (tmp->next == NULL))
 			ft_pwd();
 		if (ft_strcmp(tmp->str, "echo") == 0)

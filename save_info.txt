@@ -15,5 +15,8 @@ save du 22/03 :
 - built-in "export" en cours, lorsque 'export' est entré dans bash sans aucun arguments,
   il retourne la liste des variables d'environnement trié dans l'ordre alphabetique.
   Cette partie semble ok.
-  
+
+  save du 25/03 :
+  - fonction export modifiée, ajout d'un double quote apres le nom de la variable ainsi qu'a la fin de la chaine...
+    
   
