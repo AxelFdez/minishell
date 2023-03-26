@@ -9,10 +9,10 @@ void	ft_check_built_in(t_parsing *parse)
 	{
 		if ((ft_strcmp(tmp->str, "env") == 0 || ft_strcmp(tmp->str, "ENV") == 0) && (tmp->next == NULL))
 			ft_env(parse);
-		if (ft_strcmp(tmp->str, "export") == 0 && tmp->next == NULL)
-			ft_print_sorted_env(parse);
-		if (ft_strcmp(tmp->str, "export") == 0 && tmp->next != NULL)
+		if (ft_strcmp(tmp->str, "export") == 0)
 			ft_export(parse);
+		if (ft_strcmp(tmp->str, "unset") == 0)
+			ft_unset(parse);
 		if ((ft_strcmp(tmp->str, "pwd") == 0 || ft_strcmp(tmp->str, "PWD") == 0) && (tmp->next == NULL))
 			ft_pwd();
 		if (ft_strcmp(tmp->str, "echo") == 0)

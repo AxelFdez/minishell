@@ -21,6 +21,7 @@ SRCS = srcs/str/ft_split.c srcs/str/ft_strjoin.c srcs/str/ft_strjoin_free_s1.c s
 		srcs/linked_list/ft_lstdel_back.c \
 		srcs/linked_list/ft_lstdel_front.c \
 		srcs/linked_list/ft_lstdel_position.c \
+		srcs/linked_list/ft_lstdel_actual.c \
 		srcs/linked_list/ft_lstlast.c \
 		srcs/linked_list/ft_lstnew.c \
 		srcs/linked_list/ft_lstprint_from_head.c \

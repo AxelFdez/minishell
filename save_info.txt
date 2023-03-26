@@ -16,7 +16,12 @@ save du 22/03 :
   il retourne la liste des variables d'environnement trié dans l'ordre alphabetique.
   Cette partie semble ok.
 
-  save du 25/03 :
-  - fonction export modifiée, ajout d'un double quote apres le nom de la variable ainsi qu'a la fin de la chaine...
-    
+save du 25/03 :
+- fonction export modifiée, ajout d'un double quote apres le nom de la variable ainsi qu'a la fin de la chaine...
   
+save du 26/03 :
+- fonction export ;
+  Modif de l'ajout des double quotes.
+  Ajout des vars. d'env. avec controle de la syntaxe, gestion d'erreurs.
+- fonction unset en cours.
+

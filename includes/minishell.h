@@ -48,6 +48,7 @@ void	ft_echo(t_list *tmp, t_parsing *parse);
 void	ft_env(t_parsing *parse);
 int		ft_pwd(void);
 void	ft_export(t_parsing *parse);
+void	ft_unset(t_parsing *parse);
 void	ft_print_sorted_env(t_parsing *parse);
 void	ft_handle_dollar_no_quotes(t_parsing *parse);
 void	ft_handle_dollar_in_str(t_parsing *parse);

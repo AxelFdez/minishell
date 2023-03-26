@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdel_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chmassa <chrisdev427@gmail.com>            +#+  +:+       +#+        */
+/*   By: chris <chris@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 12:11:01 by chmassa           #+#    #+#             */
-/*   Updated: 2023/03/22 11:06:56 by chmassa          ###   ########.fr       */
+/*   Updated: 2023/03/26 19:20:22 by chris            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstdel_front(t_list **lst)
 	if (!(*lst))
 		return ;
 	if ((*lst)->next)
-	{
+	{puts("AAAA");
 		free((*lst));
 		*lst = (*lst)->next;
 		(*lst)->prev = NULL;

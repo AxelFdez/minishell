@@ -53,10 +53,12 @@ static char	*ft_add_quotes(char *s)
 	{
 		if (s[i] == '=' && check_equal == 0)
 		{
+			str[j++] = s[i++];
 			str[j++] = '\"';
 			check_equal++;
 		}
-		str[j++] = s[i++];
+		else
+			str[j++] = s[i++];
 	}
 	str[j] = '\"';
 	str[j +1] = '\0';
