@@ -36,6 +36,7 @@ typedef struct s_parsing
 	char	**command;
 	int		lst_target;
 	int		fd[2];
+	int		built_in_cmd;
 }				t_parsing;
 
 
@@ -77,5 +78,6 @@ void	ft_print_sorted_env(t_parsing *parse);
 void	ft_handle_dollar_no_quotes(t_parsing *parse);
 void	ft_handle_dollar_in_str(t_parsing *parse);
 int		check_builtin_input(t_parsing * parse);
+int		parsing_built_in(t_parsing *parse);
 
 #endif
