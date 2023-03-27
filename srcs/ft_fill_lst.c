@@ -14,11 +14,9 @@ void	ft_fill_lst(t_list **lst, t_parsing *parse, int start)
 		// free(parse->str_tmp);
 		parse->str_tmp = NULL;
 	}
-	else // 
+	else //
 	{
 		str = ft_substr(parse->input, start, parse->len);
-		printf("str = %s\n", str);
-
 	}
 
 	if (parse->quote_to_del > 0)
@@ -28,5 +26,5 @@ void	ft_fill_lst(t_list **lst, t_parsing *parse, int start)
 		new = ft_lstnew(str);
 		ft_lstadd_back(lst, new);
 	}
-	
+
 }

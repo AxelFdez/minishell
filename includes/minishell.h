@@ -68,7 +68,7 @@ void	pipex(t_parsing *parse);
 int		ft_lst_strchr_meta(t_list *list);
 void	cmd_lst_to_tab(t_parsing *parse);
 int		is_meta_char(int c);
-void	ft_check_built_in(t_parsing *parse);
+void	execute_built_in(t_parsing *parse);
 void	ft_echo(t_list *tmp, t_parsing *parse);
 void	ft_env(t_parsing *parse);
 int		ft_pwd(void);
@@ -76,5 +76,6 @@ void	ft_export(t_parsing *parse);
 void	ft_print_sorted_env(t_parsing *parse);
 void	ft_handle_dollar_no_quotes(t_parsing *parse);
 void	ft_handle_dollar_in_str(t_parsing *parse);
+int		check_builtin_input(t_parsing * parse);
 
 #endif

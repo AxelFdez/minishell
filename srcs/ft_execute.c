@@ -32,6 +32,25 @@ int ft_lst_strchr_meta(t_list *list)
 
 // }
 
+int check_builtin_input(t_parsing * parse)
+{
+	char	*tmp;
+
+	tmp = parse->lst_cmdline->str;
+	if (ft_strcmp(tmp, "env") == 0 || ft_strcmp(tmp, "ENV") == 0
+		|| ft_strcmp(tmp, "export") == 0 || ft_strcmp(tmp, "pwd") == 0
+		|| ft_strcmp(tmp, "PWD") == 0 || ft_strcmp(tmp, "echo") == 0)
+	{
+		return (0);
+	}
+	return (1);
+}
+
+// void builtin_behaviour(t_parsing *parse)
+// {
+// 	execute_built_in(parse);
+// }
+
 void execute_cmd(t_parsing *parse)
 {
 	// 1- watch on redirection
@@ -39,6 +58,7 @@ void execute_cmd(t_parsing *parse)
 	// 3 where ?
 	pid_t child;
 	child = fork();
+	//char *built_temp;
 
 	if (child < 0)
 		perror("fork error\n");
@@ -46,7 +66,15 @@ void execute_cmd(t_parsing *parse)
 	{
 		// redirection here
 		//check_herringbone(parse);
-		parsing_cmd(parse);
+		// printf("command = %s \n", parse->lst_cmdline->str);
+		// exit (EXIT_FAILURE);
+		if (check_builtin_input(parse) == 1)
+			parsing_cmd(parse);
+		// else
+		// {
+		// 	built_temp = parse->lst_cmdline->str;
+		// 	// attribuer a une variable la commande builtin. effacer la liste utilisée
+		// }
 		if (ft_lst_strchr_meta(parse->lst_cmdline) == 0)
 			pipex(parse);
 	// 	int i = 0;
@@ -57,6 +85,9 @@ void execute_cmd(t_parsing *parse)
 	// }
 	// ft_lstprint_from_head(parse->lst_cmdline);
 	//  exit(EXIT_FAILURE);
+		//printf("BP\n");
+		execute_built_in(parse);
+		//ft_lstprint_from_head(parse->lst_cmdline);
 		execve(parse->command[0], parse->command, parse->env);
 		perror("command not found");
 	}

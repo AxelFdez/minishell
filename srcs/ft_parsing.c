@@ -88,7 +88,6 @@ void	ft_get_cmdline(t_parsing *parse)
 	ft_parseur(parse);
 	//ft_lstprint_from_head(parse->lst_cmdline);
 	//ft_lstdel_all(&parse->lst_cmdline);
-	ft_check_built_in(parse);
 	// ft_lstprint_from_head(parse->lst_cmdline);
 	//ft_lstdel_all(&parse->lst_cmdline);
 	free(parse->input);
