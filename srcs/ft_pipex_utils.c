@@ -72,7 +72,9 @@ void	cmd_lst_to_tab(t_parsing *parse)
 		perror("error malloc");
 	i = 0;
 	parse->lst_target = 0;
-	while (temp2 && ft_strchr(temp2->str, '|') == NULL)
+	while (temp2 && ft_strchr(temp2->str, '|') == NULL
+		&& ft_strchr(temp2->str, '<') == NULL
+		&& ft_strchr(temp2->str, '>') == NULL)
 	{
 		parse->command[i] = ft_strdup(temp2->str);
 		i++;
@@ -95,6 +97,9 @@ void	parsing_cmd(t_parsing *parse)
 		ft_lstdel_front(&parse->lst_cmdline);
 		i++;
 	}
+		// ft_lstprint_from_head(parse->lst_cmdline);
+		// exit(EXIT_FAILURE);
+	//printf("ret = %d\n", parse->lst_target);
 }
 
 int	count_pipe_until_sep(t_list *list)

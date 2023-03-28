@@ -9,3 +9,6 @@ save du 24/03 :
 -save du 27/03 :
 - Merging complete
 - pipes + built_in fonctionnels
+
+save du 28/03 :
+- Implementation des redirections 70 %
