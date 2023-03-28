@@ -4,7 +4,7 @@ NAME = minishell
 LIBFT = libft/
 LST = linked_list/
 CC = gcc 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 SRCS =  srcs/minishell.c \
 		srcs/ft_parsing.c \
@@ -18,8 +18,9 @@ SRCS =  srcs/minishell.c \
 		srcs/built-in/ft_pwd.c \
 		srcs/built-in/ft_export.c \
 		srcs/built-in/ft_unset.c \
+		srcs/built-in/ft_exit.c \
 		srcs/built-in/ft_check_built_in.c \
-		srcs/built-in/ft_print_sorted_env.c \
+		srcs/built-in/ft_print_export.c \
 		srcs/built-in/ft_handle_dollar.c \
 		srcs/built-in/ft_cd.c \
 		srcs/ft_quotes.c
@@ -43,8 +44,8 @@ $(NAME): $(OBJECT_FILES)
 clean: 
 	@echo "$(RED)\n<<<<< deleting $(NAME) obj. files ! ... >>>>>$(DEFAULT)"
 	rm -rf $(OBJECT_FILES)
-	@echo "$(GREEN)<<<<< clean from $(NAME) done ! >>>>>\n$(DEFAULT)"
 	$(MAKE) clean -C $(LIBFT)
+	@echo "$(GREEN)<<<<< clean from $(NAME) done ! >>>>>\n$(DEFAULT)"
 #------------------------------------------------------------------------------
 fclean: clean
 	@echo "$(RED)<<<<< deleting $(NAME) exec ! >>>>>\n$(DEFAULT)"

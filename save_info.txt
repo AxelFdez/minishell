@@ -25,3 +25,8 @@ save du 26/03 :
   Ajout des vars. d'env. avec controle de la syntaxe, gestion d'erreurs.
 - fonction unset en cours.
 
+save du 28/03 :
+- ft_unset semble ok .
+- ft_export demande a etre paufinée.
+- $? semble fonctionner correctement.
+

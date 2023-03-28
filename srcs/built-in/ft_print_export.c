@@ -46,6 +46,8 @@ static char	*ft_add_quotes(char *s)
 	i = 0;
 	j = 0;
 	check_equal = 0;
+	if (!ft_strnstr(s, "=", ft_strlen(s)))
+		return (s);
 	str = malloc(sizeof(char) * (ft_strlen(s) + 3));
 	if (!str)
 		return (NULL);
@@ -84,7 +86,7 @@ static t_list	*ft_env_cpy(t_list **lst)
 }
 
 
-void	ft_print_sorted_env(t_parsing *parse)
+void	ft_print_export(t_parsing *parse)
 {
 	t_list	*envcpy;
 

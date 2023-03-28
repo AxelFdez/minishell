@@ -14,4 +14,7 @@ void	ft_initialization(t_parsing *parse)
 	parse->meta[3] = ">";
 	parse->meta[4] = ">>";
 	parse->meta[5] = NULL;
+	parse->ret_value = 0;
+	parse->tmp_ret_value = 0;
+	
 }

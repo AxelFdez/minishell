@@ -11,8 +11,12 @@
 # include <fcntl.h>
 # include "../libft/libft.h"
 
+int value_return;
+
 typedef struct s_parsing
 {
+	int		ret_value;
+	int		tmp_ret_value;
 	int		i;
 	int		j;
 	int		k;
@@ -45,12 +49,12 @@ void	ft_check_built_in(t_parsing *parse);
 
 
 void	ft_echo(t_list *tmp, t_parsing *parse);
-void	ft_env(t_parsing *parse);
+int		ft_env(t_parsing *parse);
 int		ft_pwd(void);
-void	ft_export(t_parsing *parse);
+int		ft_export(t_parsing *parse);
 void	ft_unset(t_parsing *parse);
-void	ft_print_sorted_env(t_parsing *parse);
-void	ft_handle_dollar_no_quotes(t_parsing *parse);
-void	ft_handle_dollar_in_str(t_parsing *parse);
-void	ft_cd(t_parsing *parse);
+void	ft_exit(t_parsing *parse);
+void	ft_print_export(t_parsing *parse);
+void	ft_handle_dollar(t_parsing *parse);
+int		ft_cd(t_parsing *parse);
 #endif

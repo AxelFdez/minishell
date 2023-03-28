@@ -3,48 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdel_actual.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chris <chris@student.42.fr>                +#+  +:+       +#+        */
+/*   By: chmassa <chrisdev427@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/26 17:59:05 by chris             #+#    #+#             */
-/*   Updated: 2023/03/26 19:52:08 by chris            ###   ########.fr       */
+/*   Created: 2023/03/27 10:20:55 by chmassa           #+#    #+#             */
+/*   Updated: 2023/03/27 11:11:07 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdel_actual(t_list *lst)
+void	ft_lstdel_actual(t_list **lst, t_list *tmp)
 {
-    // puts("IN FUNC");
-    // printf("tmp = %s\n", lst->str);
+	t_list	*tmp2;
 
-    t_list  *tmp;
-
-    tmp = lst;
-    
-    if (tmp->next == NULL)
-    {puts("IF");
-         tmp->prev->next = NULL;
-        free(tmp);
-    }
-    else if (tmp->prev == NULL)
-    {puts("ELSE IF");
-        printf("lst = %s\n", lst->str);
-        printf("lst next = %s\n", lst->next->str);
-
-        lst = lst->next;
-        lst->prev = NULL;
-        
-        free(tmp);
-    }
-    else
-    {puts("ELSE");
-        printf("tmp = %s\n", lst->str);
-        tmp = lst;
-        lst = lst->prev;
-        lst->next = lst->next->next;
-        lst->next->prev = lst;
-        free(tmp);
-        
-       
-    }
+	if (!(*lst))
+		return ;
+	if (!tmp)
+		return ;
+	if (tmp->next == NULL)
+		ft_lstdel_back(lst);
+	else if (tmp->prev == NULL)
+		ft_lstdel_front(lst);
+	else
+	{
+		free(tmp->str);
+		tmp2 = tmp;
+		tmp = tmp->prev;
+		tmp->next = tmp->next->next;
+		tmp->next->prev = tmp;
+		free(tmp2);
+	}
 }

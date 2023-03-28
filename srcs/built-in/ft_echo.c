@@ -22,7 +22,7 @@ static int	ft_check_arg(char *s)
 
 
 void	ft_echo(t_list *tmp, t_parsing *parse)
-{
+{puts("ft_echo");
 	int	nl;
 
 	nl = 0;
@@ -34,13 +34,11 @@ void	ft_echo(t_list *tmp, t_parsing *parse)
 	}
 	while (tmp)
 	{
-		if (ft_strscmp(parse->meta, tmp->str) == 0) // && tmp->str[0] == '$')
+		if (ft_strscmp(parse->meta, tmp->str) == 0)
 			ft_putstr_fd(tmp->str, 1);
-		// 	ft_handle_dollar(tmp->str, parse);
-		// else
-
 		tmp = tmp->next;
-		if (tmp != NULL && ft_strscmp(parse->meta, tmp->str) == 0)
+		if (tmp != NULL && ft_strscmp(parse->meta, tmp->str) == 0
+			&& ft_strscmp(parse->meta, tmp->prev->str) == 0)
 			write(1, " ", 1);
 	}
 	if (nl == 0)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdel_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chris <chris@student.42.fr>                +#+  +:+       +#+        */
+/*   By: chmassa <chrisdev427@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 12:08:22 by chmassa           #+#    #+#             */
-/*   Updated: 2023/03/26 19:07:42 by chris            ###   ########.fr       */
+/*   Updated: 2023/03/27 11:47:38 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ft_lstdel_back(t_list **lst)
 	tmp = *lst;
 	if (tmp->next == NULL)
 	{
+		free(tmp->str);
 		free(tmp);
 		*lst = NULL;
 	}
@@ -30,9 +31,10 @@ void	ft_lstdel_back(t_list **lst)
 		{
 			if (tmp->next->next == NULL)
 			{
+				free(tmp->next->str);
+				free(tmp->next);
 				tmp->next->prev = NULL;
 				tmp->next = NULL;
-				free(tmp->next);
 			}
 			tmp = tmp->next;
 		}
