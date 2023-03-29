@@ -91,49 +91,6 @@ int	parsing_built_in(t_parsing *parse)
 	return (0);
 }
 
-void	ft_lstdel_current(t_list **lst)
-{
-	t_list	*tmp;
-
-	if (!(*lst))
-		return ;
-
-	tmp = *lst;
-	if (tmp->prev == NULL)
-		ft_lstdel_front(&tmp);
-	else if (tmp->next == NULL)
-		ft_lstdel_back(&tmp);
-	else
-	{
-		tmp->prev->next = tmp->next;
-		tmp->next->prev = tmp->prev;
-		free(tmp->str);
-		free(tmp);
-	}
-}
-
-void	input_redirection(t_list *parse)
-{
-	int fd[1];
-	ft_lstdel_current(&parse);
-	// ft_lstprint_from_head(parse->lst_cmdline);
-	// exit(EXIT_FAILURE);
-	if (access(parse->str, F_OK) != 0)
-	{
-		perror(parse->str);
-		exit(EXIT_FAILURE);
-	}
-	if (access(parse->str, R_OK) != 0)
-	{
-		perror(parse->str);
-		exit(EXIT_FAILURE);
-	}
-	fd[0] = open(parse->str, O_RDONLY);
-	dup2(fd[0], STDIN_FILENO);
-	close(fd[0]);
-	ft_lstdel_current(&parse);
-}
-
 
 void	print_list(t_list *lst)
 {
@@ -147,16 +104,76 @@ void	print_list(t_list *lst)
 	tmp = lst;
 	while (tmp != NULL)
 	{
-		ft_printf("[%s] ", tmp->str);
+		ft_printf("\n[%s] ", tmp->str);
 		tmp = tmp->next;
 	}
 }
 
-void	output_redirection(t_list *parse)
+void	ft_lstdel_current(t_list **lst)
+{
+	if (!(*lst))
+		return ;
+	if ((*lst)->prev == NULL)
+	{
+		//puts("before");
+		//print_list((*lst));
+		//puts("");
+		//puts("IDKNWPD");
+		ft_lstdel_front(&(*lst));
+		(*lst)->prev = NULL;
+		//puts("after");
+		//print_list((*lst));
+		//puts("");
+	}
+	else if ((*lst)->next == NULL)
+	{
+		//mrintf("lst prev = %s\n", (*lst)->prev->str);
+		(*lst) = (*lst)->prev;
+		//print_list((*lst));
+		ft_lstdel_back(&(*lst));
+
+		//puts("after");
+		//print_list((*lst));
+		//(*lst) = (*lst)->prev;
+	}
+	else
+	{
+		//puts("AAA");
+		// print_list((*lst));
+		// exit(EXIT_FAILURE);
+		((*lst)->prev)->next = (*lst)->next;
+		((*lst)->next)->prev = (*lst)->prev;
+		free((*lst)->str);
+		free((*lst));
+		(*lst) = (*lst)->next;
+	}
+}
+
+void	input_redirection(t_list **parse)
+{
+	int fd[1];
+	ft_lstdel_current(&(*parse));
+	if (access((*parse)->str, F_OK) != 0)
+	{
+		perror((*parse)->str);
+		exit(EXIT_FAILURE);
+	}
+	if (access((*parse)->str, R_OK) != 0)
+	{
+		perror((*parse)->str);
+		exit(EXIT_FAILURE);
+	}
+	fd[0] = open((*parse)->str, O_RDONLY);
+	dup2(fd[0], STDIN_FILENO);
+	close(fd[0]);
+	ft_lstdel_current(&(*parse));
+}
+
+void	output_redirection(t_list **parse)
 {
 	int fd;
-	ft_lstdel_current(&parse);
-	fd = open(parse->str, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	ft_lstdel_current(&(*parse));
+	fd = open((*parse)->str, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (fd < 0)
 		perror("fd error");
 	//printf ("fd = %d\n", fd);
@@ -165,21 +182,24 @@ void	output_redirection(t_list *parse)
 	// if (ret < 0)
 	// 	perror("err");
 	close(fd);
-	ft_lstdel_current(&parse);
-	//print_list(parse->lst_cmdline);
+	ft_lstdel_current(&(*parse));
+	// printf("next = %p\n", (*parse)->next);
+	// print_list((*parse));
+	// puts("\n\n");
+	// exit(EXIT_SUCCESS);
 }
 
-void	ft_append(t_list *parse)
+void	ft_append(t_list **parse)
 {
 	int fd[1];
 
-	ft_lstdel_current(&parse);
-	fd[0] = open(parse->str, O_WRONLY | O_CREAT | O_APPEND, 0644);
+	ft_lstdel_current(&(*parse));
+	fd[0] = open((*parse)->str, O_WRONLY | O_CREAT | O_APPEND, 0644);
 	if (fd[0] < 0)
 		perror("fd error");
 	dup2(fd[0], STDOUT_FILENO);
 	close(fd[0]);
-	ft_lstdel_current(&parse);
+	ft_lstdel_current(&(*parse));
 }
 
 
@@ -187,22 +207,36 @@ void	check_herringbone(t_parsing *parse)
 {
 	// ft_lstprint_from_head(parse->lst_cmdline);
 	// exit(EXIT_FAILURE)
-	t_list *temp;
-
-	temp = parse->lst_cmdline;
-	while (temp && temp->str[0] != '|')
+	// 	t_list *temp;
+	// temp = parse->lst_cmdline;
+	while (parse->lst_cmdline->next != NULL && parse->lst_cmdline->str[0] != '|')
 	{
 		// printf("ret = %d \n", ft_lst_strchr_herringbone(parse->lst_cmdline));
-		if (ft_strcmp(temp->str, "<") == 0)
-			input_redirection(temp);
-		if (ft_strcmp(temp->str, ">") == 0)
-			output_redirection(temp);
-		// if (ft_strcmp(parse->lst_cmdline->str, "<<") == 0)
+		if (ft_strcmp(parse->lst_cmdline->str, "<") == 0)
+		{
+			//printf("str = %s\n", parse->lst_cmdline->str);
+			input_redirection(&parse->lst_cmdline);
+		}
+		if (ft_strcmp(parse->lst_cmdline->str, ">") == 0)
+			output_redirection(&parse->lst_cmdline);
+		//else if (ft_strcmp(parse->lst_cmdline->str, "<<") == 0)
 		// 	ft_heredoc();
-		if (ft_strcmp(temp->str, ">>") == 0)
-			ft_append(temp);
-		temp = temp->next;
+		if (ft_strcmp(parse->lst_cmdline->str, ">>") == 0)
+			ft_append(&parse->lst_cmdline);
+		if (parse->lst_cmdline->next == NULL)
+			break;
+		parse->lst_cmdline = parse->lst_cmdline->next;
+		// printf("\n\n\n\n a chaque tour de boucle :\n");
+		// print_list(parse->lst_cmdline);
+		// puts("\n\n\n\n");
 	}
+	// puts("before");
+	// print_list(parse->lst_cmdline);
+	while (parse->lst_cmdline->prev != NULL)
+		parse->lst_cmdline = parse->lst_cmdline->prev;
+		// puts("\nafter");
+		// print_list(parse->lst_cmdline);
+		// exit(EXIT_FAILURE);
 	// ft_lstprint_from_head(parse->lst_cmdline);
 	// exit(EXIT_FAILURE);
 }
@@ -222,12 +256,12 @@ void execute_cmd(t_parsing *parse)
 	{
 		parse->built_in_cmd = 0;
 		check_herringbone(parse);
+		//print_list(parse->lst_cmdline);
+		// exit(EXIT_FAILURE);
 		if (check_builtin_input(parse) == 1)
 			parsing_cmd(parse);
 		else
 			parse->built_in_cmd = parsing_built_in(parse);
-		// ft_lstprint_from_head(parse->lst_cmdline);
-		// exit(EXIT_FAILURE);
 		//puts("AA");
 		//check_herringbone(parse);
 		// 	built_temp = parse->lst_cmdline->str;

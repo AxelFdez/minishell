@@ -12,3 +12,6 @@ save du 24/03 :
 
 save du 28/03 :
 - Implementation des redirections 70 %
+
+save du 29/03 :
+- Implementation des redirections (redirection avant et apres commandes gérées)
