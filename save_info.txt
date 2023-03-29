@@ -30,3 +30,7 @@ save du 28/03 :
 - ft_export demande a etre paufinée.
 - $? semble fonctionner correctement.
 
+save du 29/03 :
+
+- ft_export tout semble fonctionner correctement, pb de free (segfault) de tps en tps si bcp d'ajout ou modif de variables...
+
