@@ -66,11 +66,11 @@ int	ft_check_syntax(t_parsing *parse)
 		|| ft_strnstr(s, ";", ft_strlen(s))
 		|| ft_strnstr(s, "||", ft_strlen(s)))
 	{
-		ft_error("syntax error\n");
+		ft_printf("minishell: syntax error near unexpected token `%s'\n", s);
 		free(s);
-		return (0);
+		return (258);
 	}
 	free(s);
 	parse->i = 0;
-	return (1);
+	return (0);
 }

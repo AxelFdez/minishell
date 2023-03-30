@@ -1,6 +1,6 @@
 #include "../../includes/minishell.h"
 
-static void	ft_found_var(t_parsing*parse)
+static void	ft_found_var(t_parsing *parse)
 {
 	t_list	*tmp;
 
@@ -9,8 +9,8 @@ static void	ft_found_var(t_parsing*parse)
 	{
 		if (ft_strnstr(tmp->str, parse->var_name +1,
 				ft_strlen(parse->var_name)))
-		{puts("AAAAA");
-			parse->str_tmp = ft_strjoin(parse->str_tmp,
+		{
+			parse->str_tmp = ft_strjoin_free_s1(parse->str_tmp,
 					tmp->str + ft_strlen(parse->var_name));
 			break ;
 		}
@@ -18,16 +18,11 @@ static void	ft_found_var(t_parsing*parse)
 	}
 }
 
-void	ft_handle_dollar_in_str(t_parsing *parse)
+static void	ft_retrieve_var_name(t_parsing *parse)
 {
-	int		i;
+	int	i;
 
 	i = 0;
-	if (parse->len > 0)
-		parse->str_tmp = ft_substr(parse->input,
-				parse->i - parse->len, parse->len);
-	else
-		(parse->str_tmp = "");
 	while (parse->input[parse->i] && parse->input[parse->i] != '\"'
 		&& parse->input[parse->i] != '\'' && parse->input[parse->i] != ' ')
 	{
@@ -36,5 +31,22 @@ void	ft_handle_dollar_in_str(t_parsing *parse)
 		parse->i++;
 	}
 	ft_found_var(parse);
-	parse->var_name[0] = '\0';
+	ft_bzero(parse->var_name, 1024);
+}
+
+void	ft_handle_dollar(t_parsing *parse)
+{
+	if (parse->len > 0)
+		parse->str_tmp = ft_substr(parse->input,
+				parse->i - parse->len, parse->len);
+	else
+		parse->str_tmp = ft_calloc(1, sizeof(char));
+	if (parse->input[parse->i +1] == '?')
+	{
+		parse->str_tmp = ft_strjoin(parse->str_tmp,
+				ft_itoa(parse->tmp_ret_value));
+		parse->i += 2;
+	}
+	else
+		ft_retrieve_var_name(parse);
 }

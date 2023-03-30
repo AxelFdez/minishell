@@ -1,18 +1,28 @@
 #include "../../includes/minishell.h"
 
-void	ft_env(t_parsing *parse)
+int	ft_env(t_parsing *parse)
 {
 	t_list	*tmp;
+	int		error;
 
-	if (!parse->lst_env)
-	{
-		ft_putstr_fd("Error print env\n", 2);
-		return ;
-	}
 	tmp = parse->lst_env;
-	while (tmp)
+	error = 0;
+	if (parse->lst_cmdline->next == NULL)
 	{
-		ft_printf("%s\n", tmp->str);
-		tmp = tmp->next;
+		while (tmp)
+		{
+			if (ft_strnstr(tmp->str, "=", ft_strlen(tmp->str)))
+				ft_printf("%s\n", tmp->str);
+			tmp = tmp->next;
+		}
 	}
+	else
+	{
+		ft_printf("env: `%s' : not a valid identifier\n",
+			parse->lst_cmdline->next->str);
+		error++;
+	}
+	if (error > 0)
+		return (1);
+	return (0);
 }

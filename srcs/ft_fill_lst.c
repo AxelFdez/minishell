@@ -7,6 +7,7 @@ void	ft_fill_lst(t_list **lst, t_parsing *parse, int start)
 	char	*str;
 
 	str = NULL;
+
 	if (parse->str_tmp != NULL)
 	{
 		str = ft_strdup(parse->str_tmp);
@@ -17,8 +18,8 @@ void	ft_fill_lst(t_list **lst, t_parsing *parse, int start)
 	else //
 	{
 		str = ft_substr(parse->input, start, parse->len);
+		// printf("str = %s\n", str);
 	}
-
 	if (parse->quote_to_del > 0)
 		ft_strdel_quotes(parse, str);
 	if (ft_strlen(str) > 0)
