@@ -45,7 +45,6 @@ typedef struct s_parsing
 
 
 void	rl_replace_line(const char *text, int clear_undo);
-
 void	ft_parsing(char *input);
 void	ft_get_cmdline(t_parsing *parse);
 void	ft_quotes(t_parsing *parse);
@@ -73,7 +72,8 @@ void	pipex(t_parsing *parse);
 int		ft_lst_strchr_meta(t_list *list);
 void	cmd_lst_to_tab(t_parsing *parse);
 int		is_meta_char(int c);
-void	execute_built_in(t_parsing *parse);
+void	ft_check_built_in(t_parsing *parse);
+void	ft_sort_env(t_list **lst);
 void	ft_echo(t_list *tmp, t_parsing *parse);
 int		ft_env(t_parsing *parse);
 int		ft_pwd(void);
@@ -82,6 +82,7 @@ void	ft_print_sorted_env(t_parsing *parse);
 void	ft_handle_dollar_no_quotes(t_parsing *parse);
 void	ft_handle_dollar_in_str(t_parsing *parse);
 int		check_builtin_input(t_parsing * parse);
+void	execute_built_in(t_parsing *parse);
 int		parsing_built_in(t_parsing *parse);
 void	check_herringbone(t_parsing *parse);
 void	input_redirection(t_list **parse);
@@ -93,5 +94,7 @@ void	ft_exit(t_parsing *parse);
 void	ft_print_export(t_parsing *parse);
 void	ft_handle_dollar(t_parsing *parse);
 int		ft_cd(t_parsing *parse);
+int		ft_lst_strchr_pipe(t_list *list);
+void	cd_in_cmdline(t_parsing *parse);
 
 #endif

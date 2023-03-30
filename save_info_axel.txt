@@ -15,3 +15,7 @@ save du 28/03 :
 
 save du 29/03 :
 - Implementation des redirections (redirection avant et apres commandes gérées)
+
+save du 30/03 :
+- redirections 100%
+- Merging chris : * cd OK, export KO, env KO, exit KO.

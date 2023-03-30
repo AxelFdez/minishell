@@ -11,7 +11,7 @@ void	execute_built_in(t_parsing *parse)
 		i = 0;
 		if (parse->built_in_cmd == 1)
 		{
-			ft_env(parse);
+			parse->ret_value = ft_env(parse);
 			while (i < parse->lst_target + 1)
 			{
 				ft_lstdel_front(&parse->lst_cmdline);
@@ -21,7 +21,7 @@ void	execute_built_in(t_parsing *parse)
 		}
 		if (parse->built_in_cmd == 2)
 		{
-			//ft_print_sorted_env(parse);
+			parse->ret_value = ft_export(parse);
 			while (i < parse->lst_target)
 			{
 				ft_lstdel_front(&parse->lst_cmdline);
@@ -32,16 +32,12 @@ void	execute_built_in(t_parsing *parse)
 		//printf("temp = %s\n",tmp->str);
 		if (parse->built_in_cmd == 3)
 		{
-			ft_pwd();
+			parse->ret_value = ft_pwd();
 			while (i < parse->lst_target + 1)
 			{
-				free(parse->lst_cmdline->str);
 				ft_lstdel_front(&parse->lst_cmdline);
 				i++;
 			}
-			//printf("target = %d\n", parse->lst_target);
-			//ft_lstprint_from_head(parse->lst_cmdline);
-
 			exit(EXIT_SUCCESS);
 		}
 		if (parse->built_in_cmd == 4)
@@ -54,6 +50,37 @@ void	execute_built_in(t_parsing *parse)
 			}
 			exit(EXIT_SUCCESS);
 		}
+		if (parse->built_in_cmd == 5)
+		{
+			ft_unset(parse);
+			while (i < parse->lst_target)
+			{
+				ft_lstdel_front(&parse->lst_cmdline);
+				i++;
+			}
+			exit(EXIT_SUCCESS);
+		}
+		if (parse->built_in_cmd == 6)
+		{
+			parse->ret_value = ft_cd(parse);
+			while (i < parse->lst_target)
+			{
+				ft_lstdel_front(&parse->lst_cmdline);
+				i++;
+			}
+			exit(EXIT_SUCCESS);
+		}
+		if (parse->built_in_cmd == 7)
+		{
+			ft_exit(parse);
+			while (i < parse->lst_target)
+			{
+				ft_lstdel_front(&parse->lst_cmdline);
+				i++;
+			}
+			exit(EXIT_SUCCESS);
+		}
+	// { puts("check built in");
 	// { puts("check built in");
 	// 	if ((ft_strcmp(tmp->str, "env") == 0 || ft_strcmp(tmp->str, "ENV") == 0))
 	// 		parse->ret_value = ft_env(parse);

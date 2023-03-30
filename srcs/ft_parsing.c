@@ -41,7 +41,7 @@ static void	is_no_quote_string(t_parsing *parse)
 	while (parse->input[parse->i] && !is_meta_char(parse->input[parse->i])
 		&& parse->input[parse->i] != ' ')
 	{
-		if (parse->input[parse->i] == '$' && parse->input[parse->i +1] != ' ')
+		if (parse->input[parse->i] == '$' && parse->input[parse->i +1] != ' ' && parse->input[parse->i +1] != '\0')
 		{
 			ft_handle_dollar(parse);
 			parse->len = 0;

@@ -40,7 +40,10 @@ int check_builtin_input(t_parsing * parse)
 	tmp = parse->lst_cmdline->str;
 	if (ft_strcmp(tmp, "env") == 0 || ft_strcmp(tmp, "ENV") == 0
 		|| ft_strcmp(tmp, "export") == 0 || ft_strcmp(tmp, "pwd") == 0
-		|| ft_strcmp(tmp, "PWD") == 0 || ft_strcmp(tmp, "echo") == 0)
+		|| ft_strcmp(tmp, "PWD") == 0 || ft_strcmp(tmp, "echo") == 0
+		|| ft_strcmp(tmp, "unset") == 0 || ft_strcmp(tmp, "cd") == 0
+		|| ((ft_strcmp(tmp, "cd") == 0 && (ft_strcmp(tmp, "~"))))
+		|| ft_strcmp(tmp, "exit") == 0)
 	{
 		return (0);
 	}
@@ -70,6 +73,12 @@ int	parsing_built_in(t_parsing *parse)
 			return (3);
 		if (ft_strcmp(tmp->str, "echo") == 0)
 			return (4);
+		if (ft_strcmp(tmp->str, "unset") == 0)
+			return (5);
+		if ((ft_strcmp(tmp->str, "cd") == 0) || (ft_strcmp(tmp->str, "cd") == 0 && (ft_strcmp(tmp->next->str, "~") == 0)))
+			return (6);
+		if (ft_strcmp(tmp->str, "exit") == 0)
+			return (7);
 		tmp = tmp->next;
 	}
 	return (0);

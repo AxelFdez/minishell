@@ -22,7 +22,7 @@ static int	ft_check_arg(char *s)
 
 
 void	ft_echo(t_list *tmp, t_parsing *parse)
-{puts("ft_echo");
+{
 	int	nl;
 
 	nl = 0;

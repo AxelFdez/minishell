@@ -19,6 +19,7 @@ SRCS =  srcs/minishell.c \
 		srcs/ft_pipex.c \
 		srcs/ft_pipex_utils.c \
 		srcs/ft_herringbone.c \
+		srcs/ft_sort_env.c \
 		srcs/built-in/ft_echo.c \
 		srcs/built-in/ft_env.c \
 		srcs/built-in/ft_pwd.c \
@@ -28,7 +29,7 @@ SRCS =  srcs/minishell.c \
 		srcs/built-in/ft_check_built_in.c \
 		srcs/built-in/ft_print_export.c \
 		srcs/built-in/ft_handle_dollar.c \
-		srcs/built-in/ft_cd.c 
+		srcs/built-in/ft_cd.c
 
 OBJECT_FILES = $(SRCS:.c=.o)
 HEADER = -I./includes
