@@ -46,6 +46,8 @@ void	ft_initialization(t_parsing *parse);
 void	ft_strdel_quotes(t_parsing *parse, char *str);
 int		is_meta_char(int c);
 void	ft_check_built_in(t_parsing *parse);
+void	ft_sort_env(t_list **lst);
+
 
 
 void	ft_echo(t_list *tmp, t_parsing *parse);

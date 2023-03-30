@@ -34,3 +34,16 @@ save du 29/03 :
 
 - ft_export tout semble fonctionner correctement, pb de free (segfault) de tps en tps si bcp d'ajout ou modif de variables...
 
+save du 30/03 :
+- ft_export pb de segfault resolu, semble ok.
+- valeur de retour des built in 
+  cd OK
+  env OK
+  pwd OK
+  export OK
+
+tout semble etre ok.
+
+- dernier push avant merge !!!
+
+

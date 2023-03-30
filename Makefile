@@ -13,6 +13,7 @@ SRCS =  srcs/minishell.c \
 		srcs/ft_check_syntax.c \
 		srcs/ft_initialization.c \
 		srcs/ft_fill_lst.c \
+		srcs/ft_sort_env.c \
 		srcs/built-in/ft_echo.c \
 		srcs/built-in/ft_env.c \
 		srcs/built-in/ft_pwd.c \
