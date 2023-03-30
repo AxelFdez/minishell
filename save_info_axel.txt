@@ -19,3 +19,28 @@ save du 29/03 :
 save du 30/03 :
 - redirections 100%
 - Merging chris : * cd OK, export KO, env KO, exit KO.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NOTE :
+
+cd : fonctionne seul
+export : transmet une variable si utilisé seul
+env : partout (visible que seul ou fin de pipe)
+unset : fonctionne seul
+exit : fonctionne seul et avant un pipe

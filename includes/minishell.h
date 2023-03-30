@@ -41,6 +41,7 @@ typedef struct s_parsing
 	int		lst_target;
 	int		fd[2];
 	int		built_in_cmd;
+	int		built_in_last_cmd;
 }				t_parsing;
 
 
@@ -96,5 +97,6 @@ void	ft_handle_dollar(t_parsing *parse);
 int		ft_cd(t_parsing *parse);
 int		ft_lst_strchr_pipe(t_list *list);
 void	cd_in_cmdline(t_parsing *parse);
+void	print_list(t_list *list);
 
 #endif

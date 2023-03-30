@@ -160,20 +160,14 @@ void	pipex(t_parsing *parse)
 	int		i;
 	int		sep;
 	int		temp_fd;
-	//printf ("1  = %s\n", parse->lst_cmdline->str);
+
 	sep = count_pipe_until_sep(parse->lst_cmdline);
 	if (check_builtin_input(parse) == 1)
 		ft_lstdel_front(&parse->lst_cmdline);
-	//printf("path fils = %s\n", parse->lst_cmdline->str);
-	//ft_lstprint_from_head(parse->lst_cmdline->next);
-	// compter le nombre de pipe jusqu'a un separateur / fin
-	//printf("num = %d\n", ft_lst_strchr_meta(parse->lst_cmdline->next));
 	if (sep == 1)
 		one_pipe(parse);
 	else
 	{
-	// iterrer de i jusqu-a nb pipe
-		//printf("count pipe = %d\n", count_pipe_until_sep(parse->lst_cmdline));
 		temp_fd = 0;
 		temp_fd = first_pipe(parse, temp_fd);
 		i = 0;

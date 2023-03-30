@@ -7,7 +7,6 @@ void	ft_lstdel_current(t_list **lst)
 	if ((*lst)->prev == NULL)
 	{
 		ft_lstdel_front(&(*lst));
-		(*lst)->prev = NULL;
 	}
 	else if ((*lst)->next == NULL)
 	{
@@ -27,7 +26,7 @@ void	ft_lstdel_current(t_list **lst)
 
 void	input_redirection(t_list **parse)
 {
-	int fd[1];
+	int fd;
 	ft_lstdel_current(&(*parse));
 	if (access((*parse)->str, F_OK) != 0)
 	{
@@ -39,9 +38,9 @@ void	input_redirection(t_list **parse)
 		perror((*parse)->str);
 		exit(EXIT_FAILURE);
 	}
-	fd[0] = open((*parse)->str, O_RDONLY);
-	dup2(fd[0], STDIN_FILENO);
-	close(fd[0]);
+	fd = open((*parse)->str, O_RDONLY);
+	dup2(fd, STDIN_FILENO);
+	close(fd);
 	ft_lstdel_current(&(*parse));
 }
 
