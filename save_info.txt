@@ -46,4 +46,7 @@ tout semble etre ok.
 
 - dernier push avant merge !!!
 
+save du 30/03 -2- :
+- Gerer les $VAR dans les chaines de caracteres "$HOME $USER iuhiuhiuh"
+
 

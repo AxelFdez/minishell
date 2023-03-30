@@ -23,6 +23,7 @@ SRCS =  srcs/minishell.c \
 		srcs/built-in/ft_check_built_in.c \
 		srcs/built-in/ft_print_export.c \
 		srcs/built-in/ft_handle_dollar.c \
+		srcs/built-in/ft_handle_dollar_in_str.c \
 		srcs/built-in/ft_cd.c \
 		srcs/ft_quotes.c
 

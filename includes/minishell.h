@@ -15,6 +15,7 @@ int value_return;
 
 typedef struct s_parsing
 {
+	
 	int		ret_value;
 	int		tmp_ret_value;
 	int		i;
@@ -58,5 +59,6 @@ void	ft_unset(t_parsing *parse);
 void	ft_exit(t_parsing *parse);
 void	ft_print_export(t_parsing *parse);
 void	ft_handle_dollar(t_parsing *parse);
+void	ft_handle_dollar_in_str(t_parsing *parse);
 int		ft_cd(t_parsing *parse);
 #endif
