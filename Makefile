@@ -36,7 +36,6 @@ all: $(NAME)
 $(NAME): $(OBJECT_FILES)
 	@echo "$(YELLOW)\n<<<<< libft compiling ... >>>>>\n$(DEFAULT)"
 	$(MAKE) -C $(LIBFT)
-	# cp linked_list/lst.a $(NAME)
 	cp libft/libft.a $(NAME)
 	@echo "$(YELLOW)\n<<<<< Creating $(NAME) exec file ! ... >>>>>$(DEFAULT)"
 	$(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -lreadline

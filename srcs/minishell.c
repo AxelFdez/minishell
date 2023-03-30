@@ -2,7 +2,7 @@
 
 static void	ft_retrieve_env(t_parsing *parse, char **env)
 {
-	int	i;
+	int		i;
 	t_list	*new;
 
 	parse->lst_env = NULL;
@@ -15,14 +15,11 @@ static void	ft_retrieve_env(t_parsing *parse, char **env)
 	}
 }
 
-
-
 int	main(int ac, char **av, char **env)
 {
 	t_parsing	parse;
-	
+
 	(void)av;
-	
 	if (ac == 1)
 	{
 		ft_initialization(&parse);
@@ -32,13 +29,10 @@ int	main(int ac, char **av, char **env)
 			parse.input = readline("\033[3;36mminishell ->\033[0m ");
 			ft_quotes(&parse);
 			add_history(parse.input);
-			// if (ft_check_syntax(&parse))
-				ft_get_cmdline(&parse);
+			ft_get_cmdline(&parse);
 			parse.tmp_ret_value = parse.ret_value;
 			if (parse.str_tmp)
 				free(parse.str_tmp);
-			// ft_lstdel_all(&parse.lst_cmdline);
-			// system("leaks minishell");
 		}
 	}
 	puts("end");
