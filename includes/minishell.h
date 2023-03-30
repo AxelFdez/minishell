@@ -79,5 +79,12 @@ void	ft_handle_dollar_no_quotes(t_parsing *parse);
 void	ft_handle_dollar_in_str(t_parsing *parse);
 int		check_builtin_input(t_parsing * parse);
 int		parsing_built_in(t_parsing *parse);
+void	check_herringbone(t_parsing *parse);
+void	input_redirection(t_list **parse);
+void	output_redirection(t_list **parse);
+void	ft_append(t_list **parse);
+void	check_herringbone(t_parsing *parse);
+
+
 
 #endif

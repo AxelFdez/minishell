@@ -21,6 +21,7 @@ void	one_pipe(t_parsing *parse)
 	dup2(pfd[0], STDIN_FILENO);
 	close(pfd[1]);
 	wait(NULL);
+	check_herringbone(parse);
 	if (parse->built_in_cmd > 0)
 	{
 		int i = 0;
@@ -178,6 +179,7 @@ void	pipex(t_parsing *parse)
 		i = 0;
 		while (i < (sep - 2))
 		{
+			check_herringbone(parse);
 			if (check_builtin_input(parse) == 1)
 				parsing_cmd(parse);
 			else
@@ -187,6 +189,7 @@ void	pipex(t_parsing *parse)
 			temp_fd = middle_pipe(parse, temp_fd);
 			i++;
 		}
+		check_herringbone(parse);
 		if (check_builtin_input(parse) == 1)
 			parsing_cmd(parse);
 		else
