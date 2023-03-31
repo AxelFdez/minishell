@@ -2,6 +2,9 @@
 
 void	ft_lstdel_current(t_list **lst)
 {
+	t_list *temp;
+
+	temp = (*lst);
 	if (!(*lst))
 		return ;
 	if ((*lst)->prev == NULL)
@@ -15,14 +18,14 @@ void	ft_lstdel_current(t_list **lst)
 	}
 	else
 	{
+		temp = (*lst)->next;
 		((*lst)->prev)->next = (*lst)->next;
 		((*lst)->next)->prev = (*lst)->prev;
 		free((*lst)->str);
 		free((*lst));
-		(*lst) = (*lst)->next;
+		(*lst) = temp;
 	}
 }
-
 
 void	input_redirection(t_list **parse)
 {
@@ -47,25 +50,32 @@ void	input_redirection(t_list **parse)
 void	output_redirection(t_list **parse)
 {
 	int fd;
+	int i = 0;
+	printf("i = %d\n", i++);
 	ft_lstdel_current(&(*parse));
+	print_list((*parse));
 	fd = open((*parse)->str, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (fd < 0)
-		perror("fd error");
+		perror((*parse)->str);
 	dup2(fd, STDOUT_FILENO);
 	close(fd);
 	ft_lstdel_current(&(*parse));
+	// print_list((*parse));
+	// exit(EXIT_FAILURE);
+	// printf("\n\n");
+	// print_list((*parse));
 }
 
 void	ft_append(t_list **parse)
 {
-	int fd[1];
+	int fd;
 
 	ft_lstdel_current(&(*parse));
-	fd[0] = open((*parse)->str, O_WRONLY | O_CREAT | O_APPEND, 0644);
-	if (fd[0] < 0)
-		perror("fd error");
-	dup2(fd[0], STDOUT_FILENO);
-	close(fd[0]);
+	fd = open((*parse)->str, O_WRONLY | O_CREAT | O_APPEND, 0644);
+	if (fd < 0)
+		perror((*parse)->str);
+	dup2(fd, STDOUT_FILENO);
+	close(fd);
 	ft_lstdel_current(&(*parse));
 }
 
@@ -91,7 +101,6 @@ void ft_heredoc(t_list **parse)
 	close(pfd[0]);
 	ft_lstdel_current(&(*parse));
 }
-
 
 void	check_herringbone(t_parsing *parse)
 {

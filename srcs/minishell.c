@@ -15,68 +15,6 @@ static void	ft_retrieve_env(t_parsing *parse, char **env)
 	}
 }
 
-void	exit_in_cmdline(t_parsing *parse)
-{
-	if (ft_strcmp(parse->lst_cmdline->str, "exit") == 0)
-	{
-		if (ft_lst_strchr_pipe(parse->lst_cmdline) != 0)
-			ft_exit(parse);
-		else
-		{
-			ft_lstdel_front(&parse->lst_cmdline);
-		}
-	}
-}
-
-void	print_list(t_list *lst)
-{
-	if (!lst)
-	{
-		ft_printf("la liste est vide\n");
-		return ;
-	}
-	while (lst != NULL)
-	{
-		ft_printf("[%s] ", lst->str);
-		lst = lst->next;
-	}
-}
-
-void	export_in_cmdline(t_parsing *parse)
-{
-	if (ft_strcmp(parse->lst_cmdline->str, "export") == 0)
-	{
-		parse->ret_value = ft_export(parse);
-	}
-}
-
-void	built_in_exceptions(t_parsing *parse)
-{
-	t_list *temp;
-	int		built_in_found;
-
-	built_in_found = 0;
-	temp = parse->lst_cmdline;
-	while (ft_strchr(temp->str, '|') != 0 || temp->next)
-	{
-		if (ft_strcmp(temp->str, "export") == 0
-			|| ft_strcmp(temp->str, "unset") == 0
-			|| ft_strcmp(temp->str, "cd") == 0
-			|| (ft_strcmp(temp->str, "cd") == 0 && ft_strcmp(temp->next->str, "~") == 0)
-			|| ft_strcmp(temp->str, "exit") == 0)
-			built_in_found = 1;
-		temp = temp->next;
-	}
-	if (built_in_found == 1)
-	{
-		check_herringbone(parse);
-		cd_in_cmdline(parse);
-		print_list(parse->lst_cmdline);
-	}
-
-}
-
-
 int	main(int ac, char **av, char **env)
 {
 	t_parsing	parse;
@@ -96,13 +34,13 @@ int	main(int ac, char **av, char **env)
 			add_history(parse.input);
 			//if (ft_check_syntax(&parse))
 				ft_get_cmdline(&parse);
-			//exit_in_cmdline(&parse);
 			if (parse.lst_cmdline)
 			{
-				built_in_exceptions(&parse);
-				execute_cmd(&parse);
-				//export_or_env_exception(&parse);
-				ft_lstdel_all(&parse.lst_cmdline);
+				if (parse.lst_cmdline)
+				{
+					execute_cmd(&parse);
+					ft_lstdel_all(&parse.lst_cmdline);
+				}
 			}
 			//system("leaks minishell");
 			parse.tmp_ret_value = parse.ret_value;

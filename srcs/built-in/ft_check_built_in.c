@@ -21,15 +21,16 @@ void	execute_built_in(t_parsing *parse)
 		}
 		if (parse->built_in_cmd == 2)
 		{
-			parse->ret_value = ft_export(parse);
+			if (parse->last_pipe == 0)
+				parse->ret_value = ft_export(parse);
 			while (i < parse->lst_target)
 			{
 				ft_lstdel_front(&parse->lst_cmdline);
 				i++;
 			}
+			parse->last_pipe = 0;
 			exit(EXIT_SUCCESS);
 		}
-		//printf("temp = %s\n",tmp->str);
 		if (parse->built_in_cmd == 3)
 		{
 			parse->ret_value = ft_pwd();

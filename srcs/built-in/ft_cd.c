@@ -1,26 +1,5 @@
 #include "../../includes/minishell.h"
 
-void	cd_in_cmdline(t_parsing *parse)
-{
-	if ((ft_strcmp(parse->lst_cmdline->str, "cd") == 0)
-			|| (ft_strcmp(parse->lst_cmdline->str, "cd") == 0
-			&& (ft_strcmp(parse->lst_cmdline->next->str, "~") == 0)))
-	{
-			if (ft_lst_strchr_pipe(parse->lst_cmdline) != 0)
-			{
-				parse->ret_value = ft_cd(parse);
-				ft_lstdel_all(&parse->lst_cmdline);
-			}
-			else
-			{
-				while (ft_strcmp(parse->lst_cmdline->str, "|") != 0)
-					ft_lstdel_front(&parse->lst_cmdline);
-				ft_lstdel_front(&parse->lst_cmdline);
-			}
-			return ;
-	}
-}
-
 static char	*ft_found_home(t_parsing *parse)
 {
 	t_list	*tmp;

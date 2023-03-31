@@ -43,4 +43,8 @@ cd : fonctionne seul
 export : transmet une variable si utilisé seul
 env : partout (visible que seul ou fin de pipe)
 unset : fonctionne seul
-exit : fonctionne seul et avant un pipe
+exit : fonctionne seul
+
+A tester :
+- enchainer les redirections droite
+- cat cat ls

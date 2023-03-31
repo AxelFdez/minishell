@@ -33,7 +33,7 @@ int ft_lst_strchr_pipe(t_list *list)
 	return (1);
 }
 
-int check_builtin_input(t_parsing * parse)
+int check_builtin_input(t_parsing *parse)
 {
 	char	*tmp;
 
@@ -84,17 +84,85 @@ int	parsing_built_in(t_parsing *parse)
 	return (0);
 }
 
+void	print_list(t_list *lst)
+{
+	if (!lst)
+	{
+		ft_printf("la liste est vide\n");
+		return ;
+	}
+	while (lst != NULL)
+	{
+		ft_printf("[%s] ", lst->str);
+		lst = lst->next;
+	}
+}
+
+void	execute_built_in_first(t_parsing *parse)
+{
+	if (ft_strcmp(parse->lst_cmdline->str, "export") == 0
+		&& ft_lst_strchr_pipe(parse->lst_cmdline) == 1)
+		parse->ret_value = ft_export(parse);
+	else if (ft_strcmp(parse->lst_cmdline->str, "unset") == 0)
+		ft_unset(parse);
+	else if (ft_strcmp(parse->lst_cmdline->str, "exit") == 0)
+		ft_exit(parse);
+	else if ((ft_strcmp(parse->lst_cmdline->str, "cd") == 0)
+		|| (ft_strcmp(parse->lst_cmdline->str, "cd") == 0
+		&& (ft_strcmp(parse->lst_cmdline->next->str, "~") == 0)))
+	{
+		if (ft_lst_strchr_pipe(parse->lst_cmdline) != 0)
+		{
+			parse->ret_value = ft_cd(parse);
+			ft_lstdel_all(&parse->lst_cmdline);
+		}
+		else
+		{
+			while (ft_strcmp(parse->lst_cmdline->str, "|") != 0)
+				ft_lstdel_front(&parse->lst_cmdline);
+			ft_lstdel_front(&parse->lst_cmdline);
+		}
+		return ;
+	}
+}
+
+void	built_in_works(t_parsing *parse)
+{
+	t_list *temp;
+	int		built_in_found;
+
+	built_in_found = 0;
+	temp = parse->lst_cmdline;
+	if (ft_lst_strchr_pipe(parse->lst_cmdline) == 0)
+		return;
+	while (temp)
+	{
+		if (ft_strcmp(temp->str, "export") == 0
+			|| ft_strcmp(temp->str, "unset") == 0
+			|| ft_strcmp(temp->str, "cd") == 0
+			|| (ft_strcmp(temp->str, "cd") == 0 && ft_strcmp(temp->next->str, "~") == 0)
+			|| ft_strcmp(temp->str, "exit") == 0)
+			built_in_found = 1;
+		if (!temp->next)
+			break;
+		temp = temp->next;
+	}
+	if (built_in_found == 1)
+		execute_built_in_first(parse);
+}
+
 void execute_cmd(t_parsing *parse)
 {
 	pid_t child;
 
+	check_herringbone(parse);
+	built_in_works(parse);
 	child = fork();
 	if (child < 0)
 		perror("fork error\n");
 	else if (child == 0)
 	{
 		parse->built_in_cmd = 0;
-		check_herringbone(parse);
 		if (check_builtin_input(parse) == 1)
 			parsing_cmd(parse);
 		else
