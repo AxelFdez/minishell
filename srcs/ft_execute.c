@@ -157,6 +157,11 @@ void execute_cmd(t_parsing *parse)
 
 	check_herringbone(parse);
 	built_in_works(parse);
+	//print_list(parse->lst_cmdline);
+	// printf("bef = %p\n", parse->lst_cmdline->prev);
+	// printf("ptr = %p\n", parse->lst_cmdline);
+	// printf("str = %s\n", parse->lst_cmdline->str);
+	// printf("aft = %p\n", parse->lst_cmdline->next);
 	child = fork();
 	if (child < 0)
 		perror("fork error\n");
@@ -164,9 +169,18 @@ void execute_cmd(t_parsing *parse)
 	{
 		parse->built_in_cmd = 0;
 		if (check_builtin_input(parse) == 1)
+		{
+			// puts("AAA");
+			// exit(EXIT_SUCCESS);
 			parsing_cmd(parse);
+		}
 		else
+		{
+			// puts("BBB");
+			// exit(EXIT_SUCCESS);
 			parse->built_in_cmd = parsing_built_in(parse);
+		}
+		//exit(EXIT_SUCCESS);
 		if (ft_lst_strchr_pipe(parse->lst_cmdline) == 0)
 			pipex(parse);
 		if (parse->built_in_cmd > 0)

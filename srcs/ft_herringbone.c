@@ -30,30 +30,25 @@ void	ft_lstdel_current(t_list **lst)
 void	input_redirection(t_list **parse)
 {
 	int fd;
-	ft_lstdel_current(&(*parse));
+	ft_lstdel_front(&(*parse));
 	if (access((*parse)->str, F_OK) != 0)
-	{
 		perror((*parse)->str);
-		exit(EXIT_FAILURE);
-	}
-	if (access((*parse)->str, R_OK) != 0)
-	{
+	else if (access((*parse)->str, R_OK) != 0)
 		perror((*parse)->str);
-		exit(EXIT_FAILURE);
+	else
+	{
+		fd = open((*parse)->str, O_RDONLY);
+		dup2(fd, STDIN_FILENO);
+		close(fd);
 	}
-	fd = open((*parse)->str, O_RDONLY);
-	dup2(fd, STDIN_FILENO);
-	close(fd);
-	ft_lstdel_current(&(*parse));
+	ft_lstdel_front(&(*parse));
 }
 
 void	output_redirection(t_list **parse)
 {
 	int fd;
-	int i = 0;
-	printf("i = %d\n", i++);
+
 	ft_lstdel_current(&(*parse));
-	print_list((*parse));
 	fd = open((*parse)->str, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (fd < 0)
 		perror((*parse)->str);
@@ -104,7 +99,7 @@ void ft_heredoc(t_list **parse)
 
 void	check_herringbone(t_parsing *parse)
 {
-	while (parse->lst_cmdline->next != NULL && parse->lst_cmdline->str[0] != '|')
+	while (parse->lst_cmdline != NULL && parse->lst_cmdline->str[0] != '|')
 	{
 		if (ft_strcmp(parse->lst_cmdline->str, "<") == 0)
 			input_redirection(&parse->lst_cmdline);
