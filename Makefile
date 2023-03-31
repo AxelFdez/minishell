@@ -3,7 +3,7 @@
 NAME = minishell
 LIBFT = libft/
 LST = linked_list/
-CC = gcc 
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
 
 SRCS =  srcs/minishell.c \
@@ -13,6 +13,12 @@ SRCS =  srcs/minishell.c \
 		srcs/ft_check_syntax.c \
 		srcs/ft_initialization.c \
 		srcs/ft_fill_lst.c \
+		srcs/ft_signals.c \
+		srcs/ft_execute.c \
+		srcs/ft_save_env.c \
+		srcs/ft_pipex.c \
+		srcs/ft_pipex_utils.c \
+		srcs/ft_herringbone.c \
 		srcs/ft_sort_env.c \
 		srcs/built-in/ft_echo.c \
 		srcs/built-in/ft_env.c \
@@ -30,19 +36,21 @@ SRCS =  srcs/minishell.c \
 OBJECT_FILES = $(SRCS:.c=.o)
 HEADER = -I./includes
 
-all: $(NAME) 
+all: $(NAME)
 .c.o:
 	@$(CC) $(CFLAGS) $(HEADER) -c $< -o $(<:.c=.o)
 
 $(NAME): $(OBJECT_FILES)
 	@echo "$(YELLOW)\n<<<<< libft compiling ... >>>>>\n$(DEFAULT)"
 	$(MAKE) -C $(LIBFT)
-	cp libft/libft.a $(NAME)
+	# cp linked_list/lst.a $(NAME)
+	# cp libft/libft.a $(NAME)
 	@echo "$(YELLOW)\n<<<<< Creating $(NAME) exec file ! ... >>>>>$(DEFAULT)"
 	$(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -lreadline
+	# $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -L /opt/homebrew/Cellar/readline/8.2.1/lib/ -lreadline
 	@echo "$(GREEN)\n<<<<< $(NAME) created ! ... >>>>>\n$(DEFAULT)"
 #------------------------------------------------------------------------------
-clean: 
+clean:
 	@echo "$(RED)\n<<<<< deleting $(NAME) obj. files ! ... >>>>>$(DEFAULT)"
 	rm -rf $(OBJECT_FILES)
 	$(MAKE) clean -C $(LIBFT)
@@ -57,7 +65,7 @@ fclean: clean
 re: fclean all
 	@echo "$(GREEN)\n<<<<< $(NAME) make re done ! >>>>>\n$(DEFAULT)"
 #------------------------------------------------------------------------------
- 
+
 
 #COLORS
 RED = \033[1;31m

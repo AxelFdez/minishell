@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel_front.c                                  :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/23 12:11:01 by chmassa           #+#    #+#             */
-/*   Updated: 2023/03/30 23:38:42 by axfernan         ###   ########.fr       */
+/*   Created: 2023/02/20 10:44:39 by axfernan          #+#    #+#             */
+/*   Updated: 2023/02/28 11:53:00 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdel_front(t_list **lst)
+char	*ft_strstr(const char *str, const char *to_find)
 {
-	t_list *temp;
+	unsigned int	i;
+	unsigned int	j;
 
-	if (!(*lst))
-		return ;
-	if ((*lst)->next)
+	i = 0;
+	if (to_find[i] == '\0')
+		return ((char *)str);
+	while (str[i])
 	{
-		temp = (*lst)->next;
-		free((*lst)->str);
-		free((*lst));
-		*lst = temp;
-		(*lst)->prev = NULL;
+		j = 0;
+		if (str[i] == to_find[j])
+		{
+			while (str[i + j] == to_find[j])
+			{
+				j++;
+				if (!to_find[j])
+					return ((char *)&str[i]);
+			}
+		}
+		i++;
 	}
-	else
-	{
-		free((*lst)->str);
-		free((*lst));
-		*lst = NULL;
-	}
+	return (NULL);
 }

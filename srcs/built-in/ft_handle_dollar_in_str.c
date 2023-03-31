@@ -28,7 +28,6 @@ static void	ft_fill_tmplst(t_parsing *parse, t_list **lst, int start, int len)
 	t_list	*new;
 	new = ft_lstnew(ft_substr(parse->str_tmp, start, len));
 	ft_lstadd_back(lst, new);
-	
 }
 
 static void	ft_loop(t_parsing *parse, t_list **lst)
@@ -41,7 +40,7 @@ static void	ft_loop(t_parsing *parse, t_list **lst)
 		{
 			while (parse->str_tmp[i] && parse->str_tmp[i] != ' '
 				&& parse->str_tmp[i] != '\"'
-					&& parse->str_tmp[i] != '\'')
+				&& parse->str_tmp[i] != '\'')
 			{
 				len++;
 				i++;

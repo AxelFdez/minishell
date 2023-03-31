@@ -1,6 +1,6 @@
 save du 21/03 :
 - Readline et historique ok .
-- Quotes non fermees et prompte associe ok . 
+- Quotes non fermees et prompte associe ok .
 - Recup de la ligne de commande dans une liste chainee ok .
 - Recup de la variable d'environnement dans une liste chainee ok .
 
@@ -18,7 +18,7 @@ save du 22/03 :
 
 save du 25/03 :
 - fonction export modifiée, ajout d'un double quote apres le nom de la variable ainsi qu'a la fin de la chaine...
-  
+
 save du 26/03 :
 - fonction export ;
   Modif de l'ajout des double quotes.
@@ -54,3 +54,7 @@ save du 31/03 :
 - correction les noms de variable dans les strings "".. fonctionne!
 
 PUSH AVANT MERGE...
+
+save de 31/03 -2- :
+- Merge ok !
+- En cours; copie de env dans fichier txt...

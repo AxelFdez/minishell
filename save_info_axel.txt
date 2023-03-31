@@ -1,0 +1,50 @@
+save du 23/03 (Axel) :
+- Implementation de l'exec simple d'une commande avec l'env et chemin absolu
+- Mise em place des pipes (35%)
+
+save du 24/03 :
+- Gestion des pipes et multipipes fonctionnel, leaks KO
+- Merging chris on master, master on axel, fusion work in progress
+
+-save du 27/03 :
+- Merging complete
+- pipes + built_in fonctionnels
+
+save du 28/03 :
+- Implementation des redirections 70 %
+
+save du 29/03 :
+- Implementation des redirections (redirection avant et apres commandes gérées)
+
+save du 30/03 :
+- redirections 100%
+- Merging chris : * cd OK, export KO, env KO, exit KO.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NOTE :
+
+cd : fonctionne seul
+export : transmet une variable si utilisé seul
+env : partout (visible que seul ou fin de pipe)
+unset : fonctionne seul
+exit : fonctionne seul
+
+A tester :
+- enchainer les redirections droite
+- cat cat ls

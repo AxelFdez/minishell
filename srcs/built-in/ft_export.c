@@ -36,7 +36,6 @@ static int	ft_var_is_exist(t_parsing *parse, t_list *tmp)
 	return (0);
 }
 
-
 static int	ft_check_var_syntax(char *s)
 {
 	int		i;
@@ -90,10 +89,10 @@ static int	ft_new_var(t_parsing *parse, t_list *tmp)
 
 int	ft_export(t_parsing *parse)
 {
-	int		error;
+	//int		error;
 	t_list	*tmp;
 
-	error = 0;
+	//error = 0;
 	tmp = parse->lst_cmdline->next;
 	if (tmp == NULL)
 	{

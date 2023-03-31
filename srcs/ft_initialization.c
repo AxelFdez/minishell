@@ -16,6 +16,10 @@ void	ft_initialization(t_parsing *parse)
 	parse->ret_value = 0;
 	parse->tmp_ret_value = 0;
 	parse->is_dollar = 0;
+	
+	
+	
+	
 
 	
 }

@@ -1,4 +1,3 @@
-
 #include "../includes/minishell.h"
 
 int	is_meta_char(int c)
@@ -69,7 +68,7 @@ static void	is_no_quote_string(t_parsing *parse)
 }
 
 static void	ft_parseur(t_parsing *parse)
-{	
+{
 	while (parse->input[parse->i])
 	{
 		if (parse->input[parse->i] == '<' && !is_open_herringbone(parse))
@@ -98,9 +97,15 @@ void	ft_get_cmdline(t_parsing *parse)
 	parse->input = ft_strtrim_free_s1(parse->input, " ");
 	parse->ret_value = ft_check_syntax(parse);
 	ft_parseur(parse);
-	ft_check_built_in(parse);
-	ft_lstprint_from_head(parse->lst_cmdline);
-	ft_lstdel_all(&parse->lst_cmdline);
+	//ft_lstprint_from_head(parse->lst_cmdline);
+	//ft_lstdel_all(&parse->lst_cmdline);
+	// ft_lstprint_from_head(parse->lst_cmdline);
+	//ft_lstdel_all(&parse->lst_cmdline);
 	free(parse->input);
-
 }
+// 	ft_check_built_in(parse);
+// 	ft_lstprint_from_head(parse->lst_cmdline);
+// 	ft_lstdel_all(&parse->lst_cmdline);
+// 	free(parse->input);
+
+// }

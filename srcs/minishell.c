@@ -20,17 +20,33 @@ int	main(int ac, char **av, char **env)
 	t_parsing	parse;
 
 	(void)av;
+	parse.env = env;
 	if (ac == 1)
 	{
-		ft_initialization(&parse);
+		// parse.fd_env = open("env.txt", O_RDWR | O_CREAT | O_TRUNC, 0644);
+		// if (parse.fd_env < 0)
+		// 	ft_putstr_fd("Error: fd_env", 2);
 		ft_retrieve_env(&parse, env);
+		ft_save_env(&parse);
+
+		ft_initialization(&parse);
 		while (1)
 		{
+			// signal(SIGQUIT, SIG_IGN);
+			// signals_();
 			parse.input = readline("\033[3;36mminishell ->\033[0m ");
 			ft_quotes(&parse);
 			add_history(parse.input);
 			ft_get_cmdline(&parse);
+			if (parse.lst_cmdline)
+			{
+				execute_cmd(&parse);
+				ft_lstdel_all(&parse.lst_cmdline);
+			}
+
+
 			parse.tmp_ret_value = parse.ret_value;
+			ft_save_env(&parse);
 			if (parse.str_tmp)
 				free(parse.str_tmp);
 		}
