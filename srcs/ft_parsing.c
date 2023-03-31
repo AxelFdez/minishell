@@ -9,24 +9,15 @@ int	is_meta_char(int c)
 }
 
 static void	is_quote_string(t_parsing *parse, char c)
-{puts("is quote str ft");
-	int	is_dollar = 0;
+{
+	parse->i++;
+	parse->len++;
+	parse->quote_to_del++;
 	while (parse->input[parse->i])
 	{
-		if (parse->input[parse->i] == c && parse->input[parse->i +1] != ' ')
-		{
-			parse->len++;
-			parse->i++;
-			parse->quote_to_del++;
-		}
-		if (parse->input[parse->i] == '$' && parse->input[parse->i +1] != ' ' && c == '\"')
-			is_dollar++;
-		// {puts("if $");
-		// 	ft_handle_dollar_in_str(parse);
-		// 	parse->len = 0;
-		// 	printf("parse->str_tmp in is quote str = %s\n", parse->str_tmp);
-
-		// }
+		if (parse->input[parse->i] == '$' && parse->input[parse->i +1] != ' '
+			&& c == '\"')
+			parse->is_dollar++;
 		if (parse->input[parse->i] == c && parse->input[parse->i +1] == ' ')
 		{
 			parse->i++;
@@ -36,15 +27,12 @@ static void	is_quote_string(t_parsing *parse, char c)
 		parse->i++;
 		parse->len++;
 	}
-	if (is_dollar > 0)
-	{
-		puts("to handle dollar in str");
+	if (parse->is_dollar > 0)
 		ft_handle_dollar_in_str(parse);
-	}
 	else
 		ft_fill_lst(&parse->lst_cmdline, parse, parse->i - parse->len);
 	parse->len = 0;
-	is_dollar = 0;
+	parse->is_dollar = 0;
 	parse->quote_to_del = 0;
 }
 
@@ -54,7 +42,7 @@ static void	is_no_quote_string(t_parsing *parse)
 		&& parse->input[parse->i] != ' ')
 	{
 		if (parse->input[parse->i] == '$' && parse->input[parse->i +1] != ' ' && parse->input[parse->i +1] != '\0')
-		{puts("h dollar");
+		{
 			ft_handle_dollar(parse);
 			parse->len = 0;
 			if (parse->input[parse->i] == ' ')
@@ -90,6 +78,8 @@ static void	ft_parseur(t_parsing *parse)
 			return ;
 		else if (parse->input[parse->i] == '|' && !is_pipe(parse))
 			return ;
+
+
 		else if (parse->input[parse->i] == '\"')
 			is_quote_string(parse, '\"');
 		else if (parse->input[parse->i] == '\'')

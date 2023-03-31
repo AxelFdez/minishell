@@ -21,7 +21,7 @@ typedef struct s_parsing
 	int		i;
 	int		j;
 	int		k;
-	int		dollar;
+	int		is_dollar;
 	char	*str_tmp;
 	char	var_name[1024];
 	char	c;
