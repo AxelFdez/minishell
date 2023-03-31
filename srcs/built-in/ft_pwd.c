@@ -12,7 +12,7 @@ int	ft_pwd(void)
 		return (1);
 	}
 	ft_printf("%s\n", cwd);
-	//free(cwd);
+	// free(cwd);
 	ft_bzero(buffer, 4096);
 	return (0);
 }

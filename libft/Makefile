@@ -28,6 +28,7 @@ SRCS = srcs/str/ft_split.c srcs/str/ft_strjoin.c srcs/str/ft_strjoin_free_s1.c s
 		srcs/linked_list/ft_lstprint_from_tail.c \
 		srcs/linked_list/ft_lstprint.c \
 		srcs/linked_list/ft_lstcpy.c \
+		srcs/linked_list/ft_lst_to_str.c \
 		srcs/linked_list/ft_sortlst_str.c \
 		srcs/linked_list/ft_lstsize.c
 OBJECT_FILES = $(SRCS:.c=.o)

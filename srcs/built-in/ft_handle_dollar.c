@@ -12,6 +12,8 @@ static void	ft_found_var(t_parsing *parse)
 		{
 			parse->str_tmp = ft_strjoin_free_s1(parse->str_tmp,
 					tmp->str + ft_strlen(parse->var_name));
+			
+				
 			break ;
 		}
 		tmp = tmp->next;
@@ -21,7 +23,6 @@ static void	ft_found_var(t_parsing *parse)
 static void	ft_retrieve_var_name(t_parsing *parse)
 {
 	int	i;
-
 	i = 0;
 	while (parse->input[parse->i] && parse->input[parse->i] != '\"'
 		&& parse->input[parse->i] != '\'' && parse->input[parse->i] != ' ')
@@ -29,7 +30,9 @@ static void	ft_retrieve_var_name(t_parsing *parse)
 		parse->var_name[i] = parse->input[parse->i];
 		i++;
 		parse->i++;
+		// parse->len++;
 	}
+	parse->var_name[i] = '\0';
 	ft_found_var(parse);
 	ft_bzero(parse->var_name, 1024);
 }

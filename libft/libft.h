@@ -6,7 +6,7 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:21:09 by chmassa           #+#    #+#             */
-/*   Updated: 2023/03/30 10:15:44 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/03/31 16:27:34 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,7 @@ t_list	*ft_lstcpy(t_list **lst);
 t_list	*ft_lstlast(t_list *lst);
 int		ft_lstsize(t_list *lst);
 void	ft_sortlst_str(t_list **lst);
+char	*ft_lst_to_str(t_list *lst);
 
 //***** lstadd *****************************************************************
 void	ft_lstadd_front(t_list **lst, t_list *new);
