@@ -9,6 +9,7 @@ void	execute_built_in(t_parsing *parse)
 	while (tmp)
 	{
 		i = 0;
+		
 		if (parse->built_in_cmd == 1)
 		{
 			parse->ret_value = ft_env(parse);

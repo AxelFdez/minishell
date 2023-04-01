@@ -58,3 +58,6 @@ PUSH AVANT MERGE...
 save de 31/03 -2- :
 - Merge ok !
 - En cours; copie de env dans fichier txt...
+
+save de 01/04 :
+- ft_history.c ajouté. Doit etre inclus dans les commandes.

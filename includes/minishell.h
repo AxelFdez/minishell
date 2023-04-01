@@ -28,7 +28,7 @@ typedef struct s_parsing
 	int		i;
 	int		j;
 	int		k;
-	int		fd_env;
+	int		fd_history[2];
 	int		is_dollar;
 	char	*str_tmp;
 	char	var_name[1024];
@@ -103,7 +103,9 @@ int		ft_cd(t_parsing *parse);
 int		ft_lst_strchr_pipe(t_list *list);
 void	cd_in_cmdline(t_parsing *parse);
 void	print_list(t_list *list);
-void	ft_save_env(t_parsing *parse);
+void	ft_history(t_parsing *parse);
+void	ft_check_history_size(t_parsing *parse);
+void	ft_print_history(t_parsing *parse);
 
 
 #endif

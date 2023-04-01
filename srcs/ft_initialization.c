@@ -2,6 +2,7 @@
 
 void	ft_initialization(t_parsing *parse)
 {
+	
 	parse->lst_cmdline = NULL;
 	parse->i = 0;
 	parse->len = 0;
@@ -16,6 +17,12 @@ void	ft_initialization(t_parsing *parse)
 	parse->ret_value = 0;
 	parse->tmp_ret_value = 0;
 	parse->is_dollar = 0;
+	parse->fd_history[1] = open("history.txt", O_RDWR | O_CREAT | O_APPEND, 0644);
+	if (parse->fd_history[1] < 0)
+		perror("history.txt");
+	// parse->fd_history[0] = open("history.txt", O_RDONLY);
+	// if (parse->fd_history[0] < 0)
+	// 	perror("history.txt");
 	
 	
 	
