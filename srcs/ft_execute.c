@@ -157,6 +157,8 @@ void execute_cmd(t_parsing *parse)
 
 	check_herringbone(parse);
 	built_in_works(parse);
+	print_list(parse->lst_cmdline);
+	exit(EXIT_FAILURE);
 	child = fork();
 	if (child < 0)
 		perror("fork error\n");
@@ -167,6 +169,7 @@ void execute_cmd(t_parsing *parse)
 			parsing_cmd(parse);
 		else
 			parse->built_in_cmd = parsing_built_in(parse);
+	//exit(EXIT_FAILURE);
 		if (ft_lst_strchr_pipe(parse->lst_cmdline) == 0)
 			pipex(parse);
 		if (parse->built_in_cmd > 0)

@@ -14,7 +14,7 @@ void	ft_lstdel_current(t_list **lst)
 	else if ((*lst)->next == NULL)
 	{
 		(*lst) = (*lst)->prev;
-		ft_lstdel_back(&(*lst));
+		ft_lstdel_back(&(*lst)->next);
 	}
 	else
 	{
@@ -50,10 +50,8 @@ void	input_redirection(t_list **parse)
 void	output_redirection(t_list **parse)
 {
 	int fd;
-	int i = 0;
-	printf("i = %d\n", i++);
 	ft_lstdel_current(&(*parse));
-	print_list((*parse));
+	//print_list((*parse));
 	fd = open((*parse)->str, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (fd < 0)
 		perror((*parse)->str);
@@ -102,9 +100,26 @@ void ft_heredoc(t_list **parse)
 	ft_lstdel_current(&(*parse));
 }
 
+int check_herringbones_input(t_parsing *parse)
+{
+	t_list	*tmp;
+
+	tmp = parse->lst_cmdline;
+	while (tmp)
+	{
+		if (ft_strcmp(tmp->str, "<") == 0 || ft_strcmp(tmp->str, "<<") == 0
+			|| ft_strcmp(tmp->str, ">>") == 0 || ft_strcmp(tmp->str, ">>") == 0)
+		{
+			return (0);
+		}
+		tmp = tmp->next;
+	}
+	return (1);
+}
+
 void	check_herringbone(t_parsing *parse)
 {
-	while (parse->lst_cmdline->next != NULL && parse->lst_cmdline->str[0] != '|')
+	while (check_herringbones_input(parse) == 0 || parse->lst_cmdline->str[0] != '|')
 	{
 		if (ft_strcmp(parse->lst_cmdline->str, "<") == 0)
 			input_redirection(&parse->lst_cmdline);
@@ -114,9 +129,9 @@ void	check_herringbone(t_parsing *parse)
 			ft_heredoc(&parse->lst_cmdline);
 		if (ft_strcmp(parse->lst_cmdline->str, ">>") == 0)
 			ft_append(&parse->lst_cmdline);
-		if (parse->lst_cmdline->next == NULL)
+		if (parse->lst_cmdline->next == NULL || !parse->lst_cmdline)
 			break;
-		parse->lst_cmdline = parse->lst_cmdline->next;
+		//parse->lst_cmdline = parse->lst_cmdline->next;
 	}
 	while (parse->lst_cmdline->prev != NULL)
 		parse->lst_cmdline = parse->lst_cmdline->prev;
