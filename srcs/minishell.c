@@ -1,37 +1,30 @@
 #include "../includes/minishell.h"
 
-static void	ft_retrieve_env(t_parsing *parse, char **env)
-{
-	int		i;
-	t_list	*new;
+// static void	ft_retrieve_env(t_parsing *parse, char **env)
+// {
+// 	int		i;
+// 	t_list	*new;
 
-	parse->lst_env = NULL;
-	i = 0;
-	while (env[i])
-	{
-		new = ft_lstnew(ft_strdup(env[i]));
-		ft_lstadd_back(&parse->lst_env, new);
-		i++;
-	}
-}
+// 	parse->lst_env = NULL;
+// 	i = 0;
+// 	while (env[i])
+// 	{
+// 		new = ft_lstnew(ft_strdup(env[i]));
+// 		ft_lstadd_back(&parse->lst_env, new);
+// 		i++;
+// 	}
+// }
 
 int	main(int ac, char **av, char **env)
 {
 	t_parsing	parse;
 
 	(void)av;
-	parse.env = env;
 	if (ac == 1)
 	{
-		// parse.fd_env = open("env.txt", O_RDWR | O_CREAT | O_TRUNC, 0644);
-		// if (parse.fd_env < 0)
-		// 	ft_putstr_fd("Error: fd_env", 2);
 		ft_retrieve_env(&parse, env);
-		
-
 		ft_initialization(&parse);
 		ft_check_history_size(&parse);
-
 		while (1)
 		{
 			// signal(SIGQUIT, SIG_IGN);
@@ -43,8 +36,9 @@ int	main(int ac, char **av, char **env)
 			ft_get_cmdline(&parse);
 			if (parse.lst_cmdline)
 			{
-				// ft_print_history(&parse);
+				parse.env = ft_lst_to_char_tab(parse.lst_env);
 				execute_cmd(&parse);
+				free(parse.env);
 				ft_lstdel_all(&parse.lst_cmdline);
 			}
 

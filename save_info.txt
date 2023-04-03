@@ -67,3 +67,9 @@ save de 01/04 -2- :
     tout semble fonctionner,
     $? entre "" OK,
     comparaison des variables avec la liste 'lst_env' OK.  
+save de 03/04 :
+- bug ft_handle_dollar_in_str.c reglés...
+- ajout de ft_handle_env.c 
+- ajout de ft_lst_to_char_tab
+- ajout ft_increment_shlvl
+

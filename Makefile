@@ -15,6 +15,7 @@ SRCS =  srcs/minishell.c \
 		srcs/ft_fill_lst.c \
 		srcs/ft_signals.c \
 		srcs/ft_execute.c \
+		srcs/ft_handle_env.c \
 		srcs/ft_history.c \
 		srcs/ft_pipex.c \
 		srcs/ft_pipex_utils.c \
