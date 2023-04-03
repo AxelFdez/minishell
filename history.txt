@@ -365,3 +365,30 @@ ls
 > 1 cd ..
 ls
 rm 1
+> 1 cd ..
+;s
+ls
+cd ..
+ls
+cd minishell 
+cd .. < 2
+;s
+ls
+rm 1 2
+> 2 cd ..
+ls
+< 2 < test
+< 2 > 3
+cd ..
+ls
+cd minishell 
+ls
+cd .. > 4
+ls
+ls
+cd minishell 
+ls
+> 4 cd ..
+ls
+ls
+make
