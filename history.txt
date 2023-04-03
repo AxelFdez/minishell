@@ -146,3 +146,7 @@ export
 export BBB=123
 export
 export
+export AAA
+export
+./minishell
+export
