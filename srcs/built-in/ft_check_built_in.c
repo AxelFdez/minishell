@@ -81,6 +81,16 @@ void	execute_built_in(t_parsing *parse)
 			}
 			exit(EXIT_SUCCESS);
 		}
+		if (parse->built_in_cmd == 8)
+		{
+			ft_history(parse);
+			while (i < parse->lst_target)
+			{
+				ft_lstdel_front(&parse->lst_cmdline);
+				i++;
+			}
+			exit(EXIT_SUCCESS);
+		}
 	// { puts("check built in");
 	// { puts("check built in");
 	// 	if ((ft_strcmp(tmp->str, "env") == 0 || ft_strcmp(tmp->str, "ENV") == 0))
