@@ -1,0 +1,148 @@
+history
+export
+dfgljh
+echo toi
+echo toi
+echo toi
+echo toi
+echo toi
+echo toi
+echo toi
+echo "$USER"
+echo "$USER"
+echo "$USER"
+echo "$USER"
+echo "$USER"
+echo "$USER"
+echo "$USER"
+echo "$USER"
+echo "$USER"
+echo "$USER"
+echo "$USER"
+echo "$USER"
+echo kljshf
+echo iuyriuyreiue
+echo ljhfi
+echo lkjhd
+echo guiewuy
+echo ouhcdiu
+echo $HOME
+echo $HOMEew
+echo "$USER $HJKKJH"
+echo "$USER kjh $HJKIY"
+echo kjhrfgju
+echo "$HOME kjhdjhd $JYGH"
+echo "uhf $USER lkjfikjhi $HOME lkjhfk $LJKHJUH $JHGJHG"
+export VAR89=4567890
+export
+echo "$VAR*("
+echo "$VAR89"
+echo "$USER $USER $IGGT $HOME $USER fouhfkujhf"
+echo "$USER $HJKKJ"
+echo "$IUYIU $USER"
+echo "$OIUHU $USER"
+echo "$USER"
+echo "$HFDYTFHT"
+echo "$HFDYTFHT $USER"
+"$jhygujyg $USER kjhfkjhfkjhf"
+$?
+echo $?
+echo "$?"
+echo "$?"
+echo "$? $USERT $HOME"
+echo "$? $USER $HOME"
+echo $? $USER $HOME
+echo "$USER $JUHGJH khgkugh ikhkiuh kuhiuhk"
+echo "$USER $JHGJHG kjhkg oihjg"
+echo "$USER jhgj $HOME lkflkjf foijflkjf lkjflkjg $GGGGG"
+echo "$KJHKJH $USER    $HOME lkjfkjf"
+echo kjfdjhf kjhdfkjhf $USER
+echo hgd hgjhgd     jkdhgjhdgjd $USER kjd  $KJHH
+echo hgd hgjhgd     jkdhgjhdgjd $USER kjd  $KJHH
+echo hgd hgjhgd     jkdhgjhdgjd $USER kjd  $KJHH
+echo kjhdkjhfjhf "fljkhflkjhfljkhlf""ljhflkjhfkjhfkjhfkjhf"
+echo kjhdkjhfjhf "fljkhflkj'hfljkhlf""ljhflkj'''''hfkjhfkjhfkjhf"
+echo hgd hgjhgd     jkdhgjhdgjd $USER kjd  $KJHH
+echo hgd hgjhgd     jkdhgjhdgjd $USER kjd  $KJHH 
+$KJHJ
+$
+echo $
+echo $
+echo $USER "khggh$USER ojflkjhfkjhf"
+echo $USER "khggh$USER              '       ojflkjhfkjhf"
+echo $USER "$USER"
+echo $USER "$USER   "
+echo "$USER     "
+echo $USER
+echo "$USER"
+echo "$USER  "
+echo "$USER "
+echo "$USER  "
+echo "$USER      "
+echo "$USER                                         p"
+echo "$USER                                         p"
+echo "ljhfg    oifhjglihjfg                                              ioj"
+echo "ljhfg    oifhjglihjfg                                              ioj"
+echo "ljhfg    oifhjglihjfg                                              ioj"
+echo "ljhfg    oifhjglihjfg                                              ioj"
+echo "ljhfg    oifhjglihjfg                                              ioj"
+echo "ljhfg    oifhjglihjfg            $HOME                                  ioj"
+echo "ljhfg    oifhjglihjfg            $HOME                                  ioj"
+echo "$USER $HOME $USEr $PWD $SHLLVL"
+export
+echo "$USER $HOME $USEr $PWD $SHLVL"
+echo "khjdfkdfjh    oiduhfkudhfidfgu    oihdjlfibjhldijbdfgbdfbgtb"
+echo "$USER"
+echo "$USER "
+echo "$USER "
+echo "$USER "
+echo "$USER "
+echo "$USER "
+echo "$USER      "
+echo "$USER   "
+echo "$USER   "
+echo "$USER $HOME"
+echo "$USER $HOME"
+echo "$HOME"
+echo "$HOME"
+echo "$USER"
+echo "$USER"
+echo "$USER"
+echo "$USER    "
+echo "$USER           "
+echo "$USER           $HOME"
+echo "$USER       fhfthh    $HOME"
+echo $USER lkglkjglktjgh "$USER       fhfthh    $HOME"
+echo kjsfhkj$HOME "$USER""$HOME"
+echo $HOME ",sjnfkjshgkfjg""fgkdfjksdfjhgkjfhkjdhfgfd"
+export
+minishell
+export
+unset PATH
+export
+ls
+echo dfthfh
+SHELL=/bin/zsh
+SHELL=/bin/zsh
+SHELL=/bin/zsh
+SHELL=/bin/zsh
+history
+< history.txt wc -l
+< history.txt | wc -l
+< history.txt cat > test
+env
+export
+export VAR=123
+export
+./minishell
+export
+unset VAR
+export
+export AAA
+export
+export
+./minishell
+export
+export BBB=123
+export
+export

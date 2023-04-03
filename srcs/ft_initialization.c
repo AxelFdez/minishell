@@ -16,6 +16,9 @@ void	ft_initialization(t_parsing *parse)
 	parse->ret_value = 0;
 	parse->tmp_ret_value = 0;
 	parse->is_dollar = 0;
+	parse->fd_history[1] = open("history.txt",
+			O_RDWR | O_CREAT | O_APPEND, 0644);
+	if (parse->fd_history[1] < 0)
+		perror("history.txt");
 
-	
 }

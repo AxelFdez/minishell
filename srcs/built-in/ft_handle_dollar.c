@@ -12,8 +12,6 @@ static void	ft_found_var(t_parsing *parse)
 		{
 			parse->str_tmp = ft_strjoin_free_s1(parse->str_tmp,
 					tmp->str + ft_strlen(parse->var_name));
-			
-				
 			break ;
 		}
 		tmp = tmp->next;

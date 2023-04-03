@@ -13,12 +13,16 @@ static void	is_quote_string(t_parsing *parse, char c)
 	parse->len++;
 	parse->quote_to_del++;
 	while (parse->input[parse->i])
-	{
+	{puts("AAA");
 		if (parse->input[parse->i] == '$' && parse->input[parse->i +1] != ' '
 			&& c == '\"')
-			parse->is_dollar++;
+			{
+				puts("BBB");
+				parse->is_dollar++;
+			}
 		if (parse->input[parse->i] == c && parse->input[parse->i +1] == ' ')
 		{
+			puts("BBB");
 			parse->i++;
 			parse->len++;
 			break ;
@@ -27,7 +31,10 @@ static void	is_quote_string(t_parsing *parse, char c)
 		parse->len++;
 	}
 	if (parse->is_dollar > 0)
+	{
+		puts("CCC");
 		ft_handle_dollar_in_str(parse);
+	}
 	else
 		ft_fill_lst(&parse->lst_cmdline, parse, parse->i - parse->len);
 	parse->len = 0;
@@ -40,7 +47,8 @@ static void	is_no_quote_string(t_parsing *parse)
 	while (parse->input[parse->i] && !is_meta_char(parse->input[parse->i])
 		&& parse->input[parse->i] != ' ')
 	{
-		if (parse->input[parse->i] == '$' && parse->input[parse->i +1] != ' ' && parse->input[parse->i +1] != '\0')
+		if (parse->input[parse->i] == '$' && parse->input[parse->i +1] != ' '
+			&& parse->input[parse->i +1] != '\0')
 		{
 			ft_handle_dollar(parse);
 			parse->len = 0;
@@ -52,11 +60,8 @@ static void	is_no_quote_string(t_parsing *parse)
 			parse->c = parse->input[parse->i];
 			parse->i++;
 			parse->len++;
-			while (parse->input[parse->i] != parse->c)
-			{
+			while (parse->input[parse->i++] != parse->c)
 				parse->len++;
-				parse->i++;
-			}
 			parse->quote_to_del++;
 		}
 		parse->len++;
@@ -64,7 +69,6 @@ static void	is_no_quote_string(t_parsing *parse)
 	}
 	ft_fill_lst(&parse->lst_cmdline, parse, parse->i - parse->len);
 	parse->len = 0;
-	parse->quote_to_del = 0;
 }
 
 static void	ft_parseur(t_parsing *parse)

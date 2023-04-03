@@ -1,34 +1,34 @@
 #include "../includes/minishell.h"
 
-static void	ft_retrieve_env(t_parsing *parse, char **env)
-{
-	int		i;
-	t_list	*new;
+// static void	ft_retrieve_env(t_parsing *parse, char **env)
+// {
+// 	int		i;
+// 	t_list	*new;
 
-	parse->lst_env = NULL;
-	i = 0;
-	while (env[i])
-	{
-		new = ft_lstnew(ft_strdup(env[i]));
-		ft_lstadd_back(&parse->lst_env, new);
-		i++;
-	}
-}
+// 	parse->lst_env = NULL;
+// 	i = 0;
+// 	while (env[i])
+// 	{
+// 		new = ft_lstnew(ft_strdup(env[i]));
+// 		ft_lstadd_back(&parse->lst_env, new);
+// 		i++;
+// 	}
+// }
 
 int	main(int ac, char **av, char **env)
 {
 	t_parsing	parse;
 
 	(void)av;
-	parse.env = env;
 	if (ac == 1)
 	{
-		ft_initialization(&parse);
 		ft_retrieve_env(&parse, env);
+		ft_initialization(&parse);
+		ft_check_history_size(&parse);
 		while (1)
 		{
-			signal(SIGQUIT, SIG_IGN);
-			signals_();
+			// signal(SIGQUIT, SIG_IGN);
+			// signals_();
 			parse.input = readline("\033[3;36mminishell ->\033[0m ");
 			if (!parse.input)
 			{
@@ -37,14 +37,17 @@ int	main(int ac, char **av, char **env)
 			}
 			ft_quotes(&parse);
 			add_history(parse.input);
-			//if (ft_check_syntax(&parse))
+			ft_history(&parse);
 			ft_get_cmdline(&parse);
 			if (parse.lst_cmdline)
 			{
+				parse.env = ft_lst_to_char_tab(parse.lst_env);
 				execute_cmd(&parse);
+				free(parse.env);
 				ft_lstdel_all(&parse.lst_cmdline);
 			}
-			//system("leaks minishell");
+
+
 			parse.tmp_ret_value = parse.ret_value;
 			if (parse.str_tmp)
 				free(parse.str_tmp);

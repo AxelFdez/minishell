@@ -13,9 +13,10 @@ SRCS =  srcs/minishell.c \
 		srcs/ft_check_syntax.c \
 		srcs/ft_initialization.c \
 		srcs/ft_fill_lst.c \
-		srcs/ft_quotes.c \
 		srcs/ft_signals.c \
 		srcs/ft_execute.c \
+		srcs/ft_handle_env.c \
+		srcs/ft_history.c \
 		srcs/ft_pipex.c \
 		srcs/ft_pipex_utils.c \
 		srcs/ft_herringbone.c \
@@ -30,7 +31,8 @@ SRCS =  srcs/minishell.c \
 		srcs/built-in/ft_print_export.c \
 		srcs/built-in/ft_handle_dollar.c \
 		srcs/built-in/ft_handle_dollar_in_str.c \
-		srcs/built-in/ft_cd.c
+		srcs/built-in/ft_cd.c \
+		srcs/ft_quotes.c
 
 OBJECT_FILES = $(SRCS:.c=.o)
 HEADER = -I./includes
@@ -45,7 +47,7 @@ $(NAME): $(OBJECT_FILES)
 	# cp linked_list/lst.a $(NAME)
 	# cp libft/libft.a $(NAME)
 	@echo "$(YELLOW)\n<<<<< Creating $(NAME) exec file ! ... >>>>>$(DEFAULT)"
-	$(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -L /Users/axfernan/homebrew/Cellar/readline/8.2.1/lib/ -lreadline
+	$(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -lreadline
 	# $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -L /opt/homebrew/Cellar/readline/8.2.1/lib/ -lreadline
 	@echo "$(GREEN)\n<<<<< $(NAME) created ! ... >>>>>\n$(DEFAULT)"
 #------------------------------------------------------------------------------

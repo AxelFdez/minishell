@@ -8,6 +8,6 @@ void	ft_exit(t_parsing *parse)
 	else
 		ft_lstdel_front(&parse->lst_cmdline);
 		ft_lstdel_front(&parse->lst_cmdline);
-		print_list(parse->lst_cmdline);
+		// print_list(parse->lst_cmdline);
 		// ft_putstr_fd("exit: no argument required\n", 2);
 }

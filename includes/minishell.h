@@ -16,7 +16,9 @@ typedef struct s_cmd
 	char	**cmd;
 }	t_cmd;
 
-int value_return;
+// int value_return;
+
+
 
 typedef struct s_parsing
 {
@@ -24,14 +26,17 @@ typedef struct s_parsing
 	int		ret_value;
 	int		tmp_ret_value;
 	int		i;
+	int		i_b;
 	int		j;
 	int		k;
+	int		fd_history[2];
 	int		is_dollar;
 	char	*str_tmp;
 	char	var_name[1024];
 	char	c;
 	char	*meta[6];
 	int		len;
+	int		len_b;
 	int		quote_to_del;
 	char	*input;
 	char	*prompt;
@@ -84,6 +89,8 @@ int		ft_export(t_parsing *parse);
 void	ft_print_sorted_env(t_parsing *parse);
 void	ft_handle_dollar_no_quotes(t_parsing *parse);
 void	ft_handle_dollar_in_str(t_parsing *parse);
+void	ft_retrieve_env(t_parsing *parse, char **env);
+char	**ft_lst_to_char_tab(t_list *lst);
 int		check_builtin_input(t_parsing * parse);
 void	execute_built_in(t_parsing *parse);
 int		parsing_built_in(t_parsing *parse);
@@ -100,5 +107,9 @@ int		ft_cd(t_parsing *parse);
 int		ft_lst_strchr_pipe(t_list *list);
 void	cd_in_cmdline(t_parsing *parse);
 void	print_list(t_list *list);
+void	ft_history(t_parsing *parse);
+void	ft_check_history_size(t_parsing *parse);
+void	ft_print_history(t_parsing *parse);
+
 
 #endif

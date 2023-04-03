@@ -54,3 +54,22 @@ save du 31/03 :
 - correction les noms de variable dans les strings "".. fonctionne!
 
 PUSH AVANT MERGE...
+
+save de 31/03 -2- :
+- Merge ok !
+- En cours; copie de env dans fichier txt...
+
+save de 01/04 :
+- ft_history.c ajouté. Doit etre inclus dans les commandes.
+
+save de 01/04 -2- :
+- ft_handle_dollar_in_str.c,
+    tout semble fonctionner,
+    $? entre "" OK,
+    comparaison des variables avec la liste 'lst_env' OK.  
+save de 03/04 :
+- bug ft_handle_dollar_in_str.c reglés...
+- ajout de ft_handle_env.c 
+- ajout de ft_lst_to_char_tab
+- ajout ft_increment_shlvl
+
