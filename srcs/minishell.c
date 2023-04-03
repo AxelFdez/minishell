@@ -46,8 +46,6 @@ int	main(int ac, char **av, char **env)
 				free(parse.env);
 				ft_lstdel_all(&parse.lst_cmdline);
 			}
-
-
 			parse.tmp_ret_value = parse.ret_value;
 			if (parse.str_tmp)
 				free(parse.str_tmp);

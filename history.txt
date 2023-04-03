@@ -150,3 +150,218 @@ export AAA
 export
 ./minishell
 export
+< eof cat
+<< eof cat
+<< eof cat >> out
+<< eof cat > out
+<< eof cat > out
+<< test cat > out
+<< eof cat > out
+<< eof cat > out
+make
+< test cat -e > 1
+<< eof cat -e > 2
+cat 2
+ls
+< test cat > out
+<< eof cat > out
+ls
+< test cat
+< test > out cat
+cat out
+< ls > out
+<< eof cat
+<< eof cat > out
+<< eof cat > out
+<< eof cat > out
+<< eof cat > out
+make
+<< eof cat > out
+cat out
+<< eof cat > out
+<< eof cat > out
+< test cat > 3
+cat 3
+cat test
+make
+< test cat > out
+cat out
+make
+cat out
+< test cat > out
+cat out
+< test cat > out
+cat out
+< test cat > out
+make
+< test cat > out
+cat out
+< test cat > out
+< test cat > out
+< test cat
+<< eof cat 
+<< eof cat > out
+cat out
+<< eof cat -e > out
+cat out
+rm 1 2 3
+> 1 > 2 > 3 ls
+rm 1 3
+> 1 > 2 > 3 ls
+rm 1 3
+> 1 > 2 > 3 ls
+< test cat > out
+< test
+ls
+< test
+< ls < test cat > out
+cat out
+ls
+> 1 > 2 > 3 ls
+make
+> 1 > 2 > 3 ls
+> 1 > 2 > 3 ls
+make
+> 1 > 2 > 3 ls
+> 1 > 2 > 3 ls
+> 1 > 2 > 3 ls
+make
+> 1 > 2 > 3 ls
+make
+./minishell
+> 1 > 2 > 3 ls
+> 1 > 2 > 3 ls
+make
+./minishell
+./minishell
+> 1 > 2 > 3 ls
+ ls -l
+
+
+
+
+1 > 2 > 3 ls -l
+rm 1 2 3
+
+rm 1 2 3
+> 1 > 2 > 3 ls -l
+> 1 > 2 > 3 ls
+make
+4 > 5 > 6 ls
+> 4 > 5 > 6 ls
+> 1 > 2 > 3 ls
+cat 3
+make
+> 1 > 2 > 3 ls
+make
+> 1 > 2 > 3 ls
+make
+> 1 > 2 > 3 ls
+cat 3
+make
+> 1 > 2 > 3 ls
+cat 3
+make
+> 1 > 2 > 3 ls
+cat 3
+> 1 > 2 > 3 ls
+> 1 > 2 > 3 ls
+> 1 > 2 > 3 ls
+> 1 > 2 > 3 ls
+> 1 > 2 > 3 ls
+make
+> 1 > 2 > 3 ls
+> 1 > 2 > 3 ls
+> 1 > 2 > 3 ls
+> 1 > 2 > 3 ls -l
+> 1 > 2 > 3 ls
+> 1 > 2 > 3 ls
+> 1 > 2 > 3 ls
+> 1 > 2 > 3 ls
+> 1 > 2 > 3 ls
+> 1 > 2 > 3 ls
+> 1 > 2 > 3 ls
+> 1 > 2 > 3 ls - l
+> 1 > 2 > 3 ls - l | cat -e
+> 1 > 2 > 3 | cat -e
+> 1 > 2 > 3 ls
+make
+rm 1 2 3
+> 1 > 2 > 3 ls
+< test cat > out
+<< eof eof > 2
+<< eof cat > 2
+cat 2
+rm 1 2 3
+ls
+< cd ..
+< test > 5 cd ..
+ls
+< test < 5 cat
+< test < 5 cat
+< test cat
+cat 5
+< test < 5 cat
+< test < 5 cat
+make
+< test < 5
+cat
+< test < 5 cat
+< test < 5 cat
+< test < 5 cat
+> 1 > 2 > 3 ls
+make
+< test < 5 cat
+> 1 > 2 > 3 ls
+> 1 > 2 > 3 ls
+> 1 > 2 > 3 ls
+> 1 > 2 > 3 ls
+< test < 3 cat
+make
+< test < 3 cat
+make
+ls
+< test | cat -e
+
+< test cat | cat -e
+< test cat | wc | echo coucou
+history
+ls
+rm 1 2 3
+<< eof cat -e | >> 3
+cat 3
+rm 3
+<< eof cat -e | >> 3
+
+<< eof << cc cat
+<< eof << cc cat
+ls >> out >> 3
+ls >> out >> 3
+cd ..
+ls
+cd minishell 
+ls
+> 2 cd ..
+ls
+pwd
+> 3 cd ..
+pwd
+cd ..
+ls
+cd minishell 
+ls
+rm 2 3
+ls
+make
+ls
+cd ..
+ls
+> 1 cd ..
+ls
+rm 1
+ls
+cd minishell 
+ls
+> 1 cd ..
+ls
+rm 1

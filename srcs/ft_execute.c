@@ -97,6 +97,7 @@ void	print_list(t_list *lst)
 		ft_printf("[%s] ", lst->str);
 		lst = lst->next;
 	}
+	ft_printf("\n");
 }
 
 void	execute_built_in_first(t_parsing *parse)
@@ -114,6 +115,7 @@ void	execute_built_in_first(t_parsing *parse)
 	{
 		if (ft_lst_strchr_pipe(parse->lst_cmdline) != 0)
 		{
+			//check_herringbone(parse);
 			parse->ret_value = ft_cd(parse);
 			ft_lstdel_all(&parse->lst_cmdline);
 		}
