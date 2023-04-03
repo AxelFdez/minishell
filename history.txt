@@ -122,3 +122,132 @@ unset PATH
 export
 ls
 echo dfthfh
+sdghsfgh"sdghsfghsfgh
+sdfghsfdgh
+sfghsfgh
+sfghsfgh"
+< test
+echo "fsghsfghsfghsfgh'fsghsfghsfghsfghsfghsfgh
+sfghsfgh
+sfghsfgh"
+"Dghsdlfkjlkhjldfh''''''''''"
+<< eof | >> eof
+echo "$HOME
+$USER
+$HOME
+"
+echo "$USER $HOME"
+echo "lkjhsfglkjfsg
+dyhdfjh
+dfndfgj
+dfghndfghjm
+ghmdghjdghjdghdghm"
+echo "lkjhsfglkjfsg
+dyhdfjh
+dfndfgj
+dfghndfghjm
+ghmdghjdgh$USER jdghdghm"
+echo "lkjhsfglkjfsg
+dyhdfjh
+dfndfgj
+dfghndfghjm
+ghmdghjdgh$USER jdghdgh$HOME m"
+echo "$USER
+$HOME"
+echo "aaaaa
+bbbbb"
+echo "AAAAA$USER
+BBBB"
+echo "$USER
+$HOME"
+kdjhkdhgkd "ekjhgkehgkdjuhkeg
+hdf
+dfhj
+dhj
+dhgj
+dgj
+fd
+dmn'''''dfhjndgn'
+''dfn
+'"
+echo "$USER
+$HOME"
+echo '$USER
+$HOME'
+export
+minishell
+export
+exit
+export
+export VAR1=42 VAR2=789
+export
+minishell
+export
+exporta
+export a
+export
+env
+./minishell
+export
+env
+export
+export AAAA BBBB CCCC=6788
+export
+minishell'
+'
+export
+minishell
+export
+export AAA BBB CCC=789
+export
+minishell
+export
+minishell
+export aaa bbb
+export
+export
+export aaa bbb
+export
+env
+export
+export var=890
+export
+env
+export
+minishell
+./minishell
+./minishell
+
+
+minishell
+export
+export aaa bbb var=65
+export
+env
+export
+minishell
+export aaa bbb var=890
+export
+env
+export
+minishell
+export
+export aaa bbb var=78
+minishell
+export
+exit
+export
+export aaa bbb var=890
+export
+minishell
+export
+env
+export aaa bbb ccc=789
+export
+minishell
+export
+env
+exit
+export
+env
+<< eof | cat >> out

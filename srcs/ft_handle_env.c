@@ -57,8 +57,12 @@ char	**ft_lst_to_char_tab(t_list *lst)
 	array = malloc(sizeof (char *) * (ft_lstsize(lst) + 1));
 	while (tmp)
 	{
-		array[i] = ft_strdup(tmp->str);
+		if (ft_found_char(tmp->str, '=') == 1)
+		{
+
+			array[i] = ft_strdup(tmp->str);
 		i++;
+		}
 		tmp = tmp->next;
 	}
 	array[i] = NULL;
