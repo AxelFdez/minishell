@@ -94,7 +94,7 @@ void	ft_get_cmdline(t_parsing *parse)
 	parse->input = ft_strtrim_free_s1(parse->input, " ");
 	parse->ret_value = ft_check_syntax(parse);
 	ft_parseur(parse);
-	ft_lstprint_from_head(parse->lst_cmdline);
+	//ft_lstprint_from_head(parse->lst_cmdline);
 	//ft_lstdel_all(&parse->lst_cmdline);
 	// ft_lstprint_from_head(parse->lst_cmdline);
 	//ft_lstdel_all(&parse->lst_cmdline);

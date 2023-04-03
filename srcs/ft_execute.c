@@ -36,14 +36,13 @@ int ft_lst_strchr_pipe(t_list *list)
 int check_builtin_input(t_parsing *parse)
 {
 	char	*tmp;
-
 	tmp = parse->lst_cmdline->str;
 	if (ft_strcmp(tmp, "env") == 0 || ft_strcmp(tmp, "ENV") == 0
 		|| ft_strcmp(tmp, "export") == 0 || ft_strcmp(tmp, "pwd") == 0
 		|| ft_strcmp(tmp, "PWD") == 0 || ft_strcmp(tmp, "echo") == 0
 		|| ft_strcmp(tmp, "unset") == 0 || ft_strcmp(tmp, "cd") == 0
 		|| ((ft_strcmp(tmp, "cd") == 0 && (ft_strcmp(tmp, "~"))))
-		|| ft_strcmp(tmp, "exit") == 0)
+		|| ft_strcmp(tmp, "exit") == 0 || ft_strcmp(tmp, "history") == 0)
 	{
 		return (0);
 	}
@@ -79,6 +78,8 @@ int	parsing_built_in(t_parsing *parse)
 			return (6);
 		if (ft_strcmp(tmp->str, "exit") == 0)
 			return (7);
+		if (ft_strcmp(tmp->str, "history") == 0)
+			return (8);
 		tmp = tmp->next;
 	}
 	return (0);
@@ -143,7 +144,7 @@ void	built_in_works(t_parsing *parse)
 			|| (ft_strcmp(temp->str, "cd") == 0 && ft_strcmp(temp->next->str, "~") == 0)
 			|| ft_strcmp(temp->str, "exit") == 0)
 			built_in_found = 1;
-		if (!temp->next)
+		if (temp->next == NULL)
 			break;
 		temp = temp->next;
 	}
@@ -155,13 +156,17 @@ void execute_cmd(t_parsing *parse)
 {
 	pid_t child;
 
-	check_herringbone(parse);
+	if (!parse->lst_cmdline)
+		return ;
 	built_in_works(parse);
+	// print_list(parse->lst_cmdline);
+	// exit(EXIT_FAILURE);
 	child = fork();
 	if (child < 0)
 		perror("fork error\n");
 	else if (child == 0)
 	{
+		check_herringbone(parse);
 		parse->built_in_cmd = 0;
 		if (check_builtin_input(parse) == 1)
 			parsing_cmd(parse);
@@ -175,6 +180,6 @@ void execute_cmd(t_parsing *parse)
 		perror("command not found");
 	}
 	wait(NULL);
-	return ;
+	//exit(EXIT_FAILURE);
 }
 

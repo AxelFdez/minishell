@@ -84,7 +84,7 @@ void	ft_check_built_in(t_parsing *parse);
 void	ft_sort_env(t_list **lst);
 void	ft_echo(t_list *tmp, t_parsing *parse);
 int		ft_env(t_parsing *parse);
-int		ft_pwd(void);
+int		ft_pwd(t_parsing *parse);
 int		ft_export(t_parsing *parse);
 void	ft_print_sorted_env(t_parsing *parse);
 void	ft_handle_dollar_no_quotes(t_parsing *parse);
@@ -110,6 +110,7 @@ void	print_list(t_list *list);
 void	ft_history(t_parsing *parse);
 void	ft_check_history_size(t_parsing *parse);
 void	ft_print_history(t_parsing *parse);
+// void	ft_update_pwd(t_parsing *parse, char *cwd);
 
 
 #endif

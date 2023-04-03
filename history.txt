@@ -122,6 +122,7 @@ unset PATH
 export
 ls
 echo dfthfh
+<<<<<<< HEAD
 sdghsfgh"sdghsfghsfgh
 sdfghsfdgh
 sfghsfgh
@@ -251,3 +252,269 @@ exit
 export
 env
 << eof | cat >> out
+=======
+SHELL=/bin/zsh
+SHELL=/bin/zsh
+SHELL=/bin/zsh
+SHELL=/bin/zsh
+history
+< history.txt wc -l
+< history.txt | wc -l
+< history.txt cat > test
+env
+export
+export VAR=123
+export
+./minishell
+export
+unset VAR
+export
+export AAA
+export
+export
+./minishell
+export
+export BBB=123
+export
+export
+export AAA
+export
+./minishell
+export
+>>>>>>> origin/axel
+<< eof cat >> out
+export
+export aaa bbb ccc=435
+export
+env
+minishell
+export
+env
+exit
+env
+export
+cd ..
+env
+pwd
+minishell
+./minishell
+ls
+cd minishell
+minishell
+env
+export
+export
+export
+cd ..
+pewd
+pwd
+cd ..
+cd ..
+pwd
+cd chmassa/desktop/minishell
+pwd
+echo $OLDPWD
+export VAR=ljfhgkdfjhgkdjhgkdjfhgkdjfhg
+echo $VAR
+cd ..
+env
+pwd
+env
+pwd
+export
+cd ..
+cd ..
+pwd
+cd minishell
+pwd
+cd ..
+cd ..
+pwd
+env
+export
+export
+cd ..
+export
+export
+cd ..
+cd ..
+cd ..
+cd ..
+export
+pwd
+export
+cd ..
+export
+pwd
+pwd
+cd ..
+pwd
+export
+cd ..
+pwd
+export
+pwd
+export
+cd ..
+export
+export
+cd ..
+echo $PWD
+pwd
+env
+export
+cd ..
+export
+cd ..
+export
+pwd
+export
+cd ..
+pwd
+cd ..
+pwd
+export
+export
+cd ..
+pwd
+cd ..
+cd
+cd 
+cd
+cd ..
+cd ..
+pwd
+cd ~
+cd ~
+cd ~
+cd 
+cd
+cd
+pwd
+cd desktop
+pwd
+cd ~
+pwd
+cd 
+cd desktop
+cd
+cd ..
+cd ~
+cd
+ cd
+cd ~
+cd 
+cd
+cd ~
+cd 
+cd ~
+cd 
+cd desktop
+cd desktop
+cd Desktop
+pwd
+cd ..
+cd ~
+cd 
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+pwd
+cd ..
+pwd
+export
+cd desktop
+cd ..
+p[wd
+pwd
+export
+pwd
+cd Desktop
+pwd
+export
+cd ..
+export
+cd ..
+export
+cd ~
+pwd
+export
+cd
+pwd
+export
+ls
+cd srcs
+export
+pwd
+export
+cd ..
+export
+pwd
+echo $OLDPWD
+export
+cd srcs
+export
+cd srcs
+cd srcs
+cd srcs
+cd srcs
+cd srcs
+export
+cd ..
+export
+pwd
+cd srcs
+pwd
+export
+cd ..
+cd ..
+pwd
+export
+cd srcs
+pwd
+export
+cd ~
+pwd
+export
+cd ..
+export
+echo $USER "$HOME     $USER"
+echo $USER "$HOME $PWD     $USER"
+echo $USER "$PWD $OLDPWD kjshkjhfkjhkrjhv""jhgfjkhfjhgf"
+pwd
+cd chmassa
+pwd
+
+cd desktop
+pwd
+cd minishell
+pwd
+echo "ugy           $HOME kuhgkuhgiouhfgkuhjg"
+echo $OLDPWD $PWD
+pwd
+echo $OLDPWD
+echo $PWD
+echo $PWD $OLDPWD
+echo $USER $HOME
+echo $USER $HOME $PWD
+pwd
+echo $USER $HOME $PWD      $OLDPWD
+echo "$USER   $PWD    $OLDPWD      $HOME"
+export
+./minishell
+echo $SHLVL
+ldhkjhgs ishg isurghi iuhidgg
+echo kjdhfgkjdfg "ljhgkjhg kjhgkjhg    kjhfkjhg 'uhgrkjhkjhgg'ojhfkjhgiouhiojeg"
+<< eof cat >> out

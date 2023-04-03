@@ -30,10 +30,16 @@ int	main(int ac, char **av, char **env)
 			// signal(SIGQUIT, SIG_IGN);
 			// signals_();
 			parse.input = readline("\033[3;36mminishell ->\033[0m ");
+			if (!parse.input)
+			{
+				printf("exit\n");
+				return (0);
+			}
 			ft_quotes(&parse);
 			add_history(parse.input);
 			ft_history(&parse);
 			ft_get_cmdline(&parse);
+			// ft_print_strs_array(env);
 			if (parse.lst_cmdline)
 			{
 				parse.env = ft_lst_to_char_tab(parse.lst_env);
@@ -41,7 +47,6 @@ int	main(int ac, char **av, char **env)
 				free(parse.env);
 				ft_lstdel_all(&parse.lst_cmdline);
 			}
-
 
 			parse.tmp_ret_value = parse.ret_value;
 			if (parse.str_tmp)

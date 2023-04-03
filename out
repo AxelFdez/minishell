@@ -1,5 +1,20 @@
+<<<<<<< HEAD
 aaa
 bbb
 $HOME
 $USER
 [3;36mminishell ->[0m 
+=======
+Makefile
+README.md
+includes
+libft
+minishell
+minishell.dSYM
+out
+save_info.txt
+save_info_axel.txt
+srcs
+test
+to_do.txt
+>>>>>>> origin/axel

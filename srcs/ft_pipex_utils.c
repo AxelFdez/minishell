@@ -92,6 +92,7 @@ void	parsing_cmd(t_parsing *parse)
 	cmd_lst_to_tab(parse);
 	if (access(parse->command[0], F_OK))
 		parse->command[0] = path_of_command(parse);
+		//exit(EXIT_FAILURE);
 	while (i < parse->lst_target)
 	{
 		ft_lstdel_front(&parse->lst_cmdline);
