@@ -40,7 +40,8 @@ static void	is_no_quote_string(t_parsing *parse)
 	while (parse->input[parse->i] && !is_meta_char(parse->input[parse->i])
 		&& parse->input[parse->i] != ' ')
 	{
-		if (parse->input[parse->i] == '$' && parse->input[parse->i +1] != ' ' && parse->input[parse->i +1] != '\0')
+		if (parse->input[parse->i] == '$' && parse->input[parse->i +1] != ' '
+			&& parse->input[parse->i +1] != '\0')
 		{
 			ft_handle_dollar(parse);
 			parse->len = 0;
@@ -52,11 +53,8 @@ static void	is_no_quote_string(t_parsing *parse)
 			parse->c = parse->input[parse->i];
 			parse->i++;
 			parse->len++;
-			while (parse->input[parse->i] != parse->c)
-			{
+			while (parse->input[parse->i++] != parse->c)
 				parse->len++;
-				parse->i++;
-			}
 			parse->quote_to_del++;
 		}
 		parse->len++;
@@ -64,7 +62,6 @@ static void	is_no_quote_string(t_parsing *parse)
 	}
 	ft_fill_lst(&parse->lst_cmdline, parse, parse->i - parse->len);
 	parse->len = 0;
-	parse->quote_to_del = 0;
 }
 
 static void	ft_parseur(t_parsing *parse)
@@ -97,7 +94,7 @@ void	ft_get_cmdline(t_parsing *parse)
 	parse->input = ft_strtrim_free_s1(parse->input, " ");
 	parse->ret_value = ft_check_syntax(parse);
 	ft_parseur(parse);
-	//ft_lstprint_from_head(parse->lst_cmdline);
+	ft_lstprint_from_head(parse->lst_cmdline);
 	//ft_lstdel_all(&parse->lst_cmdline);
 	// ft_lstprint_from_head(parse->lst_cmdline);
 	//ft_lstdel_all(&parse->lst_cmdline);

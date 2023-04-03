@@ -61,3 +61,9 @@ save de 31/03 -2- :
 
 save de 01/04 :
 - ft_history.c ajouté. Doit etre inclus dans les commandes.
+
+save de 01/04 -2- :
+- ft_handle_dollar_in_str.c,
+    tout semble fonctionner,
+    $? entre "" OK,
+    comparaison des variables avec la liste 'lst_env' OK.  

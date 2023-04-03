@@ -26,6 +26,7 @@ typedef struct s_parsing
 	int		ret_value;
 	int		tmp_ret_value;
 	int		i;
+	int		i_b;
 	int		j;
 	int		k;
 	int		fd_history[2];
@@ -35,6 +36,7 @@ typedef struct s_parsing
 	char	c;
 	char	*meta[6];
 	int		len;
+	int		len_b;
 	int		quote_to_del;
 	char	*input;
 	char	*prompt;
