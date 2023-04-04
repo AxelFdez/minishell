@@ -157,19 +157,15 @@ void execute_cmd(t_parsing *parse)
 {
 	pid_t child;
 
+	built_in_works(parse);
 	if (!parse->lst_cmdline)
 		return ;
-	built_in_works(parse);
-	// print_list(parse->lst_cmdline);
-	// exit(EXIT_FAILURE);
 	child = fork();
 	if (child < 0)
 		perror("fork error\n");
 	else if (child == 0)
 	{
 		check_herringbone(parse);
-		if (!parse->lst_cmdline)
-			exit(EXIT_SUCCESS);
 		parse->built_in_cmd = 0;
 		if (check_builtin_input(parse) == 1)
 			parsing_cmd(parse);
@@ -180,9 +176,9 @@ void execute_cmd(t_parsing *parse)
 		if (parse->built_in_cmd > 0)
 			execute_built_in(parse);
 		execve(parse->command[0], parse->command, parse->env);
-		perror("command not found");
+		//perror("command not found");
 	}
-	wait(NULL);
+	wait(&child);
 	//exit(EXIT_FAILURE);
 }
 

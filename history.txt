@@ -1,394 +1,43 @@
-history
-export
-dfgljh
-echo toi
-echo toi
-echo toi
-echo toi
-echo toi
-echo toi
-echo toi
-echo "$USER"
-echo "$USER"
-echo "$USER"
-echo "$USER"
-echo "$USER"
-echo "$USER"
-echo "$USER"
-echo "$USER"
-echo "$USER"
-echo "$USER"
-echo "$USER"
-echo "$USER"
-echo kljshf
-echo iuyriuyreiue
-echo ljhfi
-echo lkjhd
-echo guiewuy
-echo ouhcdiu
-echo $HOME
-echo $HOMEew
-echo "$USER $HJKKJH"
-echo "$USER kjh $HJKIY"
-echo kjhrfgju
-echo "$HOME kjhdjhd $JYGH"
-echo "uhf $USER lkjfikjhi $HOME lkjhfk $LJKHJUH $JHGJHG"
-export VAR89=4567890
-export
-echo "$VAR*("
-echo "$VAR89"
-echo "$USER $USER $IGGT $HOME $USER fouhfkujhf"
-echo "$USER $HJKKJ"
-echo "$IUYIU $USER"
-echo "$OIUHU $USER"
-echo "$USER"
-echo "$HFDYTFHT"
-echo "$HFDYTFHT $USER"
-"$jhygujyg $USER kjhfkjhfkjhf"
-$?
-echo $?
-echo "$?"
-echo "$?"
-echo "$? $USERT $HOME"
-echo "$? $USER $HOME"
-echo $? $USER $HOME
-echo "$USER $JUHGJH khgkugh ikhkiuh kuhiuhk"
-echo "$USER $JHGJHG kjhkg oihjg"
-echo "$USER jhgj $HOME lkflkjf foijflkjf lkjflkjg $GGGGG"
-echo "$KJHKJH $USER    $HOME lkjfkjf"
-echo kjfdjhf kjhdfkjhf $USER
-echo hgd hgjhgd     jkdhgjhdgjd $USER kjd  $KJHH
-echo hgd hgjhgd     jkdhgjhdgjd $USER kjd  $KJHH
-echo hgd hgjhgd     jkdhgjhdgjd $USER kjd  $KJHH
-echo kjhdkjhfjhf "fljkhflkjhfljkhlf""ljhflkjhfkjhfkjhfkjhf"
-echo kjhdkjhfjhf "fljkhflkj'hfljkhlf""ljhflkj'''''hfkjhfkjhfkjhf"
-echo hgd hgjhgd     jkdhgjhdgjd $USER kjd  $KJHH
-echo hgd hgjhgd     jkdhgjhdgjd $USER kjd  $KJHH 
-$KJHJ
-$
-echo $
-echo $
-echo $USER "khggh$USER ojflkjhfkjhf"
-echo $USER "khggh$USER              '       ojflkjhfkjhf"
-echo $USER "$USER"
-echo $USER "$USER   "
-echo "$USER     "
-echo $USER
-echo "$USER"
-echo "$USER  "
-echo "$USER "
-echo "$USER  "
-echo "$USER      "
-echo "$USER                                         p"
-echo "$USER                                         p"
-echo "ljhfg    oifhjglihjfg                                              ioj"
-echo "ljhfg    oifhjglihjfg                                              ioj"
-echo "ljhfg    oifhjglihjfg                                              ioj"
-echo "ljhfg    oifhjglihjfg                                              ioj"
-echo "ljhfg    oifhjglihjfg                                              ioj"
-echo "ljhfg    oifhjglihjfg            $HOME                                  ioj"
-echo "ljhfg    oifhjglihjfg            $HOME                                  ioj"
-echo "$USER $HOME $USEr $PWD $SHLLVL"
-export
-echo "$USER $HOME $USEr $PWD $SHLVL"
-echo "khjdfkdfjh    oiduhfkudhfidfgu    oihdjlfibjhldijbdfgbdfbgtb"
-echo "$USER"
-echo "$USER "
-echo "$USER "
-echo "$USER "
-echo "$USER "
-echo "$USER "
-echo "$USER      "
-echo "$USER   "
-echo "$USER   "
-echo "$USER $HOME"
-echo "$USER $HOME"
-echo "$HOME"
-echo "$HOME"
-echo "$USER"
-echo "$USER"
-echo "$USER"
-echo "$USER    "
-echo "$USER           "
-echo "$USER           $HOME"
-echo "$USER       fhfthh    $HOME"
-echo $USER lkglkjglktjgh "$USER       fhfthh    $HOME"
-echo kjsfhkj$HOME "$USER""$HOME"
-echo $HOME ",sjnfkjshgkfjg""fgkdfjksdfjhgkjfhkjdhfgfd"
-export
-minishell
-export
-unset PATH
-export
+cat | cat | wc
 ls
-echo dfthfh
-SHELL=/bin/zsh
-SHELL=/bin/zsh
-SHELL=/bin/zsh
-SHELL=/bin/zsh
-history
-< history.txt wc -l
-< history.txt | wc -l
-< history.txt cat > test
-env
-export
-export VAR=123
-export
-./minishell
-export
-unset VAR
-export
-export AAA
-export
-export
-./minishell
-export
-export BBB=123
-export
-export
-export AAA
-export
-./minishell
-export
-< eof cat
-<< eof cat
-<< eof cat >> out
-<< eof cat > out
-<< eof cat > out
-<< test cat > out
-<< eof cat > out
-<< eof cat > out
-make
-< test cat -e > 1
-<< eof cat -e > 2
-cat 2
+cat /dev/urandom | head
+cat /dev/urandom | head
+ls -l > out | wc
+cat wc
+cat out
 ls
-< test cat > out
-<< eof cat > out
+
 ls
+fasdf
+ls
+ls -l
+lfasdf
+ls
+ls
+lafa
+ls
+ls -la
+ls | cat -e
+ls | cat -e | cat -e
+cat | cat | ls
+cat | cat | ls
+cat | cat | ls
+cat | cat | ls
+
+ls -l | wc | cat -e
 < test cat
-< test > out cat
-cat out
-< ls > out
-<< eof cat
-<< eof cat > out
-<< eof cat > out
-<< eof cat > out
-<< eof cat > out
-make
-<< eof cat > out
-cat out
-<< eof cat > out
-<< eof cat > out
-< test cat > 3
-cat 3
-cat test
-make
-< test cat > out
-cat out
-make
-cat out
-< test cat > out
-cat out
-< test cat > out
-cat out
-< test cat > out
-make
-< test cat > out
-cat out
-< test cat > out
-< test cat > out
-< test cat
-<< eof cat 
-<< eof cat > out
-cat out
-<< eof cat -e > out
-cat out
-rm 1 2 3
-> 1 > 2 > 3 ls
-rm 1 3
-> 1 > 2 > 3 ls
-rm 1 3
-> 1 > 2 > 3 ls
-< test cat > out
-< test
-ls
-< test
-< ls < test cat > out
-cat out
-ls
-> 1 > 2 > 3 ls
-make
-> 1 > 2 > 3 ls
-> 1 > 2 > 3 ls
-make
-> 1 > 2 > 3 ls
-> 1 > 2 > 3 ls
-> 1 > 2 > 3 ls
-make
-> 1 > 2 > 3 ls
-make
-./minishell
-> 1 > 2 > 3 ls
-> 1 > 2 > 3 ls
-make
-./minishell
-./minishell
-> 1 > 2 > 3 ls
- ls -l
-
-
-
-
-1 > 2 > 3 ls -l
-rm 1 2 3
-
-rm 1 2 3
-> 1 > 2 > 3 ls -l
-> 1 > 2 > 3 ls
-make
-4 > 5 > 6 ls
-> 4 > 5 > 6 ls
-> 1 > 2 > 3 ls
-cat 3
-make
-> 1 > 2 > 3 ls
-make
-> 1 > 2 > 3 ls
-make
-> 1 > 2 > 3 ls
-cat 3
-make
-> 1 > 2 > 3 ls
-cat 3
-make
-> 1 > 2 > 3 ls
-cat 3
-> 1 > 2 > 3 ls
-> 1 > 2 > 3 ls
-> 1 > 2 > 3 ls
-> 1 > 2 > 3 ls
-> 1 > 2 > 3 ls
-make
-> 1 > 2 > 3 ls
-> 1 > 2 > 3 ls
-> 1 > 2 > 3 ls
-> 1 > 2 > 3 ls -l
-> 1 > 2 > 3 ls
-> 1 > 2 > 3 ls
-> 1 > 2 > 3 ls
-> 1 > 2 > 3 ls
-> 1 > 2 > 3 ls
-> 1 > 2 > 3 ls
-> 1 > 2 > 3 ls
-> 1 > 2 > 3 ls - l
-> 1 > 2 > 3 ls - l | cat -e
-> 1 > 2 > 3 | cat -e
-> 1 > 2 > 3 ls
-make
-rm 1 2 3
-> 1 > 2 > 3 ls
-< test cat > out
-<< eof eof > 2
-<< eof cat > 2
-cat 2
-rm 1 2 3
-ls
-< cd ..
-< test > 5 cd ..
-ls
-< test < 5 cat
-< test < 5 cat
-< test cat
-cat 5
-< test < 5 cat
-< test < 5 cat
-make
-< test < 5
-cat
-< test < 5 cat
-< test < 5 cat
-< test < 5 cat
-> 1 > 2 > 3 ls
-make
-< test < 5 cat
-> 1 > 2 > 3 ls
-> 1 > 2 > 3 ls
-> 1 > 2 > 3 ls
-> 1 > 2 > 3 ls
-< test < 3 cat
-make
-< test < 3 cat
-make
-ls
-< test | cat -e
-
 < test cat | cat -e
-< test cat | wc | echo coucou
-history
+> out cat | wc
 ls
-rm 1 2 3
-<< eof cat -e | >> 3
-cat 3
-rm 3
-<< eof cat -e | >> 3
-
-<< eof << cc cat
-<< eof << cc cat
-ls >> out >> 3
-ls >> out >> 3
-cd ..
-ls
-cd minishell 
-ls
-> 2 cd ..
-ls
-pwd
-> 3 cd ..
-pwd
-cd ..
-ls
-cd minishell 
-ls
-rm 2 3
-ls
-make
-ls
-cd ..
-ls
-> 1 cd ..
-ls
-rm 1
-ls
-cd minishell 
-ls
-> 1 cd ..
-ls
-rm 1
-> 1 cd ..
-;s
-ls
-cd ..
-ls
-cd minishell 
-cd .. < 2
-;s
-ls
-rm 1 2
-> 2 cd ..
-ls
-< 2 < test
-< 2 > 3
-cd ..
-ls
-cd minishell 
-ls
-cd .. > 4
+ls -l
+> out ls | wc
+cat out
 ls
 ls
-cd minishell 
+> out ls
+cat out
+cat out | wc
+> out ls | wc
 ls
-> 4 cd ..
-ls
-ls
-make
+lsafadsf | fdsaf
+slaf | dasgfad

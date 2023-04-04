@@ -48,3 +48,4 @@ exit : fonctionne seul
 A tester :
 - enchainer les redirections droite
 - cat cat ls
+- si redirection fermante pas de redirection dans le pipe.

@@ -22,7 +22,7 @@ typedef struct s_cmd
 
 typedef struct s_parsing
 {
-	
+
 	int		ret_value;
 	int		tmp_ret_value;
 	int		i;
@@ -49,6 +49,7 @@ typedef struct s_parsing
 	int		built_in_cmd;
 	int		built_in_last_cmd;
 	int		last_pipe;
+	int		redirection_out;
 }				t_parsing;
 
 
@@ -84,7 +85,7 @@ void	ft_check_built_in(t_parsing *parse);
 void	ft_sort_env(t_list **lst);
 void	ft_echo(t_list *tmp, t_parsing *parse);
 int		ft_env(t_parsing *parse);
-int		ft_pwd(void);
+int		ft_pwd(t_parsing *parse);
 int		ft_export(t_parsing *parse);
 void	ft_print_sorted_env(t_parsing *parse);
 void	ft_handle_dollar_no_quotes(t_parsing *parse);
@@ -110,6 +111,9 @@ void	print_list(t_list *list);
 void	ft_history(t_parsing *parse);
 void	ft_check_history_size(t_parsing *parse);
 void	ft_print_history(t_parsing *parse);
+void	del_parsed_cmd(t_parsing *parse);
+void	pipe_child(t_parsing *parse, int pfd[2], int pipe_temp, int dup);
+// void	ft_update_pwd(t_parsing *parse, char *cwd);
 
 
 #endif

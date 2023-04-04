@@ -73,3 +73,5 @@ save de 03/04 :
 - ajout de ft_lst_to_char_tab
 - ajout ft_increment_shlvl
 
+save de 03/04 -2- :
+- Mise a jour des variables PWD et OLDPWD OK !

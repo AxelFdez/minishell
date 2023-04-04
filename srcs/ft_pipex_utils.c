@@ -92,15 +92,11 @@ void	parsing_cmd(t_parsing *parse)
 	cmd_lst_to_tab(parse);
 	if (access(parse->command[0], F_OK))
 		parse->command[0] = path_of_command(parse);
-		//exit(EXIT_FAILURE);
 	while (i < parse->lst_target)
 	{
 		ft_lstdel_front(&parse->lst_cmdline);
 		i++;
 	}
-		// ft_lstprint_from_head(parse->lst_cmdline);
-		// exit(EXIT_FAILURE);
-	//printf("ret = %d\n", parse->lst_target);
 }
 
 int	count_pipe_until_sep(t_list *list)

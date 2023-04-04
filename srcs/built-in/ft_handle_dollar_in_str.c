@@ -65,7 +65,8 @@ static void	ft_loop(t_parsing *parse, t_list **lst)
 			while (parse->str_tmp[parse->i_b]
 				&& parse->str_tmp[parse->i_b] != ' '
 				&& parse->str_tmp[parse->i_b] != '\"'
-				&& parse->str_tmp[parse->i_b] != '\'')
+				&& parse->str_tmp[parse->i_b] != '\''
+				&& parse->str_tmp[parse->i_b] != '\n')
 			{
 				parse->len_b++;
 				parse->i_b++;
@@ -93,11 +94,8 @@ void	ft_handle_dollar_in_str(t_parsing *parse)
 	parse->len_b = 0;
 	parse->i_b = 0;
 	parse->str_tmp = ft_substr(parse->input, parse->i - parse->len, parse->len);
-	printf("str_tmp = %s\n", parse->str_tmp);
 	tmplst = NULL;
 	ft_loop(parse, &tmplst);
-	puts("tmplst = ");
-	ft_lstprint_from_head(tmplst);
 	ft_replace_value(parse, &tmplst);
 	free(parse->str_tmp);
 	parse->str_tmp = ft_lst_to_str(tmplst);

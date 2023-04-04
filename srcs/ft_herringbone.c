@@ -44,28 +44,20 @@ void	input_redirection(t_list **parse)
 	fd = open((*parse)->str, O_RDONLY);
 	dup2(fd, STDIN_FILENO);
 	close(fd);
-	// printf("\nprev = %p\n", (*parse)->prev);
-	// printf("\nnext = %p\n", (*parse)->next);
-	// exit(EXIT_FAILURE);
 	ft_lstdel_current(&(*parse));
 }
 
 void	output_redirection(t_list **parse)
 {
 	int fd;
+
 	ft_lstdel_current(&(*parse));
-	//print_list((*parse));
 	fd = open((*parse)->str, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (fd < 0)
 		perror((*parse)->str);
 	dup2(fd, STDOUT_FILENO);
 	close(fd);
 	ft_lstdel_current(&(*parse));
-	//print_list((*parse));
-	// print_list((*parse));
-	// exit(EXIT_FAILURE);
-	// printf("\n\n");
-	// print_list((*parse));
 }
 
 void	ft_append(t_list **parse)
@@ -92,6 +84,7 @@ void ft_heredoc(t_list **parse)
 	ft_lstdel_current(&(*parse));
 	while (1)
 	{
+		//signal(SIGQUIT, SIG_IGN);
 		temp = readline("> ");
 		if (ft_strcmp(temp, (*parse)->str) == 0)
 			break ;
@@ -123,12 +116,16 @@ int check_herringbones_input(t_parsing *parse)
 
 void	check_herringbone(t_parsing *parse)
 {
+	parse->redirection_out = 0;
 	while (check_herringbones_input(parse) == 0 && parse->lst_cmdline->str[0] != '|' && parse->lst_cmdline != NULL)
 	{
 		if (ft_strcmp(parse->lst_cmdline->str, "<") == 0)
 			input_redirection(&parse->lst_cmdline);
 		else if (ft_strcmp(parse->lst_cmdline->str, ">") == 0)
+		{
+			parse->redirection_out = 1;
 			output_redirection(&parse->lst_cmdline);
+		}
 		else if (ft_strcmp(parse->lst_cmdline->str, "<<") == 0)
 			ft_heredoc(&parse->lst_cmdline);
 		else if (ft_strcmp(parse->lst_cmdline->str, ">>") == 0)
@@ -137,9 +134,9 @@ void	check_herringbone(t_parsing *parse)
 			break;
 		if (parse->lst_cmdline->str[0] != '>' && parse->lst_cmdline->str[0] != '<')
 			parse->lst_cmdline = parse->lst_cmdline->next;
-		// if (parse->lst_cmdline->str[0] != '<')
-		// 	parse->lst_cmdline = parse->lst_cmdline->next;
 	}
 	while (parse->lst_cmdline->prev != NULL)
 		parse->lst_cmdline = parse->lst_cmdline->prev;
+	if (!parse->lst_cmdline)
+			exit(EXIT_SUCCESS);
 }
