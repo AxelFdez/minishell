@@ -9,6 +9,7 @@
 # include <fcntl.h>
 # include "../libft/libft.h"
 # include <signal.h>
+# include <sys/wait.h>
 
 typedef struct s_cmd
 {
@@ -45,11 +46,10 @@ typedef struct s_parsing
 	t_list	*lst_env;
 	char	**command;
 	int		lst_target;
-	int		fd[2];
 	int		built_in_cmd;
 	int		built_in_last_cmd;
-	int		last_pipe;
 	int		redirection_out;
+	int		fd_stdout;
 }				t_parsing;
 
 

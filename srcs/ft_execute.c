@@ -178,7 +178,8 @@ void execute_cmd(t_parsing *parse)
 		execve(parse->command[0], parse->command, parse->env);
 		//perror("command not found");
 	}
-	wait(&child);
+	waitpid(child, 0, 0);
+	//system("lsof -c minishell");
 	//exit(EXIT_FAILURE);
 }
 

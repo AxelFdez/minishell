@@ -117,6 +117,7 @@ int check_herringbones_input(t_parsing *parse)
 void	check_herringbone(t_parsing *parse)
 {
 	parse->redirection_out = 0;
+	parse->fd_stdout = dup(STDOUT_FILENO);
 	while (check_herringbones_input(parse) == 0 && parse->lst_cmdline->str[0] != '|' && parse->lst_cmdline != NULL)
 	{
 		if (ft_strcmp(parse->lst_cmdline->str, "<") == 0)

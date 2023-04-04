@@ -2,6 +2,7 @@
 
 int	ft_pwd(t_parsing *parse)
 {
+	(void)parse;
 	char	buffer[4096];
 	char	*cwd;
 	parse = NULL;
