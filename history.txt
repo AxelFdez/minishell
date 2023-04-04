@@ -518,3 +518,26 @@ echo $SHLVL
 ldhkjhgs ishg isurghi iuhidgg
 echo kjdhfgkjdfg "ljhgkjhg kjhgkjhg    kjhfkjhg 'uhgrkjhkjhgg'ojhfkjhgiouhiojeg"
 << eof cat >> out
+history
+echo "$HOME"
+echo toi
+export 
+cd ..
+pwd
+export
+env
+clear
+clear
+cd ..
+cd ..
+pwd
+pwd
+export
+echo "   $USER                kjjkh$HOME"
+echo $USER    "   $HOME kjhfkjhgfkj   ljfhgkjhkfjhb   "
+echo "$USER
+$HOME
+$OLDPWD
+$PWD"
+ /Users/chmassa/.vscode/extensions/vadimcn.vscode-lldb-1.9.0/adapter/codelldb terminal-agent --connect=50798 
+echo "$USER"
