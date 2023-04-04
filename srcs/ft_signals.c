@@ -32,7 +32,7 @@
 // 	return 0;
 // }
 
-/*void handle_signals(int sig)
+void handle_signals(int sig)
 {
 	//int pid = getpid();
 	if (sig == 2)
@@ -68,4 +68,4 @@ void signals_(void)
 	sigaction(SIGINT, &sa, NULL);
 	sigaction(SIGQUIT, &sa, NULL);
 	sigaction(SIGSTOP, &sa, NULL);
-}*/
+}

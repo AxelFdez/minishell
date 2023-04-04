@@ -1,543 +1,96 @@
-history
-export
-dfgljh
-echo toi
-echo toi
-echo toi
-echo toi
-echo toi
-echo toi
-echo toi
-echo "$USER"
-echo "$USER"
-echo "$USER"
-echo "$USER"
-echo "$USER"
-echo "$USER"
-echo "$USER"
-echo "$USER"
-echo "$USER"
-echo "$USER"
-echo "$USER"
-echo "$USER"
-echo kljshf
-echo iuyriuyreiue
-echo ljhfi
-echo lkjhd
-echo guiewuy
-echo ouhcdiu
-echo $HOME
-echo $HOMEew
-echo "$USER $HJKKJH"
-echo "$USER kjh $HJKIY"
-echo kjhrfgju
-echo "$HOME kjhdjhd $JYGH"
-echo "uhf $USER lkjfikjhi $HOME lkjhfk $LJKHJUH $JHGJHG"
-export VAR89=4567890
-export
-echo "$VAR*("
-echo "$VAR89"
-echo "$USER $USER $IGGT $HOME $USER fouhfkujhf"
-echo "$USER $HJKKJ"
-echo "$IUYIU $USER"
-echo "$OIUHU $USER"
-echo "$USER"
-echo "$HFDYTFHT"
-echo "$HFDYTFHT $USER"
-"$jhygujyg $USER kjhfkjhfkjhf"
-$?
-echo $?
-echo "$?"
-echo "$?"
-echo "$? $USERT $HOME"
-echo "$? $USER $HOME"
-echo $? $USER $HOME
-echo "$USER $JUHGJH khgkugh ikhkiuh kuhiuhk"
-echo "$USER $JHGJHG kjhkg oihjg"
-echo "$USER jhgj $HOME lkflkjf foijflkjf lkjflkjg $GGGGG"
-echo "$KJHKJH $USER    $HOME lkjfkjf"
-echo kjfdjhf kjhdfkjhf $USER
-echo hgd hgjhgd     jkdhgjhdgjd $USER kjd  $KJHH
-echo hgd hgjhgd     jkdhgjhdgjd $USER kjd  $KJHH
-echo hgd hgjhgd     jkdhgjhdgjd $USER kjd  $KJHH
-echo kjhdkjhfjhf "fljkhflkjhfljkhlf""ljhflkjhfkjhfkjhfkjhf"
-echo kjhdkjhfjhf "fljkhflkj'hfljkhlf""ljhflkj'''''hfkjhfkjhfkjhf"
-echo hgd hgjhgd     jkdhgjhdgjd $USER kjd  $KJHH
-echo hgd hgjhgd     jkdhgjhdgjd $USER kjd  $KJHH 
-$KJHJ
-$
-echo $
-echo $
-echo $USER "khggh$USER ojflkjhfkjhf"
-echo $USER "khggh$USER              '       ojflkjhfkjhf"
 echo $USER "$USER"
-echo $USER "$USER   "
-echo "$USER     "
-echo $USER
-echo "$USER"
-echo "$USER  "
-echo "$USER "
-echo "$USER  "
-echo "$USER      "
-echo "$USER                                         p"
-echo "$USER                                         p"
-echo "ljhfg    oifhjglihjfg                                              ioj"
-echo "ljhfg    oifhjglihjfg                                              ioj"
-echo "ljhfg    oifhjglihjfg                                              ioj"
-echo "ljhfg    oifhjglihjfg                                              ioj"
-echo "ljhfg    oifhjglihjfg                                              ioj"
-echo "ljhfg    oifhjglihjfg            $HOME                                  ioj"
-echo "ljhfg    oifhjglihjfg            $HOME                                  ioj"
-echo "$USER $HOME $USEr $PWD $SHLLVL"
-export
-echo "$USER $HOME $USEr $PWD $SHLVL"
-echo "khjdfkdfjh    oiduhfkudhfidfgu    oihdjlfibjhldijbdfgbdfbgtb"
-echo "$USER"
-echo "$USER "
-echo "$USER "
-echo "$USER "
-echo "$USER "
-echo "$USER "
-echo "$USER      "
-echo "$USER   "
-echo "$USER   "
-echo "$USER $HOME"
-echo "$USER $HOME"
-echo "$HOME"
-echo "$HOME"
-echo "$USER"
-echo "$USER"
-echo "$USER"
-echo "$USER    "
-echo "$USER           "
-echo "$USER           $HOME"
-echo "$USER       fhfthh    $HOME"
-echo $USER lkglkjglktjgh "$USER       fhfthh    $HOME"
-echo kjsfhkj$HOME "$USER""$HOME"
-echo $HOME ",sjnfkjshgkfjg""fgkdfjksdfjhgkjfhkjdhfgfd"
-export
-minishell
-export
-unset PATH
-export
-ls
-echo dfthfh
-<<<<<<< HEAD
-sdghsfgh"sdghsfghsfgh
-sdfghsfdgh
-sfghsfgh
-sfghsfgh"
-< test
-echo "fsghsfghsfghsfgh'fsghsfghsfghsfghsfghsfgh
-sfghsfgh
-sfghsfgh"
-"Dghsdlfkjlkhjldfh''''''''''"
-<< eof | >> eof
-echo "$HOME
-$USER
-$HOME
-"
-echo "$USER $HOME"
-echo "lkjhsfglkjfsg
-dyhdfjh
-dfndfgj
-dfghndfghjm
-ghmdghjdghjdghdghm"
-echo "lkjhsfglkjfsg
-dyhdfjh
-dfndfgj
-dfghndfghjm
-ghmdghjdgh$USER jdghdghm"
-echo "lkjhsfglkjfsg
-dyhdfjh
-dfndfgj
-dfghndfghjm
-ghmdghjdgh$USER jdghdgh$HOME m"
-echo "$USER
-$HOME"
-echo "aaaaa
-bbbbb"
-echo "AAAAA$USER
-BBBB"
-echo "$USER
-$HOME"
-kdjhkdhgkd "ekjhgkehgkdjuhkeg
-hdf
-dfhj
-dhj
-dhgj
-dgj
-fd
-dmn'''''dfhjndgn'
-''dfn
-'"
-echo "$USER
-$HOME"
-echo '$USER
-$HOME'
-export
-minishell
-export
-exit
-export
-export VAR1=42 VAR2=789
-export
-minishell
-export
-exporta
-export a
-export
-env
-./minishell
-export
-env
-export
-export AAAA BBBB CCCC=6788
-export
-minishell'
-'
-export
-minishell
-export
-export AAA BBB CCC=789
-export
-minishell
-export
-minishell
-export aaa bbb
-export
-export
-export aaa bbb
-export
-env
-export
-export var=890
-export
-env
-export
-minishell
-./minishell
-./minishell
-
-
-minishell
-export
-export aaa bbb var=65
-export
-env
-export
-minishell
-export aaa bbb var=890
-export
-env
-export
-minishell
-export
-export aaa bbb var=78
-minishell
-export
-exit
-export
-export aaa bbb var=890
-export
-minishell
-export
-env
-export aaa bbb ccc=789
-export
-minishell
-export
-env
-exit
-export
-env
-<< eof | cat >> out
-=======
-SHELL=/bin/zsh
-SHELL=/bin/zsh
-SHELL=/bin/zsh
-SHELL=/bin/zsh
-history
-< history.txt wc -l
-< history.txt | wc -l
-< history.txt cat > test
-env
-export
-export VAR=123
-export
-./minishell
-export
-unset VAR
-export
-export AAA
-export
-export
-./minishell
-export
-export BBB=123
-export
-export
-export AAA
-export
-./minishell
-export
->>>>>>> origin/axel
-<< eof cat >> out
-export
-export aaa bbb ccc=435
-export
-env
-minishell
-export
-env
-exit
-env
-export
-cd ..
-env
-pwd
-minishell
-./minishell
-ls
-cd minishell
-minishell
-env
-export
-export
-export
-cd ..
-pewd
-pwd
-cd ..
-cd ..
-pwd
-cd chmassa/desktop/minishell
-pwd
-echo $OLDPWD
-export VAR=ljfhgkdfjhgkdjhgkdjfhgkdjfhg
-echo $VAR
-cd ..
-env
-pwd
-env
-pwd
-export
-cd ..
-cd ..
-pwd
-cd minishell
-pwd
-cd ..
-cd ..
-pwd
-env
-export
-export
-cd ..
-export
-export
-cd ..
-cd ..
-cd ..
-cd ..
-export
-pwd
-export
-cd ..
-export
-pwd
-pwd
-cd ..
-pwd
-export
-cd ..
-pwd
-export
-pwd
-export
-cd ..
-export
-export
-cd ..
-echo $PWD
-pwd
-env
-export
-cd ..
-export
-cd ..
-export
-pwd
-export
-cd ..
-pwd
-cd ..
-pwd
-export
-export
-cd ..
-pwd
-cd ..
-cd
-cd 
-cd
-cd ..
-cd ..
-pwd
-cd ~
-cd ~
-cd ~
-cd 
-cd
-cd
-pwd
-cd desktop
-pwd
-cd ~
-pwd
-cd 
-cd desktop
-cd
-cd ..
-cd ~
-cd
- cd
-cd ~
-cd 
-cd
-cd ~
-cd 
-cd ~
-cd 
-cd desktop
-cd desktop
-cd Desktop
-pwd
-cd ..
-cd ~
-cd 
-cd ..
-cd ..
-cd ..
-cd ..
-cd ..
-cd ..
-cd ..
-cd ..
-cd ..
-cd ..
-cd ..
-cd ..
-cd ..
-cd ..
-cd ..
-pwd
-cd ..
-pwd
-export
-cd desktop
-cd ..
-p[wd
-pwd
-export
-pwd
-cd Desktop
-pwd
-export
-cd ..
-export
-cd ..
-export
-cd ~
-pwd
-export
-cd
-pwd
-export
-ls
-cd srcs
-export
-pwd
-export
-cd ..
-export
-pwd
-echo $OLDPWD
-export
-cd srcs
-export
-cd srcs
-cd srcs
-cd srcs
-cd srcs
-cd srcs
-export
-cd ..
-export
-pwd
-cd srcs
-pwd
-export
-cd ..
-cd ..
-pwd
-export
-cd srcs
-pwd
-export
-cd ~
-pwd
-export
-cd ..
-export
-echo $USER "$HOME     $USER"
-echo $USER "$HOME $PWD     $USER"
-echo $USER "$PWD $OLDPWD kjshkjhfkjhkrjhv""jhgfjkhfjhgf"
-pwd
-cd chmassa
-pwd
-
-cd desktop
-pwd
-cd minishell
-pwd
-echo "ugy           $HOME kuhgkuhgiouhfgkuhjg"
-echo $OLDPWD $PWD
-pwd
-echo $OLDPWD
-echo $PWD
-echo $PWD $OLDPWD
-echo $USER $HOME
-echo $USER $HOME $PWD
-pwd
-echo $USER $HOME $PWD      $OLDPWD
-echo "$USER   $PWD    $OLDPWD      $HOME"
-export
-./minishell
-echo $SHLVL
-ldhkjhgs ishg isurghi iuhidgg
-echo kjdhfgkjdfg "ljhgkjhg kjhgkjhg    kjhfkjhg 'uhgrkjhkjhgg'ojhfkjhgiouhiojeg"
-<< eof cat >> out
-history
-echo "$HOME"
-echo toi
-export 
-cd ..
-pwd
-export
-env
-clear
-clear
-cd ..
-cd ..
-pwd
-pwd
-export
-echo "   $USER                kjjkh$HOME"
-echo $USER    "   $HOME kjhfkjhgfkj   ljfhgkjhkfjhb   "
-echo "$USER
-$HOME
-$OLDPWD
-$PWD"
- /Users/chmassa/.vscode/extensions/vadimcn.vscode-lldb-1.9.0/adapter/codelldb terminal-agent --connect=50798 
-echo "$USER"
+echo $USER "$USER iuhgogoiguh$HOME sfdhgyhh"
+echo ldjgldjglkdjfgldkjgldjglkdjglkdjflgkjdflkgj"
+edglkjlfgkjg
+adgefgkjh$USER dlijbdlkijbglkjdgl 
+fhfdhjfehjdf'fhsgkjlgkjlfkjhfghyhhg'"
+echo "gfuyfg iuhdfiuhf
+ekrufhieurgf
+efjhkuhjg$USER 
+fhlijhlkjhyh
+fhfh
+fshfsgdnfdn"
+djkhsbjhbgf"
+kjh$USER kjhfgkjhfg
+kjhfkjhfgkjhfkjnfkjnhfkb"
+echo kjhdkjhbkv"klu
+dfb
+sdb
+jkhg$USER lkjv
+gdhmdgm
+dghmndghmdghm"
+echo "kjhkvjh
+jhgvdjhgvdjhvb$USER "
+echo kjhkj"
+jhgdf
+jghf$USER "
+echo jhbdhb"kjdhkjhdkjhd"
+echo kjshf"hgf$USER jygxu"
+echo "hgf$USER jygxu"
+echo "jhg$USER kjhkjhgf"
+echo hgfjhgjhf"jhg$USER kjhkjhgf"
+echo lkjh"jhgg$USER kjdkjhgf"
+echo "lkjhjh$USER jgjhygy"
+echo iuyyu "lkjhjh$USER jgjhygy"
+echo iuyyu"lkjhjh$USER jgjhygy"
+echo aaa"kjh$USER kjhfjf"
+echo aaa"fff$USER kjhf"
+echo fff$USER kjhf
+echo aaa"fff$USER gugu"
+echo aaa"GGG$USER iygi"
+echo aaa"GGG$USER oliju"
+echo AAA"BBB$USER uytuyt"
+echo AAA"BBB$USER GGG"
+echo AAA"$USER iigiiuy"
+echo AAA"GGG$USER ikuhiuhiuh"
+echo AAA"BBB$USER OOO"
+echo AAA"BBB$USER JJJ"
+echo AAA"BBB$USER UUU"
+echo AAA"BBB$USER NNN"
+echo AAA"BBB$USER YYY"
+echo GGGGG"JFGYG$USER . khfuhfuhf"
+echo kjshkjhskjsgdfh$USER
+echo "$USER ufkjhgfjkhgjfhgf"
+echo aaaaaaaaa"$USER ufkjhgfjkhgjfhgf"
+echo kjshkjhskjsgdfh$USER
+aaaaa$USER lkjljlkj
+echo aaaaa$USER lkjljlkj
+echo aaaaa"$USER lkjljlkj"
+echo aaaaa"aaa$USER lkjljlkj"
+echo AAA"BBB$USER hjkk"
+echo AAA"BBB$USER UUU"
+echo AAA"$USER UUU"
+echo AAA"BBB$USER OOO"
+echo AAA"BBB$USER YYY"
+echo AAA"BBB$USER YIUI"
+echo AAA"BBB$USER YYY"
+echo AAA"BBB$USER VVV"
+echo AAA"BBB$USER KKK"
+echo AAA"BBB$USER HJHJ"
+echo AAA"BBB$USER PPP"
+echo AAA"BBB$USER MMM"
+echo AAA"BBB$USER BBBB"
+echo AAA"BBB$USER KL:"
+echo AAA"BBB$USER NNN"
+echo AAA"BBB$USER JJJ"
+echo AAA"BBB$USER HHH"
+echo aAA"BBB$USER BBB"
+echo AAA"BBB$USER UUU"
+echo AAA"BBB$USER JJJ"
+echo AAA"BBB$USER UUU"
+echo AAA"BBB$USER NNN"
+echo AAA"BBB$USER HHH"
+echo AAA"BBB$USER KKK"
+echo AAA"BBB$USER JJJ"
+echo AAA"BBB$USER HHH"
+echo AAA"BBB$USER MMM"
+echo "hgfgh$USER jhgfhgg""$HOME kjhngjhjg"$USER
+echo "hgfgh$USER jhgfhgg" "$HOME kjhngjhjg"$USER
+echo "lkjhdkjhdkjhd"
+echo "lkjhdkjhdkjhd$USER lkjhfi"
+echo kjhdkjhdkjhdkjhd"lkjhdkjhdkjhd$USER lkjhfi"
+echo "kjhdkjhdkjhdkjhd""lkjhdkjhdkjhd$USER lkjhfi"
+echo "kjhdkjhdkjhdkjhd" "lkjhdkjhdkjhd$USER lkjhfi"
+echo kjhdkjhdkjhdkjhd "lkjhdkjhdkjhd$USER lkjhfi"
+echo kjhdkjhdkjhdkjhd"lkjhdkjhdkjhd$USER lkjhfi"
+echo kjhdkjhdkjhdkjhd"lkjhdkjhdkjhd$USERE lkjhfi"

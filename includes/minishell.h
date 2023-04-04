@@ -113,4 +113,7 @@ void	ft_print_history(t_parsing *parse);
 // void	ft_update_pwd(t_parsing *parse, char *cwd);
 
 
+
+
+
 #endif

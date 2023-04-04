@@ -61,6 +61,7 @@ void	output_redirection(t_list **parse)
 	dup2(fd, STDOUT_FILENO);
 	close(fd);
 	ft_lstdel_current(&(*parse));
+	//print_list((*parse));
 	// print_list((*parse));
 	// exit(EXIT_FAILURE);
 	// printf("\n\n");
@@ -124,7 +125,6 @@ void	check_herringbone(t_parsing *parse)
 {
 	while (check_herringbones_input(parse) == 0 && parse->lst_cmdline->str[0] != '|' && parse->lst_cmdline != NULL)
 	{
-		puts("QQ");
 		if (ft_strcmp(parse->lst_cmdline->str, "<") == 0)
 			input_redirection(&parse->lst_cmdline);
 		else if (ft_strcmp(parse->lst_cmdline->str, ">") == 0)
@@ -133,16 +133,13 @@ void	check_herringbone(t_parsing *parse)
 			ft_heredoc(&parse->lst_cmdline);
 		else if (ft_strcmp(parse->lst_cmdline->str, ">>") == 0)
 			ft_append(&parse->lst_cmdline);
-		if (!parse->lst_cmdline)
+		if (!parse->lst_cmdline || !parse->lst_cmdline->next || parse->lst_cmdline->str[0] == '|')
 			break;
-		if (check_herringbones_input(parse) != 0 && parse->lst_cmdline->next != NULL)
+		if (parse->lst_cmdline->str[0] != '>' && parse->lst_cmdline->str[0] != '<')
 			parse->lst_cmdline = parse->lst_cmdline->next;
+		// if (parse->lst_cmdline->str[0] != '<')
+		// 	parse->lst_cmdline = parse->lst_cmdline->next;
 	}
-	// print_list(parse->lst_cmdline);
-	// while (parse->lst_cmdline->prev != NULL)
-	// 	parse->lst_cmdline = parse->lst_cmdline->prev;
-	// exit(EXIT_FAILURE);
-	// print_list(parse->lst_cmdline);
-	// printf("\nprev = %p\n", parse->lst_cmdline->prev);
-	// printf("\nnext = %p\n", parse->lst_cmdline->next);
+	while (parse->lst_cmdline->prev != NULL)
+		parse->lst_cmdline = parse->lst_cmdline->prev;
 }

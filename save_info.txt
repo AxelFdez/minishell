@@ -75,3 +75,7 @@ save de 03/04 :
 
 save de 03/04 -2- :
 - Mise a jour des variables PWD et OLDPWD OK !
+
+save de 04/04 :
+
+- pd avec 'echo AAA"BBB$USER MMM" OK !

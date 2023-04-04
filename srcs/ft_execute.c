@@ -97,6 +97,7 @@ void	print_list(t_list *lst)
 		ft_printf("[%s] ", lst->str);
 		lst = lst->next;
 	}
+	ft_printf("\n");
 }
 
 void	execute_built_in_first(t_parsing *parse)
@@ -167,6 +168,8 @@ void execute_cmd(t_parsing *parse)
 	else if (child == 0)
 	{
 		check_herringbone(parse);
+		if (!parse->lst_cmdline)
+			exit(EXIT_SUCCESS);
 		parse->built_in_cmd = 0;
 		if (check_builtin_input(parse) == 1)
 			parsing_cmd(parse);

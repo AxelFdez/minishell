@@ -21,6 +21,7 @@ static void	ft_found_var(t_parsing *parse)
 static void	ft_retrieve_var_name(t_parsing *parse)
 {
 	int	i;
+
 	i = 0;
 	while (parse->input[parse->i] && parse->input[parse->i] != '\"'
 		&& parse->input[parse->i] != '\'' && parse->input[parse->i] != ' ')
@@ -28,7 +29,6 @@ static void	ft_retrieve_var_name(t_parsing *parse)
 		parse->var_name[i] = parse->input[parse->i];
 		i++;
 		parse->i++;
-		// parse->len++;
 	}
 	parse->var_name[i] = '\0';
 	ft_found_var(parse);
@@ -37,6 +37,8 @@ static void	ft_retrieve_var_name(t_parsing *parse)
 
 void	ft_handle_dollar(t_parsing *parse)
 {
+	char	*ret_itoa;
+
 	if (parse->len > 0)
 		parse->str_tmp = ft_substr(parse->input,
 				parse->i - parse->len, parse->len);
@@ -44,8 +46,9 @@ void	ft_handle_dollar(t_parsing *parse)
 		parse->str_tmp = ft_calloc(1, sizeof(char));
 	if (parse->input[parse->i +1] == '?')
 	{
-		parse->str_tmp = ft_strjoin(parse->str_tmp,
-				ft_itoa(parse->tmp_ret_value));
+		ret_itoa = ft_itoa(parse->tmp_ret_value);
+		parse->str_tmp = ft_strjoin_free_s1(parse->str_tmp, ret_itoa);
+		free(ret_itoa);
 		parse->i += 2;
 	}
 	else

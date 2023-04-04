@@ -27,8 +27,9 @@ int	main(int ac, char **av, char **env)
 		ft_check_history_size(&parse);
 		while (1)
 		{
-			// signal(SIGQUIT, SIG_IGN);
-			// signals_();
+			signal(SIGQUIT, SIG_IGN);
+			signals_();
+			
 			parse.input = readline("\033[3;36mminishell ->\033[0m ");
 			if (!parse.input)
 			{
@@ -39,15 +40,15 @@ int	main(int ac, char **av, char **env)
 			add_history(parse.input);
 			ft_history(&parse);
 			ft_get_cmdline(&parse);
-			// ft_print_strs_array(env);
 			if (parse.lst_cmdline)
 			{
 				parse.env = ft_lst_to_char_tab(parse.lst_env);
 				execute_cmd(&parse);
-				free(parse.env);
+				free_str_tab(parse.env);
 				ft_lstdel_all(&parse.lst_cmdline);
-			}
 
+			}
+				// system("leaks minishell");
 			parse.tmp_ret_value = parse.ret_value;
 			if (parse.str_tmp)
 				free(parse.str_tmp);
