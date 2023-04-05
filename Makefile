@@ -31,6 +31,7 @@ SRCS =  srcs/minishell.c \
 		srcs/built-in/ft_print_export.c \
 		srcs/built-in/ft_handle_dollar.c \
 		srcs/built-in/ft_handle_dollar_in_str.c \
+		srcs/built-in/ft_handle_dollar_utils.c \
 		srcs/built-in/ft_cd.c \
 		srcs/ft_quotes.c
 
@@ -48,7 +49,8 @@ $(NAME): $(OBJECT_FILES)
 	# cp libft/libft.a $(NAME)
 	@echo "$(YELLOW)\n<<<<< Creating $(NAME) exec file ! ... >>>>>$(DEFAULT)"
 	# $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -lreadline
-	$(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a $(RLFLAGS) -lreadline
+	# $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a $(RLFLAGS) -lreadline
+	$(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -L /usr/local/Cellar/readline/8.2.1/lib -lreadline
 	@echo "$(GREEN)\n<<<<< $(NAME) created ! ... >>>>>\n$(DEFAULT)"
 #------------------------------------------------------------------------------
 clean:

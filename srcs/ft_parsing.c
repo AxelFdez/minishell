@@ -48,7 +48,8 @@ static void	is_no_quote_string(t_parsing *parse)
 			if (parse->input[parse->i] == ' ')
 				break ;
 		}
-		if (parse->input[parse->i] == '\"' || parse->input[parse->i] == '\'')
+		else if ((parse->input[parse->i] == '\"' || parse->input[parse->i]
+				== '\'') && (parse->input[parse->i +1] != '\0'))
 		{
 			parse->c = parse->input[parse->i];
 			parse->i++;
@@ -70,8 +71,11 @@ static void	is_no_quote_string(t_parsing *parse)
 			}
 			parse->quote_to_del++;
 		}
-		parse->len++;
-		parse->i++;
+		else
+		{
+			parse->len++;
+			parse->i++;
+		}
 	}
 	ft_fill_lst(&parse->lst_cmdline, parse, parse->i - parse->len);
 	parse->len = 0;
@@ -104,10 +108,8 @@ void	ft_get_cmdline(t_parsing *parse)
 	parse->input = ft_strtrim_free_s1(parse->input, " ");
 	parse->ret_value = ft_check_syntax(parse);
 	ft_parseur(parse);
-	//ft_lstprint_from_head(parse->lst_cmdline);
-	//ft_lstdel_all(&parse->lst_cmdline);
 	// ft_lstprint_from_head(parse->lst_cmdline);
 	//ft_lstdel_all(&parse->lst_cmdline);
-	free(parse->input);
+	// free(parse->input);
 }
 

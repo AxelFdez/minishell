@@ -29,7 +29,7 @@ int	main(int ac, char **av, char **env)
 		{
 			signal(SIGQUIT, SIG_IGN);
 			signals_();
-			
+
 			parse.input = readline("\033[3;36mminishell ->\033[0m ");
 			if (!parse.input)
 			{
@@ -40,15 +40,17 @@ int	main(int ac, char **av, char **env)
 			add_history(parse.input);
 			ft_history(&parse);
 			ft_get_cmdline(&parse);
+			if (parse.input[0] == '$' && parse.lst_cmdline)
+				ft_printf("minishell: %s: ", parse.lst_cmdline->str);
 			if (parse.lst_cmdline)
 			{
 				parse.env = ft_lst_to_char_tab(parse.lst_env);
 				execute_cmd(&parse);
 				free_str_tab(parse.env);
 				ft_lstdel_all(&parse.lst_cmdline);
-
 			}
-				// system("leaks minishell");
+			// system("leaks minishell");
+			free(parse.input);
 			parse.tmp_ret_value = parse.ret_value;
 			if (parse.str_tmp)
 				free(parse.str_tmp);

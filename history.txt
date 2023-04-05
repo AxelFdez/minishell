@@ -94,3 +94,270 @@ echo "kjhdkjhdkjhdkjhd" "lkjhdkjhdkjhd$USER lkjhfi"
 echo kjhdkjhdkjhdkjhd "lkjhdkjhdkjhd$USER lkjhfi"
 echo kjhdkjhdkjhdkjhd"lkjhdkjhdkjhd$USER lkjhfi"
 echo kjhdkjhdkjhdkjhd"lkjhdkjhdkjhd$USERE lkjhfi"
+echo aaaaaaa"$USER kjfjhjhf"  "$HOME lkjhfgjhkjhf  kjhfkjhgg"
+export
+clear
+echo $HOME
+echo '$HOME'
+echo "$HOME"
+echo "skjfhgksjfgh $HOME"
+echo "skjfhgksjfgh$HOME"
+echo "skjfhgksjfgh$HOMEio"
+echo "skjfhgksjfgh$ HOMEio"
+echo "skjfhgksjfgh$ HOMEio $?"
+echo skjfhgksjfgh$ HOMEio $?
+echo skjfhgksjfgh$ HOMEio '$?'
+$?
+echo "kuhdf  oiudoiuf $? oijgfoli"
+echo $?"trre"
+$?
+$?
+$?
+$?
+$?
+$?
+$?
+$?
+$?
+$?
+$?
+$?
+$?
+$? echo ljhfk
+echo $?
+$?
+$?
+echo lkdjhglkjdfglkjg
+ls
+$USER
+$USER
+$USER
+$ERWT
+$WERT
+$WER
+$DSFG
+$WER
+$WER
+$SDF
+$DFGH
+$SDF
+$USER
+$USER
+$SDF
+$USER
+$ERT
+echo "$USER $KJHGKJHG"
+"$USER $KJHGKJHG"
+"$KJHGKJHG"
+echo "$KJHGKJHG"
+$SDF
+$DSF
+$SDF
+$SDFG
+$USER
+$DFG
+$USER
+$jkllf
+$WER
+$ewf
+$USER
+$WER
+$ERT
+$SDF
+$DSFG
+$DFG
+$SDFG
+$SDFG
+$SDF
+$USER
+
+$DF $USER
+$ERT $USER
+$WER $USER
+$ERT $USER
+$USER $ERTT
+echo "$USER ohjgoihjg
+"
+echo "$USE""kjh$HOME ljl" $USER .  $HOME
+echo "$USE""kjh$HOME $ERT ljl" $USER .  $HOME
+echo "$USER rth"
+echo "$USE fgh"
+echo $USE
+echo $U
+echo $US
+echo $USERT
+echo $USE
+echo $USE
+echo $USE
+echo $USE
+echo $USE
+echo $USER
+echo $USE
+echo $USE
+echo $USER
+echo $US
+echo $US
+echo $USer
+echo $USER
+echo $USERR
+echo $USE
+echo $USER
+echo "$USER"
+echo "$USR"
+echo "$USE"
+echo "$USE"
+echo "$USE"
+echo "$USE"
+echo "$USE"
+echo "$USE"
+echo "$USER"
+echo "$USE $HOME kjhdfkjhdkjhg"
+echo $USER
+echo $USER
+echo $USE
+echo $USEwer
+echo "$USEwer"
+echo "$USE"
+echo "$USER"
+echo "$USER $TYU"
+echo "$TYU $USER"
+echo "$TYU $USER $TYU $HOME"
+echo "$TYU $USER $TYU $HOME""$HJK $USER"
+echo "$TYU $USER $TYU $HOME""$HJK $USER oit"
+echo "$TYU $USER $TYU $HOME""$HJK $USER oit" $GHJ $USER
+echo ethgsdghdfhgsfh"$TYU $USER $TYU $HOME""$HJK $USER oit" $GHJ $USER
+echo AAA"BBB$USER NNN"
+echo AAA"$USER NNN"
+echo AAA"$RT $USER NNN"
+echo AAA"$ER $USER OOO"
+echo AAA" $USER OOO
+dgf"
+echo AAA"$USER HHH"
+echo AAA"$USER $RTY HHH"
+echo AAA"$TR $USER MMM"
+echo AAA"$RT $USER NNN"
+echo AAA"$RT $USER MMM"
+echo AAA"$TSUY $USER III"
+echo AAA"$RT $USER KKK"
+echo AAA"$RT $USER LLL"
+echo AAA"$RT $USER MMM"
+echo AAA"$RT $USER NNN"
+echo AAA"$RT $USER HHH"
+echo AAA"$RT $USER FFF"
+echo AAAAA"$USER  fg$RTY  $HOME GGG"
+echo AAAAA"$USER  fg$RTY  $HOME GGG"
+echo AAAAA "$USER  fg$RTY  $HOME GGG"
+echo $RTY $RTY . $RTY . $USER
+echo $RTY $RTY . aaa$RTY . $USER
+echo aaaaa"$RTY $RTY . aaa$RTY . $USER"
+echo aaaaa"$RTY $RTY .fff aaa$RTY . $USER"
+echo aaaaa"$RTY $RTY .fff rrr $RTY . $USER"
+echo aaaaa"$RTY $RTY .fff rrr $RTY . $USER dtgtg"
+echo AAAAA"jf . fhjksjdf fieuhf  "
+echo AAAAA"jf . fhjksjdf fieuhf $USER "
+echo AAAAA"jf . fhjksjdf $RE fieuhf $USER "
+echo "skjfh kjhsdf $FGH aaaa $TRFSG jhg"
+echo AAA"$RTY $USER jkl"
+echo AAA"$RTY $USER ergrg $ERT jkl"
+echo AAA"$USER ergrg $ERT jkl"
+echo AAA"$SRT BBB $USER lll"
+echo AAA "$SRT BBB $USER lll"
+echo AAA"$SRT BBB $USER lll"
+echo AAA"$SER BBB $USER MMM"
+echo AAA"$SERT HHH $USER BBB"
+echo AAA"$SERT HHH $USER BBB"
+echo AAA"$SERT HHH $USER BBB"
+echo AAA"$SERT HHH $USER BBB"
+echo AAA"$RTY . HHH $USER iop"
+echo AAA"$RTY  HHH  $USER PPP"
+echo AAA"$RTY  HHH $USER"
+echo AAA "$RTY  HHH $USER"
+echo AAA"$USER  HHH $USER"
+echo AAA"$USER HHH $USER OOO"
+echo AAA"$USER HHH $USER PPP"
+ech AAA"$USER HHH $USER PPP"
+echo AAA"$USER HHH $USER PPP"
+echo AAA"$USER HHH $USER OOO"
+echo AAA"$USER HHH $USER PPP"
+echo AAA"$USER HHH $USER PPP"
+echo AAA"$USER HHH $USER PPP"
+echo AAA"$USER HHH $USER PPP"
+echo AAA"$USER HHH $USER PPP"
+echo AAA"$USER HHH $USER PPP"
+echo AAA"$USER HHH $USER PPP"
+echo AAA"$USER .  HHH   UIogh $USER  PPP"
+echo AAA"$USER .  HHH   UIogh $USER  PPP"
+echo AAA"$USER .  $ERT HHH   UIogh $USER  PPP"
+echo AAA"$RET ghjd $USER lkjfgi $USER lkjdfkif" AGHJJ
+echo kjhs
+echo $USER
+echo $USER"$USER"
+echo $USER"$USER hjk $RTY . $USER kjhkjh $HOME l;kj kjuhku""
+"
+echo AAA"$USER HHHH HHHH"
+echo AAA "$USER HHHH HHHH"
+echo AAA "$USER HHHH HHHH$USER"
+echo AAA"$USER HHHH HHHH$USER"
+echo AAA"$USER HHHH$RTY HHHH$USER"
+echo AAA"$USER HHHH$RTYHHHH$USER"
+echo $USER$HOME
+echo $USER $HOME
+echo $USER$HOME
+echo $USER $HOME
+echo $USER
+echo $USER
+echo $USER$HOME
+echo $USER $HOME
+echo $USER
+echo $USE
+echo $USER
+echo $USER
+echo $USER$USER
+echo "$USER"
+echo "$USER$USER"
+echo "$USER $USER"
+echo $USER $USER
+echo $USER$USER
+echo $USER$USER
+echo $USER$USER
+echo kjshkjsfhg 
+echo kjshkjsfhg sfg  srg
+echo $USER$USER
+echo $USER$USER
+echo $USER$USER
+echo "$USER$USER"
+echo AAA"$USER tftfytf$RTY$USER"
+echo AAA"$USER JHKJH"
+echo AAA"$USER GGG"
+echo AAA"$USER HHH"
+echo AAA"$USER JJJ"
+echo AAA"$USER FFF"
+echo AAA"$USER$USER FFF"
+echo AAA"$USER DDD"
+echo AAA"$USER$USER DDD"
+echo AAA"$USER$USER HHHH"
+echo AAA"$USER $USER HHHH"
+echo "$USER$USER"
+echo "$USER$USER"
+echo "$USER $USER"
+echo "$USER $USER"
+echo "$USER"
+echo "$USER"
+echo "$USER"
+echo "$USER $USER"
+echo "$USER$USER"
+echo "$USER $USER"
+echo "$USER$USER"
+echo "$USER $USER"
+echo "$USER$USER"
+echo "$USER$USER"
+echo "$USER $USER"
+echo "$USER"
+echo "$USER $USER"
+echo "$USER$USER"
+echo $USER$USER "$USER$USER"
+echo $USER$USER"$USER$USER"
+echo $USER$USER"$USER$ERT$USER"
+echo $USER$RTY$USER"$USER$ERT$USER"
+echo $USER$USER$USER .   "$USER$USER"
+echo $USER$USER "$USER$USER"

@@ -181,6 +181,7 @@ void execute_cmd(t_parsing *parse)
 			execute_built_in(parse);
 		execve(parse->command[0], parse->command, parse->env);
 		perror("command not found");
+		
 	}
 	wait(NULL);
 	//exit(EXIT_FAILURE);
