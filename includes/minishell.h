@@ -36,6 +36,8 @@ typedef struct s_parsing
 	char	var_name[1024];
 	char	c;
 	char	*meta[6];
+	char	*s1;
+	char	*s2;
 	int		len;
 	int		len_b;
 	int		quote_to_del;
@@ -72,7 +74,7 @@ void	cmd_lst_to_tab(t_parsing *parse);
 void	parsing_cmd(t_parsing *parse);
 void	execute_cmd(t_parsing *parse);
 char	*path_of_command(t_parsing *parse);
-int		count_pipe_until_sep(t_list *list);
+int		count_pipe(t_list *list);
 void	one_pipe(t_parsing *parse);
 int		first_pipe(t_parsing *parse, int temp_fd);
 int		middle_pipe(t_parsing *parse, int pipe_temp);
@@ -85,7 +87,7 @@ void	ft_check_built_in(t_parsing *parse);
 void	ft_sort_env(t_list **lst);
 void	ft_echo(t_list *tmp, t_parsing *parse);
 int		ft_env(t_parsing *parse);
-int		ft_pwd(t_parsing *parse);
+int		ft_pwd(void);
 int		ft_export(t_parsing *parse);
 void	ft_print_sorted_env(t_parsing *parse);
 void	ft_handle_dollar_no_quotes(t_parsing *parse);
@@ -113,7 +115,14 @@ void	ft_check_history_size(t_parsing *parse);
 void	ft_print_history(t_parsing *parse);
 void	del_parsed_cmd(t_parsing *parse);
 void	pipe_child(t_parsing *parse, int pfd[2], int pipe_temp, int dup);
+void	ft_fill_tmplst(t_parsing *parse, t_list **lst, int start);
+char	*ft_set_str_to_comp(char *s);
+void	ft_loop(t_parsing *parse, t_list **lst);
+
 // void	ft_update_pwd(t_parsing *parse, char *cwd);
+
+
+
 
 
 #endif

@@ -1,14 +1,14 @@
 #include "../../includes/minishell.h"
 
-static char	*ft_set_str_to_comp(char *s2)
-{
-	char	*s1;
+// static char	*ft_set_str_to_comp(char *s)
+// {
+// 	char	*s1;
 
-	s1 = ft_strdup(s2);
-	if (ft_strchr(s1, '='))
-		s1[ft_str_chr(s1, '=')] = '\0';
-	return (s1);
-}
+// 	s1 = ft_strdup(s);
+// 	if (ft_strchr(s1, '='))
+// 		s1[ft_str_chr(s1, '=')] = '\0';
+// 	return (s1);
+// }
 
 static int	ft_var_is_exist(t_parsing *parse, t_list *tmp)
 {

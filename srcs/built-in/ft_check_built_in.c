@@ -9,7 +9,7 @@ void	execute_built_in(t_parsing *parse)
 	else if (parse->built_in_cmd == 2)
 		parse->ret_value = ft_export(parse);
 	else if (parse->built_in_cmd == 3)
-		parse->ret_value = ft_pwd(parse);
+		parse->ret_value = ft_pwd();
 	else if (parse->built_in_cmd == 4)
 		ft_echo(parse->lst_cmdline, parse);
 	else if (parse->built_in_cmd == 5)

@@ -1,11 +1,10 @@
 #include "../../includes/minishell.h"
 
-int	ft_pwd(t_parsing *parse)
+int	ft_pwd(void)
 {
-	(void)parse;
 	char	buffer[4096];
 	char	*cwd;
-	parse = NULL;
+
 	cwd = getcwd(buffer, sizeof(buffer));
 	if (cwd == NULL)
 	{

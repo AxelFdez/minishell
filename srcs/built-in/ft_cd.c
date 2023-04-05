@@ -15,6 +15,7 @@ static void	ft_update_oldpwd(t_parsing *parse, char *cwd)
 			old_tmp[ft_str_chr(old_tmp, '=') + 1] = '\0';
 			free(tmp->str);
 			tmp->str = ft_strjoin(old_tmp, cwd);
+			free(old_tmp);
 		}
 		tmp = tmp->next;
 	}
@@ -35,6 +36,7 @@ static void	ft_update_pwd(t_parsing *parse, char *cwd)
 			pwd_tmp[ft_str_chr(pwd_tmp, '=') + 1] = '\0';
 			free(tmp->str);
 			tmp->str = ft_strjoin(pwd_tmp, cwd);
+			free(pwd_tmp);
 		}
 		tmp = tmp->next;
 	}

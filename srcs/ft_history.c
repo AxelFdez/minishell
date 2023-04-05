@@ -12,14 +12,25 @@ void	ft_clear_history(t_parsing *parse)
 
 void	ft_check_history_size(t_parsing *parse)
 {
-	int	nb_line;
+	int		nb_line;
+	char	*s;
 
 	nb_line = 0;
 	parse->fd_history[0] = open("history.txt", O_RDONLY);
 	if (parse->fd_history[0] < 0)
 		perror("history.txt");
-	while (get_next_line(parse->fd_history[0]))
+	while (1)
+	{
+		s = get_next_line(parse->fd_history[0]);
+		if (!s)
+		{
+			free(s);
+			break ;
+		}
+		free(s);
 		nb_line++;
+
+	}
 	if (nb_line > 1000)
 		ft_clear_history(parse);
 	close(parse->fd_history[0]);

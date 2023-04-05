@@ -138,6 +138,8 @@ void	check_herringbone(t_parsing *parse)
 	}
 	while (parse->lst_cmdline->prev != NULL)
 		parse->lst_cmdline = parse->lst_cmdline->prev;
+	// print_list(parse->lst_cmdline);
+	// exit(EXIT_SUCCESS);
 	if (!parse->lst_cmdline)
 			exit(EXIT_SUCCESS);
 }

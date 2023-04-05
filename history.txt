@@ -1,204 +1,536 @@
-cat | cat | wc
+echo $USER "$USER"
+echo $USER "$USER iuhgogoiguh$HOME sfdhgyhh"
+echo ldjgldjglkdjfgldkjgldjglkdjglkdjflgkjdflkgj"
+edglkjlfgkjg
+adgefgkjh$USER dlijbdlkijbglkjdgl
+fhfdhjfehjdf'fhsgkjlgkjlfkjhfghyhhg'"
+echo "gfuyfg iuhdfiuhf
+ekrufhieurgf
+efjhkuhjg$USER
+fhlijhlkjhyh
+fhfh
+fshfsgdnfdn"
+djkhsbjhbgf"
+kjh$USER kjhfgkjhfg
+kjhfkjhfgkjhfkjnfkjnhfkb"
+echo kjhdkjhbkv"klu
+dfb
+sdb
+jkhg$USER lkjv
+gdhmdgm
+dghmndghmdghm"
+echo "kjhkvjh
+jhgvdjhgvdjhvb$USER "
+echo kjhkj"
+jhgdf
+jghf$USER "
+echo jhbdhb"kjdhkjhdkjhd"
+echo kjshf"hgf$USER jygxu"
+echo "hgf$USER jygxu"
+echo "jhg$USER kjhkjhgf"
+echo hgfjhgjhf"jhg$USER kjhkjhgf"
+echo lkjh"jhgg$USER kjdkjhgf"
+echo "lkjhjh$USER jgjhygy"
+echo iuyyu "lkjhjh$USER jgjhygy"
+echo iuyyu"lkjhjh$USER jgjhygy"
+echo aaa"kjh$USER kjhfjf"
+echo aaa"fff$USER kjhf"
+echo fff$USER kjhf
+echo aaa"fff$USER gugu"
+echo aaa"GGG$USER iygi"
+echo aaa"GGG$USER oliju"
+echo AAA"BBB$USER uytuyt"
+echo AAA"BBB$USER GGG"
+echo AAA"$USER iigiiuy"
+echo AAA"GGG$USER ikuhiuhiuh"
+echo AAA"BBB$USER OOO"
+echo AAA"BBB$USER JJJ"
+echo AAA"BBB$USER UUU"
+echo AAA"BBB$USER NNN"
+echo AAA"BBB$USER YYY"
+echo GGGGG"JFGYG$USER . khfuhfuhf"
+echo kjshkjhskjsgdfh$USER
+echo "$USER ufkjhgfjkhgjfhgf"
+echo aaaaaaaaa"$USER ufkjhgfjkhgjfhgf"
+echo kjshkjhskjsgdfh$USER
+aaaaa$USER lkjljlkj
+echo aaaaa$USER lkjljlkj
+echo aaaaa"$USER lkjljlkj"
+echo aaaaa"aaa$USER lkjljlkj"
+echo AAA"BBB$USER hjkk"
+echo AAA"BBB$USER UUU"
+echo AAA"$USER UUU"
+echo AAA"BBB$USER OOO"
+echo AAA"BBB$USER YYY"
+echo AAA"BBB$USER YIUI"
+echo AAA"BBB$USER YYY"
+echo AAA"BBB$USER VVV"
+echo AAA"BBB$USER KKK"
+echo AAA"BBB$USER HJHJ"
+echo AAA"BBB$USER PPP"
+echo AAA"BBB$USER MMM"
+echo AAA"BBB$USER BBBB"
+echo AAA"BBB$USER KL:"
+echo AAA"BBB$USER NNN"
+echo AAA"BBB$USER JJJ"
+echo AAA"BBB$USER HHH"
+echo aAA"BBB$USER BBB"
+echo AAA"BBB$USER UUU"
+echo AAA"BBB$USER JJJ"
+echo AAA"BBB$USER UUU"
+echo AAA"BBB$USER NNN"
+echo AAA"BBB$USER HHH"
+echo AAA"BBB$USER KKK"
+echo AAA"BBB$USER JJJ"
+echo AAA"BBB$USER HHH"
+echo AAA"BBB$USER MMM"
+echo "hgfgh$USER jhgfhgg""$HOME kjhngjhjg"$USER
+echo "hgfgh$USER jhgfhgg" "$HOME kjhngjhjg"$USER
+echo "lkjhdkjhdkjhd"
+echo "lkjhdkjhdkjhd$USER lkjhfi"
+echo kjhdkjhdkjhdkjhd"lkjhdkjhdkjhd$USER lkjhfi"
+echo "kjhdkjhdkjhdkjhd""lkjhdkjhdkjhd$USER lkjhfi"
+echo "kjhdkjhdkjhdkjhd" "lkjhdkjhdkjhd$USER lkjhfi"
+echo kjhdkjhdkjhdkjhd "lkjhdkjhdkjhd$USER lkjhfi"
+echo kjhdkjhdkjhdkjhd"lkjhdkjhdkjhd$USER lkjhfi"
+echo kjhdkjhdkjhdkjhd"lkjhdkjhdkjhd$USERE lkjhfi"
+echo aaaaaaa"$USER kjfjhjhf"  "$HOME lkjhfgjhkjhf  kjhfkjhgg"
+export
+clear
+echo $HOME
+echo '$HOME'
+echo "$HOME"
+echo "skjfhgksjfgh $HOME"
+echo "skjfhgksjfgh$HOME"
+echo "skjfhgksjfgh$HOMEio"
+echo "skjfhgksjfgh$ HOMEio"
+echo "skjfhgksjfgh$ HOMEio $?"
+echo skjfhgksjfgh$ HOMEio $?
+echo skjfhgksjfgh$ HOMEio '$?'
+$?
+echo "kuhdf  oiudoiuf $? oijgfoli"
+echo $?"trre"
+$?
+$?
+$?
+$?
+$?
+$?
+$?
+$?
+$?
+$?
+$?
+$?
+$?
+$? echo ljhfk
+echo $?
+$?
+$?
+echo lkdjhglkjdfglkjg
 ls
-cat /dev/urandom | head
-cat /dev/urandom | head
-ls -l > out | wc
-cat wc
-cat out
-ls
+$USER
+$USER
+$USER
+$ERWT
+$WERT
+$WER
+$DSFG
+$WER
+$WER
+$SDF
+$DFGH
+$SDF
+$USER
+$USER
+$SDF
+$USER
+$ERT
+echo "$USER $KJHGKJHG"
+"$USER $KJHGKJHG"
+"$KJHGKJHG"
+echo "$KJHGKJHG"
+$SDF
+$DSF
+$SDF
+$SDFG
+$USER
+$DFG
+$USER
+$jkllf
+$WER
+$ewf
+$USER
+$WER
+$ERT
+$SDF
+$DSFG
+$DFG
+$SDFG
+$SDFG
+$SDF
+$USER
 
+$DF $USER
+$ERT $USER
+$WER $USER
+$ERT $USER
+$USER $ERTT
+echo "$USER ohjgoihjg
+"
+echo "$USE""kjh$HOME ljl" $USER .  $HOME
+echo "$USE""kjh$HOME $ERT ljl" $USER .  $HOME
+echo "$USER rth"
+echo "$USE fgh"
+echo $USE
+echo $U
+echo $US
+echo $USERT
+echo $USE
+echo $USE
+echo $USE
+echo $USE
+echo $USE
+echo $USER
+echo $USE
+echo $USE
+echo $USER
+echo $US
+echo $US
+echo $USer
+echo $USER
+echo $USERR
+echo $USE
+echo $USER
+echo "$USER"
+echo "$USR"
+echo "$USE"
+echo "$USE"
+echo "$USE"
+echo "$USE"
+echo "$USE"
+echo "$USE"
+echo "$USER"
+echo "$USE $HOME kjhdfkjhdkjhg"
+echo $USER
+echo $USER
+echo $USE
+echo $USEwer
+echo "$USEwer"
+echo "$USE"
+echo "$USER"
+echo "$USER $TYU"
+echo "$TYU $USER"
+echo "$TYU $USER $TYU $HOME"
+echo "$TYU $USER $TYU $HOME""$HJK $USER"
+echo "$TYU $USER $TYU $HOME""$HJK $USER oit"
+echo "$TYU $USER $TYU $HOME""$HJK $USER oit" $GHJ $USER
+echo ethgsdghdfhgsfh"$TYU $USER $TYU $HOME""$HJK $USER oit" $GHJ $USER
+echo AAA"BBB$USER NNN"
+echo AAA"$USER NNN"
+echo AAA"$RT $USER NNN"
+echo AAA"$ER $USER OOO"
+echo AAA" $USER OOO
+dgf"
+echo AAA"$USER HHH"
+echo AAA"$USER $RTY HHH"
+echo AAA"$TR $USER MMM"
+echo AAA"$RT $USER NNN"
+echo AAA"$RT $USER MMM"
+echo AAA"$TSUY $USER III"
+echo AAA"$RT $USER KKK"
+echo AAA"$RT $USER LLL"
+echo AAA"$RT $USER MMM"
+echo AAA"$RT $USER NNN"
+echo AAA"$RT $USER HHH"
+echo AAA"$RT $USER FFF"
+echo AAAAA"$USER  fg$RTY  $HOME GGG"
+echo AAAAA"$USER  fg$RTY  $HOME GGG"
+echo AAAAA "$USER  fg$RTY  $HOME GGG"
+echo $RTY $RTY . $RTY . $USER
+echo $RTY $RTY . aaa$RTY . $USER
+echo aaaaa"$RTY $RTY . aaa$RTY . $USER"
+echo aaaaa"$RTY $RTY .fff aaa$RTY . $USER"
+echo aaaaa"$RTY $RTY .fff rrr $RTY . $USER"
+echo aaaaa"$RTY $RTY .fff rrr $RTY . $USER dtgtg"
+echo AAAAA"jf . fhjksjdf fieuhf  "
+echo AAAAA"jf . fhjksjdf fieuhf $USER "
+echo AAAAA"jf . fhjksjdf $RE fieuhf $USER "
+echo "skjfh kjhsdf $FGH aaaa $TRFSG jhg"
+echo AAA"$RTY $USER jkl"
+echo AAA"$RTY $USER ergrg $ERT jkl"
+echo AAA"$USER ergrg $ERT jkl"
+echo AAA"$SRT BBB $USER lll"
+echo AAA "$SRT BBB $USER lll"
+echo AAA"$SRT BBB $USER lll"
+echo AAA"$SER BBB $USER MMM"
+echo AAA"$SERT HHH $USER BBB"
+echo AAA"$SERT HHH $USER BBB"
+echo AAA"$SERT HHH $USER BBB"
+echo AAA"$SERT HHH $USER BBB"
+echo AAA"$RTY . HHH $USER iop"
+echo AAA"$RTY  HHH  $USER PPP"
+echo AAA"$RTY  HHH $USER"
+echo AAA "$RTY  HHH $USER"
+echo AAA"$USER  HHH $USER"
+echo AAA"$USER HHH $USER OOO"
+echo AAA"$USER HHH $USER PPP"
+ech AAA"$USER HHH $USER PPP"
+echo AAA"$USER HHH $USER PPP"
+echo AAA"$USER HHH $USER OOO"
+echo AAA"$USER HHH $USER PPP"
+echo AAA"$USER HHH $USER PPP"
+echo AAA"$USER HHH $USER PPP"
+echo AAA"$USER HHH $USER PPP"
+echo AAA"$USER HHH $USER PPP"
+echo AAA"$USER HHH $USER PPP"
+echo AAA"$USER HHH $USER PPP"
+echo AAA"$USER .  HHH   UIogh $USER  PPP"
+echo AAA"$USER .  HHH   UIogh $USER  PPP"
+echo AAA"$USER .  $ERT HHH   UIogh $USER  PPP"
+echo AAA"$RET ghjd $USER lkjfgi $USER lkjdfkif" AGHJJ
+echo kjhs
+echo $USER
+echo $USER"$USER"
+echo $USER"$USER hjk $RTY . $USER kjhkjh $HOME l;kj kjuhku""
+"
+echo AAA"$USER HHHH HHHH"
+echo AAA "$USER HHHH HHHH"
+echo AAA "$USER HHHH HHHH$USER"
+echo AAA"$USER HHHH HHHH$USER"
+echo AAA"$USER HHHH$RTY HHHH$USER"
+echo AAA"$USER HHHH$RTYHHHH$USER"
+echo $USER$HOME
+echo $USER $HOME
+echo $USER$HOME
+echo $USER $HOME
+echo $USER
+echo $USER
+echo $USER$HOME
+echo $USER $HOME
+echo $USER
+echo $USE
+echo $USER
+echo $USER
+echo $USER$USER
+echo "$USER"
+echo "$USER$USER"
+echo "$USER $USER"
+echo $USER $USER
+echo $USER$USER
+echo $USER$USER
+echo $USER$USER
+echo kjshkjsfhg
+echo kjshkjsfhg sfg  srg
+echo $USER$USER
+echo $USER$USER
+echo $USER$USER
+echo "$USER$USER"
+echo AAA"$USER tftfytf$RTY$USER"
+echo AAA"$USER JHKJH"
+echo AAA"$USER GGG"
+echo AAA"$USER HHH"
+echo AAA"$USER JJJ"
+echo AAA"$USER FFF"
+echo AAA"$USER$USER FFF"
+echo AAA"$USER DDD"
+echo AAA"$USER$USER DDD"
+echo AAA"$USER$USER HHHH"
+echo AAA"$USER $USER HHHH"
+echo "$USER$USER"
+echo "$USER$USER"
+echo "$USER $USER"
+echo "$USER $USER"
+echo "$USER"
+echo "$USER"
+echo "$USER"
+echo "$USER $USER"
+echo "$USER$USER"
+echo "$USER $USER"
+echo "$USER$USER"
+echo "$USER $USER"
+echo "$USER$USER"
+echo "$USER$USER"
+echo "$USER $USER"
+echo "$USER"
+echo "$USER $USER"
+echo "$USER$USER"
+echo $USER$USER "$USER$USER"
+echo $USER$USER"$USER$USER"
+echo $USER$USER"$USER$ERT$USER"
+echo $USER$RTY$USER"$USER$ERT$USER"
+echo $USER$USER$USER .   "$USER$USER"
+echo $USER$USER "$USER$USER"
+echo suhdfuhfsiuhfifuh"sdfuhkuhkjhkjhf""khfkjhfkjhfkjhfkjhf"
+echo $USER"khjfjkhgdfjhg$RTY$USER kuhd"
 ls
-fasdf
-ls
-ls -l
-lfasdf
-ls
-ls
-lafa
-ls
-ls -la
-ls | cat -e
-ls | cat -e | cat -e
-cat | cat | ls
-cat | cat | ls
-cat | cat | ls
-cat | cat | ls
+$HOME
 
-ls -l | wc | cat -e
-< test cat
-< test cat | cat -e
-> out cat | wc
-ls
-ls -l
-> out ls | wc
-cat out
-ls
-ls
-> out ls
-cat out
-cat out | wc
-> out ls | wc
-ls
-lsafadsf | fdsaf
-slaf | dasgfad
-ls
-> out ls
-cat out
-> out ls | wc
-ls -la > out | wc
-make
-ls -la > out | wc
-cat /dev/urandom | head
-make
-cat /dev/urandom | head
-ls > out | head
-ls > out | head
+$USER
+echo $HOME
 ls > out | wc
 make
-ls > out | wc
-ls -l > out | wc
-ls > out | wc
-make
-ls > out | wc
-ls > out | wc
-ls > out | wc
-ls > out | wc
-ls > out | wc
-make
-ls > out | wc
-ls > out | wc
-ls > out | wc
-ls | wc
-ls | wc
-ls | wc
-ls | wc
-ls | wc
-ls | wc
-ls | wc
-ls | wc
-ls -l | wc
-ls -l | wc
-ls -l | wc
-ls -l | wc
-ls -l | wc
-ls -l | wc
-ls -l | wc
-
-ls | wc
-ls | wc
-ls | wc
-ls | wc
-ls | wc
-ls | wc
-ls > out | wc
-ls -l > out | wc
-ls -l | wc > out | wc
-ls -l | wc > out | wc
-cd
 ls
-cd
-cd
-cd
+ls > out | wc
+make
+> 1 > 2 > 3
+rm 1 2 3
+> 1 > 2 > 3 ls
+cat 1
+cat 2
+cat 3
+rm 3
+rm 1 2
 cd ..
 ls
-cd
-< test cd ..
+cat out
+rm out
+mv push_swap_listes/ push_swap
 ls
+cat test1 
+rm test1 
+ls ./pipex\ copie
+ls ./pipex
 cd minishell/
 ls
-< test cd ..
-ls
-cd .. < test
+rm out1
+cd .. > 1
 ls
 cd minishell/
-
+> 1 cd ..
+ls
+rm 1
 cat | cat | ls
+ls | ls -l > out | ls | wc > out1 | pwd
+cat out
+
+cat
+ls | ls -l > out | ls | wc > out1 | pwd
+ls
+ls
+ls
+ls
+make
+ls
+ls | ls -l > out | ls | wc > out1 | pwd
 
 
-l
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ls
+ls | wc
+ls | wc | cat -e
+ls | wc > out | cat -e
+ls | wc > out | cat -e | ls -l > out1
+s | wc > out | cat -e | ls -l > out1
+ls | wc > out | cat -e | ls -l > out1
+rm out
+ls | wc > out | cat -e | ls -l > out1
+ls | wc | cat -e | ls -l
+ls | wc | cat -e | ls -l | pwd
+ls | wc | cat -e | ls -l | pwd | wc
+ls | wc > out | cat -e | ls -l > out1
+
+
+ls | wc > out | cat -e | ls -l > out1
+
+
+
+
+
+
+
+sdsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ls | wc | ls | wc > out | cat -e | ls ls > out1
+ls | wc | ls | wc > out | cat -e | ls ls > out1
+
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | ls | wc > out | cat -e | ls -l > out1
 make
-ls
-ls -l
-< test cat
-< test cat > out
-make
-make
-ls
-< test cat
-< test cat > out
-< test cat > out | wc
-< test cat > out | wc > out
-ls -l | wc
-cat | cat | ls
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+pwd | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | ls | wc > out | cat -e | > out1 ls -l
+ls | wc | ls | wc > out | cat -e |  > out1 ls -l
+ls | wc | ls | wc > out | cat -e | > out1 ls -l
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | lls | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+rm out out1
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+
 
 
 
 ls | wc | cat -e
-ls | wc | echo coucou
-echo coucou | wc
-echo coucou | wc | cat -e
-echo coucou | cat | cat -e
-ps | wc | ls
-ps | wc | cat -e
-ls
-ls | wc
-cat | cat | ls
-ake
+ls | wc | cat -e
+ls | wc | ls | wc > out | cat -e | ls -l > out1
+<< test << test1 cat
+<< test << test1 cat
+
+
+
+
+
+
+
+
+<< test << test1 cat
 make
+<< test << test1 cat
+<< test << test1 cat > out
+<< test << test1 cat
+<< test << test 1 cat
+asgagaw
+<< test << test 1 cat
+fasgsagasg
+dgaga
+dagagh
+afhfd
 ls
-cat | cat | ls
-ls
-cd ..
-ls
-cd
-ls -l | export
-ls -l | export AAA
-export
-export
-export
-make
-export
-export AAA
-export
-ls -l | export BBB
-export
-export CCC | ls
-export
-ls
-echo coucou
-echo coucou | cat -e
-cd ..
-ls
-cd minishell/
-ls
-pwd
-env
-export | env
-ls -l
-ls -l | cat -e | cat -e
-ls -l | cat -e | cat -e | fdaf
-total 264$$
--rw-r--r--   1 axelfernandez  staff   2540  4 avr 21:52 Makefile$$
--rw-r--r--   1 axelfernandez  staff     12 17 mar 20:47 README.md$$
--rw-r--r--   1 axelfernandez  staff   1105  4 avr 21:50 env.txt$$
--rw-r--r--   1 axelfernandez  staff     24  4 avr 21:50 eof$$
--rw-r--r--   1 axelfernandez  staff   1811  4 avr 23:43 history.txt$$
-drwxr-xr-x   3 axelfernandez  staff     96  4 avr 21:50 includes$$
-drwxr-xr-x   6 axelfernandez  staff    192  4 avr 23:12 libft$$
--rwxr-xr-x   1 axelfernandez  staff  87174  4 avr 23:43 minishell$$
-drwxr-xr-x   3 axelfernandez  staff     96 30 mar 21:10 minishell.dSYM$$
--rw-r--r--   1 axelfernandez  staff     33  4 avr 22:55 out$$
--rw-r--r--   1 axelfernandez  staff    284  4 avr 21:50 out1$$
--rw-r--r--   1 axelfernandez  staff   2094  4 avr 21:50 save_info.txt$$
--rw-r--r--   1 axelfernandez  staff    897  4 avr 21:50 save_info_axel.txt$$
-drwxr-xr-x  38 axelfernandez  staff   1216  4 avr 23:43 srcs$$
--rw-r--r--   1 axelfernandez  staff     33 28 mar 21:50 test$$
--rw-r--r--   1 axelfernandez  staff    350 30 mar 21:10 to_do.txt$$
-
-
-
-
-ls -l | cat -e | cat -e | cat _e
-ls -l | cat -e | cat -e | cat -e
-ls -l | cat -e | cat -e | cat -efa
+<< test cat
+<< test wc
+<< test wc > out
+cat out
+<< test << test1 wc
+argragarg

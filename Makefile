@@ -5,7 +5,7 @@ LIBFT = libft/
 LST = linked_list/
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
-
+RLFLAGS = -L /Users/chmassa/.brew/opt/readline/lib
 SRCS =  srcs/minishell.c \
 		srcs/ft_parsing.c \
 		srcs/ft_error.c \
@@ -32,6 +32,7 @@ SRCS =  srcs/minishell.c \
 		srcs/built-in/ft_print_export.c \
 		srcs/built-in/ft_handle_dollar.c \
 		srcs/built-in/ft_handle_dollar_in_str.c \
+		srcs/built-in/ft_handle_dollar_utils.c \
 		srcs/built-in/ft_cd.c \
 		srcs/ft_quotes.c
 

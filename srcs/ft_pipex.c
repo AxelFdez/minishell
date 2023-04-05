@@ -13,8 +13,6 @@ void	one_pipe(t_parsing *parse)
 		pipe_child(parse, pfd, 0, 0);
 	dup2(pfd[0], STDIN_FILENO);
 	close(pfd[1]);
-	//wait(&child);
-	//print_list(parse->lst_cmdline);
 	dup2(parse->fd_stdout, STDOUT_FILENO);
 	check_herringbone(parse);
 	del_parsed_cmd(parse);
@@ -24,7 +22,6 @@ void	one_pipe(t_parsing *parse)
 		parse->built_in_cmd = parsing_built_in(parse);
 	if (parse->built_in_cmd > 0)
 		execute_built_in(parse);
-	// system("lsof -c minishell");
 	execve(parse->command[0], parse->command, parse->env);
 }
 
@@ -57,7 +54,7 @@ int	middle_pipe(t_parsing *parse, int pipe_temp)
 	else if (child == 0)
 		pipe_child(parse, pfd, pipe_temp, 2);
 	if (parse->built_in_cmd > 0)
-	del_parsed_cmd(parse);
+		del_parsed_cmd(parse);
 	close(pipe_temp);
 	pipe_temp = pfd[0];
 	close(pfd[1]);
@@ -80,6 +77,7 @@ void	last_pipe(t_parsing *parse, int pipe_temp)
 	close(pfd[1]);
 	dup2(parse->fd_stdout, STDOUT_FILENO);
 	del_parsed_cmd(parse);
+	check_herringbone(parse);
 	if (check_builtin_input(parse) == 1)
 		parsing_cmd(parse);
 	else
@@ -105,7 +103,7 @@ void	pipex(t_parsing *parse)
 	int		sep;
 	int		temp_fd;
 
-	sep = count_pipe_until_sep(parse->lst_cmdline);
+	sep = count_pipe(parse->lst_cmdline);
 	if (check_builtin_input(parse) == 1)
 		ft_lstdel_front(&parse->lst_cmdline);
 	if (sep == 1)
@@ -114,7 +112,6 @@ void	pipex(t_parsing *parse)
 	temp_fd = first_pipe(parse, temp_fd);
 	while (sep - 2 > 0)
 	{
-		check_herringbone(parse);
 		parsing_cmd_in_pipe(parse);
 		temp_fd = middle_pipe(parse, temp_fd);
 		sep--;

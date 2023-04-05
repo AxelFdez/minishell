@@ -99,7 +99,7 @@ void	parsing_cmd(t_parsing *parse)
 	}
 }
 
-int	count_pipe_until_sep(t_list *list)
+int	count_pipe(t_list *list)
 {
 	t_list	*temp;
 	int		count;
@@ -110,10 +110,6 @@ int	count_pipe_until_sep(t_list *list)
 	{
 		if (temp->str[0] == '|')
 			count++;
-		if (temp->str[0] == '<' && temp->str[0] == '>')
-		{
-			return (count);
-		}
 		temp = temp->next;
 	}
 	return (count);

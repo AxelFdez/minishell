@@ -48,17 +48,34 @@ static void	is_no_quote_string(t_parsing *parse)
 			if (parse->input[parse->i] == ' ')
 				break ;
 		}
-		if (parse->input[parse->i] == '\"' || parse->input[parse->i] == '\'')
+		else if ((parse->input[parse->i] == '\"' || parse->input[parse->i]
+				== '\'') && (parse->input[parse->i +1] != '\0'))
 		{
 			parse->c = parse->input[parse->i];
 			parse->i++;
 			parse->len++;
-			while (parse->input[parse->i++] != parse->c)
-				parse->len++;
+			while (parse->input[parse->i] != parse->c)
+			{
+				if (parse->c == '\"' && parse->input[parse->i] == '$'
+					&& parse->input[parse->i +1] != ' '
+					&& parse->input[parse->i +1] != '\0')
+				{
+					ft_handle_dollar(parse);
+					parse->len = 0;
+				}
+				else
+				{
+					parse->i++;
+					parse->len++;
+				}
+			}
 			parse->quote_to_del++;
 		}
-		parse->len++;
-		parse->i++;
+		else
+		{
+			parse->len++;
+			parse->i++;
+		}
 	}
 	ft_fill_lst(&parse->lst_cmdline, parse, parse->i - parse->len);
 	parse->len = 0;
@@ -74,8 +91,6 @@ static void	ft_parseur(t_parsing *parse)
 			return ;
 		else if (parse->input[parse->i] == '|' && !is_pipe(parse))
 			return ;
-
-
 		else if (parse->input[parse->i] == '\"')
 			is_quote_string(parse, '\"');
 		else if (parse->input[parse->i] == '\'')
@@ -86,7 +101,6 @@ static void	ft_parseur(t_parsing *parse)
 		else
 			parse->i++;
 	}
-
 }
 
 void	ft_get_cmdline(t_parsing *parse)
@@ -94,15 +108,8 @@ void	ft_get_cmdline(t_parsing *parse)
 	parse->input = ft_strtrim_free_s1(parse->input, " ");
 	parse->ret_value = ft_check_syntax(parse);
 	ft_parseur(parse);
-	//ft_lstprint_from_head(parse->lst_cmdline);
-	//ft_lstdel_all(&parse->lst_cmdline);
 	// ft_lstprint_from_head(parse->lst_cmdline);
 	//ft_lstdel_all(&parse->lst_cmdline);
-	free(parse->input);
+	// free(parse->input);
 }
-// 	ft_check_built_in(parse);
-// 	ft_lstprint_from_head(parse->lst_cmdline);
-// 	ft_lstdel_all(&parse->lst_cmdline);
-// 	free(parse->input);
 
-// }
