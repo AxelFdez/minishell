@@ -94,3 +94,12 @@ echo "kjhdkjhdkjhdkjhd" "lkjhdkjhdkjhd$USER lkjhfi"
 echo kjhdkjhdkjhdkjhd "lkjhdkjhdkjhd$USER lkjhfi"
 echo kjhdkjhdkjhdkjhd"lkjhdkjhdkjhd$USER lkjhfi"
 echo kjhdkjhdkjhdkjhd"lkjhdkjhdkjhd$USERE lkjhfi"
+echo lkjf
+echo lkjf$USER
+echo lkjf $USER
+echo lkjf $USERW
+echo lkjf$USERW
+echo "lkjf$USERW
+dsgkju 
+sdgriuhg$HOME kuhf
+khjgfjhf"
