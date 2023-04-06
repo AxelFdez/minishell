@@ -809,3 +809,184 @@ ls
 rm my_ls
 ls
 make fclean
+ls
+cd ..
+ls
+ps
+< test cat | cat -e > 1
+cat tes
+ls
+cd minishell/
+< test cat | cat -e > 1
+cat 1
+rm 1
+<< eof cat
+eof
+eof
+ls
+env | grep HOME
+<< 1 << 2 ls
+<< 1 << 2 ls
+make
+ls | wc | cat -e | cat -e
+ls | wc | cat -e | cat -e | pwd
+make
+ls | wc
+ls | wc | cat -e
+make
+make
+make
+ls | wx
+ls | wc
+ls | wc | cat-e
+      14      14     136
+ls | wc | cat-e
+      14      14     136
+make
+ls | wc
+ls | wc | cat -e
+      14      14     136
+make
+ls | cat -e | cat -e
+i = 0
+i = 2
+ 
+ 
+ 
+ls -l | cat -e | cat -e
+ls -l | echo "vggerpg|fadf" | cat -e
+vggerpg|fadfcat -e
+ls -l | echo "vggerpgfadf" | cat -e
+ls -l | echo "agasfgfsdg" | cat -e
+ls -l | echo agasfgfsdg | cat -e
+ls -l | echo agasf|gfsdg | cat -e
+make
+ls -l | echo agasf|gfsdg | cat -e
+ls -l
+ls -l | cat -e
+ls -l | echo coucou
+ls -l | echo cou|cou
+coucou
+echo "cou|cou"
+ls
+ls
+ls
+ls -l
+echo "cou|cou"
+echo cou|cou
+echo 'cou|cou'
+ls
+ls
+make
+ls
+ls -l | cat -e | cat -e
+ls -l | ls | echo "cou|cou"
+ls -l | ls | echo cou|cou
+coucou
+ls
+ls -l | cat -e | cat 0e
+ls -l | cat -e | cat -e
+ls
+ls
+make
+ls
+ls
+cd ..
+ls
+cd minishell/
+ls -l | wc
+ls
+echo coucou
+pwd
+pwd | wc
+ls
+ls | cat -e | echo coucou | cat
+6mminishell ->m exit
+6mminishell ->m exit
+ls | cat -e | echo coucou
+cat -eecho coucou
+make
+ls
+ls
+ls | cat -e | wc | echo coucou
+ls | cat -e | echo coucou
+ls | cat -e |cho coucou
+Makefile$
+README.md$
+env.txt$
+eof$
+history.txt$
+includes$
+libft$
+m$
+minishell$
+minishell.dSYM$
+save_info.txt$
+save_info_axel.txt$
+srcs$
+test$
+to_do.txt$
+ls -l | cat -e | cat -e
+ls -l | cat -e | cat -e | echo coucou
+rm m
+rm eof
+le
+env
+ls
+<< test << test2 ls
+test
+test
+test
+ls
+ls
+test
+test
+test
+ls
+test
+test
+<< 1 << 2 ls
+ls
+rm 1 2 3
+<< 1 << 2 ls
+ls
+<< 1 << 2 ls
+<< 1 << 2 ls
+ps
+<< 1 << 2 ls | ls -l << 3
+<< 1 << 2 ls | ls << 3
+make
+<< 1 << 2 ls
+<< 1 << 2 ls | << 3 ls
+<< 1 << 2 ls
+<< 1 << 2 ls
+<< 1 << 2 cat
+make
+<< 1 << 2 cat
+<< 1 << 2 cat
+<< 1 << 2 cat
+<< 1 << 2 cat
+make
+<< 1 << 2 cat
+make
+<< 1 << 2 cat
+make
+fasdf
+<< 1 << 2 cat
+<< 1 << 2 cat
+<< 1 << 2 cat
+<< 1 << 2 cat
+<< 1 << 2
+make
+<< 1 << 2
+make
+<< 1 << 2
+<< 1 << 2 cat
+<< 1 << 2 cat
+make
+<< 1 << 2 ca
+<< 1 << 2 cat
+<< 1 << 2 cat
+<< 1 << 2 cat
+<< 1 << 2 cat
+<< 1 << 2 << 3 cat -e

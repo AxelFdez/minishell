@@ -29,3 +29,18 @@ void	pipe_child(t_parsing *parse, int pfd[2], int pipe_temp, int dup)
 	// printf("minishell: ");
 	// perror(parse->command[0]);
 }
+
+void	print_list(t_list *lst)
+{
+	if (!lst)
+	{
+		ft_printf("la liste est vide\n");
+		return ;
+	}
+	while (lst != NULL)
+	{
+		ft_printf("[%s] ", lst->str);
+		lst = lst->next;
+	}
+	ft_printf("\n");
+}

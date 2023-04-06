@@ -54,14 +54,10 @@ void	cmd_lst_to_tab(t_parsing *parse)
 {
 	int		i;
 	t_list *temp;
-	t_list *temp2;
 
 	temp = parse->lst_cmdline;
-	temp2 = parse->lst_cmdline;
 	i = 0;
-	while (temp && ft_strchr(temp->str, '|') == NULL
-		&& ft_strchr(temp->str, '<') == NULL
-		&& ft_strchr(temp->str, '>') == NULL)
+	while (temp && ft_strcmp(temp->str, "|") != 0)
 	{
 		i++;
 		temp = temp->next;
@@ -72,14 +68,13 @@ void	cmd_lst_to_tab(t_parsing *parse)
 		perror("error malloc");
 	i = 0;
 	parse->lst_target = 0;
-	while (temp2 && ft_strchr(temp2->str, '|') == NULL
-		&& ft_strchr(temp2->str, '<') == NULL
-		&& ft_strchr(temp2->str, '>') == NULL)
+	temp = parse->lst_cmdline;
+	while (temp && ft_strcmp(temp->str, "|") != 0)
 	{
-		parse->command[i] = ft_strdup(temp2->str);
+		parse->command[i] = ft_strdup(temp->str);
 		i++;
 		parse->lst_target++;
-		temp2 = temp2->next;
+		temp = temp->next;
 	}
 	parse->command[i] = 0;
 }
