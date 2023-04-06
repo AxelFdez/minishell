@@ -28,7 +28,7 @@ int	main(int ac, char **av, char **env)
 		while (1)
 		{
 			signal(SIGQUIT, SIG_IGN);
-			signals_();
+			signals_(0);
 			parse.input = readline("\033[3;36mminishell ->\033[0m ");
 			if (!parse.input)
 			{
@@ -41,6 +41,7 @@ int	main(int ac, char **av, char **env)
 			ft_get_cmdline(&parse);
 			if (parse.input[0] == '$' && parse.lst_cmdline)
 				ft_printf("minishell: %s: ", parse.lst_cmdline->str);
+			//print_list(parse.lst_cmdline);
 			if (parse.lst_cmdline)
 			{
 				parse.env = ft_lst_to_char_tab(parse.lst_env);

@@ -534,3 +534,278 @@ ls
 cat out
 << test << test1 wc
 argragarg
+ls
+cd 
+ls
+cd cursus/
+ls
+$USER
+ls
+$USER
+$HOME
+env
+env | USER
+env | grep USER
+env | grep "USER"
+env | grep "HOME"
+env | grep HOME
+$HOME
+ps
+$HOME
+$HOME
+ps
+$HOME
+ps
+echo $USER
+echo $USEagfsa
+ls
+ls
+cd ..
+cd
+ls
+cd cursus/minishell/
+ls
+env | grep HOME
+ls
+env | grep HOME
+env
+env | cat
+env
+env | grep HOME
+env fafad
+env
+make
+env | grep HOME
+env
+env dfasdf
+env | ls
+env | ls
+env | ls
+ls | wc
+env | grep HOME
+env | wc
+env | cat
+env
+env | cat
+env | grep HOME
+env | wc
+env | grep "HOME"
+env | grep HOME
+env | grep HOME
+env | cat
+asdgasdfgfsdagafgfdhfdshdsgfhgshjgfjdhfgjmdfsknga;ngadfnga;dsgna;ldngaldsfnga;lfsdgna;lfgnaf;lgnfa
+ls
+cd out
+ls
+cd .. 
+ls
+cd minishell/
+$?
+$?
+?$
+ls
+env | wc
+ls
+env
+cp /bin/ls myls
+ls
+/bin/ls
+cp out .
+cp ls
+cp ls myls
+ls
+cp out ../
+ls
+mv out out1
+ls
+echo coucuo
+echo coucou cjfc
+/bin/ls
+touch myls
+cp /bin/ls myls
+;s
+ls
+ls
+touch ls
+ls
+ls
+ls
+ls
+ls
+make re
+ls
+cd ..
+ls
+rm ./minishell/ls
+cd minishell/
+ls
+
+ls
+cd ..
+ls
+cd minishell/
+ls
+ls
+cd ..
+ls
+touch coucou
+ls
+ls
+touch coucou
+ls
+/bin/ls
+/bin/ls -l
+ls
+touch ls
+ls
+ls
+touch ls
+ls
+ls
+ls
+rm ls
+cd ..
+ls
+make
+ls
+ls
+rm out
+ls
+touch ls
+ls
+rm ls
+ls
+ls
+cp test ../
+cd ..
+ls
+rm test
+make
+cd ..
+ls
+cd ..
+ls
+cd minishell/
+pwd
+env | grep HOME
+<< test << test1 ls
+<< test << test1 ls
+<< test << test1 ls
+ps
+ps
+<< test << test1 ls
+ps
+<< test << test1 ls
+<< test << test1 ls
+<< test
+<< test << test1
+<< test << test1
+<< test << test1 ls
+<< test ls
+<< test
+<< test
+<< test
+<< test
+<< test
+m
+make
+<< test
+<< tes
+<< tes
+make
+<< test
+
+<< test
+ps
+kill -9 -name minishell
+kill -9 -n minishell
+kill -9 --name minishell
+ps
+<< test
+<< test
+ps
+<< test
+<< test
+<< test
+make
+
+<< test
+<< test
+<< test
+ls
+ps
+cd /Users/axfernan/homebrew/Cellar/readline/8.2.1
+ls
+cd lib
+ls
+cd ..
+ls
+cat README 
+ls
+cd include/
+ls
+cat readline/
+cd readline/
+ls
+cat readline.h 
+
+man rl_replace_line
+<< test
+ls
+ps
+make
+<< test
+ls
+ls
+<< test
+<< test
+<< rtes
+<< test
+<< test
+
+<< test
+<< test
+
+<< test 
+<< test << test 
+<< test << test1
+ps
+<< test << test1
+<< test << test1 ls
+<< test << test1 ls
+make
+<< test << test1 ls
+<< test << test1 ls
+<< test << test1 ls
+make
+ls
+>> test
+<< test
+<< test << test1 ls
+make
+<< test << test1 ls
+<< test << test1 ls
+<< test << test1 ls
+<< test << test1 ls
+<< test << test1 ls
+make
+<< test << test1 ls
+cp /bin/ls ./my_ls
+ls
+echo "Hello World" >> text.txt
+ls
+cat text.txt 
+< text.txt cat | cat > out
+ls
+cat out
+
+< /dev/urandom cat | head > /dev/stdout
+ls
+ls
+rm text.txt 
+ls
+rm out
+ls
+rm my_ls
+ls
+make fclean

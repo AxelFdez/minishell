@@ -19,8 +19,6 @@ typedef struct s_cmd
 
 // int value_return;
 
-
-
 typedef struct s_parsing
 {
 
@@ -68,7 +66,7 @@ int		ft_check_syntax(t_parsing *parse);
 void	ft_initialization(t_parsing *parse);
 void	handle_signals(int sig);
 void	ft_strdel_quotes(t_parsing *parse, char *str);
-void	signals_(void);
+void	signals_(int heredoc);
 char	*path_of_command(t_parsing *parse);
 void	cmd_lst_to_tab(t_parsing *parse);
 void	parsing_cmd(t_parsing *parse);

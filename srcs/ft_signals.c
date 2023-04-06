@@ -4,25 +4,35 @@ void handle_signals(int sig)
 {
 	if (sig == 2)
 	{
-		ft_putchar(8);
+		//ft_putchar('\b');
+		rl_replace_line(" ", 0);
 		write(1, "\n", 1);
 		rl_on_new_line();
-		rl_replace_line("", 0);
 		rl_redisplay();
 	}
-// 	if (sig == 3)
-// 	{
-// 		signal(SIGSTOP, SIG_IGN);
-// 		//kill(pid, SIGCONT);
-// 	}
 }
 
-void signals_(void)
+void handle_signals_heredoc(int sig)
+{
+	if (sig == 2)
+	{
+		rl_replace_line(" ", 0);
+		rl_on_new_line();
+		rl_redisplay();
+		// write(1, "\n", 1);
+		exit(1);
+	}
+}
+
+void signals_(int heredoc)
 {
 	struct sigaction sa;
 
 	sigemptyset(&sa.sa_mask);
-	sa.sa_handler = handle_signals;
+	if (heredoc == 0)
+		sa.sa_handler = handle_signals;
+	else
+		sa.sa_handler = handle_signals_heredoc;
 	sa.sa_flags = SA_RESTART;
 	sigaddset(&sa.sa_mask, SIGINT);
 	// sigaddset(&sa.sa_mask, SIGSTOP);

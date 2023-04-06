@@ -81,11 +81,13 @@ void ft_heredoc(t_list **parse)
 
 	temp = "";
 	pipe(pfd);
+
 	ft_lstdel_current(&(*parse));
 	while (1)
 	{
-		//signal(SIGQUIT, SIG_IGN);
+		signals_(1);
 		temp = readline("> ");
+		//print_list((*parse));
 		if (ft_strcmp(temp, (*parse)->str) == 0)
 			break ;
 		ft_putstr_fd(temp, pfd[1]);
@@ -114,6 +116,20 @@ int check_herringbones_input(t_parsing *parse)
 	return (1);
 }
 
+int ft_lst_strchr_heredoc(t_list *list)
+{
+	t_list *temp;
+	temp = list;
+
+	while (temp)
+	{
+		if (ft_strcmp(temp->str, "<<") == 0)
+			return (0);
+		temp = temp->next;
+	}
+	return (1);
+}
+
 void	check_herringbone(t_parsing *parse)
 {
 	parse->redirection_out = 0;
@@ -128,7 +144,9 @@ void	check_herringbone(t_parsing *parse)
 			output_redirection(&parse->lst_cmdline);
 		}
 		else if (ft_strcmp(parse->lst_cmdline->str, "<<") == 0)
-			ft_heredoc(&parse->lst_cmdline);
+		{
+				ft_heredoc(&parse->lst_cmdline);
+		}
 		else if (ft_strcmp(parse->lst_cmdline->str, ">>") == 0)
 			ft_append(&parse->lst_cmdline);
 		if (!parse->lst_cmdline || !parse->lst_cmdline->next || parse->lst_cmdline->str[0] == '|')
