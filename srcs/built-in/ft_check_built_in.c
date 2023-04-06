@@ -34,7 +34,7 @@ void	execute_built_in(t_parsing *parse)
 		}
 		if (parse->built_in_cmd == 3)
 		{
-			parse->ret_value = ft_pwd(parse);
+			parse->ret_value = ft_pwd();
 			while (i < parse->lst_target + 1)
 			{
 				ft_lstdel_front(&parse->lst_cmdline);
@@ -72,16 +72,16 @@ void	execute_built_in(t_parsing *parse)
 			}
 			exit(EXIT_SUCCESS);
 		}
-		if (parse->built_in_cmd == 7)
-		{
-			ft_exit(parse);
-			while (i < parse->lst_target)
-			{
-				ft_lstdel_front(&parse->lst_cmdline);
-				i++;
-			}
-			exit(EXIT_SUCCESS);
-		}
+		// if (parse->built_in_cmd == 7)
+		// {
+		// 	ft_exit(parse);
+		// 	while (i < parse->lst_target)
+		// 	{
+		// 		ft_lstdel_front(&parse->lst_cmdline);
+		// 		i++;
+		// 	}
+		// 	exit(EXIT_SUCCESS);
+		// }
 		if (parse->built_in_cmd == 8)
 		{
 			ft_print_history(parse);

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strdup_free.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 08:02:58 by chmassa           #+#    #+#             */
-/*   Updated: 2023/04/06 14:43:39 by chmassa          ###   ########.fr       */
+/*   Created: 2023/04/06 14:44:34 by chmassa           #+#    #+#             */
+/*   Updated: 2023/04/06 14:48:15 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strdup_free(const char *s1)
 {
 	char	*str;
 	int		i;
@@ -34,5 +34,6 @@ char	*ft_strdup(const char *s1)
 		}
 		str[i] = '\0';
 	}
+    free((char *)s1);
 	return (str);
 }

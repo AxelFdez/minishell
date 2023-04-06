@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:21:09 by chmassa           #+#    #+#             */
-/*   Updated: 2023/04/03 13:39:05 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/06 18:15:10 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,14 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_str_chr(const char *s, int c);
 int		ft_str_rchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
+char	*ft_strdup_free(const char *s1);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strtrim_free_s1(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_itoa(int n);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strjoin_free_s1(char const *s1, char const *s2);
+char	*ft_strjoin_free_s1_s2(char const *s1, char const *s2);
 char	**ft_split(char const *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*get_next_line(int fd);
@@ -56,6 +58,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_strrev(char *str);
 void	ft_strcpy(char *dst, const char *src);
 int		ft_atoi(const char *str);
+unsigned long long		ft_atoi_llu(const char *str);
 int		ft_atoi_base(const char *str, const char *base);
 int		ft_strncmp(const char *s1, const char *s2,	size_t n);
 int		ft_strcmp(const char *s1, const char *s2);

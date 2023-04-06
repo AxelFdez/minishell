@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin_free_s1_s2.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 08:02:58 by chmassa           #+#    #+#             */
-/*   Updated: 2023/04/06 14:43:39 by chmassa          ###   ########.fr       */
+/*   Created: 2023/04/06 15:18:04 by chmassa           #+#    #+#             */
+/*   Updated: 2023/04/06 15:18:20 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strjoin_free_s1_s2(char const *s1, char const *s2)
 {
-	char	*str;
 	int		i;
-	int		s1len;
+	int		j;
+	int		len;
+	char	*str;
 
-	i = 0;
-	s1len = 0;
-	while (s1[s1len])
-		s1len++;
-	str = malloc(sizeof(char) * s1len + 1);
-	if (str == NULL)
+	if ((!s1) || (!s2))
 		return (NULL);
-	else
-	{
-		while (s1[i])
-		{
-			str[i] = s1[i];
-			i++;
-		}
-		str[i] = '\0';
-	}
+	i = 0;
+	j = 0;
+	len = ft_strlen(s1) + ft_strlen(s2);
+	str = malloc(sizeof(char) * len + 1);
+	if (!str)
+		return (NULL);
+	while (s1[i])
+		str[i++] = s1[j++];
+	j = 0;
+	while (s2[j])
+		str[i++] = s2[j++];
+	str[i] = '\0';
+	free((char *)s1);
+	free((char *)s2);
 	return (str);
 }

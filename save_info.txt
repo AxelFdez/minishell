@@ -79,3 +79,10 @@ save de 03/04 -2- :
 save de 04/04 :
 
 - pd avec 'echo AAA"BBB$USER MMM" OK !
+
+save de 05/04 :
+- debug avec '$' : ex: 'echo $USER$USER "$USER$USER' ou 'echo $USER$USER"$USER$USER' OK !
+
+save du 06/04 :
+- ft_exit semble etre OK.
+

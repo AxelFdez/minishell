@@ -94,12 +94,384 @@ echo "kjhdkjhdkjhdkjhd" "lkjhdkjhdkjhd$USER lkjhfi"
 echo kjhdkjhdkjhdkjhd "lkjhdkjhdkjhd$USER lkjhfi"
 echo kjhdkjhdkjhdkjhd"lkjhdkjhdkjhd$USER lkjhfi"
 echo kjhdkjhdkjhdkjhd"lkjhdkjhdkjhd$USERE lkjhfi"
-echo lkjf
-echo lkjf$USER
-echo lkjf $USER
-echo lkjf $USERW
-echo lkjf$USERW
-echo "lkjf$USERW
-dsgkju 
-sdgriuhg$HOME kuhf
-khjgfjhf"
+echo AAA"$USER$USER$ERT"
+echo AAA"$USER$USER$ERT BBBB"
+echo "$USER $HOME $GYIUUYI IUHIUH"
+echo "$USER $HOME $GYIUUYI IUHIUH"AAAAA
+echo "$USER $HOME $GYIUUYI IUHIUH"$USER
+echo $?
+$?
+$USER
+ps
+$USER $USER
+$USER$USER
+echo $USER
+ps
+echo $USER
+ps
+echo $USER
+ps
+$USER
+ps
+$USER
+ps
+$USER
+ps
+$USER | ls
+ps
+$USER | ls
+ps
+$USER | ls | $USER
+Makefile
+README.md
+env.txt
+eof
+history.txt
+includes
+libft
+minishell
+minishell.dSYM
+out
+save_info.txt
+save_info_axel.txt
+srcs
+test
+to_do.txt
+Makefile
+README.md
+env.txt
+eof
+history.txt
+includes
+libft
+minishell
+minishell.dSYM
+out
+save_info.txt
+save_info_axel.txt
+srcs
+test
+to_do.txt
+$USER | ls | $USER
+Makefile
+README.md
+env.txt
+eof
+history.txt
+includes
+libft
+minishell
+minishell.dSYM
+out
+save_info.txt
+save_info_axel.txt
+srcs
+test
+to_do.txt
+Makefile
+README.md
+env.txt
+eof
+history.txt
+includes
+libft
+minishell
+minishell.dSYM
+out
+save_info.txt
+save_info_axel.txt
+srcs
+test
+to_do.txt
+$USER
+$USER
+$USER
+ps
+$USER
+ps
+$USER
+$USER
+$USER
+$USER
+$USER
+$USER
+$USER
+ps
+$USER
+$USER
+$USER
+$USER
+$USER
+ps
+$USER | $USER
+$USER | $USER | $USER
+$USER
+$USER | $USER
+$USER | $USER | $USER
+$USER | $USER
+$USER
+$USER | $USER
+$USER | $USER | $USER
+$USER | $USER | $USER
+$USER | $USER | $USER
+$USER | $USER | $USER
+$USER | $USER | $USER
+$USER | $USER
+$USER | $USER | $USER
+$USER | $USER | $USER
+$USER | $USER | $USER
+$USER | $USER | $USER
+$USER | $USER | $USER
+$USER | $USER | $USER
+$USER | $USER | $USER
+$USER
+$USER
+$USER
+$USER
+$USER
+$USER
+$USER
+$USER
+$USER
+$USER
+$USER
+$USER
+$USER
+$USER
+$USER
+$USER
+echo $USER
+$USER
+$USER
+$USER | $USER | $USER
+echo $USER$USER
+$USER$USER
+$USER | $USER | $USER
+$USER | $USER | $USER
+$USER | $USER
+$USER | $USER
+$USER | $USER
+$USER | $USER
+$USER | $USER
+$USER | $USER
+kjhf | ls
+$USER
+$USER > out
+$USER > out | $USER
+cat out
+exit
+sfjglakdjfg
+dlfjgldakfjgladkfgdfg
+echo $? $USER
+echo $?$USER
+exit
+echo $USER
+ejetyj
+yjetyj
+etyjetyjetyjj
+exit
+ldfjg sdpghjspdoigh spohpsdfoih
+shsfh
+sfhsfh
+"dshsdhh   srthsdhsthsfh"
+exit
+$?
+exit
+echo $USER
+exit
+echo $USER
+exit
+echo $USER
+exit
+echo $USER
+exit
+echo $USER
+exit
+echo $USER
+exit
+exit
+exit
+exit
+exit
+echo $USER
+echo $USER
+echo $USER
+echo $USER
+echo $USER
+echo $USER
+echo $USER
+exit
+echo $USER
+exit
+echo $USER
+echo $USER
+exit
+echo $USER
+echo $USER
+echo $USER
+echo $USER
+echo $USER
+echo $USER
+exit
+echo $USER
+echo $USER
+echo $USER
+echo $USER
+echo $USER
+echo $USER
+exit
+echo $USER
+echo $USER
+echo $USER
+exit
+echo $USER
+echo $USER
+echo $USER
+exit
+echo $USER
+echo $USER
+echo $USER
+echo $USER
+echo $USER
+echo $USER
+echo $USER
+exit
+echo $USER
+exit
+echo $USER
+echo $USER
+exit
+hdgfjhgsdf
+uhkjhdd
+echo kjhdkjhdkjhd
+exit
+echo "$USER"
+exit
+echo "$?"
+exit
+echo "$?"
+exit
+echo "$?"
+exit
+echo $USER
+exit
+echo $?
+exit
+echo $?
+exit
+echo $?
+exit
+echo $?
+echo $?
+echo $?
+echo $?
+echo $?
+echo $?
+echo $?
+echo $?
+exit
+echo $?
+exit
+echo $?
+echo $?
+exit
+echo $?
+echo $?
+echo $?
+exit
+echo $?
+exit
+echo $?
+exit
+echo $?
+exit
+echo $?
+exit
+echo $?
+exit
+echo $?
+exit
+echo $?
+exit
+echo $?
+exit
+echo $?
+exit
+exit 456
+exit ppp
+exit 234
+exit 234p
+exit 42
+exit 42
+exit 42po
+exit 12
+exit 300
+exit 234 43
+exit 324 434
+exit 435 45
+exit
+exit 23
+exit kl;f
+exit klf
+exit ppp 23
+exit 12 122
+exit 45 534
+exit wr
+exit 23 21 2313 21313
+exit 2134 12313
+exit 23
+exit 18446744073709551615
+exit 12318446744073709551615
+exit 18446744073709551615
+exit 18446744073709551615
+exit 18446744073709551615
+exit 18446744073709551615
+exit 18446744073709551615
+exit 1844674407370955161
+exit 18446744073709551614
+exit 18446744073709551613
+exit 18446744073709551612
+exit 18446744073709551611
+exit 18446744073709551610
+exit 18446744073709551609
+exit 18446744073709551601
+exit
+exit 1844674407370955169
+exit 18446744073709551615
+exit -18446744073709551615
+exit -18446744073709551615
+exit -12
+exit 123
+exit -6548
+exit 18446744073709551616
+exit 18446744073709551617
+exit 18446744073709551615
+exit 18446744073709551615
+exit 1844674407370955169
+exit 1844674407370955169
+exit 1844674407370955161589
+exit -234
+exit -78
+exit -78
+exit -45
+exit -89
+exit -90
+exit -90
+exit -90
+exit -90
+exit -67890809809823048028434234
+exit -567892589027892973698752084525
+exit -567892589027892973698752084525
+exit -9834759387593875983475
+exit -1844674407370955169
+exit -1844674407370955169
+exit -1844674407370955169
+exit -1844674407370955170
+exit -1844674407370955199
+exit ppp 234
+exit 234 ppp
+exit 234 ppp
+exit 234 ppp
+exit ppp 234
+exit iufijihjfg
+exit 0989ihg

@@ -16,7 +16,8 @@ void	one_pipe(t_parsing *parse)
 		if (parse->built_in_cmd > 0)
 			execute_built_in(parse);;
 		execve(parse->command[0], parse->command, parse->env);
-		perror("command not found");
+		exit(1);
+		// perror("command not found");
 	}
 	dup2(pfd[0], STDIN_FILENO);
 	close(pfd[1]);
@@ -40,7 +41,9 @@ void	one_pipe(t_parsing *parse)
 	if (parse->built_in_cmd > 0)
 		execute_built_in(parse);
 	execve(parse->command[0], parse->command, parse->env);
-	perror("command not found");
+	exit(1);
+
+	// perror("command not found");
 }
 
 int	first_pipe(t_parsing *parse, int temp_fd)
@@ -59,7 +62,8 @@ int	first_pipe(t_parsing *parse, int temp_fd)
 		if (parse->built_in_cmd > 0)
 			execute_built_in(parse);
 		execve(parse->command[0], parse->command, parse->env);
-		perror("command not found");
+		exit(1);
+		// perror("command not found");
 	}
 	wait(NULL);
 	if (parse->built_in_cmd > 0)
@@ -94,7 +98,8 @@ int	middle_pipe(t_parsing *parse, int pipe_temp)
 		if (parse->built_in_cmd > 0)
 			execute_built_in(parse);
 		execve(parse->command[0], parse->command, parse->env);
-		perror("command not found");
+		exit(1);
+		// perror("command not found");
 	}
 	wait(NULL);
 	if (parse->built_in_cmd > 0)
@@ -130,7 +135,8 @@ void	last_pipe(t_parsing *parse, int temp_fd)
 		if (parse->built_in_cmd > 0)
 			execute_built_in(parse);
 		execve(parse->command[0], parse->command, parse->env);
-		perror("command not found");
+		exit(1);
+		// perror("command not found");
 	}
 	dup2(pfd[0], STDIN_FILENO);
 	close(temp_fd);
@@ -154,7 +160,8 @@ void	last_pipe(t_parsing *parse, int temp_fd)
 	if (parse->built_in_cmd > 0)
 			execute_built_in(parse);
 	execve(parse->command[0], parse->command, parse->env);
-	perror("command not found");
+	exit(1);
+	// perror("command not found");
 }
 
 void	pipex(t_parsing *parse)

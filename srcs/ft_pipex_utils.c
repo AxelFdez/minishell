@@ -36,7 +36,8 @@ char	*path_of_command(t_parsing *parse)
 		i++;
 		if (split[i] == 0)
 		{
-			perror("command not found");
+			// ft_printf("minishell: %s: ", parse->command[0]);
+			
 			j = 0;
 			while (j < i)
 			{
@@ -90,6 +91,7 @@ void	parsing_cmd(t_parsing *parse)
 
 	i = 0;
 	cmd_lst_to_tab(parse);
+	
 	if (access(parse->command[0], F_OK))
 		parse->command[0] = path_of_command(parse);
 		//exit(EXIT_FAILURE);
@@ -98,6 +100,7 @@ void	parsing_cmd(t_parsing *parse)
 		ft_lstdel_front(&parse->lst_cmdline);
 		i++;
 	}
+	
 		// ft_lstprint_from_head(parse->lst_cmdline);
 		// exit(EXIT_FAILURE);
 	//printf("ret = %d\n", parse->lst_target);
