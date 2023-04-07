@@ -7,7 +7,7 @@ void	ft_fill_lst(t_list **lst, t_parsing *parse, int start)
 
 	str = NULL;
 	if (parse->str_tmp)
-	{puts("AAAA");
+	{
 		str = ft_strdup(parse->str_tmp);
 		free(parse->str_tmp);
 		parse->str_tmp = NULL;

@@ -42,11 +42,6 @@ static void	ft_retrieve_var_name(t_parsing *parse)
 	}
 	parse->var_name[i] = '\0';
 	ft_found_var(parse);
-	// if (ft_found_var(parse) == 1)
-	// {puts("AAAAAAAAAAAAAAA");
-	// 	free (parse->str_tmp);
-	// 	parse->str_tmp = NULL;
-	// }
 	ft_bzero(parse->var_name, 1024);
 }
 
@@ -61,29 +56,16 @@ void	ft_handle_dollar(t_parsing *parse)
 				parse->i - parse->len, parse->len);
 	}
 	else if (!parse->str_tmp)
-	{
-		puts("else if 1");
 		parse->str_tmp = ft_calloc(1, sizeof(char));
-	}
 	else if (parse->str_tmp)
-	{
-		puts("else if 2");
 		parse->str_tmp = ft_strjoin_free_s1_s2(parse->str_tmp,
 				ft_substr(parse->input, parse->i - parse->len, parse->len));
-	}
 	if (parse->input[parse->i +1] == '?')
 	{
-		puts("else if ?");
 		ret_itoa = ft_itoa(parse->tmp_ret_value);
 		parse->str_tmp = ft_strjoin_free_s1_s2(parse->str_tmp, ret_itoa);
-			printf("str_tmp ptr $? -> %p\n", parse->str_tmp);
-
-		// free(ret_itoa);
 		parse->i += 2;
 	}
 	else
-	{
-		puts("go to retrieve var name");
 		ft_retrieve_var_name(parse);
-	}
 }

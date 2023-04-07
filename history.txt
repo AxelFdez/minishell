@@ -475,3 +475,11 @@ exit 234 ppp
 exit ppp 234
 exit iufijihjfg
 exit 0989ihg
+exit -67
+exit pp 324
+./minishell
+exit 42
+ps
+./minishell
+exit 42
+echo $?
