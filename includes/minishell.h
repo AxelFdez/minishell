@@ -36,6 +36,7 @@ typedef struct s_parsing
 	char	*meta[6];
 	char	*s1;
 	char	*s2;
+	char	*tmp_input;
 	int		len;
 	int		len_b;
 	int		quote_to_del;
@@ -90,6 +91,8 @@ int		ft_export(t_parsing *parse);
 void	ft_print_sorted_env(t_parsing *parse);
 void	ft_handle_dollar_no_quotes(t_parsing *parse);
 void	ft_handle_dollar_in_str(t_parsing *parse);
+void	ft_handle_dollar_in_heredoc(t_parsing *parse);
+
 void	ft_retrieve_env(t_parsing *parse, char **env);
 char	**ft_lst_to_char_tab(t_list *lst);
 int		check_builtin_input(t_parsing * parse);
@@ -116,6 +119,8 @@ void	pipe_child(t_parsing *parse, int pfd[2], int pipe_temp, int dup);
 void	ft_fill_tmplst(t_parsing *parse, t_list **lst, int start);
 char	*ft_set_str_to_comp(char *s);
 void	ft_loop(t_parsing *parse, t_list **lst);
+void    ft_return_error(t_parsing *parse);
+
 
 // void	ft_update_pwd(t_parsing *parse, char *cwd);
 

@@ -73,6 +73,8 @@ void	ft_append(t_list **parse)
 	ft_lstdel_current(&(*parse));
 }
 
+static
+
 void ft_heredoc(t_list **parse)
 {
 	char *temp;

@@ -36,8 +36,8 @@ char	*path_of_command(t_parsing *parse)
 		i++;
 		if (split[i] == 0)
 		{
-			// ft_printf("minishell: %s: ", parse->command[0]);
-			
+			ft_printf("minishell: %s: command not found\n", parse->command[0]);
+			parse->ret_value = 127;
 			j = 0;
 			while (j < i)
 			{
@@ -86,7 +86,6 @@ void	parsing_cmd(t_parsing *parse)
 
 	i = 0;
 	cmd_lst_to_tab(parse);
-	
 	if (access(parse->command[0], F_OK))
 		parse->command[0] = path_of_command(parse);
 	while (i < parse->lst_target)

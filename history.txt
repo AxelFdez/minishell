@@ -25,3 +25,144 @@ ls uioo
 minishell
 exit 234
 echo $?
+
+
+ 
+
+fslglgkjslkjglasjglsfajglkafjglfkjgladkfjgleqkjgoerjgoeqijgoerijgoeqjgorejoeqjrogijqeorjgoqerijg
+rew
+echo $?
+ewrt
+wrgf
+sdfsdf
+xfg
+dfg
+srf
+fghfsgh
+echo $?
+erdg
+echo $?
+rf
+echo $?
+wef
+echo $?
+ls ijhfu
+echo $?
+echo dfgh;gt
+echo $?
+echo AAA"$USER$USER"
+dfgfdg doijoihj 
+arg sdgbsgfhb
+
+dfg sdghsdh
+gyjdgyjj
+djdjuj
+echo ljkglkjfg
+srf sfghsdgh
+fghfthhy
+edgdg
+edgdg dgh
+fgegedgegqeg
+adgadg
+ttttttttt
+egeeeeqgg
+aaaa
+aaaa
+aaaa
+aaaa
+ 
+aaa
+bbb
+bbb
+aaa
+aaaa
+aaaa
+cccc
+cccc
+cccc
+cccc
+cccc
+cccc
+drjhg odhgkdhg odaifhgokadihfjg
+aaa 
+aaa 
+echo "ohfoiduhf oijfoijoijfg"
+$HOME
+echo $HOME
+$HOME
+echo $?
+$?
+$HOME
+dfg
+$USER
+$HOME
+$USER
+dfgdrg
+$HOME
+pwd
+env
+$HOME
+$HOME
+$HOME
+$HOME
+env
+$HOME
+$USER
+$PATH
+$USER
+$HOME
+/oiu
+/kkk
+/Users
+$USER
+$HOME
+echo $?
+$?
+$?
+$?
+$USER
+$HOME
+echo $?
+$USER
+echo $?
+$HOME
+echo$?
+$HOME
+echo $?
+$HOME
+$PATH
+echo wer
+exit
+echo $USER
+exit
+echo $USER
+echo $USER$USER$USER$USER
+echo AAA"$USER iuhfiuh fiuhfuh $UYGJUYGYGUy$USER kjfoi "
+echo AAA "$USER iuhfiuh fiuhfuh $UYGJUYGYGUy$USER kjfoi "
+echo "AAA$USER iugiudhiu$UYYG$USER kjvihv""ligoijgoijgoi $HOME oijfoijf"
+echo AAA BBB "kuhdfkj " $USER
+echo AAA$USER
+echo AAA$USERRE
+echo AAA$US
+echo << fin
+cat << fin
+> $USER
+> $HOME ef
+> iufiuhf"fkjhfiuhifuhf"
+> fin
+cat << fin
+echo "kjuhf
+$USER
+$HOME"
+echo $USER > out
+cat out 
+cat $USER > out
+cat out 
+echo << f
+cat << f
+cat << f
+cat << f
+cat << f
+cat <<
+cat << f
+cat << f

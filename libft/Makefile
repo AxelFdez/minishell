@@ -94,28 +94,28 @@ HEADER = ./
 
 
 all: $(NAME)
-.c.o:
-	$(CC) $(CFLAGS) $(HEADER) -c  $< -o $(<:.c=.o)
+%.o: %.c
+	@$(CC) $(CFLAGS) $(HEADER) -c $< -o $(<:.c=.o)
+	@printf "$(YELLOW)Compiling $(NAME): << $< >>\033[K\r$(DEFAULT)"
 
 $(NAME): $(OBJECT_FILES)
+	@echo "\n"
 	@ar rsc $(NAME) $(OBJECT_FILES)
-	@echo "$(GREEN)\n<<<<< libft.a created ! >>>>>$(DEFAULT)"
+	@echo "$(GREEN)<<<<< libft.a created >>>>>$(DEFAULT)"
 
 clean:
-	@echo "$(RED)\n<<<<< deleting libft obj. files! >>>>>$(DEFAULT)"
+	@echo "$(RED)<<<<< deleting libft obj. files >>>>>$(DEFAULT)"
 	@rm -rf $(OBJECT_FILES)
-	@echo "$(GREEN)\n<<<<< obj. files libft cleaned ! >>>>>$(DEFAULT)"
 
 fclean: clean
-	@echo "$(RED)\n<<<<< deleting libft.a >>>>>$(DEFAULT)"
+	@echo "$(RED)<<<<< deleting libft.a >>>>>$(DEFAULT)"
 	@rm -rf $(NAME)
-	@echo "$(GREEN)\n<<<<< fclean libft done ! >>>>>$(DEFAULT)"
 
 re: fclean all
-	@echo "$(GREEN)<<<<< Make re libft done ! >>>>>$(DEFAULT)"
+	@echo "$(GREEN)\n<<<<< Make re libft done >>>>>$(DEFAULT)"
 
 #COLORS
-RED = \033[1;31m
-GREEN = \033[1;32m
-YELLOW = \033[1;33m
+RED = \033[3;31m
+GREEN = \033[3;32m
+YELLOW = \033[3;33m
 DEFAULT = \033[0m

@@ -13,7 +13,6 @@ static int	ft_found_var(t_parsing *parse)
 		{
 			parse->str_tmp = ft_strjoin_free_s1(parse->str_tmp,
 					tmp->str + (ft_strlen(parse->var_name) + 1));
-			printf("str_tmp ptr -> %p\n", parse->str_tmp);
 			free(parse->s1);
 			free(parse->s2);
 			return (0);
@@ -50,11 +49,8 @@ void	ft_handle_dollar(t_parsing *parse)
 	char	*ret_itoa;
 
 	if (parse->len > 0 && !parse->str_tmp)
-	{
-		puts("first if");
 		parse->str_tmp = ft_substr(parse->input,
 				parse->i - parse->len, parse->len);
-	}
 	else if (!parse->str_tmp)
 		parse->str_tmp = ft_calloc(1, sizeof(char));
 	else if (parse->str_tmp)

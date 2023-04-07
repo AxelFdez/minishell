@@ -34,47 +34,49 @@ SRCS =  srcs/minishell.c \
 		srcs/built-in/ft_handle_dollar_in_str.c \
 		srcs/built-in/ft_handle_dollar_utils.c \
 		srcs/built-in/ft_cd.c \
+		srcs/built-in/ft_handle_dollar_in_heredoc.c \
+		srcs/ft_return_error.c \
 		srcs/ft_quotes.c
-
 OBJECT_FILES = $(SRCS:.c=.o)
 HEADER = -I./includes
 
 all: $(NAME)
 .c.o:
 	@$(CC) $(CFLAGS) $(HEADER) -c $< -o $(<:.c=.o)
+	@printf "$(YELLOW)Compiling $(NAME): << $< >>\033[K\r$(DEFAULT)"
+
 
 $(NAME): $(OBJECT_FILES)
-	@echo "$(YELLOW)\n<<<<< libft compiling ... >>>>>\n$(DEFAULT)"
-	$(MAKE) -C $(LIBFT)
-	# cp linked_list/lst.a $(NAME)
-	# cp libft/libft.a $(NAME)
-	@echo "$(YELLOW)\n<<<<< Creating $(NAME) exec file ! ... >>>>>$(DEFAULT)"
-	# $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -lreadline
-	$(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a $(RLFLAGS) -lreadline
-	# $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -L /usr/local/Cellar/readline/8.2.1/lib -lreadline
-	@echo "$(GREEN)\n<<<<< $(NAME) created ! ... >>>>>\n$(DEFAULT)"
+	@echo "\n"
+	@$(MAKE) -C $(LIBFT)
+	
+	@# $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -lreadline
+	@$(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a $(RLFLAGS) -lreadline
+	@# $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -L /usr/local/Cellar/readline/8.2.1/lib -lreadline
+	@echo "$(GREEN)<<<<< $(NAME) exec file created >>>>>$(DEFAULT)"
 #------------------------------------------------------------------------------
 clean:
-	@echo "$(RED)\n<<<<< deleting $(NAME) obj. files ! ... >>>>>$(DEFAULT)"
-	rm -rf $(OBJECT_FILES)
-	$(MAKE) clean -C $(LIBFT)
-	@echo "$(GREEN)<<<<< clean from $(NAME) done ! >>>>>\n$(DEFAULT)"
+	@echo "$(RED)<<<<< deleting $(NAME) obj. files >>>>>$(DEFAULT)"
+	@rm -rf $(OBJECT_FILES)
+	@$(MAKE) clean -C $(LIBFT)
+	@echo "$(GREEN)<<<<< clean from $(NAME) done >>>>>\n$(DEFAULT)"
 #------------------------------------------------------------------------------
 fclean: clean
-	@echo "$(RED)<<<<< deleting $(NAME) exec ! >>>>>\n$(DEFAULT)"
-	rm -rf $(NAME)
-	$(MAKE) fclean -C $(LIBFT)
-	@echo "$(GREEN)<<<<< fclean from $(NAME) done ! >>>>>\n$(DEFAULT)"
+	@echo "$(RED)<<<<< deleting $(NAME) exec >>>>>$(DEFAULT)"
+	@rm -rf $(NAME)
+
+	@$(MAKE) fclean -C $(LIBFT)
+	@echo "$(GREEN)<<<<< fclean from $(NAME) done >>>>>\n$(DEFAULT)"
 #------------------------------------------------------------------------------
 re: fclean all
-	@echo "$(GREEN)\n<<<<< $(NAME) make re done ! >>>>>\n$(DEFAULT)"
+	@echo "$(GREEN)\n<<<<< $(NAME) make re done >>>>>$(DEFAULT)"
 #------------------------------------------------------------------------------
 
 
 #COLORS
-RED = \033[1;31m
-GREEN = \033[1;32m
-YELLOW = \033[1;33m
+RED = \033[3;31m
+GREEN = \033[3;32m
+YELLOW = \033[3;33m
 DEFAULT = \033[0m
 #------------------------------------------------------------------------------
 #DEBUG

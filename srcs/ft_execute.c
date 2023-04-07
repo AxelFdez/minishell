@@ -124,7 +124,7 @@ void execute_cmd(t_parsing *parse)
 	pid_t child;
 	int	status;
 
-	status = 42;
+	status = 0;
 	built_in_works(parse);
 	if (!parse->lst_cmdline)
 		return ;
@@ -144,7 +144,8 @@ void execute_cmd(t_parsing *parse)
 		if (parse->built_in_cmd > 0)
 			execute_built_in(parse);
 		execve(parse->command[0], parse->command, parse->env);
-		exit(1);
+
+		exit(parse->ret_value);
 	}
 	waitpid(child, &status, 0);
 	parse->ret_value = status / 256;
