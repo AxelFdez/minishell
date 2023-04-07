@@ -73,7 +73,7 @@ void	ft_append(t_list **parse)
 	ft_lstdel_current(&(*parse));
 }
 
-void ft_heredoc(t_list **parse)
+void ft_heredoc(t_list **parse, struct termios term)
 {
 	char *temp;
 	int pfd[2];
@@ -112,6 +112,9 @@ void ft_heredoc(t_list **parse)
 	int j = 0;
 	while (1)
 	{
+		tcgetattr(STDIN_FILENO, &term);
+		term.c_lflag &= ~(ECHOCTL | ICANON);
+		tcsetattr(STDIN_FILENO, TCSAFLUSH, &term);
 		signals_(1);
 		temp = readline("> ");
 		if (i == 1)
@@ -216,7 +219,7 @@ void	check_herringbone(t_parsing *parse)
 		}
 		else if (ft_strcmp(parse->lst_cmdline->str, "<<") == 0)
 		{
-				ft_heredoc(&parse->lst_cmdline);
+				ft_heredoc(&parse->lst_cmdline, parse->term);
 		}
 		else if (ft_strcmp(parse->lst_cmdline->str, ">>") == 0)
 			ft_append(&parse->lst_cmdline);

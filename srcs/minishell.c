@@ -3,7 +3,6 @@
 int	main(int ac, char **av, char **env)
 {
 	t_parsing	parse;
-
 	(void)av;
 	if (ac == 1)
 	{
@@ -12,15 +11,19 @@ int	main(int ac, char **av, char **env)
 		ft_check_history_size(&parse);
 		while (1)
 		{
+			tcgetattr(STDIN_FILENO, &parse.term);
+			parse.term.c_lflag &= ~(ECHOCTL | ICANON);
+			tcsetattr(STDIN_FILENO, TCSAFLUSH, &parse.term);
 			signal(SIGQUIT, SIG_IGN);
 			signals_(0);
-			parse.input = readline("\033[3;36mminishell ->\033[0m ");
+			parse.input = readline("minishell -> ");
 			if (!parse.input)
 			{
 				printf("exit\n");
 				return (0);
 			}
 			ft_quotes(&parse);
+
 			add_history(parse.input);
 			ft_history(&parse);
 			ft_get_cmdline(&parse);

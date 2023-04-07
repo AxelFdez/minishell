@@ -51,7 +51,7 @@ A tester :
 - si redirection fermante pas de redirection dans le pipe --OK--
 
 - si ligne trop longue, ecrase le debut
-- enchainer les heredocs
+- enchainer les heredocs --OK--
 
 To chris :
-- $HOME pas de retour a la ligne quand utilisé seul
+- $HOME pas de retour a la ligne quand utilisé seul --OK--

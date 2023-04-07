@@ -26,6 +26,7 @@ void	pipe_child(t_parsing *parse, int pfd[2], int pipe_temp, int dup)
 	if (parse->built_in_cmd > 0)
 		execute_built_in(parse);;
 	execve(parse->command[0], parse->command, parse->env);
+	error_exec_message(parse);
 	// printf("minishell: ");
 	// perror(parse->command[0]);
 }

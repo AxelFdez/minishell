@@ -1,1 +1,16 @@
-minishell: (null): 
+total 208$
+-rw-r--r--   1 axfernan  2022_nice     33 Apr  7 14:22 1$
+-rw-r--r--   1 axfernan  2022_nice   2786 Apr  7 11:04 Makefile$
+-rw-r--r--   1 axfernan  2022_nice     12 Mar 16 12:03 README.md$
+-rw-r--r--   1 axfernan  2022_nice   1105 Apr  3 13:38 env.txt$
+-rw-r--r--   1 axfernan  2022_nice   1204 Apr  7 15:07 history.txt$
+drwxr-xr-x   3 axfernan  2022_nice    102 Apr  7 11:02 includes$
+drwxr-xr-x   6 axfernan  2022_nice    204 Apr  7 11:02 libft$
+-rwxr-xr-x   1 axfernan  2022_nice  65308 Apr  7 14:58 minishell$
+drwxr-xr-x   3 axfernan  2022_nice    102 Mar 31 16:30 minishell.dSYM$
+-rw-r--r--   1 axfernan  2022_nice     11 Apr  7 15:09 out$
+-rw-r--r--   1 axfernan  2022_nice   2302 Apr  7 11:02 save_info.txt$
+-rw-r--r--   1 axfernan  2022_nice   1076 Apr  7 11:06 save_info_axel.txt$
+drwxr-xr-x  38 axfernan  2022_nice   1292 Apr  7 14:58 srcs$
+-rw-r--r--   1 axfernan  2022_nice     33 Mar 31 16:30 test$
+-rw-r--r--   1 axfernan  2022_nice    350 Mar 31 16:30 to_do.txt$

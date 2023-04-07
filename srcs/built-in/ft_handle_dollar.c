@@ -13,7 +13,6 @@ static int	ft_found_var(t_parsing *parse)
 		{
 			parse->str_tmp = ft_strjoin_free_s1(parse->str_tmp,
 					tmp->str + (ft_strlen(parse->var_name) + 1));
-			printf("str_tmp ptr -> %p\n", parse->str_tmp);
 			free(parse->s1);
 			free(parse->s2);
 			return (0);

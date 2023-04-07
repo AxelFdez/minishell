@@ -119,6 +119,21 @@ void	built_in_works(t_parsing *parse)
 		execute_built_in_first(parse);
 }
 
+void error_exec_message(t_parsing *parse)
+{
+	{
+			if (parse->command[0][0] == '/')
+			{
+				if (access(parse->command[0], F_OK))
+					ft_printf("minishell: %s: no such file or directory\n", parse->command[0]);
+				else
+					ft_printf("minishell: %s: is a directory\n", parse->command[0]);
+			}
+			else
+			ft_printf("minishell: %s: command not found\n", parse->command[0]);
+		}
+}
+
 void execute_cmd(t_parsing *parse)
 {
 	pid_t child;
@@ -144,6 +159,7 @@ void execute_cmd(t_parsing *parse)
 		if (parse->built_in_cmd > 0)
 			execute_built_in(parse);
 		execve(parse->command[0], parse->command, parse->env);
+		error_exec_message(parse);
 		exit(1);
 	}
 	waitpid(child, &status, 0);

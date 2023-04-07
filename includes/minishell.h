@@ -11,6 +11,7 @@
 # include <signal.h>
 # include <sys/wait.h>
 # include <errno.h>
+# include <termios.h>
 
 typedef struct s_cmd
 {
@@ -50,6 +51,7 @@ typedef struct s_parsing
 	int		built_in_last_cmd;
 	int		redirection_out;
 	int		fd_stdout;
+	struct termios term;
 }				t_parsing;
 
 
@@ -116,6 +118,7 @@ void	pipe_child(t_parsing *parse, int pfd[2], int pipe_temp, int dup);
 void	ft_fill_tmplst(t_parsing *parse, t_list **lst, int start);
 char	*ft_set_str_to_comp(char *s);
 void	ft_loop(t_parsing *parse, t_list **lst);
+void	error_exec_message(t_parsing *parse);
 
 // void	ft_update_pwd(t_parsing *parse, char *cwd);
 

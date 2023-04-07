@@ -23,6 +23,7 @@ void	one_pipe(t_parsing *parse)
 	if (parse->built_in_cmd > 0)
 		execute_built_in(parse);
 	execve(parse->command[0], parse->command, parse->env);
+	error_exec_message(parse);
 }
 
 int	first_pipe(t_parsing *parse, int temp_fd)
@@ -85,6 +86,7 @@ void	last_pipe(t_parsing *parse, int pipe_temp)
 	if (parse->built_in_cmd > 0)
 			execute_built_in(parse);
 	execve(parse->command[0], parse->command, parse->env);
+	error_exec_message(parse);
 }
 
 void	parsing_cmd_in_pipe(t_parsing *parse)

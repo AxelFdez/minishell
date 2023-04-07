@@ -36,8 +36,6 @@ char	*path_of_command(t_parsing *parse)
 		i++;
 		if (split[i] == 0)
 		{
-			// ft_printf("minishell: %s: ", parse->command[0]);
-			
 			j = 0;
 			while (j < i)
 			{
@@ -45,7 +43,7 @@ char	*path_of_command(t_parsing *parse)
 				j++;
 			}
 			free(split);
-			return (NULL);
+			return (parse->command[0]);;
 		}
 	}
 	return (split[i]);
@@ -86,8 +84,7 @@ void	parsing_cmd(t_parsing *parse)
 
 	i = 0;
 	cmd_lst_to_tab(parse);
-	
-	if (access(parse->command[0], F_OK))
+	if (access(parse->command[0], F_OK) && access(parse->command[0], X_OK))
 		parse->command[0] = path_of_command(parse);
 	while (i < parse->lst_target)
 	{
