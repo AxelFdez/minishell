@@ -55,14 +55,10 @@ void	cmd_lst_to_tab(t_parsing *parse)
 {
 	int		i;
 	t_list *temp;
-	t_list *temp2;
 
 	temp = parse->lst_cmdline;
-	temp2 = parse->lst_cmdline;
 	i = 0;
-	while (temp && ft_strchr(temp->str, '|') == NULL
-		&& ft_strchr(temp->str, '<') == NULL
-		&& ft_strchr(temp->str, '>') == NULL)
+	while (temp && ft_strcmp(temp->str, "|") != 0)
 	{
 		i++;
 		temp = temp->next;
@@ -73,14 +69,13 @@ void	cmd_lst_to_tab(t_parsing *parse)
 		perror("error malloc");
 	i = 0;
 	parse->lst_target = 0;
-	while (temp2 && ft_strchr(temp2->str, '|') == NULL
-		&& ft_strchr(temp2->str, '<') == NULL
-		&& ft_strchr(temp2->str, '>') == NULL)
+	temp = parse->lst_cmdline;
+	while (temp && ft_strcmp(temp->str, "|") != 0)
 	{
-		parse->command[i] = ft_strdup(temp2->str);
+		parse->command[i] = ft_strdup(temp->str);
 		i++;
 		parse->lst_target++;
-		temp2 = temp2->next;
+		temp = temp->next;
 	}
 	parse->command[i] = 0;
 }
@@ -94,19 +89,14 @@ void	parsing_cmd(t_parsing *parse)
 	
 	if (access(parse->command[0], F_OK))
 		parse->command[0] = path_of_command(parse);
-		//exit(EXIT_FAILURE);
 	while (i < parse->lst_target)
 	{
 		ft_lstdel_front(&parse->lst_cmdline);
 		i++;
 	}
-	
-		// ft_lstprint_from_head(parse->lst_cmdline);
-		// exit(EXIT_FAILURE);
-	//printf("ret = %d\n", parse->lst_target);
 }
 
-int	count_pipe_until_sep(t_list *list)
+int	count_pipe(t_list *list)
 {
 	t_list	*temp;
 	int		count;
@@ -117,10 +107,6 @@ int	count_pipe_until_sep(t_list *list)
 	{
 		if (temp->str[0] == '|')
 			count++;
-		if (temp->str[0] == '<' && temp->str[0] == '>')
-		{
-			return (count);
-		}
 		temp = temp->next;
 	}
 	return (count);

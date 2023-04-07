@@ -9,7 +9,8 @@
 # include <fcntl.h>
 # include "../libft/libft.h"
 # include <signal.h>
-#include <errno.h>
+# include <sys/wait.h>
+# include <errno.h>
 
 typedef struct s_cmd
 {
@@ -18,8 +19,6 @@ typedef struct s_cmd
 }	t_cmd;
 
 // int value_return;
-
-
 
 typedef struct s_parsing
 {
@@ -47,10 +46,10 @@ typedef struct s_parsing
 	t_list	*lst_env;
 	char	**command;
 	int		lst_target;
-	int		fd[2];
 	int		built_in_cmd;
 	int		built_in_last_cmd;
-	int		last_pipe;
+	int		redirection_out;
+	int		fd_stdout;
 }				t_parsing;
 
 
@@ -67,13 +66,13 @@ int		ft_check_syntax(t_parsing *parse);
 void	ft_initialization(t_parsing *parse);
 void	handle_signals(int sig);
 void	ft_strdel_quotes(t_parsing *parse, char *str);
-void	signals_(void);
+void	signals_(int heredoc);
 char	*path_of_command(t_parsing *parse);
 void	cmd_lst_to_tab(t_parsing *parse);
 void	parsing_cmd(t_parsing *parse);
 void	execute_cmd(t_parsing *parse);
 char	*path_of_command(t_parsing *parse);
-int		count_pipe_until_sep(t_list *list);
+int		count_pipe(t_list *list);
 void	one_pipe(t_parsing *parse);
 int		first_pipe(t_parsing *parse, int temp_fd);
 int		middle_pipe(t_parsing *parse, int pipe_temp);
@@ -112,6 +111,8 @@ void	print_list(t_list *list);
 void	ft_history(t_parsing *parse);
 void	ft_check_history_size(t_parsing *parse);
 void	ft_print_history(t_parsing *parse);
+void	del_parsed_cmd(t_parsing *parse);
+void	pipe_child(t_parsing *parse, int pfd[2], int pipe_temp, int dup);
 void	ft_fill_tmplst(t_parsing *parse, t_list **lst, int start);
 char	*ft_set_str_to_comp(char *s);
 void	ft_loop(t_parsing *parse, t_list **lst);

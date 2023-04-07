@@ -1,24 +1,6 @@
 
 #include "../includes/minishell.h"
 
-int ft_lst_strchr_meta(t_list *list)
-{
-	t_list *temp;
-	temp = list;
-
-	while (temp)
-	{
-		if (ft_strchr(temp->str, '|') != NULL)
-			return (0);
-		else if (ft_strchr(temp->str, '>') != NULL)
-			return (0);
-		else if (ft_strchr(temp->str, '<') != NULL)
-			return (0);
-		temp = temp->next;
-	}
-	return (1);
-}
-
 int ft_lst_strchr_pipe(t_list *list)
 {
 	t_list *temp;
@@ -52,16 +34,15 @@ int check_builtin_input(t_parsing *parse)
 int	parsing_built_in(t_parsing *parse)
 {
 	t_list	*tmp;
-	t_list	*tmp2;
-	tmp = parse->lst_cmdline;
-	tmp2 = parse->lst_cmdline;
-	parse->lst_target = 0;
 
-	while (tmp2 && ft_strchr(tmp2->str, '|') == NULL)
+	tmp = parse->lst_cmdline;
+	parse->lst_target = 0;
+	while (tmp && ft_strchr(tmp->str, '|') == NULL)
 	{
 		parse->lst_target++;
-		tmp2 = tmp2->next;
+		tmp = tmp->next;
 	}
+	tmp = parse->lst_cmdline;
 	while (tmp)
 	{
 		if (ft_strcmp(tmp->str, "env") == 0 || ft_strcmp(tmp->str, "ENV") == 0)
@@ -83,21 +64,6 @@ int	parsing_built_in(t_parsing *parse)
 		tmp = tmp->next;
 	}
 	return (0);
-}
-
-void	print_list(t_list *lst)
-{
-	if (!lst)
-	{
-		ft_printf("la liste est vide\n");
-		return ;
-	}
-	while (lst != NULL)
-	{
-		ft_printf("[%s] ", lst->str);
-		lst = lst->next;
-	}
-	ft_printf("\n");
 }
 
 void	execute_built_in_first(t_parsing *parse)
@@ -156,20 +122,18 @@ void	built_in_works(t_parsing *parse)
 void execute_cmd(t_parsing *parse)
 {
 	pid_t child;
+	int	status;
 
+	status = 42;
+	built_in_works(parse);
 	if (!parse->lst_cmdline)
 		return ;
-	built_in_works(parse);
-	// print_list(parse->lst_cmdline);
-	// exit(EXIT_FAILURE);
 	child = fork();
 	if (child < 0)
 		perror("fork error\n");
 	else if (child == 0)
 	{
 		check_herringbone(parse);
-		if (!parse->lst_cmdline)
-			exit(EXIT_SUCCESS);
 		parse->built_in_cmd = 0;
 		if (check_builtin_input(parse) == 1)
 			parsing_cmd(parse);
@@ -181,9 +145,10 @@ void execute_cmd(t_parsing *parse)
 			execute_built_in(parse);
 		execve(parse->command[0], parse->command, parse->env);
 		exit(1);
-
 	}
-	wait(NULL);
+	waitpid(child, &status, 0);
+	parse->ret_value = status / 256;
+	//system("lsof -c minishell");
 	//exit(EXIT_FAILURE);
 }
 

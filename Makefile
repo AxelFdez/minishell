@@ -19,6 +19,7 @@ SRCS =  srcs/minishell.c \
 		srcs/ft_history.c \
 		srcs/ft_pipex.c \
 		srcs/ft_pipex_utils.c \
+		srcs/ft_pipex_utils2.c \
 		srcs/ft_herringbone.c \
 		srcs/ft_sort_env.c \
 		srcs/built-in/ft_echo.c \

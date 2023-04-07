@@ -1,20 +1,5 @@
 #include "../includes/minishell.h"
 
-// static void	ft_retrieve_env(t_parsing *parse, char **env)
-// {
-// 	int		i;
-// 	t_list	*new;
-
-// 	parse->lst_env = NULL;
-// 	i = 0;
-// 	while (env[i])
-// 	{
-// 		new = ft_lstnew(ft_strdup(env[i]));
-// 		ft_lstadd_back(&parse->lst_env, new);
-// 		i++;
-// 	}
-// }
-
 int	main(int ac, char **av, char **env)
 {
 	t_parsing	parse;
@@ -28,8 +13,7 @@ int	main(int ac, char **av, char **env)
 		while (1)
 		{
 			signal(SIGQUIT, SIG_IGN);
-			signals_();
-
+			signals_(0);
 			parse.input = readline("\033[3;36mminishell ->\033[0m ");
 			if (!parse.input)
 			{
@@ -40,12 +24,7 @@ int	main(int ac, char **av, char **env)
 			add_history(parse.input);
 			ft_history(&parse);
 			ft_get_cmdline(&parse);
-			// if (parse.input[0] == '$' && parse.lst_cmdline)
-			// {
-			// 	ft_printf("minishell: %s: command not found\n", parse.lst_cmdline->str);
-			// 	ft_lstdel_front(&parse.lst_cmdline);
-
-			// }
+			//print_list(parse.lst_cmdline);
 			if (parse.lst_cmdline)
 			{
 				parse.env = ft_lst_to_char_tab(parse.lst_env);

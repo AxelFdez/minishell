@@ -33,6 +33,7 @@ void	ft_exit(t_parsing *parse)
 		{
 			ft_printf("minishell: exit: %s: numeric argument required\n",
 				parse->lst_cmdline->next->str);
+			parse->ret_value = 255;
 			exit(255);
 		}
 		else
@@ -42,7 +43,8 @@ void	ft_exit(t_parsing *parse)
 					&& ret_atoi <= 1844674407370955169)
 				|| (parse->lst_cmdline->next->str[0] == '-'
 					&& ret_atoi >= 1844674407370955169))
-				exit(ret_atoi % 256);
+			parse->ret_value = ret_atoi % 256;
+			exit(ret_atoi % 256);
 		}
 	}
 }

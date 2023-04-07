@@ -39,12 +39,19 @@ save du 30/03 :
 
 NOTE :
 
-cd : fonctionne seul
+cd : fonctionne seul et avec redirections
 export : transmet une variable si utilisé seul
 env : partout (visible que seul ou fin de pipe)
 unset : fonctionne seul
 exit : fonctionne seul
 
 A tester :
-- enchainer les redirections droite
+- enchainer les redirections droite --OK--
 - cat cat ls
+- si redirection fermante pas de redirection dans le pipe --OK--
+
+- si ligne trop longue, ecrase le debut
+- enchainer les heredocs
+
+To chris :
+- $HOME pas de retour a la ligne quand utilisé seul

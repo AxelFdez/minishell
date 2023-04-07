@@ -7,7 +7,7 @@ int	ft_env(t_parsing *parse)
 
 	tmp = parse->lst_env;
 	error = 0;
-	if (parse->lst_cmdline->next == NULL)
+	if (parse->lst_cmdline->next == NULL || ft_strcmp(parse->lst_cmdline->next->str, "|") == 0)
 	{
 		while (tmp)
 		{
