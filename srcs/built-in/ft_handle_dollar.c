@@ -1,6 +1,6 @@
 #include "../../includes/minishell.h"
 
-static int	ft_found_var(t_parsing *parse)
+static int	ft_found_var_in_env(t_parsing *parse)
 {
 	t_list	*tmp;
 
@@ -40,7 +40,7 @@ static void	ft_retrieve_var_name(t_parsing *parse)
 		parse->i++;
 	}
 	parse->var_name[i] = '\0';
-	ft_found_var(parse);
+	ft_found_var_in_env(parse);
 	ft_bzero(parse->var_name, 1024);
 }
 

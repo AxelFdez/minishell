@@ -166,3 +166,24 @@ cat << f
 cat <<
 cat << f
 cat << f
+echo "USER"
+echo $USER"
+dgdgg
+dfgadfg
+"
+export
+make
+cat << f
+cat << f
+cat eof
+cat eof <<
+cat << eof
+cat << eof
+cat << eof
+cat << eof
+cat << f
+cat << f
+cat << f
+jahgfjadhf
+echo lkjhfdkjfhd $USER
+cat << f

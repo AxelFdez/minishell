@@ -91,7 +91,7 @@ int		ft_export(t_parsing *parse);
 void	ft_print_sorted_env(t_parsing *parse);
 void	ft_handle_dollar_no_quotes(t_parsing *parse);
 void	ft_handle_dollar_in_str(t_parsing *parse);
-void	ft_handle_dollar_in_heredoc(t_parsing *parse);
+char	*ft_handle_dollar_in_heredoc(t_parsing *parse, char *src);
 
 void	ft_retrieve_env(t_parsing *parse, char **env);
 char	**ft_lst_to_char_tab(t_list *lst);
@@ -120,8 +120,8 @@ void	ft_fill_tmplst(t_parsing *parse, t_list **lst, int start);
 char	*ft_set_str_to_comp(char *s);
 void	ft_loop(t_parsing *parse, t_list **lst);
 void    ft_return_error(t_parsing *parse);
-
-
+void	ft_replace_value(t_parsing *parse, t_list **lst);
+char	*ft_found_var(t_parsing *parse, char *s);
 // void	ft_update_pwd(t_parsing *parse, char *cwd);
 
 
