@@ -42,7 +42,7 @@ static void	ft_update_pwd(t_parsing *parse, char *cwd)
 	}
 }
 
-static void	ft_found_home(t_parsing *parse)
+static void	ft_handle_tild_hyphen(t_parsing *parse, char c)
 {
 	t_list	*tmp;
 	char	*ret;
@@ -51,8 +51,13 @@ static void	ft_found_home(t_parsing *parse)
 	tmp = parse->lst_env;
 	while (tmp)
 	{
-		if (ft_strnstr(tmp->str, "HOME", 4))
+		if (c == '~' && ft_strnstr(tmp->str, "HOME", 4))
 			ret = ft_strdup(tmp->str +5);
+		if (c == '-' && ft_strnstr(tmp->str, "OLDPWD", 6))
+		{
+			ret = ft_strdup(tmp->str +7);
+			ft_printf("%s\n", ret);
+		}
 		tmp = tmp->next;
 	}
 	if (chdir(ret) != 0)
@@ -86,15 +91,17 @@ int	ft_cd(t_parsing *parse)
 
 	tmp = parse->lst_cmdline;
 	cwd = ft_get_current_position();
-	ft_update_oldpwd(parse, cwd);
-	if (tmp->next == NULL || ft_strcmp(tmp->next->str, "~") == 0)
-		ft_found_home(parse);
+	if (tmp->next == NULL || ft_strcmp(tmp->next->str, "-") == 0)
+		ft_handle_tild_hyphen(parse, '-');
+	else if (tmp->next == NULL || ft_strcmp(tmp->next->str, "~") == 0)
+		ft_handle_tild_hyphen(parse, '~');
 	else if (chdir(tmp->next->str) != 0)
 	{
 		write (2, "cd: ", 4);
 		perror(tmp->next->str);
 		return (1);
 	}
+	ft_update_oldpwd(parse, cwd);
 	cwd = ft_get_current_position();
 	ft_update_pwd(parse, cwd);
 	return (0);

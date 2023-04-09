@@ -187,3 +187,102 @@ cat << f
 jahgfjadhf
 echo lkjhfdkjfhd $USER
 cat << f
+echo tttt
+echo rrr
+export
+export var="klkj"
+export
+export "test=ici"=coucou
+export
+echo test
+echo $test
+echo \a
+echo "" aaa
+echo "'aaa'"
+..
+pwd
+echo '"abc"'
+env
+export
+env
+cd $HOME/desktop
+pwd
+cd $HOME/Desktop
+echo $HOME/Desktop
+echo $HOME/AAAAA
+echo "$USER/AAAA"
+echo "$USER/AAA"
+cd $HOME/Desktop
+pwd
+cd minishell/
+pwd
+cd aaa sss ddd
+echo $?
+expot
+export
+cd ~
+pwd
+export
+cd -
+pwd
+cd ~
+cd -
+cd ~
+cd -
+export
+export
+cd ~
+export
+cd -
+export
+cd ~
+cd -
+cd ~
+cd -
+cd ~
+cd -
+export
+cd ~
+cd -
+pwd
+pwd
+cd ~
+pwd
+pwd
+cd -
+pwd
+ped
+pwd
+cd ~
+pwd
+cd -
+pwd
+export
+cd ~
+cd -
+export
+pwd
+cd ~
+export
+cd -
+pwd
+export
+pwd
+export
+cd -
+cd ~
+cd -
+export
+pwd
+cd ~
+pwd
+cd -
+pwd
+echo OLSDPWD
+echo $OLDPWD
+export
+cat bla
+echo $?
+echo "12\""
+"
+echo \>
