@@ -51,7 +51,7 @@ static void	ft_found_home(t_parsing *parse)
 	tmp = parse->lst_env;
 	while (tmp)
 	{
-		if (ft_strnstr(tmp->str, "HOME", 4))
+		if (ft_strncmp(tmp->str, "HOME=", 5) == 0)
 			ret = ft_strdup(tmp->str +5);
 		tmp = tmp->next;
 	}

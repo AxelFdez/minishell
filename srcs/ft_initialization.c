@@ -3,6 +3,7 @@
 void	ft_initialization(t_parsing *parse)
 {
 	parse->lst_cmdline = NULL;
+	parse->tmp_input = NULL;
 	parse->i = 0;
 	parse->len = 0;
 	parse->str_tmp = NULL;

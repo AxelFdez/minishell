@@ -7,10 +7,16 @@ static char	**find_path_in_env(t_parsing *parse)
 	char	**split;
 
 	i = 0;
-	while (ft_strstr(parse->env[i], "PATH") == NULL)
+	path = NULL;
+	while (parse->env[i])
+	{
+		if (ft_strncmp(parse->env[i], "PATH", 4) == 0)
+			path = parse->env[i];
 		i++;
-	path = parse->env[i];
+	}
 	path = ft_strtrim(path, "PATH=");
+	if (!path)
+		return NULL;
 	split = ft_split(path, ':');
 	free(path);
 	i = 0;
@@ -23,13 +29,15 @@ static char	**find_path_in_env(t_parsing *parse)
 	return (split);
 }
 
-char	*path_of_command(t_parsing *parse)
+static char	*env_path_command(t_parsing *parse)
 {
 	int		i;
 	int		j;
 	char	**split;
 
 	split = find_path_in_env(parse);
+	if (!split)
+		return (NULL);
 	i = 0;
 	while (access(split[i], F_OK) != 0)
 	{
@@ -49,7 +57,7 @@ char	*path_of_command(t_parsing *parse)
 	return (split[i]);
 }
 
-void	cmd_lst_to_tab(t_parsing *parse)
+static void	cmd_lst_to_tab(t_parsing *parse)
 {
 	int		i;
 	t_list *temp;
@@ -85,7 +93,9 @@ void	parsing_cmd(t_parsing *parse)
 	i = 0;
 	cmd_lst_to_tab(parse);
 	if (access(parse->command[0], F_OK) && access(parse->command[0], X_OK))
-		parse->command[0] = path_of_command(parse);
+		parse->command[0] = env_path_command(parse);
+	if (!parse->command[0])
+		ft_printf("minishell: %s: no such file or directory\n", parse->lst_cmdline->str);
 	while (i < parse->lst_target)
 	{
 		ft_lstdel_front(&parse->lst_cmdline);

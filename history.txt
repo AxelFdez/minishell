@@ -1,351 +1,70 @@
-exit ksfhgjkfhg
-exit 234
 ls
-ls iuyiuy
-minishell
-exit pppp
-echo $?
-ps
-minishell
-exit ppp
-ps
-minishell
-ps
-exit 234
-minishell
-exit 234
-ps
-minishell
-exit 34
-minishell
-exit 34
-minishell
+ls | wc
+cat | ls
 ls
-ls uioo
-minishell
-exit 234
-echo $?
-<< eof cat
-<< eof << eof1
-cd ..
-ls
-$HOME
-echo $HOME
-ls
-ls
-<< ls 
-ps
-ps -l
-ls
-pwd
-ls
-/bin
-ls
-cd /bin
-ls
-ls -la
-chmod 000 ls
-chmod -rf 000 ls
-chmod -r 000 ls
-ls
-cd
-ls
-cd cursus/minishell/
-make
-inishell -> 
-
-
-
-minishell -> 
-
-
-minishell -> 
-
-
-
-
-
-minishell -> 
-inishell -> 
-ps
-minishell -> 
-minishell -> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-env
-cd /usr/bin
-ls
-cd /usr/bin | grep grep
-cd /usr/bin | grep "grep"
-ls
-ls | grep grep
-env
-env
-env
-env
-env
-env
-minishell -> 
-minishell -> 
-minishell -> 
-minishell -> 
-minishell -> 
-
-c
-ls
-ls -l
-make
-ls
-ls
-ps
-ls
-cat -
-ld
-ls
-ls
-ps
-rm -
-ls
-
-
-
-
-bjgenwp;lpll
-
-
-
-
-
-
-map;mdoaf
-fwfw
-kpma vfgeomfg
-c,sp]c,wd
-ls
-ls
-wc
-
-<< 1
-
-make
-<< 1
-cc
-
-
-
-
-ls
-ls
-pwd
-<< tets
-
-ls
-<< 1
-ls
-ls
-ls
-ls
-ls
-pwd
-ls
-ls
-
-ls
-ls
-
-make
-ls
-
-
-
-
-
-
-man ascii
-<< 1 << 2 << 3
-> 1 cat < test
-cat 1
-ls
-ls
-ls
-<< rwar
-ls
-ls
-<< test
-<< 1 << 2
-cat << 1 << 2
-cat << 1 << 2
-cat -e << 1 << 2
-ls -l | cat -e << 1 << 2 > out | more
-ls -l | cat -e << 1 << 2 > out | more < out
-exit
-ls -l | cat -e << 1 << 2 > out | cat < out
-cat out
-ls -l | cat -e | cat -e | cat -e
-ls -l | cat -e | cat -e | cat -e | << 1 cat
-ls -l | cat -e | cat -e | cat -e | << 1 cat
 cat
-<< 1
-1
-1
-<< 1
+
 ls
+ls | wc
+ls
+cat | ls
+ls | wc
+ls
+ls | wc
+ls | wc
+ls | wc
+ps
+ls | wc
+ls | ls
 make
+ls | wc
+ls | wc
 ls
-<< 1
-
-
-
+ls | wc
+ps
+ls | wc
+ls | wc
+ls | wc
+ps
+ls | wc
+ps
+ls | wc
+ps
+ls | wc
+ls | wc
+ps
+make
 
 ls
-<< 1
+ls | wc
+cat | ls
 cat
-;s
-ls
-ls
-<< 1
-ls
-<< 1
-<< 1
-fafefw
-fewf
-ls
-<< 1
-<< 1
-<< 1
-<< 1
-<< 1
 
+cat | ls
 
-<< 1
-
-
-<< 1
-<< 1
-<< 1
-<< 1
-<< 1
-<< 1
+ps
 ls
-,csc
-<< 1
-lslsllslcsap;cllxclclclcl
+ls | wc
+cat | ls
+ls
+ls | wc
+cat | ls
+
+ls
+ls | wc
+cat | ls
+ls | wc
+ls | wc
 make
-lslsllslcsap;cllxclclclcld
+ls | wc
+ls | wc
 
-<< 1
-<< 1
-<< 1
-<< 1
-<< 1
-dfdaf
-fadsfad
-$HOME
-$USER
-$HOME
-/dfasdfa
-/saggsfda
 ls
 make
-ls
-vafaes
-/fadsfgas
-$HOME
-$HOME
-$USER
-/adwaf
-/sdaf
-/sadfaf
-/afaf
-dsf
-sdfgsa
-dasg
-/agsdgdsa
-$HOME
-/agsdgdsa
-make
-/fasfads
-$HOME
-asfa
+ls | wc
 
-bliu
 make
-$HOME
-
-$HOME
-man access
-make
-make
-make
-$HOME
-$HOME
-$HOME
-gsadg
-$USER
-/adgsdfag
-asfadfg
-adsgashg
-/sadgadsg
-$HOME
-$HOME
-gsagsa
-/dsgsadfg
-gasdg
-/asdgas
-$HOME
- 
-agdsa
-/sadgdsa
-$HOME
-ls
-dsfgads
-$HOME
-daf
-vasdg
-/gdasgdas
-$HOME
-ls
-cd ..
-ls
-$HOME
-agewrrge
-/addgar
-ls
-$USER
-/bin/ls
-export var=ls
-export
-$var
-$HOME
-fsfge
-/dgvfweg
-ls
-rm 1
-ls
-cd ..
-ls
-cd minishell/
-ls
-cd .. | ls
-pwd
-ls | cd ..
-pwd
-< test cd ..
-pwd
-seafa
-fdafad | saagf
-$HOME | $USER
-$HOME | $USER | $HOME
+ls | wc
+ls | wc
+ls | wc
+cat | ls

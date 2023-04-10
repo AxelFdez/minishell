@@ -73,13 +73,13 @@ void	ft_append(t_list **parse)
 	ft_lstdel_current(&(*parse));
 }
 
-void ft_heredoc(t_list **parse, struct termios term)
+void ft_heredoc(t_parsing *parse, t_list **lst)
 {
 	char *temp;
 	int pfd[2];
 	t_list *temp_list;
 
-	temp_list = (*parse);
+	temp_list = (*lst);
 	int i = 0;
 	while (temp_list && ft_strcmp(temp_list->str, "|") != 0)
 	{
@@ -94,17 +94,17 @@ void ft_heredoc(t_list **parse, struct termios term)
 		perror("malloc error");
 
 	i = 0;
-	while ((*parse) && (*parse)->next && ft_strcmp((*parse)->str, "|") != 0)
+	while ((*lst) && (*lst)->next && ft_strcmp((*lst)->str, "|") != 0)
 	{
-		if (ft_strcmp((*parse)->str, "<<") == 0)
+		if (ft_strcmp((*lst)->str, "<<") == 0)
 		{
-			ft_lstdel_current(&(*parse));
-			tab[i] = ft_strdup((*parse)->str);
+			ft_lstdel_current(&(*lst));
+			tab[i] = ft_strdup((*lst)->str);
 			i++;
-			ft_lstdel_current(&(*parse));
+			ft_lstdel_current(&(*lst));
 		}
 		else
-			(*parse) = (*parse)->next;
+			(*lst) = (*lst)->next;
 	}
 	tab[i] = 0;
 	temp = "";
@@ -112,15 +112,16 @@ void ft_heredoc(t_list **parse, struct termios term)
 	int j = 0;
 	while (1)
 	{
-		tcgetattr(STDIN_FILENO, &term);
-		term.c_lflag &= ~(ECHOCTL | ICANON);
-		tcsetattr(STDIN_FILENO, TCSAFLUSH, &term);
+		// tcgetattr(STDIN_FILENO, &term);
+		// term.c_lflag &= ~(ECHOCTL | ICANON);
+		// tcsetattr(STDIN_FILENO, TCSAFLUSH, &term);
 		signals_(1);
 		temp = readline("> ");
 		if (i == 1)
 		{
 			if (ft_strcmp(temp, tab[j]) == 0)
 				break;
+			temp = ft_handle_dollar_in_heredoc(parse, temp);
 			ft_putstr_fd(temp, pfd[1]);
 			ft_putstr_fd("\n", pfd[1]);
 		}
@@ -136,8 +137,8 @@ void ft_heredoc(t_list **parse, struct termios term)
 	close(pfd[1]);
 	dup2(pfd[0], STDIN_FILENO);
 	close(pfd[0]);
-	while ((*parse)->prev != NULL)
-		(*parse) = (*parse)->prev;
+	while ((*lst)->prev != NULL)
+		(*lst) = (*lst)->prev;
 	i = 0;
 	while (tab[i])
 	{
@@ -219,7 +220,7 @@ void	check_herringbone(t_parsing *parse)
 		}
 		else if (ft_strcmp(parse->lst_cmdline->str, "<<") == 0)
 		{
-				ft_heredoc(&parse->lst_cmdline, parse->term);
+				ft_heredoc(parse, &parse->lst_cmdline);
 		}
 		else if (ft_strcmp(parse->lst_cmdline->str, ">>") == 0)
 			ft_append(&parse->lst_cmdline);
