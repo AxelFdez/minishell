@@ -35,16 +35,9 @@ int	main(int ac, char **av, char **env)
 			ft_add_history(&parse);
 			ft_history(&parse);
 			ft_get_cmdline(&parse);
-			// char **cat = malloc(sizeof(char *) * 2);
-			// cat[0] = "/bin/cat";
-			// cat[1] = "\0";
-			// execve("/bin/cat", cat, 0);
-			// if (parse.lst_cmdline)
-			// {
-				parse.env = ft_lst_to_char_tab(parse.lst_env);
-				execute_cmd(&parse);
-				free_str_tab(parse.env);
-			// }
+			parse.env = ft_lst_to_char_tab(parse.lst_env);
+			execute_cmd(&parse);
+			free_str_tab(parse.env);
 			ft_lstdel_all(&parse.lst_cmdline);
 			free(parse.input);
 			parse.tmp_ret_value = parse.ret_value;

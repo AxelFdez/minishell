@@ -53,6 +53,8 @@ typedef struct s_parsing
 	int		redirection_out;
 	int		fd_stdout;
 	struct termios term;
+	int		temp_fd;
+	int		status;
 }				t_parsing;
 
 
@@ -74,9 +76,6 @@ void	parsing_cmd(t_parsing *parse);
 void	execute_cmd(t_parsing *parse);
 int		count_pipe(t_list *list);
 void	one_pipe(t_parsing *parse);
-int		first_pipe(t_parsing *parse, int temp_fd);
-int		middle_pipe(t_parsing *parse, int pipe_temp);
-void	last_pipe(t_parsing *parse, int temp_fd);
 void	pipex(t_parsing *parse);
 int		ft_lst_strchr_meta(t_list *list);
 int		is_meta_char(int c);
@@ -112,7 +111,7 @@ void	ft_history(t_parsing *parse);
 void	ft_check_history_size(t_parsing *parse);
 void	ft_print_history(t_parsing *parse);
 void	del_parsed_cmd(t_parsing *parse);
-void	pipe_child(t_parsing *parse, int pfd[2], int pipe_temp, int dup);
+void	pipe_child(t_parsing *parse, int pfd[2], int dup);
 void	ft_fill_tmplst(t_parsing *parse, t_list **lst, int start);
 char	*ft_set_str_to_comp(char *s);
 void	ft_loop(t_parsing *parse, t_list **lst);

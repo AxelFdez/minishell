@@ -8,7 +8,7 @@ int ft_lst_strchr_pipe(t_list *list)
 
 	while (temp)
 	{
-		if (ft_strchr(temp->str, '|') != NULL)
+		if (ft_strcmp(temp->str, "|") == 0)
 			return (0);
 		temp = temp->next;
 	}
@@ -137,9 +137,9 @@ void error_exec_message(t_parsing *parse)
 void execute_cmd(t_parsing *parse)
 {
 	pid_t child;
-	int	status;
+	//int	status;
 
-	status = 0;
+	parse->status = 0;
 	built_in_works(parse);
 	if (!parse->lst_cmdline)
 		return ;
@@ -147,27 +147,27 @@ void execute_cmd(t_parsing *parse)
 		pipex(parse);
 	else
 	{
-
-	child = fork();
-	if (child < 0)
-		perror("fork error\n");
-	else if (child == 0)
-	{
-		check_herringbone(parse);
-		parse->built_in_cmd = 0;
-		if (check_builtin_input(parse) == 1)
-			parsing_cmd(parse);
-		else
-			parse->built_in_cmd = parsing_built_in(parse);
-		if (parse->built_in_cmd > 0)
-			execute_built_in(parse);
-		execve(parse->command[0], parse->command, parse->env);
-		error_exec_message(parse);
-		exit(1);
+		child = fork();
+		if (child < 0)
+			perror("fork error\n");
+		else if (child == 0)
+		{
+			check_herringbone(parse);
+			parse->built_in_cmd = 0;
+			if (check_builtin_input(parse) == 1)
+				parsing_cmd(parse);
+			else
+				parse->built_in_cmd = parsing_built_in(parse);
+			if (parse->built_in_cmd > 0)
+				execute_built_in(parse);
+			execve(parse->command[0], parse->command, parse->env);
+			error_exec_message(parse);
+			exit(parse->ret_value);
+		}
+		waitpid(child, &parse->status, 0);
+		parse->ret_value = parse->status / 256;
 	}
-	waitpid(child, &status, 0);
-	}
-	parse->ret_value = status / 256;
+	return;
 	//system("lsof -c minishell");
 	//exit(EXIT_FAILURE);
 }
