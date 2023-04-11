@@ -20,6 +20,10 @@ static int	ft_found_var_in_env(t_parsing *parse)
 		tmp = tmp->next;
 		free(parse->s2);
 	}
+	if (ft_strcmp(parse->lst_cmdline->str, "export") == 0
+		&& parse->lst_cmdline->next == NULL)
+				parse->str_tmp = NULL;
+	parse->i++;
 	free(parse->s1);
 	return (1);
 }

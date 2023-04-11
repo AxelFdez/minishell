@@ -3,7 +3,6 @@
 void	execute_built_in(t_parsing *parse)
 {
 	int i;
-
 	if (parse->built_in_cmd == 1)
 		parse->ret_value = ft_env(parse);
 	else if (parse->built_in_cmd == 2)
@@ -22,9 +21,9 @@ void	execute_built_in(t_parsing *parse)
 		ft_print_history(parse);
 	i = 0;
 	while (i < parse->lst_target + 1)
-		{
-			ft_lstdel_front(&parse->lst_cmdline);
-			i++;
-		}
+	{
+		ft_lstdel_front(&parse->lst_cmdline);
+		i++;
+	}
 	exit(EXIT_SUCCESS);
 }

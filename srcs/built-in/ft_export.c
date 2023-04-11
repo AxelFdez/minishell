@@ -41,6 +41,8 @@ static int	ft_check_var_syntax(char *s)
 	int		i;
 	char	*var;
 
+	if (ft_strlen(s) == 0)
+		return (0);
 	var = ft_strdup(s);
 	if (ft_strchr(var, '='))
 		var[ft_str_chr(var, '=')] = '\0';
@@ -77,7 +79,7 @@ static int	ft_new_var(t_parsing *parse, t_list *tmp)
 		}
 		else
 		{
-			ft_printf("export: `%s' : not a valid identifier\n", tmp->str);
+			ft_printf("export: `%s': not a valid identifier\n", tmp->str);
 			error++;
 		}
 		tmp = tmp->next;
@@ -89,15 +91,17 @@ static int	ft_new_var(t_parsing *parse, t_list *tmp)
 
 int	ft_export(t_parsing *parse)
 {
-	//int		error;
 	t_list	*tmp;
+	
 
-	//error = 0;
 	tmp = parse->lst_cmdline->next;
+	
 	if (tmp == NULL)
 	{
 		ft_print_export(parse);
 		return (0);
 	}
+
+	
 	return (ft_new_var(parse, tmp));
 }

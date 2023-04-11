@@ -11,6 +11,12 @@ void	ft_unset(t_parsing *parse)
 		return ;
 	while (tmp_cmd)
 	{
+		if (ft_strlen(tmp_cmd->str) == 0)
+		{
+			ft_printf("export: `%s': not a valid identifier\n", tmp_cmd->str);
+			parse->ret_value = 1;
+		}
+
 		tmp_env = parse->lst_env;
 		while (tmp_env)
 		{

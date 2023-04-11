@@ -286,3 +286,492 @@ echo $?
 echo "12\""
 "
 echo \>
+echo "kjhfkjh$USER oihjfloijf"$HOME
+echo bonjour | ls
+echo bomjour > out | ls
+cat out
+history
+history
+echo "12\""
+fghsfgh"
+export "test=ici"=coucou
+export
+export test=ici=coucou
+export
+export test=ici=co======ucou
+export test=ici=coucou
+export test=ici=co======ucou
+export
+unset HOME
+cd 
+export
+pwd
+cd
+cd ~
+cd ~
+cd ~
+pwd
+cd -
+unset HOME
+cd 
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+export
+cd ~
+cd
+export
+clear
+export
+cd
+cd ~
+pwd
+cd -
+pwd
+cd
+cd -
+cd 
+pwd
+cd
+cd
+cd
+cd
+cd
+cd 
+cd 
+cd 
+cd
+pwd
+cd
+cd
+cd ~
+cd 
+cd -
+cd ~
+cd
+pwd
+cd -
+cd
+unset HOME
+cd
+cd
+pwd
+cd -
+unset HOME
+cd
+cd
+unset HOME
+cd
+cd
+pwd
+cd
+echo $?
+cd -
+pwd
+cd -
+cd
+pwd
+cd -
+pwd
+cd
+pwd
+cd -
+
+cd -
+cd =
+cd -
+cd -
+cd -
+cd -
+cd -
+cd
+cd
+cd
+cd -
+cd -
+cd -
+cd -
+cd -
+pwd
+cd
+pwd
+cd -
+cd
+pwd
+cd -
+cd
+unset HOME
+cd
+unset HOME
+cd
+echo $?
+echo ksjfhkldjfhg
+cd
+pwd
+cd -
+cd ~
+pwd
+cd -
+cd-
+export
+export
+env
+export
+export
+clear
+cd ramdom_cmd
+echo $?
+cd $?
+cd ramdom_cmd
+cd $?
+./file jhfkjhkfjd
+echo $?
+cat bla
+echo $?
+ls bonjour
+echo $?
+not_cmd
+echo $?
+export "" test=a
+echo $?
+export
+env
+echo ~
+echo $HOME
+echo sasasasa > out | ls
+cat out 
+echo saliut > out | ls
+cat out
+echo saliut > out | ls
+cat out
+echo salut >out | ls
+cat out
+echo salut > out | ls
+cat out
+echo salut > out | ls
+cat out
+echo salut > out | ls
+cat out
+echo salut > out | ls
+cat out
+echo ~
+echo ~
+echo ~
+cd ~
+pwd
+cd -
+echo ~
+echo ~ > out
+cat out
+echo ~ > out | ls
+cat out
+export test=bbb
+echo $test
+export var=a 
+export $var=AAAAA
+export
+unset vat
+export var=test
+export
+export $var=aaaa
+export
+echo $var $a
+export "" VARR=uiop
+export
+export "" VARR=uiop
+echo $?
+export VAR-R=ppppp
+echo $?
+$LESS$VAR
+echo $?
+..
+pwd
+..
+echo $?
+..
+..
+..
+echoa
+  echo\ta
+export ""
+unset ""
+export ""
+export
+export ""
+export ""
+env
+export ""
+export ""VAR=42
+export "" VAR=42
+export ""
+export ""
+echo $?
+export ""
+echo $?
+export "" VAR=43
+export ""
+export ""
+export "" VAR=42
+export
+export ""
+echo $?
+export ""VAR=90
+export
+unset ""
+unset ""
+echo $?
+unset "" AAA
+unset aaaa
+unset "" iuh
+export VAR="cat Makefile | grep >"
+echo $VAR
+export
+export VAR="cat MAkefile | grep"
+export
+export VAR="cat MAkefile grep"
+export
+export VAR="cat MAkefile >  grep"
+export
+export VAR="cat MAkefile > | grep"
+export
+export VAR="cat MAkefile > ;; grep"
+export
+export VAR="dlkrgjldjg"
+export VAR="dlkrgjl>>>djg"
+export VAR="dlkrgjl>>>d|||jg"
+export BAR="jhgjhg | igjug"
+export BAR="lkjhf | kjhgf"
+export BAR=" aaa"
+export
+export PAR="  AAA"
+export
+export PAR=  AAA
+export
+export PAR="  AAA"
+export
+echo "$BBBB" "Makefile"
+echo "$BBBB""Makefile"
+echo "$BBBB" "Makefile"
+echo "BBBB""Makefile"
+echo "$BBBB""AAAA"
+echo "$BBBB" "AAAA"
+echo "$USER""AAAA"
+echo "$BBB""IOPP"
+echo "$AAA""OPOP"
+echo "$AAA""OOO"
+echo "$AAA""OOO"
+echo "$AAA""OOO"
+echo "$AAAA""EYUI"
+echo "$AAAA" "EYUI"
+echo "$AAAA""EYUI"
+echo "$USER""EYUI"
+echo "$AAAA""EYUI"
+echo "KHGKJGHKJH""PPPPP"
+echo "$KHGKJGHKJH""PPPPP"
+echo "$KHGKJGHKJH" "PPPPP"
+echo "$TSETST""Makefile"
+echo "$TSETST" "Makefile"
+echo "$TSETST"Makefile
+$bla
+echo $?
+echo $AAA Bonjour
+echo $AAA Bonjour
+echo $AAA Bonjour
+echo $AAA Bonjour$USER
+echo $AAA Bonjour $USER
+echo $AAA Bonjour  $USER
+echo $AAA   Bonjour  $USER
+echo $AAA        Bonjour  $USER
+echo $AAA Bonjour
+echo $AAA      Bonjour
+echo $AAA                 Bonjour
+echo $AAA Bonjour
+echo $AAA Bonjour
+echo $AAA          Bonjour
+echo $AAA Bonjour
+echo $AAA        Bonjour
+echo $AAA Bonjour  $BBBBB ljlkjlkjlkj
+echo $AAA Bonjour      $BBBBB      ljlkjlkjlkj
+export $EEEE
+export EEEE
+env
+export EEEE=
+env
+export aaaaaaaaa
+export
+export $EEEE
+export $USER
+export
+export $USER
+export $USERE
+echo ""
+cat
+
+export "$EEEE" 
+export "$USER" 
+export $USER 
+export $USERgre 
+export $USER
+export $USER
+export $USER
+export $USERWE
+export $USER
+export ""
+export $USER
+export ""
+export $USER
+export $USERE
+export $USER
+export $USERWE
+export $USERWE $USER
+export $USER $HJK
+export $USER
+export $USERWE
+export ""
+echo $TYY
+echo ""
+export ""
+kdjfhg
+echo $?
+export $SHJKK
+export $IUYGUYG
+export $USER
+export YTR
+export $YTR
+export $USER
+export $HJK
+export $USER
+export $USER
+export $USERWE
+export $IUY
+export $YUI
+export $GHJK
+export $HJK
+export $HJK
+export $HJKK
+export $JKL
+export $JKL
+export $USER
+export $RTY
+export $FGJYU
+export $GHJK
+export $FGH
+export $USER
+export ""
+export $USER
+export $USER
+export $USERW
+export $USERW ""
+export QQQ=123\"
+g"
+export
+export ZZZ=" foo   bar   "
+echo $ZZZ
+export ZZZ=" foo   bar   "
+echo $ZZZ
+export var=" ddd"
+echo $var
+export
+export VAR="   AAA    BBB   "
+export
+echo $VAR
+export VAR="   GGGG    JKLL   "
+echo $VAR
+export
+echo $VAR
+export
+echo $VAR
+echo AAAA$VAR
+echo "AAAA"$VAR
+echo "AAAA"$VAR | cat -e
+export AAA="AAA"
+export
+echo $AAA
+echo ""$AAA""
+echo AAAA"$VAR"
+echo "$VAR"
+export aaa=" aaa   bbb  "
+echo $aaa
+export var="  aaa  bbb  "
+echo $"var"
+echo "$var"
+export var="  aaaa   bbbb   "
+echo $var
+echo "$var"
+export var="    aaaaa     bbbbbbbb  "
+echo $var
+echo "$var"
+echo $var
+echo $var
+echo "$var"
+echo $var
+echo "$var"
+echo $var
+export var="  aaa   bbb "
+echo "$var"
+echo $var
+export var="  aa  aa  "
+echo $var
+echo "$var"
+echo $var
+export var="  kfjghkjhg  lkjff  "
+echo $var
+echo $var
+echo $var
+echo $var
+echo $var
+echo "$var"
+echo "$var"
+echo "$var"
+echo "$var"
+echo "$var"
+echo $var
+echo $var
+echo $var
+export var="  aaaa  bbbb "
+echo $var
+echo $var
+echo $var
+echo $var
+echo $var
+echo $var
+echo $var
+echo $var
+echo "$var"
+echo "$var"
+echo "$var"
+echo "$var"
+echo $var
+echo $var
+export var="  ggh   iudu  "
+echo "$var"
+echo "$var"
+echo "$var"
+echo "$var"
+echo $var
+export var="  ddfecfe   sgdfbv  "
+echo $var
+echo $var
+echo $var
+echo "$var"
+echo "$var"
+echo $var
+echo $var
+echo $var
+echo "$var"
+echo "$var"
+echo $var
+export var="  aaaa  bbbb    ccccc  "
+export
+echo "$var"
+echo "$var"
+echo "$var"
+echo $var
+echo $var
+echo $var
+echo "$var"

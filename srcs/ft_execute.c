@@ -8,7 +8,7 @@ int ft_lst_strchr_pipe(t_list *list)
 
 	while (temp)
 	{
-		if (ft_strchr(temp->str, '|') != NULL)
+		if (ft_strcmp(temp->str, "|") == 0)
 			return (0);
 		temp = temp->next;
 	}
@@ -144,7 +144,6 @@ void execute_cmd(t_parsing *parse)
 		if (parse->built_in_cmd > 0)
 			execute_built_in(parse);
 		execve(parse->command[0], parse->command, parse->env);
-
 		exit(parse->ret_value);
 	}
 	waitpid(child, &status, 0);

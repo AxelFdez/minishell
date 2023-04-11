@@ -1,79 +1,50 @@
 #include "../../includes/minishell.h"
 
-static void	ft_update_oldpwd(t_parsing *parse, char *cwd)
+// char	*ft_loop_tild_hyphen(t_parsing *parse, char c)
+// {
+// 	t_list	*tmp;
+// 	char	*ret;
+// 	ret = NULL;
+// 	tmp = parse->lst_env;
+// 	while (tmp)
+// 	{
+// 		if (c == '~' && ft_strncmp(tmp->str, "HOME=", 5) == 0)
+// 			ret = ft_strdup(tmp->str +5);
+// 		if (c == '-' && ft_strncmp(tmp->str, "OLDPWD=", 7) == 0)
+// 		{
+// 			ret = ft_strdup(tmp->str +7);
+// 			ft_printf("%s\n", ret);
+// 		}
+// 		tmp = tmp->next;
+// 	}
+// 	return (ret);
+// }
+
+static int	ft_handle_tild_hyphen(t_parsing *parse, char c)
 {
-	t_list	*tmp;
-	char	*old_tmp;
-
-	old_tmp = NULL;
-	tmp = parse->lst_env;
-	while (tmp)
-	{
-		if (ft_strnstr(tmp->str, "OLDPWD", 6))
-		{
-			old_tmp = ft_strdup(tmp->str);
-			old_tmp[ft_str_chr(old_tmp, '=') + 1] = '\0';
-			free(tmp->str);
-			tmp->str = ft_strjoin(old_tmp, cwd);
-			free(old_tmp);
-		}
-		tmp = tmp->next;
-	}
-}
-
-static void	ft_update_pwd(t_parsing *parse, char *cwd)
-{
-	t_list	*tmp;
-	char	*pwd_tmp;
-
-	pwd_tmp = NULL;
-	tmp = parse->lst_env;
-	while (tmp)
-	{
-		if (ft_strnstr(tmp->str, "PWD", 3))
-		{
-			pwd_tmp = ft_strdup(tmp->str);
-			pwd_tmp[ft_str_chr(pwd_tmp, '=') + 1] = '\0';
-			free(tmp->str);
-			tmp->str = ft_strjoin(pwd_tmp, cwd);
-			free(pwd_tmp);
-		}
-		tmp = tmp->next;
-	}
-}
-
-static void	ft_handle_tild_hyphen(t_parsing *parse, char c)
-{
-	t_list	*tmp;
 	char	*ret;
 
 	ret = NULL;
-	tmp = parse->lst_env;
-	while (tmp)
+	ret = ft_loop_tild_hyphen(parse, c);
+	if (c == '~' && !ret)
 	{
-		if (c == '~' && ft_strnstr(tmp->str, "HOME", 4))
-			ret = ft_strdup(tmp->str +5);
-		if (c == '-' && ft_strnstr(tmp->str, "OLDPWD", 6))
-		{
-			ret = ft_strdup(tmp->str +7);
-			ft_printf("%s\n", ret);
-		}
-		tmp = tmp->next;
+		ft_putstr_fd("minishell: cd: HOME not set\n", 2);
+		return (1);
 	}
 	if (chdir(ret) != 0)
 	{
 		perror("cd: ");
 		free(ret);
-		return ;
+		return (1);
 	}
 	free(ret);
+	return (0);
 }
 
 static char	*ft_get_current_position(void)
 {
 	char	*cwd;
 	char	buffer[4096];
-
 
 	cwd = getcwd(buffer, sizeof(buffer));
 	if (!cwd)
@@ -88,13 +59,15 @@ int	ft_cd(t_parsing *parse)
 {
 	t_list	*tmp;
 	char	*cwd;
+	int		ret;
 
+	ret = 0;
 	tmp = parse->lst_cmdline;
 	cwd = ft_get_current_position();
-	if (tmp->next == NULL || ft_strcmp(tmp->next->str, "-") == 0)
-		ft_handle_tild_hyphen(parse, '-');
-	else if (tmp->next == NULL || ft_strcmp(tmp->next->str, "~") == 0)
-		ft_handle_tild_hyphen(parse, '~');
+	if (tmp->next == NULL || ft_strcmp(tmp->next->str, "~") == 0)
+		ret = ft_handle_tild_hyphen(parse, '~');
+	else if (tmp->next == NULL || ft_strcmp(tmp->next->str, "-") == 0)
+		ret = ft_handle_tild_hyphen(parse, '-');
 	else if (chdir(tmp->next->str) != 0)
 	{
 		write (2, "cd: ", 4);
@@ -104,5 +77,5 @@ int	ft_cd(t_parsing *parse)
 	ft_update_oldpwd(parse, cwd);
 	cwd = ft_get_current_position();
 	ft_update_pwd(parse, cwd);
-	return (0);
+	return (ret);
 }
