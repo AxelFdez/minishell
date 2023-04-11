@@ -35,6 +35,7 @@ SRCS =  srcs/minishell.c \
 		srcs/built-in/ft_handle_dollar_utils.c \
 		srcs/built-in/ft_handle_dollar_utils_2.c \
 		srcs/built-in/ft_cd.c \
+		srcs/built-in/ft_cd_utils.c \
 		srcs/built-in/ft_handle_dollar_in_heredoc.c \
 		srcs/ft_return_error.c \
 		srcs/ft_quotes.c
@@ -53,8 +54,8 @@ $(NAME): $(OBJECT_FILES)
 
 #	 $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -lreadline
 	# $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a $(RLFLAGS) -lreadline
-	 $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -L /Users/axfernan/homebrew/Cellar/readline/8.2.1/lib/ -lreadline
-	# $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -L /opt/homebrew/Cellar/readline/8.2.1/lib/ -lreadline
+	# $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -L /Users/axfernan/homebrew/Cellar/readline/8.2.1/lib/ -lreadline
+	 $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -L /opt/homebrew/Cellar/readline/8.2.1/lib/ -lreadline
 		@echo "$(GREEN)<<<<< $(NAME) exec file created >>>>>$(DEFAULT)"
 #------------------------------------------------------------------------------
 clean:

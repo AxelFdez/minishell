@@ -1,620 +1,281 @@
+clear
+ls
+cd
+pwd
+cd ecole42/cursus42/
+ls
+cd minishell/
+cat | cat | ls
 ls
 ls | wc
-cat | ls
-ls
-cat
-
-ls
-ls | wc
-ls
-cat | ls
-ls | wc
-ls
-ls | wc
-ls | wc
-ls | wc
-ps
-ls | wc
-ls | ls
-make
-ls | wc
-ls | wc
-ls
-ls | wc
-ps
-ls | wc
-ls | wc
-ls | wc
-ps
-ls | wc
-ps
-ls | wc
-ps
-ls | wc
-ls | wc
-ps
-make
-
-ls
-ls | wc
+ls | wc | cat -e | cat -e
 cat | ls
 cat
+cat | ls
+cat | cat | ls
+ls > out | cat < test > out1 | ls -l
+cat out
+cat out1
+cat < test > out1
+cat out1
+< test cat > out
+cat out
+qwfqwe
+echo $?
+awfawe
+sd
+fad
+echo $?
+ls
 
+make
+
+ls
+ls | < test cat > out
+cat out
+ls
+ls | < test cat > out | ls
+cat out
+ls -la | < test cat > out | ls
+cat out
+ls -la | < test cat >> out | ls
+cat out
+cat < test >> out
+cat out
+cat < test >> out | ls
+cat out
+exit
+exit
+exit
+cat | ls
+ls > out | ls -la > out1 | ls
+cat out
+cat out1
+ls > out | < test cat > out1 | ls
+cat out1
+make
+make
+make
+ls
+ls > out | ls -l | wc > out1 | < test cat
+cat out
+cat out1
+ls > out | ls -l | wc > out1 | < test cat
+ls
+cat | cat | ls
+ls | wc | cat -e
+ls
+ls | wc | cat -e
+ls | cat -e | cat -e
+ls | cat -e | cat -e | ls
+make
+cat | cat | ls
+cat | cat | ls
+< test
+< test > out
+< test
+make
+< test
+< test cat > out
+cat out
+rm out
+cat out
+< test cat > out
+cat out
+<< test cat > out
+cat out
+rm out
+< test cat >> out
+cat out
+< test cat >> out
+cat out
+rm out
+cat | cat | cat | cat | ls
 cat | ls
 
+cat | cat | ls
+cat | cat > out | ls
+cat out
+ls
+cat > out | cat | ls
+cat out
+cat | cat 
+cat
+cat | cat | ls
 ps
-ls
-ls | wc
-cat | ls
-ls
-ls | wc
-cat | ls
 
+cat | cat | ls
+cat
+exit
+exit
+cd ~
+pwd
+cd
+pwd
+exit
+cd
+pwd
 ls
-ls | wc
-cat | ls
-ls | wc
-ls | wc
+pwd
+cd
+pwwd
+pwd
 make
-ls | wc
-ls | wc
-
 ls
-make
-ls | wc
-
-make
-ls | wc
-ls | wc
-ls | wc
-cat | ls
+pwd
+cd
+ls
+ls
+< test cd
+pwd
+cd < test
+ls
 cd
 pwd
-cd cursus/minishell/
-export VAR=HOME=jfe
-env
-cd
-pwd
-export SHELL=HOME=fwef
-cd
-pwd
-cd cursus/
-cd
-pwd
+export VAR=1234
 env
 ls
-cd
-ls
-cd cursus/
-cd
-ls
 pwd
-cat | ls
-echo bonjour | wc
-
-echo | wc
-echo bonjour | wc
-ls -l | wc
-cat -e test | wc
-ls -l | wc
-cat -e test | wc
-cat -e test
-cat -e test | wc
-ls -la | wc -l
-ls -la | wc
-ls -l
-ls -la | wc
-ls -la | wc
-make
-make
-ls -la | wc
-ls -la | wc -l
-ls -la | wc -l
-ls -la | wc -l
-ls -la | wc
-ls -la | wc
-ls -la > out | wc
-cat out
-ls -la > out | wc
-cat out
-ls -la | wc
-ls -la > out | wc 
-cat out
-ls -la | wc -l
-ls -l | wc -l
-ls -l > out | wc -l
-ls -la | wc -l
-unset HOME
-cd
-export HOME=
-env
-cd
-ls -la | wc -l
-ls -la | wc -l
-ls
-ls -la
-ls -la | wc
-ls -la | wc
-ls
-ls -l
-ls | wc
-ls | wc
-ls | wc
-ls | wc
-ls | wc
-ls | wc
-ls | wc
-ls | wc
-ls
-ls | wc
-ls -l | wc
-ls | wc
-ls | wc
-ls -l | wc -l
-echo bonjour | wc
-bonjourwc
-
-pwd | wc
-pwd | wc
-pwd > out | wc
-pwd | wc
-ls
-ls | cat -e
+pwd | cat-e
 pwd | cat -e
-ls | cat
-ls | cat
-ls | cat
-pwd | wc
-pwd | wc
-pwd | wc
-pwd | wc
-pwd > out | wc
-ls | wc
-ls | wx
-ls | wc 
-ls | wc
-ls | wc
-ls | wc
-ls | wc
-ls | wc
-ls | wc
-ls | wc
-ls -l | wc -l
-pwd | wc
-ls | wc
-pwd | wc
-make
-pwd | wc
-echo bonjour | wc
-ls | wc
-ls | wc
-pwd | wc
-make
-pwd | wc
-pwd | cat
-pwd | ls
-pwd | lsjpefjio
-minishell: Й«иц: command not found
-minishell: lsjpefjio: command not found
-2004hminishell -> 2004l
+ls
+cat | cat | ls
+cat | cat | ls
+cat | cat | ls
+cat | cat | ls
+cat | cat | ls
 
-
-2004hminishell -> 2004l
-
-
-2004l
-
-
-minishell -> 
-2004l
-
-
-minishell -> 
-2004l
-
-
-minishell -> 
-2004l
-
-
-minishell -> 
-minishell -> 2004h2004l
-
-2004hminishell -> 2004l
-
+cat | cat | ls
+ls
+cat | cat | ls
+cat | cat | ls
+cat | cat | ls
+cat | cat | ls
+cat | cat | ls
+exit
 cat | ls
-ls | cat
+cat | ls
+cat | ls
 
-ls -l > out | cat
+ps
+cat
+$HOME
+echo $HOME
+echo $HOME | ls
+echo $HOME > out | ls
 cat out
-clear
+echo $?
+ls
+ps
+./minishell
+env
+exit
+env
+cat | cat | ls
+cat | cat | ls
+echo $?
+fwfew[f | echo $?
+< fawee
+echo $?
+./minishell
+exit 42
+echo $?
+fwafaweg
+echo $?
+ls
+cat agfa
+echo $?
+grgre
+echo $?
+cat < test
+echo $?
+$HOM
+ls
+$HOME
+echo $?
+make
+agwrag
+echo $?
+history
+history
+
+
+gasgas
+echo $?
+ls
+ls
+ls | exit
+cat Makefile | grep pr | head -n 5 | cd teesdf
+echo $?
+cat Makefile | grep pr | head -n 5 | hello
+echo $?
+sleep 5 | exit
+< a cat < b < c
+touch a b c
+echo coucou > c
+< a cat < b < c
+chmod 000 b
+< a cat < b < c
+cat c
+> test | echo blabla
+rm test
+echo saaaaalut > b 
+chmod 644 ?
+chmod 644 b
+echo saaaaalut > b 
+> a cat < b >> c
+cat c
+echo 2 > out1 >> out2
+cat out1
+cat out2
+echo coucou > out1
+cat out1
+echo 2 > out1 >> out2
+cat out1
+echo coucou > out1
+echo 2 >> out1 >> out2
+cat ou1
+cat out1
+cat | cat | cat | ls
+touch 1 2 3 4 5 6
+rm 1 2 3 4 5 6
+> 1 > 2 > 3 ls
+cat 1
+cat 2
+cat 3
+rm 1 2 3
+exit
+cat | cat | cat | cat | cat | ls
+cat | cat | cat | cat | cat | ls
+ls
+ls
+ls
+ls | wc
+ls | wc
+pwd
+pwd
+make
+ls
+ps
 ls
 pwd
-pwd | wc
-pwd | wc
 ls | wc
-ls -la | cat -e
-clear
-ls
-ls | cat
-pwd | wc
-echo bonjour > out | ls
+ls | wc | cat -e
+< test cat > out
+< test cat > out
+fsadgf
+dsfhdsh
 
-
-c
-cef
-wef
-ef
-
-p
-pa
-spf
-
-
-
-
-ccs
-ls | wc
-ls | pwd
--
-2004h2004l
-2004l
-Makefile
-README.md
-env.txt
-history.txt
-includes
-libft
-minishell
-minishell.dSYM
-out
-save_info.txt
-save_info_axel.txt
-srcs
-test
-to_do.txt
-ls | cat
-ls
-ls | wc
-ls | wc
-pwd | cat
-echo bonjour > out | ls
-cat out
-ls | wc
-ls | wc - l
-ls | wc -l
-ls d
-sd gew
-wc - l 
-ls | wc - l
-ls | wc - l
-ls | wc - l
-ls | wc - l
-clear
-ls | wc - l
-ps
-ps
-ls | wc - l
-ps
-ls | wc - l
-ls | wc - l
-ls | wc - l
-ls | wc - l
-ls | wc - l
-ls | wc - l
-ls | wc - l
-ps
-clear
-ps
-ls | wc - l
-env -i ./minishell
-env
-ls
-ls | wc
-ls | wc | cat -e
-ls | wc | cat -e
-ls | wc | cat -e
-ls | wc | cat -e
-ls | wc | cat -e
-make
-ls | wc | cat -e
-make
-ls | wc | cat
-ls | cat | cat
-ls | cat | cat
-ls | cat | cat
-ls | cat | cat
-ls | cat | cat
-ls | cat | cat
-ls | cat | cat
-ls | cat | cat
-ps
-make
-ls > out | ls -l > out1
-cat out
-cat out2
-cat out1
-clear
-ls > out | ls -l > out1 | ls -la > out2
-ls | cat -e | cat -e
-make
-ls | cat -e | cat -e
-ls > out | ls -l > out1 | cat -e
-cat out
-cat out1
-ls | wc | cat -e
-ls | cat | cat
-ls | wc | cat -e
-ls | wc | cat -e
-ls | wc | cat -
-ls 
-ls | cat | cat
-ls | cat | cat
-ls | cat | cat | cat
-ls | cat | cat
-ls | cat
-ls | wc | cat
-ls | wc
-< test cat
-< test cat | wc
-< test cat | wc | cat -e
-< test cat | wc > out | cat -e
-cat out
-ls
-ls | wc
-ls
-ls | wc | cat
-ls | cat | cat
-ls
-ls | cat | cat
-ls > out | ls -l > out1 | ls
-make
-ls > out | ls -l > out1 | ls
-make
-ls | cat | cat
-make
-ls | cat | cat
-ls | cat | cat
-make
-make
-make
-ls | cat | cat
-ls | cat | ls
-ls | cat
-ls | cat | cat
-ls | cat | cat
-ls | cat | cat
-ls | cat | ls
-ls | cat | wc
-make
-ls | cat | wc
-ls | cat | wc
-make
-ls | cat -e | cat -e | cat -e
+kmmm kes 
+gkignrengmir egnie ngeroi gn
+agag
+/aFASDF
+fgermger
 cat | cat | ls
 cat | cat | ls
-ls | cat -e | cat -e
-ls | cat -e | cat -e
-ls | cat -e | pwd
-ls | cat -e | pwd | cat -e
-cat | cat | ld
-gaergldfag
-agpma | ls
-make
-goewr | ls
-fcafcawsfc
-goewr | ls
-cat fadfa
-
-dsaf
-
-sdaf
-dsa
-
-
-
-
-
-
-
-
-
-
-fd
-ddfd
-dasfdsagsadg
-d
-f
-qqq
-ls
-cat | ls
-ps
-cat | ls
-
-dsaf
-cat | ls
-fasffdsa
-cat | ls
-dsaffdsa
-cat | ls
-cat | ls
-dsaf
-ls
-ls -l
-ls -l | wc
-ls | wc
-ls | wc | cat -e
+cat | cat | ls
 cat | cat | ls
 ps
-make
-ls | wc | cat -e
-ls | wc | cat -e
-cat | cat | ls
-ls
-ls
-cat | cat | ls
-cat
-ls
-cd
-ls
-cd cursus/minishell/
-ls
-rm out out1
-clear
-cat
-cat
-cat test
-cat
-
-
-
-
-cat | cat | ls
-make
-cat
-make
-cat
-cat
-cat
-ls
-cat
-ls
-cat
-ls
-$?
-echo $?
-ls
-echo $?
-ls | wc | cat -e
-echo $?
-ls | wc | catgasdgas
-      13      13     132
-echo $?
-ls | wcgfag
-Makefile
-README.md
-env.txt
-history.txt
-includes
-libft
-minishell
-minishell.dSYM
-save_info.txt
-save_info_axel.txt
-srcs
-test
-to_do.txt
-ls | wcewf
-Makefile
-README.md
-env.txt
-history.txt
-includes
-libft
-minishell
-minishell.dSYM
-save_info.txt
-save_info_axel.txt
-srcs
-test
-to_do.txt
-ls | wc
-ls | wc
-make
-ls | wc
-make
-ls
-ls | wc
-ps
 cat | ls
-cat | ls
-ls | cat -e
-pwd | wc
-ls | cat -e
-echo $?
-ls | catgreg
-Makefile
-README.md
-env.txt
-history.txt
-includes
-libft
-minishell
-minishell.dSYM
-save_info.txt
-save_info_axel.txt
-srcs
-test
-to_do.txt
-echo $?
-ls |dwqe
-Makefile
-README.md
-env.txt
-history.txt
-includes
-libft
-minishell
-minishell.dSYM
-save_info.txt
-save_info_axel.txt
-srcs
-test
-to_do.txt
 cat | cat | ls
-cat | ls
-ls | fwefwe
-Makefile
-README.md
-env.txt
-history.txt
-includes
-libft
-minishell
-minishell.dSYM
-save_info.txt
-save_info_axel.txt
-srcs
-test
-to_do.txt
-ls | fwefwe
-Makefile
-README.md
-env.txt
-history.txt
-includes
-libft
-minishell
-minishell.dSYM
-save_info.txt
-save_info_axel.txt
-srcs
-test
-to_do.txt
-ls | dqadwq
-Makefile
-README.md
-env.txt
-history.txt
-includes
-libft
-minishell
-minishell.dSYM
-save_info.txt
-save_info_axel.txt
-srcs
-test
-to_do.txt
-ls | afaadf
-cat | ls
-cat | lsdsga
-ls
-ls | mgewrgr
-echo $?
-mgberpmg
-echo $?
-make
-fweqgweqrg
-?$
-echo $?
-make
+cat | cat | ls

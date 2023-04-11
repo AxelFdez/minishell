@@ -23,6 +23,7 @@ typedef struct s_cmd
 
 typedef struct s_parsing
 {
+	int		is_in_str;
 	int		ret_value;
 	int		tmp_ret_value;
 	int		i;
@@ -49,9 +50,8 @@ typedef struct s_parsing
 	char	**command;
 	int		lst_target;
 	int		built_in_cmd;
-	int		built_in_last_cmd;
 	int		redirection_out;
-	int		fd_stdout;
+	int		redirection_in;
 	struct termios term;
 	int		temp_fd;
 	int		status;
@@ -80,15 +80,19 @@ void	pipex(t_parsing *parse);
 int		ft_lst_strchr_meta(t_list *list);
 int		is_meta_char(int c);
 void	ft_check_built_in(t_parsing *parse);
+//**** built-in *********************************************************************
 void	ft_sort_env(t_list **lst);
 void	ft_echo(t_list *tmp, t_parsing *parse);
-int		ft_env(t_parsing *parse);
 int		ft_pwd(void);
 int		ft_export(t_parsing *parse);
+int		ft_env(t_parsing *parse);
 void	ft_print_sorted_env(t_parsing *parse);
 void	ft_handle_dollar_no_quotes(t_parsing *parse);
 void	ft_handle_dollar_in_str(t_parsing *parse);
 char	*ft_handle_dollar_in_heredoc(t_parsing *parse, char *src);
+void	ft_update_oldpwd(t_parsing *parse, char *cwd);
+void	ft_update_pwd(t_parsing *parse, char *cwd);
+char	*ft_loop_tild_hyphen(t_parsing *parse, char c);
 void	ft_retrieve_env(t_parsing *parse, char **env);
 char	**ft_lst_to_char_tab(t_list *lst);
 int		check_builtin_input(t_parsing * parse);
@@ -111,7 +115,7 @@ void	ft_history(t_parsing *parse);
 void	ft_check_history_size(t_parsing *parse);
 void	ft_print_history(t_parsing *parse);
 void	del_parsed_cmd(t_parsing *parse);
-void	pipe_child(t_parsing *parse, int pfd[2], int dup);
+void	pipe_child(t_parsing *parse, int pfd[2]);
 void	ft_fill_tmplst(t_parsing *parse, t_list **lst, int start);
 char	*ft_set_str_to_comp(char *s);
 void	ft_loop(t_parsing *parse, t_list **lst);
@@ -120,7 +124,6 @@ void    ft_return_error(t_parsing *parse);
 void	ft_replace_value(t_parsing *parse, t_list **lst);
 char	*ft_found_var(t_parsing *parse, char *s);
 // void	ft_update_pwd(t_parsing *parse, char *cwd);
-
 
 
 

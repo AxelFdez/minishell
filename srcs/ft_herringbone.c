@@ -191,28 +191,31 @@ int check_herringbones_input(t_parsing *parse)
 	return (1);
 }
 
-int ft_lst_strchr_heredoc(t_list *list)
-{
-	t_list *temp;
-	temp = list;
+// int ft_lst_strchr_heredoc(t_list *list)
+// {
+// 	t_list *temp;
+// 	temp = list;
 
-	while (temp)
-	{
-		if (ft_strcmp(temp->str, "<<") == 0)
-			return (0);
-		temp = temp->next;
-	}
-	return (1);
-}
+// 	while (temp)
+// 	{
+// 		if (ft_strcmp(temp->str, "<<") == 0)
+// 			return (0);
+// 		temp = temp->next;
+// 	}
+// 	return (1);
+// }
 
 void	check_herringbone(t_parsing *parse)
 {
 	parse->redirection_out = 0;
-	parse->fd_stdout = dup(STDOUT_FILENO);
+	parse->redirection_in = 0;
 	while (check_herringbones_input(parse) == 0 && parse->lst_cmdline->str[0] != '|' && parse->lst_cmdline != NULL)
 	{
 		if (ft_strcmp(parse->lst_cmdline->str, "<") == 0)
+		{
+			parse->redirection_in = 1;
 			input_redirection(&parse->lst_cmdline);
+		}
 		else if (ft_strcmp(parse->lst_cmdline->str, ">") == 0)
 		{
 			parse->redirection_out = 1;
@@ -220,10 +223,14 @@ void	check_herringbone(t_parsing *parse)
 		}
 		else if (ft_strcmp(parse->lst_cmdline->str, "<<") == 0)
 		{
-				ft_heredoc(parse, &parse->lst_cmdline);
+			parse->redirection_in = 1;
+			ft_heredoc(parse, &parse->lst_cmdline);
 		}
 		else if (ft_strcmp(parse->lst_cmdline->str, ">>") == 0)
+		{
+			parse->redirection_out = 1;
 			ft_append(&parse->lst_cmdline);
+		}
 		if (!parse->lst_cmdline || !parse->lst_cmdline->next || parse->lst_cmdline->str[0] == '|')
 			break;
 		if (parse->lst_cmdline->str[0] != '>' && parse->lst_cmdline->str[0] != '<')
@@ -231,6 +238,4 @@ void	check_herringbone(t_parsing *parse)
 	}
 	while (parse->lst_cmdline->prev != NULL)
 		parse->lst_cmdline = parse->lst_cmdline->prev;
-	if (!parse->lst_cmdline)
-			exit(EXIT_SUCCESS);
 }

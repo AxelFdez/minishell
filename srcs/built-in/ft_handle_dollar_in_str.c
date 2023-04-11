@@ -4,7 +4,8 @@ void	ft_handle_dollar_in_str(t_parsing *parse)
 {
 	t_list	*tmplst;
 	t_list	*new;
-
+	if (parse->lst_cmdline && ft_strcmp(parse->lst_cmdline->str, "echo") == 0)
+		parse->is_in_str = 1;
 	parse->len_b = 0;
 	parse->i_b = 0;
 	parse->str_tmp = ft_substr(parse->input, parse->i - parse->len,
@@ -14,7 +15,7 @@ void	ft_handle_dollar_in_str(t_parsing *parse)
 	ft_replace_value(parse, &tmplst);
 	free(parse->str_tmp);
 	parse->str_tmp = NULL;
-	if (ft_lstsize(tmplst) > 2)
+	if (ft_lstsize(tmplst) > 1)
 	{
 		parse->str_tmp = ft_lst_to_str(tmplst);
 		ft_strdel_quotes(parse, parse->str_tmp);

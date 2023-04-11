@@ -20,6 +20,8 @@ save du 30/03 :
 - redirections 100%
 - Merging chris : * cd OK, export KO, env KO, exit KO.
 
+save du 11/04 :
+- pipex almost ready, need fix cat | cat | ls
 
 
 
@@ -54,7 +56,7 @@ A tester :
 - enchainer les heredocs --OK--
 - si unset PATH, error message = no such file or directory --OK--
 - ls ne marche plus si export a nouveau le PATH --OK--
-- echo bonjour > out | ls --   bonjourls dans out
+- echo bonjour > out | ls --   bonjourls dans out --OK--
 
 
 To chris :

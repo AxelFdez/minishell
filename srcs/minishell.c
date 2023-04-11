@@ -41,7 +41,7 @@ int	main(int ac, char **av, char **env)
 			ft_lstdel_all(&parse.lst_cmdline);
 			free(parse.input);
 			parse.tmp_ret_value = parse.ret_value;
-			//system("leaks minishell");
+			system("leaks minishell");
 		}
 	}
 	return (0);

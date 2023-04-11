@@ -1,5 +1,12 @@
 #include "../includes/minishell.h"
 
+void	delete_cmd(t_list **list_cmd)
+{
+	while (ft_strcmp((*list_cmd)->str, "|") != 0)
+				ft_lstdel_front(&(*list_cmd));
+			ft_lstdel_front(&(*list_cmd));
+}
+
 pid_t cmd1(t_parsing *parse, int *pfd)
 {
 	pid_t child;
@@ -63,9 +70,7 @@ void	one_pipe(t_parsing *parse)
 
 	pipe(pfd);
 	children[0] = cmd1(parse, pfd);
-	while (ft_strcmp(parse->lst_cmdline->str, "|") != 0)
-		ft_lstdel_front(&parse->lst_cmdline);
-	ft_lstdel_front(&parse->lst_cmdline);
+	delete_cmd(&parse->lst_cmdline);
 	children[1] = cmd2(parse, pfd);
 	close(pfd[0]);
 	close(pfd[1]);
@@ -77,37 +82,6 @@ void	one_pipe(t_parsing *parse)
 	}
 }
 
-// void	one_pipe(t_parsing *parse)
-// {
-// 	pid_t	child;
-// 	int		pfd[2];
-
-// 	pipe(pfd);
-// 	child = fork();
-// 	if (child == -1)
-// 		perror("Fork error");
-// 	else if (child == 0)
-// 		pipe_child(parse, pfd, 0, 0);
-// 	else
-// 	{
-// 		close(pfd[1]);
-// 		dup2(pfd[0], STDIN_FILENO);
-// 		dup2(parse->fd_stdout, STDOUT_FILENO);
-// 		close(pfd[0]);
-// 		waitpid(child, 0, 0);
-// 		check_herringbone(parse);
-// 		del_parsed_cmd(parse);
-// 		if (check_builtin_input(parse) == 1)
-// 				parsing_cmd(parse);
-// 		else
-// 			parse->built_in_cmd = parsing_built_in(parse);
-// 		if (parse->built_in_cmd > 0)
-// 			execute_built_in(parse);
-// 		execve(parse->command[0], parse->command, parse->env);
-// 		error_exec_message(parse);
-// 	}
-// }
-
 void	parsing_cmd_in_pipe(t_parsing *parse)
 {
 	parse->built_in_cmd = 0;
@@ -118,12 +92,12 @@ void	parsing_cmd_in_pipe(t_parsing *parse)
 		parse->built_in_cmd = parsing_built_in(parse);
 }
 
-void	pipe_child(t_parsing *parse, int pfd[2], int dup)
+void	pipe_child(t_parsing *parse, int pfd[2])
 {
 	close(pfd[0]);
 	if (parse->redirection_out == 0)
 		dup2(pfd[1], STDOUT_FILENO);
-	if (dup == 2)
+	if (parse->redirection_in == 0)
 		dup2(parse->temp_fd, STDIN_FILENO);
 	close(parse->temp_fd);
 	close(pfd[1]);
@@ -132,8 +106,6 @@ void	pipe_child(t_parsing *parse, int pfd[2], int dup)
 	execve(parse->command[0], parse->command, parse->env);
 	error_exec_message(parse);
 	exit(parse->ret_value);
-	// printf("minishell: ");
-	// perror(parse->command[0]);
 }
 
 int	first_cmd(t_parsing *parse)
@@ -148,7 +120,16 @@ int	first_cmd(t_parsing *parse)
 	else if (child == 0)
 	{
 		parsing_cmd_in_pipe(parse);
-		pipe_child(parse, pfd, 1);
+		close(pfd[0]);
+		if (parse->redirection_out == 0)
+			dup2(pfd[1], STDOUT_FILENO);
+		close(parse->temp_fd);
+		close(pfd[1]);
+		if (parse->built_in_cmd > 0)
+			execute_built_in(parse);;
+		execve(parse->command[0], parse->command, parse->env);
+		error_exec_message(parse);
+		exit(parse->ret_value);
 	}
 	close(pfd[1]);
 	parse->temp_fd = pfd[0];
@@ -167,33 +148,13 @@ int	middle_cmd(t_parsing *parse)
 	else if (child == 0)
 	{
 		parsing_cmd_in_pipe(parse);
-		pipe_child(parse, pfd, 2);
+		pipe_child(parse, pfd);
 	}
 	close(pfd[1]);
 	close(parse->temp_fd);
 	parse->temp_fd = pfd[0];
 	return (child);
 }
-
-// int	last_pipe(t_parsing *parse)
-// {
-// 	pid_t	child;
-// 	int		pfd[2];
-
-// 	pipe(pfd);
-// 	child = fork();
-// 	if (child == -1)
-// 		perror("Fork error");
-// 	else if (child == 0)
-// 	{
-// 		parsing_cmd_in_pipe(parse);
-// 		pipe_child(parse, pfd, 2);
-// 	}
-// 	close(pfd[1]);
-// 	close(parse->temp_fd);
-// 	parse->temp_fd = pfd[0];
-// 	return (child);
-// }
 
 int	last_cmd(t_parsing *parse)
 {
@@ -206,7 +167,8 @@ int	last_cmd(t_parsing *parse)
 		{
 			check_herringbone(parse);
 			parse->built_in_cmd = 0;
-			dup2(parse->temp_fd, STDIN_FILENO);
+			if (parse->redirection_in == 0)
+				dup2(parse->temp_fd, STDIN_FILENO);
 			close(parse->temp_fd);
 			if (check_builtin_input(parse) == 1)
 				parsing_cmd(parse);
@@ -231,11 +193,6 @@ void	pipex(t_parsing *parse)
 	i = 0;
 	children = NULL;
 	sep = count_pipe(parse->lst_cmdline);
-	// printf("sep = %d\n", sep);
-	// print_list(parse->lst_cmdline);
-	// exit(EXIT_FAILURE);
-	// if (check_builtin_input(parse) == 1)
-		//ft_lstdel_front(&parse->lst_cmdline);
 	if (sep == 1)
 		one_pipe(parse);
 	else
@@ -245,17 +202,13 @@ void	pipex(t_parsing *parse)
 			perror("malloc error");
 		children[i] = first_cmd(parse);
 		i++;
-		while (ft_strcmp(parse->lst_cmdline->str, "|") != 0)
-			ft_lstdel_front(&parse->lst_cmdline);
-		ft_lstdel_front(&parse->lst_cmdline);
+		delete_cmd(&parse->lst_cmdline);
 		while (sep - 1 > 0)
 		{
 			children[i] = middle_cmd(parse);
 			i++;
 			sep--;
-			while (ft_strcmp(parse->lst_cmdline->str, "|") != 0)
-				ft_lstdel_front(&parse->lst_cmdline);
-			ft_lstdel_front(&parse->lst_cmdline);
+			delete_cmd(&parse->lst_cmdline);
 		}
 		children[i] = last_cmd(parse);
 		int last_cmd_no = i;
