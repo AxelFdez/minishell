@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_to_str.c                                    :+:      :+:    :+:   */
+/*   ft_lst_to_char_tab.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 14:11:54 by chmassa           #+#    #+#             */
-/*   Updated: 2023/04/12 18:19:23 by chmassa          ###   ########.fr       */
+/*   Created: 2023/04/12 18:14:32 by chmassa           #+#    #+#             */
+/*   Updated: 2023/04/12 18:18:39 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_lst_to_str(t_list *lst)
+char	**ft_lst_to_char_tab(t_list *lst)
 {
-	char	*str;
 	t_list	*tmp;
+	char	**array;
+	int		i;
 
 	if (!lst)
 		return (NULL);
+	i = 0;
 	tmp = lst;
-	str = ft_calloc(1, sizeof(char));
+	array = malloc(sizeof (char *) * (ft_lstsize(lst) + 1));
 	while (tmp)
 	{
-		str = ft_strjoin_free_s1(str, tmp->str);
+		array[i] = ft_strdup(tmp->str);
+		i++;
 		tmp = tmp->next;
 	}
-	return (str);
+	array[i] = NULL;
+	return (array);
 }

@@ -73,8 +73,6 @@ void	ft_append(t_list **parse)
 	ft_lstdel_current(&(*parse));
 }
 
-static
-
 void ft_heredoc(t_parsing *parse, t_list **lst)
 {
 	char *temp;
@@ -114,6 +112,9 @@ void ft_heredoc(t_parsing *parse, t_list **lst)
 	int j = 0;
 	while (1)
 	{
+		// tcgetattr(STDIN_FILENO, &term);
+		// term.c_lflag &= ~(ECHOCTL | ICANON);
+		// tcsetattr(STDIN_FILENO, TCSAFLUSH, &term);
 		signals_(1);
 		temp = readline("> ");
 		if (i == 1)

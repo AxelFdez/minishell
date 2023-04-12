@@ -1,6 +1,5 @@
 #include "../../includes/minishell.h"
 
-
 static int	ft_str_isdigits(char *s)
 {
 	int	i;
@@ -18,6 +17,14 @@ static int	ft_str_isdigits(char *s)
 	return (1);
 }
 
+static void	ft_handle_error(t_parsing *parse)
+{
+	ft_printf("minishell: exit: %s: numeric argument required\n",
+		parse->lst_cmdline->next->str);
+	parse->ret_value = 255;
+	exit(255);
+}
+
 void	ft_exit(t_parsing *parse)
 {
 	unsigned long long	ret_atoi;
@@ -30,12 +37,7 @@ void	ft_exit(t_parsing *parse)
 			&& ft_lstsize(parse->lst_cmdline) > 2)
 			ft_printf("minishell: exit: too many arguments\n");
 		else if (ft_str_isdigits(parse->lst_cmdline->next->str) == 0)
-		{
-			ft_printf("minishell: exit: %s: numeric argument required\n",
-				parse->lst_cmdline->next->str);
-			parse->ret_value = 255;
-			exit(255);
-		}
+			ft_handle_error(parse);
 		else
 		{
 			ret_atoi = ft_atoi_llu(parse->lst_cmdline->next->str);

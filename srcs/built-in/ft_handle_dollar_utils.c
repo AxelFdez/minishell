@@ -27,7 +27,8 @@ static void	ft_is_dollar(t_parsing *parse, t_list **lst)
 	{
 		parse->len_b++;
 		parse->i_b++;
-		if (parse->str_tmp[parse->i_b] == '$' || parse->str_tmp[parse->i_b] == '/')
+		if (parse->str_tmp[parse->i_b] == '$'
+			|| parse->str_tmp[parse->i_b] == '/')
 			break ;
 	}
 	ft_fill_tmplst(parse, lst, parse->i_b - parse->len_b);

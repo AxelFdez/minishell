@@ -50,8 +50,12 @@ A tester :
 - cat cat ls
 - si redirection fermante pas de redirection dans le pipe --OK--
 
-- si ligne trop longue, ecrase le debut
-- enchainer les heredocs
+- si ligne trop longue, ecrase le debut --OK--
+- enchainer les heredocs --OK--
+- si unset PATH, error message = no such file or directory --OK--
+- ls ne marche plus si export a nouveau le PATH --OK--
+- echo bonjour > out | ls --   bonjourls dans out
+
 
 To chris :
-- $HOME pas de retour a la ligne quand utilisé seul
+- $HOME pas de retour a la ligne quand utilisé seul --OK--

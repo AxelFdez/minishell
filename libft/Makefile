@@ -86,6 +86,7 @@ SRCS = 	srcs/str/ft_split.c \
 		srcs/linked_list/ft_lstcpy.c \
 		srcs/linked_list/ft_lst_to_str.c \
 		srcs/linked_list/ft_sortlst_str.c \
+		srcs/linked_list/ft_lst_to_char_tab.c \
 		srcs/linked_list/ft_lstsize.c
 
 OBJECT_FILES = $(SRCS:.c=.o)

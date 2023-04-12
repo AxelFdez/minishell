@@ -22,6 +22,7 @@ static void	ft_print_var(t_parsing *parse, char *s)
 {
 	int		i;
 	char	*str;
+
 	if (parse->is_in_str == 1)
 	{
 		ft_putstr(s);
@@ -33,22 +34,28 @@ static void	ft_print_var(t_parsing *parse, char *s)
 	{
 		write (1, &str[i], 1);
 		if (str[i] == ' ')
-			while(str[i] == ' ')
+			while (str[i] == ' ')
 				i++;
-
 		i++;
 	}
 	free(str);
 }
 
+static void	ft_print_tild(t_parsing *parse)
+{
+	char	*tild_ret;
+
+	tild_ret = ft_loop_tild_hyphen(parse, '~');
+	ft_putstr_fd(tild_ret, 1);
+	free(tild_ret);
+}
+
 void	ft_echo(t_list *tmp, t_parsing *parse)
 {
 	int	nl;
-	char	*tild_ret;
 
 	nl = 0;
 	tmp = tmp->next;
-	tild_ret = NULL;
 	if (tmp != NULL && !ft_check_arg(tmp->str))
 	{
 		tmp = tmp->next;
@@ -57,11 +64,7 @@ void	ft_echo(t_list *tmp, t_parsing *parse)
 	while (tmp && ft_strcmp(tmp->str, "|") != 0)
 	{
 		if (ft_strcmp(tmp->str, "~") == 0)
-		{
-			tild_ret = ft_loop_tild_hyphen(parse, '~');
-			ft_putstr_fd(tild_ret, 1);
-			free(tild_ret);
-		}
+			ft_print_tild(parse);
 		else
 			ft_print_var(parse, tmp->str);
 		tmp = tmp->next;

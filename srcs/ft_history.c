@@ -29,9 +29,8 @@ void	ft_check_history_size(t_parsing *parse)
 		}
 		free(s);
 		nb_line++;
-
 	}
-	if (nb_line > 1000)
+	if (nb_line > 10000)
 		ft_clear_history(parse);
 	close(parse->fd_history[0]);
 }

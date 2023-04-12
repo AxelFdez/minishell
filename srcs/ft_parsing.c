@@ -1,12 +1,5 @@
 #include "../includes/minishell.h"
 
-int	is_meta_char(int c)
-{
-	if (c == '|' || c == '<' || c == '>')
-		return (1);
-	return (0);
-}
-
 static void	is_quote_string(t_parsing *parse, char c)
 {
 	parse->i++;
@@ -35,6 +28,26 @@ static void	is_quote_string(t_parsing *parse, char c)
 	parse->quote_to_del = 0;
 }
 
+static void	ft_handle_quotes(t_parsing *parse)
+{
+	parse->c = parse->input[parse->i];
+	// parse->i++;
+	// parse->len++;
+	while (parse->input[parse->i] != parse->c)
+	{
+		if (parse->c == '\"' && parse->input[parse->i] == '$'
+			&& parse->input[parse->i +1] != ' '
+			&& parse->input[parse->i +1] != '\0')
+			ft_handle_dollar(parse);
+		else
+		{
+			parse->i++;
+			parse->len++;
+		}
+	}
+	parse->quote_to_del++;
+}
+
 static void	is_no_quote_string(t_parsing *parse)
 {
 	while (parse->input[parse->i] && !is_meta_char(parse->input[parse->i])
@@ -44,32 +57,14 @@ static void	is_no_quote_string(t_parsing *parse)
 			&& parse->input[parse->i +1] != '\0')
 		{
 			ft_handle_dollar(parse);
-			parse->len = 0;
 			if (parse->input[parse->i] == ' ')
 				break ;
 		}
 		else if ((parse->input[parse->i] == '\"' || parse->input[parse->i]
 				== '\'') && (parse->input[parse->i +1] != '\0'))
 		{
-			parse->c = parse->input[parse->i];
+			ft_handle_quotes(parse);
 			parse->i++;
-			parse->len++;
-			while (parse->input[parse->i] != parse->c)
-			{
-				if (parse->c == '\"' && parse->input[parse->i] == '$'
-					&& parse->input[parse->i +1] != ' '
-					&& parse->input[parse->i +1] != '\0')
-				{
-					ft_handle_dollar(parse);
-					parse->len = 0;
-				}
-				else
-				{
-					parse->i++;
-					parse->len++;
-				}
-			}
-			parse->quote_to_del++;
 		}
 		else
 		{
@@ -109,8 +104,4 @@ void	ft_get_cmdline(t_parsing *parse)
 	parse->input = ft_strtrim_free_s1(parse->input, " ");
 	parse->ret_value = ft_check_syntax(parse);
 	ft_parseur(parse);
-	// ft_lstprint_from_head(parse->lst_cmdline);
-	//ft_lstdel_all(&parse->lst_cmdline);
-	// free(parse->input);
 }
-

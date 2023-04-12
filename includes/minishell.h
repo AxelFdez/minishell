@@ -11,6 +11,7 @@
 # include <signal.h>
 # include <sys/wait.h>
 # include <errno.h>
+# include <termios.h>
 
 typedef struct s_cmd
 {
@@ -52,6 +53,7 @@ typedef struct s_parsing
 	int		built_in_last_cmd;
 	int		redirection_out;
 	int		fd_stdout;
+	struct termios term;
 }				t_parsing;
 
 
@@ -69,11 +71,8 @@ void	ft_initialization(t_parsing *parse);
 void	handle_signals(int sig);
 void	ft_strdel_quotes(t_parsing *parse, char *str);
 void	signals_(int heredoc);
-char	*path_of_command(t_parsing *parse);
-void	cmd_lst_to_tab(t_parsing *parse);
 void	parsing_cmd(t_parsing *parse);
 void	execute_cmd(t_parsing *parse);
-char	*path_of_command(t_parsing *parse);
 int		count_pipe(t_list *list);
 void	one_pipe(t_parsing *parse);
 int		first_pipe(t_parsing *parse, int temp_fd);
@@ -81,7 +80,6 @@ int		middle_pipe(t_parsing *parse, int pipe_temp);
 void	last_pipe(t_parsing *parse, int temp_fd);
 void	pipex(t_parsing *parse);
 int		ft_lst_strchr_meta(t_list *list);
-void	cmd_lst_to_tab(t_parsing *parse);
 int		is_meta_char(int c);
 void	ft_check_built_in(t_parsing *parse);
 //**** built-in *********************************************************************
@@ -99,7 +97,7 @@ void	ft_update_pwd(t_parsing *parse, char *cwd);
 char	*ft_loop_tild_hyphen(t_parsing *parse, char c);
 
 void	ft_retrieve_env(t_parsing *parse, char **env);
-char	**ft_lst_to_char_tab(t_list *lst);
+char	**ft_lst_env_to_tab(t_list *lst);
 int		check_builtin_input(t_parsing * parse);
 void	execute_built_in(t_parsing *parse);
 int		parsing_built_in(t_parsing *parse);
@@ -124,6 +122,7 @@ void	pipe_child(t_parsing *parse, int pfd[2], int pipe_temp, int dup);
 void	ft_fill_tmplst(t_parsing *parse, t_list **lst, int start);
 char	*ft_set_str_to_comp(char *s);
 void	ft_loop(t_parsing *parse, t_list **lst);
+void	error_exec_message(t_parsing *parse);
 void    ft_return_error(t_parsing *parse);
 void	ft_replace_value(t_parsing *parse, t_list **lst);
 char	*ft_found_var(t_parsing *parse, char *s);

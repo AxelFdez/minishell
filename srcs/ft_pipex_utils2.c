@@ -18,14 +18,16 @@ void	del_parsed_cmd(t_parsing *parse)
 
 void	pipe_child(t_parsing *parse, int pfd[2], int pipe_temp, int dup)
 {
-	if (parse->redirection_out == 0)
-		dup2(pfd[1], STDOUT_FILENO);
+	close(pfd[0]);
+	//if (parse->redirection_out == 0)
+	dup2(pfd[1], STDOUT_FILENO);
 	if (dup == 2)
 		dup2(pipe_temp, STDIN_FILENO);
-	close(pfd[0]);
+	close(pfd[1]);
 	if (parse->built_in_cmd > 0)
 		execute_built_in(parse);;
 	execve(parse->command[0], parse->command, parse->env);
+	error_exec_message(parse);
 	// printf("minishell: ");
 	// perror(parse->command[0]);
 }

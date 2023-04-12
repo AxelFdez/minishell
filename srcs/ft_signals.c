@@ -5,10 +5,17 @@ void handle_signals(int sig)
 	if (sig == 2)
 	{
 		//ft_putchar('\b');
-		rl_replace_line(" ", 0);
-		write(1, "\n", 1);
+		// ft_putchar(-1);
 		rl_on_new_line();
+		rl_replace_line("", 0);
 		rl_redisplay();
+		write(1, "\n", 1);
+		ft_putstr("minishell -> ");
+		// rl_on_new_line();
+		// rl_replace_line("minishell -> ", 0);
+		// rl_redisplay();
+		// rl_replace_line("minishell -> ", 0);
+		// rl_redisplay();
 	}
 }
 
@@ -16,10 +23,10 @@ void handle_signals_heredoc(int sig)
 {
 	if (sig == 2)
 	{
-		rl_replace_line(" ", 0);
 		rl_on_new_line();
+		rl_replace_line("", 0);
 		rl_redisplay();
-		// write(1, "\n", 1);
+		write(1, "\n", 1);
 		exit(1);
 	}
 }

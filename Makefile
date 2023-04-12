@@ -14,6 +14,7 @@ SRCS =  srcs/minishell.c \
 		srcs/ft_initialization.c \
 		srcs/ft_fill_lst.c \
 		srcs/ft_signals.c \
+		srcs/is_meta_char.c \
 		srcs/ft_execute.c \
 		srcs/ft_handle_env.c \
 		srcs/ft_history.c \
@@ -37,7 +38,6 @@ SRCS =  srcs/minishell.c \
 		srcs/built-in/ft_cd.c \
 		srcs/built-in/ft_cd_utils.c \
 		srcs/built-in/ft_handle_dollar_in_heredoc.c \
-		srcs/ft_return_error.c \
 		srcs/ft_quotes.c
 OBJECT_FILES = $(SRCS:.c=.o)
 HEADER = -I./includes
