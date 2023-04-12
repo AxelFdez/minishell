@@ -279,3 +279,103 @@ ps
 cat | ls
 cat | cat | ls
 cat | cat | ls
+ls
+ls
+cat | cat | ls
+cat | cat | ls
+cat
+<< test
+<< test
+<< test
+cat
+cat
+cat
+
+
+cat
+cat
+cat
+cat
+
+cat
+cat
+
+<< t
+<< t
+<< t
+
+make
+$USER | cat -e
+echo $USER | cat -e
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+make
+ls
+ls
+cat
+ls
+ls
+ls
+ls
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+make
+ls
+;s
+ls
+cat
+ls
+cat
+cat
+lslslslslslslslsls
+ls
+ls
+cscscsc
+agpppp
+pflplw
+lsls
+ls
+ls
+ls
+ls
+ls
+make
+ls
+ls
+ls
+pwd
+ls
+cat
+cat
+ls
+ls
+cat
+cat
+ls
+cat
+ls
+ls
+ls
+cat
+cat | cat | ls
+
+cat | cat | ls

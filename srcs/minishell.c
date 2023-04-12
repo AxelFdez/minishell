@@ -12,6 +12,16 @@ static void	ft_add_history(t_parsing *parse)
 	parse->tmp_input = ft_strdup(parse->input);
 }
 
+// void sigint_father(int param)
+// {
+// 	(void)param;
+// 	rl_on_new_line();
+// 	rl_replace_line("", 0);
+// 	rl_redisplay();
+// 	write(1, "\n", 1);
+// 	ft_putstr("minishell -> ");
+// }
+
 int	main(int ac, char **av, char **env)
 {
 	t_parsing	parse;
@@ -23,14 +33,15 @@ int	main(int ac, char **av, char **env)
 		ft_check_history_size(&parse);
 		while (1)
 		{
-			tcgetattr(STDIN_FILENO, &parse.term);
-			parse.term.c_lflag &= ~(ECHOCTL | ICANON);
-			tcsetattr(STDIN_FILENO, TCSAFLUSH, &parse.term);
-			signal(SIGQUIT, SIG_IGN);
-			signals_(0);
+			// tcgetattr(STDIN_FILENO, &parse.term);
+			// parse.term.c_lflag &= ~(ECHOCTL | ICANON);
+			// tcsetattr(STDIN_FILENO, TCSAFLUSH, &parse.term);
+			// signal(SIGQUIT, SIG_IGN);
+			// signal(SIGINT, sigint_father);
+			// signals_(0);
 			parse.input = readline("minishell -> ");
 			if (!parse.input)
-				return (0);
+				return (parse.ret_value);
 			ft_quotes(&parse);
 			ft_add_history(&parse);
 			ft_history(&parse);
@@ -41,7 +52,7 @@ int	main(int ac, char **av, char **env)
 			ft_lstdel_all(&parse.lst_cmdline);
 			free(parse.input);
 			parse.tmp_ret_value = parse.ret_value;
-			system("leaks minishell");
+			//system("leaks minishell");
 		}
 	}
 	return (0);
