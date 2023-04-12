@@ -775,3 +775,12 @@ echo $var
 echo $var
 echo $var
 echo "$var"
+echo aaaaa
+echo "" aaaaa
+echo ""aaaaa
+echo $var bonjour
+echo "$var" bonjour
+echo "$var"bonjour
+export var=" aaa"
+echo $var
+echo "$var"
