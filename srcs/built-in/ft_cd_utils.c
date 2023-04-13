@@ -32,6 +32,8 @@ void	ft_update_oldpwd(t_parsing *parse, char *cwd)
 	{
 		if (ft_strnstr(tmp->str, "OLDPWD", 6))
 		{
+			if (!ft_strchr(tmp->str, '='))
+				tmp->str = ft_strjoin_free_s1(tmp->str, "=");
 			old_tmp = ft_strdup(tmp->str);
 			old_tmp[ft_str_chr(old_tmp, '=') + 1] = '\0';
 			free(tmp->str);

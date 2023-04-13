@@ -18,34 +18,26 @@ int	main(int ac, char **av, char **env)
 	(void)av;
 	if (ac == 1)
 	{
+		tcgetattr(STDIN_FILENO, &parse.term);
+		parse.term.c_lflag &= ~ECHOCTL;
+		tcsetattr(STDIN_FILENO, TCSAFLUSH, &parse.term);
+		signals_func();
 		ft_retrieve_env(&parse, env);
 		ft_initialization(&parse);
 		ft_check_history_size(&parse);
 		while (1)
 		{
-			
-			tcgetattr(STDIN_FILENO, &parse.term);
-			parse.term.c_lflag &= ~(ECHOCTL | ICANON);
-			tcsetattr(STDIN_FILENO, TCSAFLUSH, &parse.term);
-			signal(SIGQUIT, SIG_IGN);
-			signals_(0);
+			sig_child = 1;
 			parse.input = readline("minishell -> ");
 			if (!parse.input)
-				return (0);
+				return (parse.ret_value);
 			ft_quotes(&parse);
 			ft_add_history(&parse);
 			ft_history(&parse);
 			ft_get_cmdline(&parse);
-			// char **cat = malloc(sizeof(char *) * 2);
-			// cat[0] = "/bin/cat";
-			// cat[1] = "\0";
-			// execve("/bin/cat", cat, 0);
-			// if (parse.lst_cmdline)
-			// {
-				parse.env = ft_lst_env_to_tab(parse.lst_env);
-				execute_cmd(&parse);
-				free_str_tab(parse.env);
-			// }
+			parse.env = ft_lst_to_char_tab(parse.lst_env);
+			execute_cmd(&parse);
+			free_str_tab(parse.env);
 			ft_lstdel_all(&parse.lst_cmdline);
 			free(parse.input);
 			parse.tmp_ret_value = parse.ret_value;

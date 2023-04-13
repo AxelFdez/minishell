@@ -36,7 +36,8 @@ static void	ft_print_var(t_parsing *parse, char *s)
 		if (str[i] == ' ')
 			while (str[i] == ' ')
 				i++;
-		i++;
+		else
+			i++;
 	}
 	free(str);
 }

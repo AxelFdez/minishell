@@ -2,16 +2,10 @@
 
 int	ft_pwd(void)
 {
-	char	buffer[4096];
-	char	*cwd;
-
-	cwd = getcwd(buffer, sizeof(buffer));
-	if (cwd == NULL)
+	if (ft_get_current_position())
 	{
-		perror("getcwd");
-		return (1);
+		ft_printf("%s\n", ft_get_current_position());
+		return (0);
 	}
-	ft_printf("%s\n", cwd);
-	ft_bzero(buffer, 4096);
-	return (0);
+	return (1);
 }

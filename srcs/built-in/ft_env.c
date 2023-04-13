@@ -1,5 +1,6 @@
 #include "../../includes/minishell.h"
 
+
 int	ft_env(t_parsing *parse)
 {
 	t_list	*tmp;

@@ -13,7 +13,7 @@ echo -nnnnn ""
 echo -nnnnn "" fff
 echo -nnnnn ""fff
 echo -nnnnn"" fff
-echo "joijf$user 
+echo "joijf$user
 abc$TTT
 '$USER $BLABLABLABLABLABLA'
 khfiuhf
@@ -82,16 +82,16 @@ export var1="   aaa" var2="aaa   "
 export var1="   aaa" var2="aaa   "
 export var1="   aaa" var2="aaa   "
 export var2="aaa   "
-export var1=   aaa var2=aaa   
-export var1=   aaa var2=aaa   
-export var1=   aaa var2=aaa   
+export var1=   aaa var2=aaa
+export var1=   aaa var2=aaa
+export var1=   aaa var2=aaa
 var2="aaa   "
 export var2="aaa   "
 export var2="aaa   " var1="   ewf"
 export var2="aaa " var1="   ewf"
 export var1="   aaa" var2="aaa   "
 export
-export var1=   aaa var2=aaa   
+export var1=   aaa var2=aaa
 export var2="aaa " var1="   ewf"
 export var1=aaa var2=ttt var3=jjj
 export var1="aaa" var2="ttt" var3="jjj"
@@ -147,3 +147,114 @@ echo $var
 echo "$var"
 echo aaaa"bbbb  bbbb""khbgjkhbkjhgbjhgjhg"
 echo aaaa"$bbbb  bbbb""khbgjkhbkjhgbjhgjhg"
+export
+export
+export
+cd ~
+pwd
+cd -
+pwd
+pwd
+pwd
+env
+exit
+export
+env
+env
+export
+export
+cd ~
+cd -
+export
+env
+export
+export
+cd ~
+cd -
+pwd
+cd ~
+cd -
+export
+env
+cd ~
+pwd
+cd -
+export
+export
+cd ~
+cd -
+export
+export
+cd ~
+env
+export
+echo $USER
+export
+export
+env
+echo $_
+env
+env
+echo $_
+cd ~
+env
+cd ~
+env
+env
+echo er
+en
+env
+echo _
+echo $_
+pwd
+env
+env
+export
+env
+pwd
+exit
+env
+export
+env
+env
+export
+env
+export
+export
+env
+cd ~
+cd
+pwd
+cd ~
+~
+cd
+cd
+cd
+cd
+pwd
+unset HOME
+cd
+cd ~
+cd
+~
+pwd
+export
+echo ddd
+export
+pwd
+export
+export
+pwd
+pwd
+echo $?
+pwd
+echo $?
+pwd
+export
+cd
+export
+pwd
+cd ..
+pwd
+export
+cd
