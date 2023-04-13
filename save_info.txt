@@ -94,3 +94,10 @@ save du 11/04 :
                 pipe dans une strings
                 echo ~
                 etc...
+
+save du 12/04 :
+- corrections : export "" OK
+                export var="aaa$var" OK
+                probleme avec : export var2="aaa " var1="   ewf"
+                                export var1="   aaa" var2="aaa   "
+
