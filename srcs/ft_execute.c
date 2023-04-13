@@ -103,10 +103,6 @@ void	built_in_used_alone(t_parsing *parse)
 		if (ft_strcmp(temp->str, "export") == 0
 			|| ft_strcmp(temp->str, "unset") == 0
 			|| ft_strcmp(temp->str, "cd") == 0
-<<<<<<< HEAD
-=======
-			// || (ft_strcmp(temp->str, "cd") == 0 && ft_strcmp(temp->next->str, "~") == 0)
->>>>>>> origin/chris
 			|| ft_strcmp(temp->str, "exit") == 0)
 			built_in_found = 1;
 		if (temp->next == NULL)
@@ -136,12 +132,12 @@ void	simple_command(t_parsing *parse)
 {
 	pid_t child;
 
+	check_herringbone(parse);
 	child = fork();
 	if (child < 0)
 		perror("fork error\n");
 	else if (child == 0)
 	{
-		check_herringbone(parse);
 		parse->built_in_cmd = 0;
 		if (check_builtin_input(parse) == 1)
 			parsing_cmd(parse);
@@ -155,12 +151,27 @@ void	simple_command(t_parsing *parse)
 	}
 	waitpid(child, &parse->status, 0);
 	parse->ret_value = parse->status / 256;
+	// dup2(parse->fd_stdin, STDIN_FILENO);
+	// dup2(parse->fd_stdout, STDOUT_FILENO);
 }
+
+// void	count_heredoc(t_parsing *parse)
+// {
+// 	t_list *temp;
+
+// 	while (temp)
+// 	{
+// 		if (ft_strcmp(temp, "<<") == 0)
+// 			parse->heredoc_count++;
+// 		temp = temp ->next;
+// 	}
+// }
 
 void execute_cmd(t_parsing *parse)
 {
 	parse->status = 0;
 	built_in_used_alone(parse);
+	//count_heredoc(parse);
 	if (!parse->lst_cmdline)
 		return ;
 	if (ft_lst_strchr_pipe(parse->lst_cmdline) == 0)

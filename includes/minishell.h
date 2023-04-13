@@ -55,6 +55,9 @@ typedef struct s_parsing
 	struct termios term;
 	int		temp_fd;
 	int		status;
+	int		heredoc_count;
+	int		fd_stdin;
+	int		fd_stdout;
 }				t_parsing;
 
 

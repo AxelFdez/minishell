@@ -76,7 +76,7 @@ void	ft_append(t_list **parse)
 void ft_heredoc(t_parsing *parse, t_list **lst)
 {
 	char *temp;
-	//int pfd[2];
+	int pfd[2];
 	t_list *temp_list;
 
 	temp_list = (*lst);
@@ -107,16 +107,14 @@ void ft_heredoc(t_parsing *parse, t_list **lst)
 			(*lst) = (*lst)->next;
 	}
 	tab[i] = 0;
+	dprintf(2, "ps = %d\n", getpid());
+	for (int k = 0; tab[k]; k++)
+		dprintf(2, "tab[%d] = %s\n",k, tab[k]);
 	temp = "";
-	//pipe(pfd);
+	pipe(pfd);
 	int j = 0;
-	//system("lsof -c minishell");
-	//puts("\n\n\n\n");
-	print_list(parse->lst_cmdline);
-	char *pid_text = ft_itoa(sig_child);
-	int file;
-
-	file = open(pid_text, O_CREAT | O_TRUNC, 0644);
+	// dprintf(2, "i = %d\n", i);
+	// print_list(parse->lst_cmdline);
 	while (1)
 	{
 		temp = readline("> ");
@@ -125,8 +123,8 @@ void ft_heredoc(t_parsing *parse, t_list **lst)
 			if (ft_strcmp(temp, tab[j]) == 0)
 				break;
 			temp = ft_handle_dollar_in_heredoc(parse, temp);
-			ft_putstr_fd(temp, file);
-			ft_putstr_fd("\n", file);
+			ft_putstr_fd(temp, pfd[1]);
+			ft_putstr_fd("\n", pfd[1]);
 		}
 		if (i > 1)
 		{
@@ -137,9 +135,9 @@ void ft_heredoc(t_parsing *parse, t_list **lst)
 			}
 		}
 	}
-	//close(pfd[1]);
-	dup2(file, STDIN_FILENO);
-	//close(file);
+	close(pfd[1]);
+	dup2(pfd[0], STDIN_FILENO);
+	close(pfd[0]);
 	while ((*lst)->prev != NULL)
 		(*lst) = (*lst)->prev;
 	i = 0;
