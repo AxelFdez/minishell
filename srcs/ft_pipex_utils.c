@@ -94,7 +94,6 @@ void	parsing_cmd(t_parsing *parse)
 		parse->command[0] = env_path_command(parse);
 	if (!parse->command[0])
 		ft_printf("minishell: %s: no such file or directory\n", parse->lst_cmdline->str);
-
 }
 
 int	count_pipe(t_list *list)

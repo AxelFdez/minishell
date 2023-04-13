@@ -76,7 +76,7 @@ void	ft_append(t_list **parse)
 void ft_heredoc(t_parsing *parse, t_list **lst)
 {
 	char *temp;
-	int pfd[2];
+	//int pfd[2];
 	t_list *temp_list;
 
 	temp_list = (*lst);
@@ -108,22 +108,25 @@ void ft_heredoc(t_parsing *parse, t_list **lst)
 	}
 	tab[i] = 0;
 	temp = "";
-	pipe(pfd);
+	//pipe(pfd);
 	int j = 0;
+	//system("lsof -c minishell");
+	//puts("\n\n\n\n");
+	print_list(parse->lst_cmdline);
+	char *pid_text = ft_itoa(sig_child);
+	int file;
+
+	file = open(pid_text, O_CREAT | O_TRUNC, 0644);
 	while (1)
 	{
-		// tcgetattr(STDIN_FILENO, &term);
-		// term.c_lflag &= ~(ECHOCTL | ICANON);
-		// tcsetattr(STDIN_FILENO, TCSAFLUSH, &term);
-		signals_(1);
 		temp = readline("> ");
 		if (i == 1)
 		{
 			if (ft_strcmp(temp, tab[j]) == 0)
 				break;
 			temp = ft_handle_dollar_in_heredoc(parse, temp);
-			ft_putstr_fd(temp, pfd[1]);
-			ft_putstr_fd("\n", pfd[1]);
+			ft_putstr_fd(temp, file);
+			ft_putstr_fd("\n", file);
 		}
 		if (i > 1)
 		{
@@ -134,9 +137,9 @@ void ft_heredoc(t_parsing *parse, t_list **lst)
 			}
 		}
 	}
-	close(pfd[1]);
-	dup2(pfd[0], STDIN_FILENO);
-	close(pfd[0]);
+	//close(pfd[1]);
+	dup2(file, STDIN_FILENO);
+	//close(file);
 	while ((*lst)->prev != NULL)
 		(*lst) = (*lst)->prev;
 	i = 0;
@@ -147,32 +150,6 @@ void ft_heredoc(t_parsing *parse, t_list **lst)
 	}
 	free(tab);
 }
-
-
-// void ft_heredoc(t_list **parse)
-// {
-// 	char *temp;
-// 	int pfd[2];
-
-// 	temp = "";
-// 	pipe(pfd);
-
-// 	ft_lstdel_current(&(*parse));
-// 	while (1)
-// 	{
-// 		signals_(1);
-// 		temp = readline("> ");
-// 		//print_list((*parse));
-// 		if (ft_strcmp(temp, (*parse)->str) == 0)
-// 			break ;
-// 		ft_putstr_fd(temp, pfd[1]);
-// 		ft_putstr_fd("\n", pfd[1]);
-// 	}
-// 	close(pfd[1]);
-// 	dup2(pfd[0], STDIN_FILENO);
-// 	close(pfd[0]);
-// 	ft_lstdel_current(&(*parse));
-// }
 
 int check_herringbones_input(t_parsing *parse)
 {
@@ -190,20 +167,6 @@ int check_herringbones_input(t_parsing *parse)
 	}
 	return (1);
 }
-
-// int ft_lst_strchr_heredoc(t_list *list)
-// {
-// 	t_list *temp;
-// 	temp = list;
-
-// 	while (temp)
-// 	{
-// 		if (ft_strcmp(temp->str, "<<") == 0)
-// 			return (0);
-// 		temp = temp->next;
-// 	}
-// 	return (1);
-// }
 
 void	check_herringbone(t_parsing *parse)
 {

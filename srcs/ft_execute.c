@@ -137,36 +137,6 @@ void error_exec_message(t_parsing *parse)
 		}
 }
 
-void handle_signals_process(int sig)
-{
-	if (sig == 2)
-	{
-		rl_replace_line("", 0);
-		rl_redisplay();
-		write(1, "\n", 1);
-		// ft_putstr("minishell -> ");
-	}
-}
-
-void	signal_process(void)
-{
-	struct sigaction sa;
-
-	sigemptyset(&sa.sa_mask);
-	sa.sa_handler = handle_signals_process;
-	sa.sa_flags = SA_RESTART;
-	sigaddset(&sa.sa_mask, SIGINT);
-	sigaction(SIGINT, &sa, NULL);
-
-}
-
-void sigint_child(int param)
-{
-	(void)param;
-	write(2, "\n", 1);
-	exit(1);
-}
-
 void	simple_command(t_parsing *parse)
 {
 	pid_t child;
@@ -176,12 +146,6 @@ void	simple_command(t_parsing *parse)
 		perror("fork error\n");
 	else if (child == 0)
 	{
-		//signals_(1);
-		// parse->term.c_lflag |= ECHO;
-		// tcsetattr(STDIN_FILENO, TCSAFLUSH, &parse->term);
-		// signal(SIGQUIT, SIG_DFL);
-		// signal(SIGINT, sigint_child);
-		//signal_process();
 		check_herringbone(parse);
 		parse->built_in_cmd = 0;
 		if (check_builtin_input(parse) == 1)
@@ -207,40 +171,9 @@ void execute_cmd(t_parsing *parse)
 	if (ft_lst_strchr_pipe(parse->lst_cmdline) == 0)
 		pipex(parse);
 	else
+	{
+		sig_child = 0;
 		simple_command(parse);
+	}
 	return;
 }
-
-// void execute_cmd(t_parsing *parse)
-// {
-// 	pid_t child;
-// 	int	status;
-
-// 	status = 0;
-// 	built_in_works(parse);
-// 	if (!parse->lst_cmdline)
-// 		return ;
-// 	child = fork();
-// 	if (child < 0)
-// 		perror("fork error\n");
-// 	else if (child == 0)
-// 	{
-// 		check_herringbone(parse);
-// 		parse->built_in_cmd = 0;
-// 		if (check_builtin_input(parse) == 1)
-// 			parsing_cmd(parse);
-// 		else
-// 			parse->built_in_cmd = parsing_built_in(parse);
-// 		if (ft_lst_strchr_pipe(parse->lst_cmdline) == 0)
-// 			pipex(parse);
-// 		if (parse->built_in_cmd > 0)
-// 			execute_built_in(parse);
-// 		execve(parse->command[0], parse->command, parse->env);
-// 		error_exec_message(parse);
-// 		exit(1);
-// 	}
-// 	waitpid(child, &status, 0);
-// 	parse->ret_value = status / 256;
-// 	//system("lsof -c minishell");
-// 	//exit(EXIT_FAILURE);
-// }

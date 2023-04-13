@@ -379,3 +379,324 @@ cat
 cat | cat | ls
 
 cat | cat | ls
+ls
+cat
+car
+cat
+cat
+cat
+cat
+cat
+cat
+ls
+cat
+echo $?
+echo $?
+echo ?$
+echo $?
+cat
+echo $?
+make
+cat
+ls
+make
+cat
+ls
+cat
+make
+cat
+ls
+cat
+ls
+cat
+cat
+ls
+make
+cat
+cat
+cat
+echo $?
+cat
+echo $?
+bash
+ls
+ls
+ls
+ls
+ls
+ls
+cat
+ls
+cat
+ls
+make
+cat
+ls
+makwe
+make
+cat
+cat
+ls
+cat
+cat
+make
+ls
+cat
+ls
+cat
+ls
+
+make
+./minishell
+ls
+cat
+curl parrot.live
+curl parrot.live
+cat
+
+
+cat
+ls
+cat
+
+make
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+make
+cat
+cat
+ls
+cat
+cat
+
+cat
+cat
+cat
+
+
+make
+cat
+make
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+ls
+cat
+ls
+cat
+ls
+cat
+ls
+cat
+ls
+ls
+;s
+ls
+ls
+ls
+cat
+make
+cat
+cat
+cat | cat | ls
+cat | cat | ls
+cat | cat | ls
+cat | cat | ls
+<< ffd
+<< 1 << 2 << 3 ls
+ls
+cat
+<< 1
+make
+<< 1 | ls | << 2 << 3 | ls
+bash
+<< 1 | ls | << 2 << 3 | ls
+<< 1 << 2 << 3
+<< 1 << 2 << 3 ls
+<< 1 << 2 << 3 ls | ls
+<< 1 | ls | << 2 << 3 | ls
+<< 1 | ls | << 2 | ls
+<< 1 | << 2
+< env.txt > out | ls
+< env.txt > out >> out1 | < env.txt wc
+< env.txt wc
+< out > out1 | >> out1 ls
+env.txt > out >> out1 | < env.txt wc
+< env.txt > out >> out1 | < env.txt wc
+< env.txt > out > out1 | < env.txt wc
+env.txt > out >> out1 | < env.txt wc
+< env.txt > out >> out1 | < env.txt wc
+< env.txt > out >> out1 | < env.txt wc
+< env.txt > out >> out1 | < env.txt wc
+< env.txt > out > out1 | < env.txt wc
+< env.txt > out > out1 | < env.txt wc
+ls
+< env.txt > out > out1 | < env.txt wc
+< env.txt > out > out1 | < env.txt wc
+< env.txt > out > out1 | < env.txt wc
+< env.txt > out > out1 | < env.txt wc
+< env.txt > out > out1 | < env.txt wc
+<< 1 | ls | << 2 << 3 | ls
+pssps
+p[ps
+<< 1 ls | << 2 ls
+2
+ls
+ls
+<< 1 ls | << 2 ls
+<< 1 ls | << 2 ls
+<< 1 ls | << 2 ls
+
+ps
+ps
+< out < out1 > out2 | ls -l | wc
+bash
+<< test ls | << 2 ls
+make
+<< test ls | << 2 ls
+<< 1 ls | << 2 ls
+env
+./minishell
+env
+./minishell
+./minishell
+./minishell
+./minishell
+./.m
+./minishell
+env
+./minishell
+./minishell
+env
+cd jnfdvkev 
+env
+cd ..
+env
+cd ..
+env
+unset OLDPWD
+env
+cd ..
+env
+env
+export
+evrga umy vyt,uwbvfjhvearg,jufreqgfvrts
+ 95464;kn m g,43w
+!@#$%^&*(
+!@#$%^&*()
+!@#$%^&*()_
+!@#$%^&*
+!@#$%^&
+!@#$%^
+!@#$%
+!@#$
+%
+$%
+$dthynfghfn
+asdgdashstjmgyhg cj,mv n
+q3werytu436745678
+458u54 ,v``
+458u54 ,v``
+458u54 ,v``
+bdfbdfz
+b
+
+2433659;][]\.
+&@(#*#_+|]p[\][
+<
+<<
+<
+>
+:"<,.;?{)*)(^%56@!#
+"
+
+jh fdjhv <
+jh <
+| <
+dcvj | <
+dcvj | kvjen <
+dcvj | kvjen
+dcvj | kvjen >
+dcvj | <
+bash
+>|
+> |
+> <
+bash
+> >
+bash
+bash
+>> <
+$bonjour
+ls
+rm < |
+ls
+
+ls
+<< test | << 1 ls
+<< 1 << 2
+ps
+<< 1 | << 2
+<< 1 | << 2
+cat | cat | ls
+./minishell | ./minishell | ./minishell
+m2004hminiisnhieslhle l-l>  -l>s 
+2004hminishell -> ls
+ls
+2004l
+minishell -> 2004l
+minishell: ls: command not found
+minishell: 2004l: command not found
+minishell -> minishell: ls: command not found
+minishell: minishell:: command not found
+l2s0
+0m4ihnishell -> 2004hminishell -> ls
+minishell -> ls
+2004l
+minishell: ls: command not found
+minishell -> 2004l
+minishell: 2004l: command not found
+minishell -> minishell: ls: command not found
+minishell: minishell:: command not found
+l2msi0
+n0i4shhmeilnli s-h>e l2l0 0-4>h ls
+minishell -> ls
+2004l
+minishell: ls: command not found
+minishell -> 2004l
+minishell: 2004l: command not found
+minishell -> minishell: ls: command not found
+minishell: minishell:: command not found
+2004l
+minishell -> 2004l
+minishell: 2004l: command not found
+2004l
+minishell -> 2004l
+minishell: 2004l: command not found
+2004l
+minishell -> 2004l
+minishell: 2004l: command not found
+minishell -> 2004h2004l
+minishell -> minishell -> 2004h2004l
+
+minishell -> 
+minishell -> 
+<< 1 | << 2
+<< 1 | << 2
+ls
+<< 1
+<< 1 cat
+make
+make fclean
+git add .

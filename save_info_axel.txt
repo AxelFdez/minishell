@@ -57,7 +57,12 @@ A tester :
 - si unset PATH, error message = no such file or directory --OK--
 - ls ne marche plus si export a nouveau le PATH --OK--
 - echo bonjour > out | ls --   bonjourls dans out --OK--
+- lexer : probleme pas d'erreur quand meta seul
 
 
 To chris :
 - $HOME pas de retour a la ligne quand utilisé seul --OK--
+- $+valeur inexistante = segfault
+- lancer minishell sans envrionnement (env -i)
+- ouvrir un guillemet -> prompt -> fais un segfault si Ctrl-d
+

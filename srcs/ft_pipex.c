@@ -18,6 +18,8 @@ pid_t cmd1(t_parsing *parse, int *pfd)
 	{
 		close(pfd[0]);
 		check_herringbone(parse);
+		if (ft_strcmp(parse->lst_cmdline->str, "|") == 0)
+			exit(parse->ret_value);
 		parse->built_in_cmd = 0;
 		if (check_builtin_input(parse) == 1)
 			parsing_cmd(parse);
@@ -51,7 +53,7 @@ pid_t cmd2(t_parsing *parse, int *pfd)
 			parsing_cmd(parse);
 		else
 			parse->built_in_cmd = parsing_built_in(parse);
-		if (parse->redirection_out == 0)
+		if (parse->redirection_in == 0)
 			dup2(pfd[0], STDIN_FILENO);
 		close(pfd[0]);
 		if (parse->built_in_cmd > 0)
@@ -86,6 +88,8 @@ void	parsing_cmd_in_pipe(t_parsing *parse)
 {
 	parse->built_in_cmd = 0;
 	check_herringbone(parse);
+	if (ft_strcmp(parse->lst_cmdline->str, "|") == 0)
+			exit(parse->ret_value);
 	if (check_builtin_input(parse) == 1)
 		parsing_cmd(parse);
 	else

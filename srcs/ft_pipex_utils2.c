@@ -25,7 +25,7 @@ void	print_list(t_list *lst)
 	}
 	while (lst != NULL)
 	{
-		ft_printf("[%s] ", lst->str);
+		dprintf(2, "[%s] ", lst->str);
 		lst = lst->next;
 	}
 	ft_printf("\n");

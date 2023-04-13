@@ -19,7 +19,7 @@ typedef struct s_cmd
 	char	**cmd;
 }	t_cmd;
 
-// int value_return;
+int sig_child;
 
 typedef struct s_parsing
 {
@@ -123,6 +123,11 @@ void	error_exec_message(t_parsing *parse);
 void    ft_return_error(t_parsing *parse);
 void	ft_replace_value(t_parsing *parse, t_list **lst);
 char	*ft_found_var(t_parsing *parse, char *s);
+void	signals_func(void);
+void	sig_int(int param);
+
+
+
 // void	ft_update_pwd(t_parsing *parse, char *cwd);
 
 

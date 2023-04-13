@@ -12,33 +12,22 @@ static void	ft_add_history(t_parsing *parse)
 	parse->tmp_input = ft_strdup(parse->input);
 }
 
-// void sigint_father(int param)
-// {
-// 	(void)param;
-// 	rl_on_new_line();
-// 	rl_replace_line("", 0);
-// 	rl_redisplay();
-// 	write(1, "\n", 1);
-// 	ft_putstr("minishell -> ");
-// }
-
 int	main(int ac, char **av, char **env)
 {
 	t_parsing	parse;
 	(void)av;
 	if (ac == 1)
 	{
+		tcgetattr(STDIN_FILENO, &parse.term);
+		parse.term.c_lflag &= ~ECHOCTL;
+		tcsetattr(STDIN_FILENO, TCSAFLUSH, &parse.term);
+		signals_func();
 		ft_retrieve_env(&parse, env);
 		ft_initialization(&parse);
 		ft_check_history_size(&parse);
 		while (1)
 		{
-			// tcgetattr(STDIN_FILENO, &parse.term);
-			// parse.term.c_lflag &= ~(ECHOCTL | ICANON);
-			// tcsetattr(STDIN_FILENO, TCSAFLUSH, &parse.term);
-			// signal(SIGQUIT, SIG_IGN);
-			// signal(SIGINT, sigint_father);
-			// signals_(0);
+			sig_child = 1;
 			parse.input = readline("minishell -> ");
 			if (!parse.input)
 				return (parse.ret_value);
