@@ -151,13 +151,7 @@ void	simple_command(t_parsing *parse)
 			execute_built_in(parse);
 		execve(parse->command[0], parse->command, parse->env);
 		error_exec_message(parse);
-<<<<<<< HEAD
 		exit(parse->ret_value);
-=======
-		exit(1);
-	}
-	waitpid(child, &status, 0);
->>>>>>> origin/chris
 	}
 	waitpid(child, &parse->status, 0);
 	parse->ret_value = parse->status / 256;
