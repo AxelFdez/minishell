@@ -145,3 +145,5 @@ export var="     aaaa        aaaaaa      "
 export
 echo $var
 echo "$var"
+echo aaaa"bbbb  bbbb""khbgjkhbkjhgbjhgjhg"
+echo aaaa"$bbbb  bbbb""khbgjkhbkjhgbjhgjhg"
