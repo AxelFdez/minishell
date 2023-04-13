@@ -1,6 +1,5 @@
 #include "../includes/minishell.h"
 
-
 void	ft_sort_env(t_list **lst)
 {
 	t_list	*tmp;

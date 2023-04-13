@@ -70,7 +70,10 @@ void	execute_built_in_first(t_parsing *parse)
 {
 	if (ft_strcmp(parse->lst_cmdline->str, "export") == 0
 		&& ft_lst_strchr_pipe(parse->lst_cmdline) == 1)
-		parse->ret_value = ft_export(parse);
+		{
+			parse->ret_value = ft_export(parse);
+			printf("ret value = %d\n", parse->ret_value);
+		}
 	else if (ft_strcmp(parse->lst_cmdline->str, "unset") == 0)
 		ft_unset(parse);
 	else if (ft_strcmp(parse->lst_cmdline->str, "exit") == 0)
@@ -100,6 +103,10 @@ void	built_in_used_alone(t_parsing *parse)
 		if (ft_strcmp(temp->str, "export") == 0
 			|| ft_strcmp(temp->str, "unset") == 0
 			|| ft_strcmp(temp->str, "cd") == 0
+<<<<<<< HEAD
+=======
+			// || (ft_strcmp(temp->str, "cd") == 0 && ft_strcmp(temp->next->str, "~") == 0)
+>>>>>>> origin/chris
 			|| ft_strcmp(temp->str, "exit") == 0)
 			built_in_found = 1;
 		if (temp->next == NULL)
@@ -112,29 +119,17 @@ void	built_in_used_alone(t_parsing *parse)
 
 void error_exec_message(t_parsing *parse)
 {
+	if (parse->command[0][0] == '/')
 	{
-			if (parse->command[0][0] == '/')
-			{
-				if (access(parse->command[0], F_OK))
-				{
-					ft_printf("minishell: %s: no such file or directory\n", parse->command[0]);
-					free(parse->command[0]);
-					parse->ret_value = 127;
-				}
-				else
-				{
-					ft_printf("minishell: %s: is a directory\n", parse->command[0]);
-					free(parse->command[0]);
-					parse->ret_value = 126;
-				}
-			}
-			else
-			{
-				ft_printf("minishell: %s: command not found\n", parse->command[0]);
-				free(parse->command[0]);
-				parse->ret_value = 127;
-			}
-		}
+		if (access(parse->command[0], F_OK))
+			ft_printf("minishell: %s: no such file or directory\n",
+				parse->command[0]);
+		else
+			ft_printf("minishell: %s: is a directory\n", parse->command[0]);
+	}
+	else
+	ft_printf("minishell: %s: command not found\n", parse->command[0]);
+
 }
 
 void	simple_command(t_parsing *parse)
@@ -156,7 +151,13 @@ void	simple_command(t_parsing *parse)
 			execute_built_in(parse);
 		execve(parse->command[0], parse->command, parse->env);
 		error_exec_message(parse);
+<<<<<<< HEAD
 		exit(parse->ret_value);
+=======
+		exit(1);
+	}
+	waitpid(child, &status, 0);
+>>>>>>> origin/chris
 	}
 	waitpid(child, &parse->status, 0);
 	parse->ret_value = parse->status / 256;

@@ -22,5 +22,4 @@ void	ft_initialization(t_parsing *parse)
 			O_RDWR | O_CREAT | O_APPEND, 0644);
 	if (parse->fd_history[1] < 0)
 		perror("history.txt");
-
 }

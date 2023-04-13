@@ -1,15 +1,5 @@
 #include "../../includes/minishell.h"
 
-// static char	*ft_set_str_to_comp(char *s)
-// {
-// 	char	*s1;
-
-// 	s1 = ft_strdup(s);
-// 	if (ft_strchr(s1, '='))
-// 		s1[ft_str_chr(s1, '=')] = '\0';
-// 	return (s1);
-// }
-
 static int	ft_var_is_exist(t_parsing *parse, t_list *tmp)
 {
 	t_list	*tmp_env;
@@ -41,7 +31,7 @@ static int	ft_check_var_syntax(char *s)
 	int		i;
 	char	*var;
 
-	if (ft_strlen(s) == 0)
+	if ((ft_strlen(s) == 0) || (s[0] >= '0' && s[0] <= '9'))
 		return (0);
 	var = ft_strdup(s);
 	if (ft_strchr(var, '='))
@@ -91,17 +81,14 @@ static int	ft_new_var(t_parsing *parse, t_list *tmp)
 
 int	ft_export(t_parsing *parse)
 {
+	ft_lstprint_from_head(parse->lst_cmdline);
 	t_list	*tmp;
-	
 
 	tmp = parse->lst_cmdline->next;
-	
 	if (tmp == NULL)
 	{
 		ft_print_export(parse);
 		return (0);
 	}
-
-	
 	return (ft_new_var(parse, tmp));
 }

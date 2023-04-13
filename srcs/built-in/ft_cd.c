@@ -1,25 +1,5 @@
 #include "../../includes/minishell.h"
 
-// char	*ft_loop_tild_hyphen(t_parsing *parse, char c)
-// {
-// 	t_list	*tmp;
-// 	char	*ret;
-// 	ret = NULL;
-// 	tmp = parse->lst_env;
-// 	while (tmp)
-// 	{
-// 		if (c == '~' && ft_strncmp(tmp->str, "HOME=", 5) == 0)
-// 			ret = ft_strdup(tmp->str +5);
-// 		if (c == '-' && ft_strncmp(tmp->str, "OLDPWD=", 7) == 0)
-// 		{
-// 			ret = ft_strdup(tmp->str +7);
-// 			ft_printf("%s\n", ret);
-// 		}
-// 		tmp = tmp->next;
-// 	}
-// 	return (ret);
-// }
-
 static int	ft_handle_tild_hyphen(t_parsing *parse, char c)
 {
 	char	*ret;

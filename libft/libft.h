@@ -6,7 +6,7 @@
 /*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:21:09 by chmassa           #+#    #+#             */
-/*   Updated: 2023/04/06 18:15:10 by chmassa          ###   ########.fr       */
+/*   Updated: 2023/04/12 18:15:21 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,7 @@ t_list	*ft_lstlast(t_list *lst);
 int		ft_lstsize(t_list *lst);
 void	ft_sortlst_str(t_list **lst);
 char	*ft_lst_to_str(t_list *lst);
+char	**ft_lst_to_char_tab(t_list *lst);
 
 //***** lstadd *****************************************************************
 void	ft_lstadd_front(t_list **lst, t_list *new);

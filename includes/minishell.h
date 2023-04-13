@@ -94,7 +94,7 @@ void	ft_update_oldpwd(t_parsing *parse, char *cwd);
 void	ft_update_pwd(t_parsing *parse, char *cwd);
 char	*ft_loop_tild_hyphen(t_parsing *parse, char c);
 void	ft_retrieve_env(t_parsing *parse, char **env);
-char	**ft_lst_to_char_tab(t_list *lst);
+char	**ft_lst_env_to_tab(t_list *lst);
 int		check_builtin_input(t_parsing * parse);
 void	execute_built_in(t_parsing *parse);
 int		parsing_built_in(t_parsing *parse);

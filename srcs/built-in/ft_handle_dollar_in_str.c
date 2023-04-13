@@ -4,6 +4,7 @@ void	ft_handle_dollar_in_str(t_parsing *parse)
 {
 	t_list	*tmplst;
 	t_list	*new;
+
 	if (parse->lst_cmdline && ft_strcmp(parse->lst_cmdline->str, "echo") == 0)
 		parse->is_in_str = 1;
 	parse->len_b = 0;

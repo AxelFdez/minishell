@@ -1,704 +1,107 @@
-clear
-ls
-cd
-pwd
-cd ecole42/cursus42/
-ls
-cd minishell/
-cat | cat | ls
-ls
-ls | wc
-ls | wc | cat -e | cat -e
-cat | ls
-cat
-cat | ls
-cat | cat | ls
-ls > out | cat < test > out1 | ls -l
-cat out
-cat out1
-cat < test > out1
-cat out1
-< test cat > out
-cat out
-qwfqwe
 echo $?
-awfawe
-sd
-fad
-echo $?
-ls
-
-make
-
-ls
-ls | < test cat > out
-cat out
-ls
-ls | < test cat > out | ls
-cat out
-ls -la | < test cat > out | ls
-cat out
-ls -la | < test cat >> out | ls
-cat out
-cat < test >> out
-cat out
-cat < test >> out | ls
-cat out
-exit
-exit
-exit
-cat | ls
-ls > out | ls -la > out1 | ls
-cat out
-cat out1
-ls > out | < test cat > out1 | ls
-cat out1
-make
-make
-make
-ls
-ls > out | ls -l | wc > out1 | < test cat
-cat out
-cat out1
-ls > out | ls -l | wc > out1 | < test cat
-ls
-cat | cat | ls
-ls | wc | cat -e
-ls
-ls | wc | cat -e
-ls | cat -e | cat -e
-ls | cat -e | cat -e | ls
-make
-cat | cat | ls
-cat | cat | ls
-< test
-< test > out
-< test
-make
-< test
-< test cat > out
-cat out
-rm out
-cat out
-< test cat > out
-cat out
-<< test cat > out
-cat out
-rm out
-< test cat >> out
-cat out
-< test cat >> out
-cat out
-rm out
-cat | cat | cat | cat | ls
-cat | ls
-
-cat | cat | ls
-cat | cat > out | ls
-cat out
-ls
-cat > out | cat | ls
-cat out
-cat | cat 
-cat
-cat | cat | ls
-ps
-
-cat | cat | ls
-cat
-exit
-exit
-cd ~
-pwd
-cd
-pwd
-exit
-cd
-pwd
-ls
-pwd
-cd
-pwwd
-pwd
-make
-ls
-pwd
-cd
-ls
-ls
-< test cd
-pwd
-cd < test
-ls
-cd
-pwd
-export VAR=1234
-env
-ls
-pwd
-pwd | cat-e
-pwd | cat -e
-ls
-cat | cat | ls
-cat | cat | ls
-cat | cat | ls
-cat | cat | ls
-cat | cat | ls
-
-cat | cat | ls
-ls
-cat | cat | ls
-cat | cat | ls
-cat | cat | ls
-cat | cat | ls
-cat | cat | ls
-exit
-cat | ls
-cat | ls
-cat | ls
-
-ps
-cat
-$HOME
-echo $HOME
-echo $HOME | ls
-echo $HOME > out | ls
-cat out
-echo $?
-ls
-ps
-./minishell
-env
-exit
-env
-cat | cat | ls
-cat | cat | ls
-echo $?
-fwfew[f | echo $?
-< fawee
-echo $?
-./minishell
-exit 42
-echo $?
-fwafaweg
-echo $?
-ls
-cat agfa
-echo $?
-grgre
-echo $?
-cat < test
-echo $?
-$HOM
-ls
-$HOME
-echo $?
-make
-agwrag
-echo $?
-history
-history
-
-
-gasgas
-echo $?
-ls
-ls
-ls | exit
-cat Makefile | grep pr | head -n 5 | cd teesdf
-echo $?
-cat Makefile | grep pr | head -n 5 | hello
-echo $?
-sleep 5 | exit
-< a cat < b < c
-touch a b c
-echo coucou > c
-< a cat < b < c
-chmod 000 b
-< a cat < b < c
-cat c
-> test | echo blabla
-rm test
-echo saaaaalut > b 
-chmod 644 ?
-chmod 644 b
-echo saaaaalut > b 
-> a cat < b >> c
-cat c
-echo 2 > out1 >> out2
-cat out1
-cat out2
-echo coucou > out1
-cat out1
-echo 2 > out1 >> out2
-cat out1
-echo coucou > out1
-echo 2 >> out1 >> out2
-cat ou1
-cat out1
-cat | cat | cat | ls
-touch 1 2 3 4 5 6
-rm 1 2 3 4 5 6
-> 1 > 2 > 3 ls
-cat 1
-cat 2
-cat 3
-rm 1 2 3
-exit
-cat | cat | cat | cat | cat | ls
-cat | cat | cat | cat | cat | ls
-ls
-ls
-ls
-ls | wc
-ls | wc
-pwd
-pwd
-make
-ls
-ps
-ls
-pwd
-ls | wc
-ls | wc | cat -e
-< test cat > out
-< test cat > out
-fsadgf
-dsfhdsh
-
-kmmm kes 
-gkignrengmir egnie ngeroi gn
-agag
-/aFASDF
-fgermger
-cat | cat | ls
-cat | cat | ls
-cat | cat | ls
-cat | cat | ls
-ps
-cat | ls
-cat | cat | ls
-cat | cat | ls
-ls
-ls
-cat | cat | ls
-cat | cat | ls
-cat
-<< test
-<< test
-<< test
-cat
-cat
-cat
-
-
-cat
-cat
-cat
-cat
-
-cat
-cat
-
-<< t
-<< t
-<< t
-
-make
-$USER | cat -e
 echo $USER | cat -e
-cat
-cat
-cat
-cat
-cat
-cat
-cat
-cat
-ls
-ls
-ls
-ls
-ls
-ls
-ls
-ls
-make
-ls
-ls
-cat
-ls
-ls
-ls
-ls
-cat
-cat
-cat
-cat
-cat
-cat
-cat
-make
-ls
-;s
-ls
-cat
-ls
-cat
-cat
-lslslslslslslslsls
-ls
-ls
-cscscsc
-agpppp
-pflplw
-lsls
-ls
-ls
-ls
-ls
-ls
-make
-ls
-ls
-ls
-pwd
-ls
-cat
-cat
-ls
-ls
-cat
-cat
-ls
-cat
-ls
-ls
-ls
-cat
-cat | cat | ls
-
-cat | cat | ls
-ls
-cat
-car
-cat
-cat
-cat
-cat
-cat
-cat
-ls
-cat
-echo $?
-echo $?
-echo ?$
-echo $?
-cat
-echo $?
-make
-cat
-ls
-make
-cat
-ls
-cat
-make
-cat
-ls
-cat
-ls
-cat
-cat
-ls
-make
-cat
-cat
-cat
-echo $?
-cat
-echo $?
-bash
-ls
-ls
-ls
-ls
-ls
-ls
-cat
-ls
-cat
-ls
-make
-cat
-ls
-makwe
-make
-cat
-cat
-ls
-cat
-cat
-make
-ls
-cat
-ls
-cat
-ls
-
-make
-./minishell
-ls
-cat
-curl parrot.live
-curl parrot.live
-cat
-
-
-cat
-ls
-cat
-
-make
-cat
-cat
-cat
-cat
-cat
-cat
-cat
-cat
-make
-cat
-cat
-ls
-cat
-cat
-
-cat
-cat
-cat
-
-
-make
-cat
-make
-cat
-cat
-cat
-cat
-cat
-cat
-cat
-cat
-ls
-cat
-ls
-cat
-ls
-cat
-ls
-cat
-ls
-ls
-;s
-ls
-ls
-ls
-cat
-make
-cat
-cat
-cat | cat | ls
-cat | cat | ls
-cat | cat | ls
-cat | cat | ls
-<< ffd
-<< 1 << 2 << 3 ls
-ls
-cat
-<< 1
-make
-<< 1 | ls | << 2 << 3 | ls
-bash
-<< 1 | ls | << 2 << 3 | ls
-<< 1 << 2 << 3
-<< 1 << 2 << 3 ls
-<< 1 << 2 << 3 ls | ls
-<< 1 | ls | << 2 << 3 | ls
-<< 1 | ls | << 2 | ls
-<< 1 | << 2
-< env.txt > out | ls
-< env.txt > out >> out1 | < env.txt wc
-< env.txt wc
-< out > out1 | >> out1 ls
-env.txt > out >> out1 | < env.txt wc
-< env.txt > out >> out1 | < env.txt wc
-< env.txt > out > out1 | < env.txt wc
-env.txt > out >> out1 | < env.txt wc
-< env.txt > out >> out1 | < env.txt wc
-< env.txt > out >> out1 | < env.txt wc
-< env.txt > out >> out1 | < env.txt wc
-< env.txt > out > out1 | < env.txt wc
-< env.txt > out > out1 | < env.txt wc
-ls
-< env.txt > out > out1 | < env.txt wc
-< env.txt > out > out1 | < env.txt wc
-< env.txt > out > out1 | < env.txt wc
-< env.txt > out > out1 | < env.txt wc
-< env.txt > out > out1 | < env.txt wc
-<< 1 | ls | << 2 << 3 | ls
-pssps
-p[ps
-<< 1 ls | << 2 ls
-2
-ls
-ls
-<< 1 ls | << 2 ls
-<< 1 ls | << 2 ls
-<< 1 ls | << 2 ls
-
-ps
-ps
-< out < out1 > out2 | ls -l | wc
-bash
-<< test ls | << 2 ls
-make
-<< test ls | << 2 ls
-<< 1 ls | << 2 ls
-env
-./minishell
-env
-./minishell
-./minishell
-./minishell
-./minishell
-./.m
-./minishell
-env
-./minishell
-./minishell
-env
-cd jnfdvkev 
-env
-cd ..
-env
-cd ..
-env
-unset OLDPWD
-env
-cd ..
-env
-env
-export
-evrga umy vyt,uwbvfjhvearg,jufreqgfvrts
- 95464;kn m g,43w
-!@#$%^&*(
-!@#$%^&*()
-!@#$%^&*()_
-!@#$%^&*
-!@#$%^&
-!@#$%^
-!@#$%
-!@#$
-%
-$%
-$dthynfghfn
-asdgdashstjmgyhg cj,mv n
-q3werytu436745678
-458u54 ,v``
-458u54 ,v``
-458u54 ,v``
-bdfbdfz
-b
-
-2433659;][]\.
-&@(#*#_+|]p[\][
-<
-<<
-<
->
-:"<,.;?{)*)(^%56@!#
+echo "" aaa
+echo ""aaa
+echo -nnn ""aaa
+echo -nnn "" aaa
+echo -nnn"" aaa
+echo -nnnnnnaaaaaaa
+echo -nnnnnnaaaaaaa""
+echo -nnnnnnaaaaaaa ""
+echo -nnnnn""
+echo -nnnnn ""
+echo -nnnnn "" fff
+echo -nnnnn ""fff
+echo -nnnnn"" fff
+echo "joijf$user
+abc$TTT
+'$USER $BLABLABLABLABLABLA'
+khfiuhf
+sfouhjsffv
 "
-
-jh fdjhv <
-jh <
-| <
-dcvj | <
-dcvj | kvjen <
-dcvj | kvjen
-dcvj | kvjen >
-dcvj | <
-bash
->|
-> |
-> <
-bash
-> >
-bash
-bash
->> <
-$bonjour
-ls
-rm < |
-ls
-
-ls
-<< test | << 1 ls
-<< 1 << 2
-ps
-<< 1 | << 2
-<< 1 | << 2
-cat | cat | ls
-./minishell | ./minishell | ./minishell
-m2004hminiisnhieslhle l-l>  -l>s 
-2004hminishell -> ls
-ls
-2004l
-minishell -> 2004l
-minishell: ls: command not found
-minishell: 2004l: command not found
-minishell -> minishell: ls: command not found
-minishell: minishell:: command not found
-l2s0
-0m4ihnishell -> 2004hminishell -> ls
-minishell -> ls
-2004l
-minishell: ls: command not found
-minishell -> 2004l
-minishell: 2004l: command not found
-minishell -> minishell: ls: command not found
-minishell: minishell:: command not found
-l2msi0
-n0i4shhmeilnli s-h>e l2l0 0-4>h ls
-minishell -> ls
-2004l
-minishell: ls: command not found
-minishell -> 2004l
-minishell: 2004l: command not found
-minishell -> minishell: ls: command not found
-minishell: minishell:: command not found
-2004l
-minishell -> 2004l
-minishell: 2004l: command not found
-2004l
-minishell -> 2004l
-minishell: 2004l: command not found
-2004l
-minishell -> 2004l
-minishell: 2004l: command not found
-minishell -> 2004h2004l
-minishell -> minishell -> 2004h2004l
-
-minishell -> 
-minishell -> 
-<< 1 | << 2
-<< 1 | << 2
-ls
-<< 1
-<< 1 cat
-make
-make fclean
-git add .
-git commit -m 'bef-merge'
-git merge origin/chris
+echo "$USER ljhkdhf
+dfghfh
+sfdghsgh"
+echo "tgsdg$USER ljhkdhf
+dfghfh
+sfdghsgh"
+echo "tgsdg$USER ljhkdhf
+dfghfh
+sfdghsgh"
+echo "hdfgj$USER
+ljkgdf
+ojdfg
+"
+echo "aaa$USER
+bhfd
+'$HOME'
+oiuhfi"
+echo "hdgfdh'$USER' hhgf"
+echo '$USER'
+export var1=42 var2=78 var3=67 1var3=909 var9=678
+export
+unset var
+export
+unset var9
+export
+export $RTY
+export $x
+export $var1
+export $USER
+export $SHLVL
+export $HOME
+export $USER
+export $PAGER
+export $ZSH
+export $USER
+export $SHLVL
+export $SHLVL
+echo ~
+echo ~ $USER
+echo ~$USER
+cd ~ -
+pwd
+cd -
+env
+export var1="  truc" var2="truc   "
+echo -n $var1
+echo -n $var2
+echo $var1
+export var1="    aaa" var2="aaaa   "
+echo var1
+echo var2
+echo $var1
+echo $var2
+export var1="   aaa" var2="aaa   "
+echo $var1
+export var1="    aaaa"
+echo $var1
+export var1="    aaa" var2="aaaa   "
+export var1="   aaa" var2="aaa   "
+export var1="   aaa" var2="aaa   "
+export var1="   aaa" var2="aaa   "
+export var1="   aaa" var2="aaa   "
+export var2="aaa   "
+export var1=   aaa var2=aaa
+export var1=   aaa var2=aaa
+export var1=   aaa var2=aaa
+var2="aaa   "
+export var2="aaa   "
+export var2="aaa   " var1="   ewf"
+export var2="aaa " var1="   ewf"
+export var1="   aaa" var2="aaa   "
+export
+export var1=   aaa var2=aaa
+export var2="aaa " var1="   ewf"
+export var1=aaa var2=ttt var3=jjj
+export var1="aaa" var2="ttt" var3="jjj"
+export var1="aaa" var2="ttt" var3="jjj"
+export
+export var=aaa bbb ccc
+export
+export var1="aaa" var2="ttt" var3="jjj"
+export var1="aaa" var2="ttt" var3="jjj"
+export var1="aaa" var2="ttt" var3="jjj"
+export var1="aaa     " var2="   ttt" var3="jjj"
+export var1="aaa" var2="ttt" var3="jjj"
+export var1="aaa   " var2="  ttt" var3="jjj"

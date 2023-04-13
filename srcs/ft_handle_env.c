@@ -46,7 +46,7 @@ void	ft_retrieve_env(t_parsing *parse, char **env)
 	}
 }
 
-char	**ft_lst_to_char_tab(t_list *lst)
+char	**ft_lst_env_to_tab(t_list *lst)
 {
 	t_list	*tmp;
 	char	**array;
@@ -59,7 +59,6 @@ char	**ft_lst_to_char_tab(t_list *lst)
 	{
 		if (ft_found_char(tmp->str, '=') == 1)
 		{
-
 			array[i] = ft_strdup(tmp->str);
 		i++;
 		}
