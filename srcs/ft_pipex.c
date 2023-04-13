@@ -11,6 +11,7 @@ pid_t cmd1(t_parsing *parse, int *pfd)
 {
 	pid_t child;
 
+	check_heredoc(parse);
 	child = fork();
 	if (child == -1)
 		perror("Fork error");
@@ -25,6 +26,11 @@ pid_t cmd1(t_parsing *parse, int *pfd)
 			parsing_cmd(parse);
 		else
 			parse->built_in_cmd = parsing_built_in(parse);
+		if (parse->heredoc_pfd > 0)
+		{
+			dup2(parse->heredoc_pfd, STDIN_FILENO);
+			close(parse->heredoc_pfd);
+		}
 		if (parse->redirection_out == 0)
 			dup2(pfd[1], STDOUT_FILENO);
 		close(pfd[1]);
@@ -34,6 +40,12 @@ pid_t cmd1(t_parsing *parse, int *pfd)
 		error_exec_message(parse);
 		exit(parse->ret_value);
 	}
+	if (parse->heredoc_pfd > 0)
+	{
+		close(parse->heredoc_pfd);
+		dup2(parse->fd_stdin, STDIN_FILENO);
+		parse->heredoc_pfd = 0;
+	}
 	return child;
 }
 
@@ -41,6 +53,9 @@ pid_t cmd2(t_parsing *parse, int *pfd)
 {
 	pid_t child;
 
+	check_heredoc(parse);
+	if (!parse->lst_cmdline)
+		return -1;
 	child = fork();
 	if (child == -1)
 		perror("Fork error");
@@ -55,12 +70,22 @@ pid_t cmd2(t_parsing *parse, int *pfd)
 			parse->built_in_cmd = parsing_built_in(parse);
 		if (parse->redirection_in == 0)
 			dup2(pfd[0], STDIN_FILENO);
+		if (parse->heredoc_pfd > 0)
+		{
+			dup2(parse->heredoc_pfd, STDIN_FILENO);
+			close(parse->heredoc_pfd);
+		}
 		close(pfd[0]);
 		if (parse->built_in_cmd > 0)
 			execute_built_in(parse);
 		execve(parse->command[0], parse->command, parse->env);
 		error_exec_message(parse);
 		exit(parse->ret_value);
+	}
+	if (parse->heredoc_pfd > 0)
+	{
+		close(parse->heredoc_pfd);
+		dup2(parse->fd_stdin, STDIN_FILENO);
 	}
 	return (child);
 }
@@ -103,6 +128,11 @@ void	pipe_child(t_parsing *parse, int pfd[2])
 		dup2(pfd[1], STDOUT_FILENO);
 	if (parse->redirection_in == 0)
 		dup2(parse->temp_fd, STDIN_FILENO);
+	if (parse->heredoc_pfd > 0)
+		{
+			dup2(parse->heredoc_pfd, STDIN_FILENO);
+			close(parse->heredoc_pfd);
+		}
 	close(parse->temp_fd);
 	close(pfd[1]);
 	if (parse->built_in_cmd > 0)
@@ -117,6 +147,7 @@ int	first_cmd(t_parsing *parse)
 	pid_t	child;
 	int		pfd[2];
 
+	check_heredoc(parse);
 	pipe(pfd);
 	child = fork();
 	if (child == -1)
@@ -127,6 +158,11 @@ int	first_cmd(t_parsing *parse)
 		close(pfd[0]);
 		if (parse->redirection_out == 0)
 			dup2(pfd[1], STDOUT_FILENO);
+		if (parse->heredoc_pfd > 0)
+		{
+			dup2(parse->heredoc_pfd, STDIN_FILENO);
+			close(parse->heredoc_pfd);
+		}
 		close(parse->temp_fd);
 		close(pfd[1]);
 		if (parse->built_in_cmd > 0)
@@ -145,6 +181,7 @@ int	middle_cmd(t_parsing *parse)
 	pid_t	child;
 	int		pfd[2];
 
+	check_heredoc(parse);
 	pipe(pfd);
 	child = fork();
 	if (child == -1)
@@ -164,6 +201,7 @@ int	last_cmd(t_parsing *parse)
 {
 		pid_t child;
 
+		check_heredoc(parse);
 		child = fork();
 		if (child == -1)
 		perror("Fork error");
@@ -173,6 +211,11 @@ int	last_cmd(t_parsing *parse)
 			parse->built_in_cmd = 0;
 			if (parse->redirection_in == 0)
 				dup2(parse->temp_fd, STDIN_FILENO);
+			if (parse->heredoc_pfd > 0)
+			{
+				dup2(parse->heredoc_pfd, STDIN_FILENO);
+				close(parse->heredoc_pfd);
+			}
 			close(parse->temp_fd);
 			if (check_builtin_input(parse) == 1)
 				parsing_cmd(parse);
@@ -185,6 +228,11 @@ int	last_cmd(t_parsing *parse)
 			exit(parse->ret_value);
 		}
 		close(parse->temp_fd);
+		if (parse->heredoc_pfd > 0)
+		{
+			close(parse->heredoc_pfd);
+			dup2(parse->fd_stdin, STDIN_FILENO);
+		}
 		return (child);
 }
 

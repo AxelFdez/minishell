@@ -107,9 +107,9 @@ void ft_heredoc(t_parsing *parse, t_list **lst)
 			(*lst) = (*lst)->next;
 	}
 	tab[i] = 0;
-	dprintf(2, "ps = %d\n", getpid());
-	for (int k = 0; tab[k]; k++)
-		dprintf(2, "tab[%d] = %s\n",k, tab[k]);
+	// dprintf(2, "ps = %d\n", getpid());
+	// for (int k = 0; tab[k]; k++)
+	// 	dprintf(2, "tab[%d] = %s\n",k, tab[k]);
 	temp = "";
 	pipe(pfd);
 	int j = 0;
@@ -118,6 +118,16 @@ void ft_heredoc(t_parsing *parse, t_list **lst)
 	while (1)
 	{
 		temp = readline("> ");
+		if (!temp)
+		{
+			while (tab[i])
+			{
+				free(tab[i]);
+				i++;
+			}
+			free(tab);
+			return ;
+		}
 		if (i == 1)
 		{
 			if (ft_strcmp(temp, tab[j]) == 0)
@@ -136,8 +146,9 @@ void ft_heredoc(t_parsing *parse, t_list **lst)
 		}
 	}
 	close(pfd[1]);
-	dup2(pfd[0], STDIN_FILENO);
-	close(pfd[0]);
+	// dup2(pfd[0], STDIN_FILENO);
+	parse->heredoc_pfd = pfd[0];
+	//close(pfd[0]);
 	while ((*lst)->prev != NULL)
 		(*lst) = (*lst)->prev;
 	i = 0;
@@ -147,6 +158,7 @@ void ft_heredoc(t_parsing *parse, t_list **lst)
 		i++;
 	}
 	free(tab);
+
 }
 
 int check_herringbones_input(t_parsing *parse)
@@ -169,7 +181,6 @@ int check_herringbones_input(t_parsing *parse)
 void	check_herringbone(t_parsing *parse)
 {
 	parse->redirection_out = 0;
-	parse->redirection_in = 0;
 	while (check_herringbones_input(parse) == 0 && parse->lst_cmdline->str[0] != '|' && parse->lst_cmdline != NULL)
 	{
 		if (ft_strcmp(parse->lst_cmdline->str, "<") == 0)
@@ -181,11 +192,6 @@ void	check_herringbone(t_parsing *parse)
 		{
 			parse->redirection_out = 1;
 			output_redirection(&parse->lst_cmdline);
-		}
-		else if (ft_strcmp(parse->lst_cmdline->str, "<<") == 0)
-		{
-			parse->redirection_in = 1;
-			ft_heredoc(parse, &parse->lst_cmdline);
 		}
 		else if (ft_strcmp(parse->lst_cmdline->str, ">>") == 0)
 		{

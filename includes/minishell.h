@@ -58,6 +58,7 @@ typedef struct s_parsing
 	int		heredoc_count;
 	int		fd_stdin;
 	int		fd_stdout;
+	int		heredoc_pfd;
 }				t_parsing;
 
 
@@ -128,7 +129,9 @@ void	ft_replace_value(t_parsing *parse, t_list **lst);
 char	*ft_found_var(t_parsing *parse, char *s);
 void	signals_func(void);
 void	sig_int(int param);
-
+void	ft_heredoc(t_parsing *parse, t_list **lst);
+int		check_herringbones_input(t_parsing *parse);
+void	check_heredoc(t_parsing *parse);
 
 
 // void	ft_update_pwd(t_parsing *parse, char *cwd);

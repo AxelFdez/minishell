@@ -58,6 +58,7 @@ A tester :
 - ls ne marche plus si export a nouveau le PATH --OK--
 - echo bonjour > out | ls --   bonjourls dans out --OK--
 - lexer : probleme pas d'erreur quand meta seul
+- signaux dans heredoc segfault
 
 
 To chris :

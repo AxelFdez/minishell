@@ -125,24 +125,53 @@ void error_exec_message(t_parsing *parse)
 	}
 	else
 	ft_printf("minishell: %s: command not found\n", parse->command[0]);
-
 }
+
+void	check_heredoc(t_parsing *parse)
+{
+	parse->redirection_in = 0;
+	while (check_herringbones_input(parse) == 0 && parse->lst_cmdline->str[0] != '|' && parse->lst_cmdline != NULL)
+	{
+		if (ft_strcmp(parse->lst_cmdline->str, "<<") == 0)
+		{
+			parse->redirection_in = 1;
+			ft_heredoc(parse, &parse->lst_cmdline);
+			if (!parse->lst_cmdline)
+				return;
+		}
+		if (!parse->lst_cmdline || !parse->lst_cmdline->next || parse->lst_cmdline->str[0] == '|')
+			break;
+		if (ft_strcmp(parse->lst_cmdline->str, "<<") != 0)
+			parse->lst_cmdline = parse->lst_cmdline->next;
+	}
+	while (parse->lst_cmdline->prev != NULL)
+		parse->lst_cmdline = parse->lst_cmdline->prev;
+}
+
 
 void	simple_command(t_parsing *parse)
 {
 	pid_t child;
 
-	check_herringbone(parse);
+	check_heredoc(parse);
+	if (!parse->lst_cmdline)
+		return;
 	child = fork();
 	if (child < 0)
 		perror("fork error\n");
 	else if (child == 0)
 	{
 		parse->built_in_cmd = 0;
+		check_herringbone(parse);
 		if (check_builtin_input(parse) == 1)
 			parsing_cmd(parse);
 		else
 			parse->built_in_cmd = parsing_built_in(parse);
+		if (parse->heredoc_pfd > 0)
+		{
+			dup2(parse->heredoc_pfd, STDIN_FILENO);
+			close(parse->heredoc_pfd);
+		}
 		if (parse->built_in_cmd > 0)
 			execute_built_in(parse);
 		execve(parse->command[0], parse->command, parse->env);
@@ -151,7 +180,11 @@ void	simple_command(t_parsing *parse)
 	}
 	waitpid(child, &parse->status, 0);
 	parse->ret_value = parse->status / 256;
-	// dup2(parse->fd_stdin, STDIN_FILENO);
+	if (parse->heredoc_pfd > 0)
+	{
+		close(parse->heredoc_pfd);
+		dup2(parse->fd_stdin, STDIN_FILENO);
+	}
 	// dup2(parse->fd_stdout, STDOUT_FILENO);
 }
 
