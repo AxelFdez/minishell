@@ -8,8 +8,10 @@ static void	ft_handle_oldpwd(t_parsing *parse)
 	while (tmp)
 	{
 		if (ft_strncmp(tmp->str, "OLDPWD=", 7) == 0)
+		{
 			ft_lstdel_actual(&parse->lst_env, tmp);
-		
+			break ;
+		}
 		tmp = tmp->next;
 	}
 	ft_lstadd_back(&parse->lst_env, ft_lstnew(ft_strdup("OLDPWD")));
