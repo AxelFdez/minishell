@@ -11,6 +11,8 @@ char	*ft_loop_tild_hyphen(t_parsing *parse, char c)
 	{
 		if (c == '~' && ft_strncmp(tmp->str, "HOME=", 5) == 0)
 			ret = ft_strdup(tmp->str +5);
+		if (c == '_' && ft_strncmp(tmp->str, "_=", 2) == 0)
+			ret = ft_strdup(ft_strrchr(tmp->str, '/'));
 		if (c == '-' && ft_strncmp(tmp->str, "OLDPWD=", 7) == 0)
 		{
 			ret = ft_strdup(tmp->str +7);

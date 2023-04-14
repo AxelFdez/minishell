@@ -1,25 +1,5 @@
 #include "../includes/minishell.h"
 
-static char	*ft_increment_shlvl(char *s)
-{
-	int		lvl;
-	int		i;
-	char	*ret;
-	char	*ret_itoa;
-
-	lvl = ft_atoi(s +6);
-	lvl++;
-	ret_itoa = ft_itoa(lvl);
-	i = 0;
-	while (s[i++])
-		if (s[i] == '=')
-			s[i +1] = '\0';
-	ret = ft_strdup(s);
-	ret = ft_strjoin_free_s1(ret, ret_itoa);
-	free(ret_itoa);
-	return (ret);
-}
-
 static void	ft_handle_oldpwd(t_parsing *parse)
 {
 	t_list	*tmp;
@@ -41,16 +21,12 @@ static void	ft_create_env(t_parsing *parse)
 	t_list	*new;
 	char	*var_to_create[5];
 	
-	
-
 	var_to_create[0] = "OLDPWD";
 	var_to_create[1] = "PWD=";
-	var_to_create[2] = "SHLVL=1";
-	var_to_create[3] = "_=";
+	var_to_create[2] = "SHLVL=0";
+	var_to_create[3] = "_=minishell";
 	var_to_create[4] = NULL;
-
 	var_to_create[1] = ft_strjoin(var_to_create[1], ft_get_current_position());
-	
 	i = 0;
 	parse->lst_env = NULL;
 	while (var_to_create[i])
@@ -60,31 +36,26 @@ static void	ft_create_env(t_parsing *parse)
 		i++;
 	}
 	free(var_to_create[1]);
-
-	ft_lstprint_from_head(parse->lst_env);
 }
-
 
 void	ft_retrieve_env(t_parsing *parse, char **env)
 {
 	int		i;
 	t_list	*new;
-	char	*lvl;
 	if (!*env)
 	{
 		ft_create_env(parse);
+		ft_handle_shlvl(parse);
 		return ;
 	}
 	parse->lst_env = NULL;
 	i = 0;
 	while (env[i])
 	{
-		if (ft_strnstr(env[i], "SHLVL", 5))
+		if (strncmp(env[i], "_=", 2) == 0)
 		{
-			lvl = ft_increment_shlvl(env[i]);
-			new = ft_lstnew(ft_strdup(lvl));
+			new = ft_lstnew(ft_strdup("_=minishell"));
 			ft_lstadd_back(&parse->lst_env, new);
-			free(lvl);
 		}
 		else
 		{
@@ -93,6 +64,7 @@ void	ft_retrieve_env(t_parsing *parse, char **env)
 		}
 		i++;
 	}
+	ft_handle_shlvl(parse);
 	ft_handle_oldpwd(parse);
 }
 

@@ -48,6 +48,7 @@ static void	ft_print_tild(t_parsing *parse)
 
 	tild_ret = ft_loop_tild_hyphen(parse, '~');
 	ft_putstr_fd(tild_ret, 1);
+	
 	free(tild_ret);
 }
 

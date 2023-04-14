@@ -126,6 +126,9 @@ char	*ft_found_var(t_parsing *parse, char *s);
 void	signals_func(void);
 void	sig_int(int param);
 char	*ft_get_current_position(void);
+void	ft_handle_shlvl(t_parsing *parse);
+void	ft_handle_underscore(t_parsing *parse);
+void 	ft_replace_underscore_value(t_list *lst, char *s);
 
 
 // void	ft_update_pwd(t_parsing *parse, char *cwd);
