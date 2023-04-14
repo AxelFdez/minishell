@@ -88,24 +88,16 @@ void	execute_built_in_alone(t_parsing *parse)
 
 void	built_in_used_alone(t_parsing *parse)
 {
-	t_list *temp;
 	int		built_in_found;
 
 	built_in_found = 0;
-	temp = parse->lst_cmdline;
 	if (ft_lst_strchr_pipe(parse->lst_cmdline) == 0)
 		return;
-	while (temp)
-	{
-		if (ft_strcmp(temp->str, "export") == 0
-			|| ft_strcmp(temp->str, "unset") == 0
-			|| ft_strcmp(temp->str, "cd") == 0
-			|| ft_strcmp(temp->str, "exit") == 0)
+		if (ft_strcmp(parse->lst_cmdline->str, "export") == 0
+			|| ft_strcmp(parse->lst_cmdline->str, "unset") == 0
+			|| ft_strcmp(parse->lst_cmdline->str, "cd") == 0
+			|| ft_strcmp(parse->lst_cmdline->str, "exit") == 0)
 			built_in_found = 1;
-		if (temp->next == NULL)
-			break;
-		temp = temp->next;
-	}
 	if (built_in_found == 1)
 		execute_built_in_alone(parse);
 }
