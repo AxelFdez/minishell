@@ -873,3 +873,98 @@ ls | cat -e
 
 cd ..
 ls
+./minishell
+./minishell
+./minishell
+./minishell
+./minishell
+env
+env
+export
+./minishell
+export
+ls
+
+
+
+
+
+ls
+
+ls -l
+<
+<< ls
+<
+la
+ls
+<< 1
+./adaw
+./adaw2e
+./minishell
+<< 1
+<< 1
+<< 1
+<< 1 
+make
+<< 1
+<< 1
+<< 1
+make
+<< 1
+kill -l
+>> 1
+< 1
+touch 1
+< 1
+make
+< 1
+< 1
+< 1
+< 1
+>> 1
+> 1
+> 1
+>> 1
+?
+>
+<
+<<
+>>
+| <
+|
+|
+|
+|
+|
+|
+|
+ls
+ls
+ls
+bash
+ls |
+ls
+|
+|<
+|
+||
+ls || ls
+bash
+<>><>
+<><><>
+<>
+<<<<<<<>>
+>>>
+<<<
+<>
+><<
+<
+<
+<
+>
+>
+<> 1
+<>
+<
+<<
+>>

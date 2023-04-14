@@ -160,6 +160,8 @@ void	simple_command(t_parsing *parse)
 	{
 		parse->built_in_cmd = 0;
 		check_herringbone(parse);
+		if (!parse->lst_cmdline)
+			exit(1);
 		if (check_builtin_input(parse) == 1)
 			parsing_cmd(parse);
 		else

@@ -14,6 +14,54 @@ static void	ft_add_history(t_parsing *parse)
 
 t_sig	sig = {0, 0, 0, 0};
 
+int ft_lexer(t_parsing *parse)
+{
+	t_list *temp;
+	temp = parse->lst_cmdline;
+
+	// print_list(temp);
+	// exit(1);
+	if ((ft_strcmp(temp->str, ">") == 0 || ft_strcmp(temp->str, "<") == 0 ||
+		ft_strcmp(temp->str, ">>") == 0 || ft_strcmp(temp->str, "<<") == 0)
+		&& !temp->next)
+	{
+		printf("minishell: syntax error near unexpected token `newline'\n");
+		return (1);
+	}
+	while (temp)
+	{
+		if (ft_strcmp(temp->str, "|") == 0)
+		{
+			if (!temp->prev || !temp->next)
+			{
+				printf("minishell: syntax error near unexpected token `|'\n");
+				return (1);
+			}
+			else if (ft_strcmp(temp->prev->str, "<") == 0 && ft_strcmp(temp->prev->str, "<<") == 0
+				&& ft_strcmp(temp->prev->str, ">") == 0 && ft_strcmp(temp->prev->str, ">>") == 0)
+			{
+				printf("minishell: syntax error near unexpected token `|'\n");
+				return (1);
+			}
+		}
+		else if (ft_strcmp(temp->str, ">") == 0)
+		{
+			if (ft_strcmp(temp->next->str, "<") == 0)
+				printf("minishell: syntax error near unexpected token `<'\n");
+			else if (ft_strcmp(temp->next->str, "<<") == 0)
+				printf("minishell: syntax error near unexpected token `<<'\n");
+		}
+		else if (ft_strcmp(temp->str, "<>") == 0)
+		{
+			if (ft_strcmp(temp->next->str, ">") == 0 && ft_strcmp(temp->next->str, "<") == 0
+				&& ft_strcmp(temp->next->str, ">>") == 0 && ft_strcmp(temp->next->str, "<<") == 0)
+				printf("minishell: syntax error near unexpected token `%s'\n", temp->next->str);
+		}
+		temp = temp->next;
+	}
+	return (0);
+}
+
 int	main(int ac, char **av, char **env)
 {
 	t_parsing	parse;
@@ -41,7 +89,8 @@ int	main(int ac, char **av, char **env)
 			ft_history(&parse);
 			ft_get_cmdline(&parse);
 			parse.env = ft_lst_to_char_tab(parse.lst_env);
-			execute_cmd(&parse);
+			if (ft_lexer(&parse) == 0)
+				execute_cmd(&parse);
 			free_str_tab(parse.env);
 			ft_lstdel_all(&parse.lst_cmdline);
 			free(parse.input);

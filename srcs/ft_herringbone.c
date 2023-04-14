@@ -112,9 +112,11 @@ void ft_heredoc(t_parsing *parse, t_list **lst)
 	int j = 0;
 	while (1)
 	{
+		puts("AAA");
 		sig.heredoc = 1;
 		if (sig.int_heredoc == 1)
 			{
+				puts("BBB");
 				ft_lstdel_all(&parse->lst_cmdline);
 				break;
 			}
@@ -150,7 +152,10 @@ void ft_heredoc(t_parsing *parse, t_list **lst)
 	}
 	free(tab);
 	if (!parse->lst_cmdline)
+	{
+		close(pfd[0]);
 		return ;
+	}
 	else
 		while ((*lst)->prev != NULL)
 			(*lst) = (*lst)->prev;
@@ -198,6 +203,7 @@ void	check_herringbone(t_parsing *parse)
 		if (parse->lst_cmdline->str[0] != '>' && parse->lst_cmdline->str[0] != '<')
 			parse->lst_cmdline = parse->lst_cmdline->next;
 	}
-	while (parse->lst_cmdline->prev != NULL)
-		parse->lst_cmdline = parse->lst_cmdline->prev;
+	if (parse->lst_cmdline)
+		while (parse->lst_cmdline->prev != NULL)
+			parse->lst_cmdline = parse->lst_cmdline->prev;
 }
