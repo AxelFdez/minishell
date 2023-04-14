@@ -54,8 +54,8 @@ $(NAME): $(OBJECT_FILES)
 
 #	 $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -lreadline
 	# $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a $(RLFLAGS) -lreadline
-	@ $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -L /opt/homebrew/Cellar/readline/8.2.1/lib/ -lreadline -fsanitize=address
-	# $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -L ~/homebrew/Cellar/readline/8.2.1/lib/ -lreadline
+	# @ $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -L /opt/homebrew/Cellar/readline/8.2.1/lib/ -lreadline -fsanitize=address
+	@ $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -L ~/homebrew/Cellar/readline/8.2.1/lib/ -lreadline -fsanitize=address
 		@echo "$(GREEN)<<<<< $(NAME) exec file created >>>>>$(DEFAULT)"
 #------------------------------------------------------------------------------
 clean:

@@ -285,3 +285,210 @@ ls
 << 1 | << 2
 make
 << 1 | << 2
+<< 1
+<<1 cat
+<< 1 << 2 cat | << 3 cat
+<< 1 
+<< 1
+<< 1
+<< 1
+<< 1
+<< 1
+<< 1 << 2
+<< 1 << 2 | << 3 << 4
+<< 1 | ls | << 2 << 3 | ls
+<<
+<< 1
+<< 1
+<< 1 << 2
+<< 1 << 2
+bash
+ps
+<< 1 << 2
+ps
+bash
+<< 1 cat
+<< 1 cat
+<< 1 cat
+ls
+<< 2 << 4 << 5 cat
+<< 2 << 4 << 5 cat | << 6 cat
+cat | ls
+bash
+cat | cat | cat | ls
+cat | cat | cat | ls
+cat | cat | cat | ls
+cat | cat | cat | ls
+cat | cat | cat | ls
+cat | cat | cat | ls
+<< 1 << 1
+bash
+bash
+<< 1 << 1
+ls
+<< 1 << 1
+<< 1 << 1
+bash
+<< 1 << 1
+ps
+lsof -c minishell
+clear
+<< 1 << 2 | ls -l | wc | cat -e | << 1 cat > out
+cat out
+<< 1 << 2 | ls -l | << 3
+<< 1 << 2 | ls | cat -e | << 3
+<< 1 << 2 | ls | cat -e | << 3 cat > out
+cat out
+cat
+cat
+cat
+ls
+<<
+<< 1
+ls
+bash
+<< 1
+ls
+<< 1
+
+cat
+<< 1
+
+
+ls
+cat
+cat
+ls
+<< 1
+<< 1
+<< 1
+<< 1
+<< 1
+<< 1
+<< 1 cat
+<< 1 cat
+
+
+ps
+cat
+cat
+cat
+ls
+<< 1
+ls
+<< 1
+<< 1
+<< 1
+ls
+ls
+<< 1
+<< 1
+bash
+<< 1
+ls
+<< 1
+<< 1 cat 
+<< 1
+<< 1 cat
+<< 1 cat
+<< 1 cat
+<< 1
+<< 1 cat
+<< 1 cat
+<< 1 cat
+<< 1 cat
+
+<< 1
+<< 1
+<< 1
+<< 1
+ls
+
+<< 1
+
+<< 1
+
+<< 1
+<< 1
+<< 1
+<< 1
+ls
+<< 1
+ls
+<< 1
+1
+<< 1
+<< 1
+make
+<< 1
+<< 1
+<< 1
+<< 1 cat
+<< 1 cat
+<< 1
+<< 1
+<< 1 cat
+<< 1 cat
+<< 1
+<< 1
+ls
+<< 1
+
+ls
+make
+>> 1
+
+<< 1
+<< 1
+<< 1
+
+
+<< 1
+<< 1
+<< 1
+<< 1
+<< 1
+<< 1
+<< 1
+ls
+ls
+<< 1
+<< 1
+<< 1
+<< 1
+<< 1
+<< 1
+<< 1
+<< 1
+<< 1
+<< 1
+<< 1
+<< 1
+;s
+ls
+<< 1
+<< 1
+
+ls
+<< 1
+<< 1
+ls
+<< 1
+ls
+<< 1 cat
+make
+make
+<< 1 cat
+<< 1 << 2 ls
+<< 1 << 2 ls
+<< 1
+<< 1
+<< 1 cat
+<< 1
+make
+make
+<< 1
+<< 1
+<< 1
+ls
+<< 1

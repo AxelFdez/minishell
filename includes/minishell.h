@@ -19,7 +19,15 @@ typedef struct s_cmd
 	char	**cmd;
 }	t_cmd;
 
-int sig_child;
+typedef struct s_sig
+{
+	int		child;
+	int		heredoc;
+	int		int_heredoc;
+	int		return_value;
+}			t_sig;
+
+extern t_sig	sig;
 
 typedef struct s_parsing
 {

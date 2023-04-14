@@ -66,7 +66,7 @@ int	parsing_built_in(t_parsing *parse)
 	return (0);
 }
 
-void	execute_built_in_first(t_parsing *parse)
+void	execute_built_in_alone(t_parsing *parse)
 {
 	if (ft_strcmp(parse->lst_cmdline->str, "export") == 0
 		&& ft_lst_strchr_pipe(parse->lst_cmdline) == 1)
@@ -110,7 +110,7 @@ void	built_in_used_alone(t_parsing *parse)
 		temp = temp->next;
 	}
 	if (built_in_found == 1)
-		execute_built_in_first(parse);
+		execute_built_in_alone(parse);
 }
 
 void error_exec_message(t_parsing *parse)
@@ -185,34 +185,21 @@ void	simple_command(t_parsing *parse)
 		close(parse->heredoc_pfd);
 		dup2(parse->fd_stdin, STDIN_FILENO);
 	}
-	// dup2(parse->fd_stdout, STDOUT_FILENO);
 }
 
-// void	count_heredoc(t_parsing *parse)
-// {
-// 	t_list *temp;
-
-// 	while (temp)
-// 	{
-// 		if (ft_strcmp(temp, "<<") == 0)
-// 			parse->heredoc_count++;
-// 		temp = temp ->next;
-// 	}
-// }
 
 void execute_cmd(t_parsing *parse)
 {
 	parse->status = 0;
+	sig.heredoc = 0;
 	built_in_used_alone(parse);
 	//count_heredoc(parse);
 	if (!parse->lst_cmdline)
 		return ;
+	sig.child = 0;
 	if (ft_lst_strchr_pipe(parse->lst_cmdline) == 0)
 		pipex(parse);
 	else
-	{
-		sig_child = 0;
 		simple_command(parse);
-	}
 	return;
 }

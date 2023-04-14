@@ -12,6 +12,8 @@ static void	ft_add_history(t_parsing *parse)
 	parse->tmp_input = ft_strdup(parse->input);
 }
 
+t_sig	sig = {0, 0, 0, 0};
+
 int	main(int ac, char **av, char **env)
 {
 	t_parsing	parse;
@@ -27,10 +29,13 @@ int	main(int ac, char **av, char **env)
 		ft_check_history_size(&parse);
 		while (1)
 		{
-			sig_child = 1;
+			sig.child = 1;
 			parse.input = readline("minishell -> ");
 			if (!parse.input)
+			{
+				write(2, "exit\n", 5);
 				return (parse.ret_value);
+			}
 			ft_quotes(&parse);
 			ft_add_history(&parse);
 			ft_history(&parse);

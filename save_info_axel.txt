@@ -57,8 +57,9 @@ A tester :
 - si unset PATH, error message = no such file or directory --OK--
 - ls ne marche plus si export a nouveau le PATH --OK--
 - echo bonjour > out | ls --   bonjourls dans out --OK--
-- lexer : probleme pas d'erreur quand meta seul
+- lexer : probleme pas d'erreur quand meta seul (<<, < etc)
 - signaux dans heredoc segfault
+- >> 1 segfault
 
 
 To chris :

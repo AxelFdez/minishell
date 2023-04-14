@@ -55,7 +55,7 @@ pid_t cmd2(t_parsing *parse, int *pfd)
 
 	check_heredoc(parse);
 	if (!parse->lst_cmdline)
-		return -1;
+		return (-1);
 	child = fork();
 	if (child == -1)
 		perror("Fork error");
@@ -148,6 +148,8 @@ int	first_cmd(t_parsing *parse)
 	int		pfd[2];
 
 	check_heredoc(parse);
+	if (!parse->lst_cmdline)
+		return (-1);
 	pipe(pfd);
 	child = fork();
 	if (child == -1)
@@ -182,6 +184,8 @@ int	middle_cmd(t_parsing *parse)
 	int		pfd[2];
 
 	check_heredoc(parse);
+	if (!parse->lst_cmdline)
+		return (-1);
 	pipe(pfd);
 	child = fork();
 	if (child == -1)
@@ -202,6 +206,8 @@ int	last_cmd(t_parsing *parse)
 		pid_t child;
 
 		check_heredoc(parse);
+		if (!parse->lst_cmdline)
+		return (-1);
 		child = fork();
 		if (child == -1)
 		perror("Fork error");
