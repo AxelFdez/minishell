@@ -788,6 +788,7 @@ echo $_
 pwd
 $_
 echo $_
+<<<<<<< HEAD
 >>>>>>> origin/chris
 ls
 ls
@@ -829,6 +830,46 @@ cd
 cd .
 cd ..
 ls 
+=======
+env
+
+export
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> origin/chris
+
+
+
+
+
+
+
+ls
+cd ..
+ls | cat -e
+
+
+cd ..
+ls

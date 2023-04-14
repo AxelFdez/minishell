@@ -10,7 +10,7 @@ static void	ft_handle_oldpwd(t_parsing *parse)
 		if (ft_strncmp(tmp->str, "OLDPWD=", 7) == 0)
 		{
 			ft_lstdel_actual(&parse->lst_env, tmp);
-			break;
+			break ;
 		}
 		tmp = tmp->next;
 	}

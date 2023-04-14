@@ -21,6 +21,8 @@ void	ft_replace_underscore_value(t_list *lst, char *s)
 
 	tmp = lst;
 	new = "_=";
+	if (!lst)
+		return ;
 	while (tmp)
 	{
 		if (ft_strncmp(tmp->str, "_=", 2) == 0)
@@ -61,7 +63,7 @@ void	ft_handle_underscore(t_parsing *parse)
 	else if (parse->lst_cmdline && ft_strcmp(parse->lst_cmdline->str,
 			"export") == 0 && parse->lst_cmdline->next)
 		ft_handle_under_export(parse);
-	else
+	else if (parse->lst_cmdline)
 		ft_replace_underscore_value(parse->lst_env,
 			ft_lstlast(parse->lst_cmdline)->str);
 }
