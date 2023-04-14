@@ -873,6 +873,7 @@ ls | cat -e
 
 cd ..
 ls
+<<<<<<< HEAD
 ./minishell
 ./minishell
 ./minishell
@@ -968,3 +969,171 @@ bash
 <
 <<
 >>
+=======
+
+minishell
+minishell
+export
+minishell
+ls
+export
+minishell
+env
+minishell
+export
+minishell
+export
+minishell
+export
+minishell
+export
+export
+minishell
+export
+export
+minishell
+export
+export
+export
+minishell
+export
+minishell
+export
+export
+echo $_
+env
+export
+echo $_
+$_
+echo $_
+ls
+echo $_
+export
+echo $_
+env
+export
+echo $_
+export export
+echo $_
+export
+echo $_
+export
+echo $_
+export
+echo $_
+export var1=io
+echo $_
+export
+echo $_
+export
+export
+echo $_
+export
+export
+export
+echo $_
+export
+export
+export
+export
+export
+export
+echo $_
+export
+echo $_
+export
+echo $_
+export
+echo $_
+export
+echo $_
+ls
+echo $_
+export
+echo $_
+export
+echo $_
+export v=32
+echo $v
+export
+export v=32
+echo $_
+export
+echo $_
+echo $USER
+echo $_
+export
+echo $_
+env
+echo $_
+export
+echo $_
+echo $USER
+export
+echo $_
+echo $USER
+echo "$_"
+export
+echo "$_"
+export
+echo $_
+export
+echo $_
+echo $USER
+export
+echo $_
+echo $USER
+echo $_
+ls
+echo $_
+export
+echo $_
+echo $USER
+echo $_
+ls
+echo $_
+export
+echo $_
+export
+echo export
+export
+echo $_
+cd ~
+pwd
+cd -
+echo ">>"
+echo ">>>"
+echo >>>
+>>
+>>
+<<
+>>
+>>
+<<
+>>
+>>
+>>
+echo $_
+make fc
+>>>>>>> origin/chris
+<
+>
+>>
+<<
+<><>
+<<
+<< 1
+<><><>
+<>
+<>>
+<><
+<
+<
+bash
+>>>
+<<<
+<><><><
+<<>><<>>
+>> >
+>>>
+|

@@ -19,8 +19,8 @@ int ft_lexer(t_parsing *parse)
 	t_list *temp;
 	temp = parse->lst_cmdline;
 
-	// print_list(temp);
-	// exit(1);
+	print_list(temp);
+	exit(1);
 	if ((ft_strcmp(temp->str, ">") == 0 || ft_strcmp(temp->str, "<") == 0 ||
 		ft_strcmp(temp->str, ">>") == 0 || ft_strcmp(temp->str, "<<") == 0)
 		&& !temp->next)

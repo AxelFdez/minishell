@@ -7,7 +7,7 @@ static void	ft_handle_oldpwd(t_parsing *parse)
 	tmp = parse->lst_env;
 	while (tmp)
 	{
-		if (ft_strncmp(tmp->str, "OLDPWD=", 7) == 0)
+		if (ft_strncmp(tmp->str, "OLDPWD", 6) == 0)
 		{
 			ft_lstdel_actual(&parse->lst_env, tmp);
 			break ;

@@ -8,7 +8,7 @@ void	ft_sort_env(t_list **lst)
 	tmp = *lst;
 	while (tmp)
 	{
-		if (tmp->next != NULL && ft_strcmp(tmp->str, tmp->next->str) >= 0)
+		if (tmp->next != NULL && ft_strcmp(tmp->str, tmp->next->str) > 0)
 		{
 			tmp_str = tmp->str;
 			tmp->str = tmp->next->str;

@@ -78,7 +78,6 @@ static t_list	*ft_env_cpy(t_list **lst)
 void	ft_print_export(t_parsing *parse)
 {
 	t_list	*envcpy;
-
 	envcpy = ft_env_cpy(&parse->lst_env);
 	ft_sort_env(&envcpy);
 	ft_print_env_sorted(envcpy);
