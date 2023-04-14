@@ -36,7 +36,8 @@ static void	ft_print_var(t_parsing *parse, char *s)
 		if (str[i] == ' ')
 			while (str[i] == ' ')
 				i++;
-		i++;
+		else
+			i++;
 	}
 	free(str);
 }
@@ -47,6 +48,7 @@ static void	ft_print_tild(t_parsing *parse)
 
 	tild_ret = ft_loop_tild_hyphen(parse, '~');
 	ft_putstr_fd(tild_ret, 1);
+	
 	free(tild_ret);
 }
 

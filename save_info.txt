@@ -99,5 +99,13 @@ save du 12/04 :
 - corrections : export "" OK
                 export var="aaa$var" OK
                 probleme avec : export var2="aaa " var1="   ewf"
-                                export var1="   aaa" var2="aaa   "
+                                export var1="   aaa" var2="aaa 
+
+
+save du 13/04 :
+- env -i ./minishell en cours, PWD et OLDPWD OK.
+- correction du jour precedent... OK
+J'ai foiré mon exam mais mon mate m'a aidé a trouver les erreurs...(c'est pour check si tu lis les save_info ;o))
+
+
 

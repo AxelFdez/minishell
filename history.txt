@@ -145,6 +145,7 @@ export var="     aaaa        aaaaaa      "
 export
 echo $var
 echo "$var"
+<<<<<<< HEAD
 ls
 make
 ls
@@ -492,3 +493,342 @@ make
 << 1
 ls
 << 1
+=======
+echo aaaa"bbbb  bbbb""khbgjkhbkjhgbjhgjhg"
+echo aaaa"$bbbb  bbbb""khbgjkhbkjhgbjhgjhg"
+export
+export
+export
+cd ~
+pwd
+cd -
+pwd
+pwd
+pwd
+env
+exit
+export
+env
+env
+export
+export
+cd ~
+cd -
+export
+env
+export
+export
+cd ~
+cd -
+pwd
+cd ~
+cd -
+export
+env
+cd ~
+pwd
+cd -
+export
+export
+cd ~
+cd -
+export
+export
+cd ~
+env
+export
+echo $USER
+export
+export
+env
+echo $_
+env
+env
+echo $_
+cd ~
+env
+cd ~
+env
+env
+echo er
+en
+env
+echo _
+echo $_
+pwd
+env
+env
+export
+env
+pwd
+exit
+env
+export
+env
+env
+export
+env
+export
+export
+env
+cd ~
+cd
+pwd
+cd ~
+~
+cd
+cd
+cd
+cd
+pwd
+unset HOME
+cd
+cd ~
+cd
+~
+pwd
+export
+echo ddd
+export
+pwd
+export
+export
+pwd
+pwd
+echo $?
+pwd
+echo $?
+pwd
+export
+cd
+export
+pwd
+cd ..
+pwd
+export
+cd
+$USER
+$USER $HOME
+$USER$HOME
+echo $USER$HOME
+echo $USER $HOME
+echo "$USER$HOME"
+echo "$USER""$HOME"
+echo $USER$HOME
+echo $USER$HOME
+echo $USER$USER
+echo $USER$USER
+echo $USER$USER
+export var1="hgf  kjhkjhf" var2="ljhdf   lijdlijlijd"
+export
+echo $USER$USER
+export var1="hgf  kjhkjhf" var2="ljhdf   lijdlijlijd"
+export
+export var1="hgf  kjhkjhf" var2="ljhdf   lijdlijlijd"
+export
+echo $USER$USER
+export
+export var1="hgf  kjhkjhf" var2="ljhdf   lijdlijlijd"
+export
+echo $USER$USER
+echo $USER$USER
+echi $USER$USER
+echo $USER$USER
+echo $USER$USER
+echo $USER$USER
+echo $USER$USER
+echo $USER $USER
+export var1="   aaaa   bbbbbb" var2="qqqqq   ppppp"
+export
+echo $var1
+echo $var1 "$var1"
+echo $var1
+echo "$var1"
+cd /
+export
+pwd
+ls
+minishell
+export
+/bin/ls
+ls
+/bin/cd
+ls
+/bin/ls
+/bin/env
+echo aaa
+env
+export
+ls
+/bin/ls
+./minishell
+./minishell
+env -i ./minishell
+./minishell
+./minishell
+export
+export
+./minishell
+export
+export var="   dffdf       ddfdfdf     "
+echo $var
+echo "$var"
+export
+export
+export
+export
+export
+minishell
+export
+export
+export
+export
+export
+minishell
+export
+export
+cd
+export
+cd ..\
+cd ..
+pwd
+cd -
+cd ~
+ls
+/bin/ls
+export PATH=/bin
+ls
+echo aaa bbb
+echo aaa bbb
+echo aaa ls
+echo aaa | ls
+export var3="    ytysyts       ytsuytsuys"
+echo $var3
+echo "$var3"
+pwd ..
+pwd
+pwd .
+echo aaa bbb > ccc
+echo fddffd kjjk | dgdg
+env
+echo kjhd jhdkjhf kjdhkf 
+sdfdf dfvdfvdfv
+export
+env
+env
+env
+dfgdf fgag |
+echo $_
+env
+echo $_
+$_
+env
+echo $_
+echo $_
+echo $_
+echo $_
+echo $_
+env
+export
+echo $_
+env
+echo aaa >> bbb
+cat aaa > out
+echo aaa > bbb
+echo $_
+env
+$_
+env
+echo $_
+echo aaa > bbb
+echo aaa > bbb
+echo $_
+export var1=hjk var2=42
+echo $_
+export var1=uio var4=uio
+echo $_
+export var3=uiodhv var11=kjgjhjg
+echo $_
+echo aaa bbb ccc
+echo $_
+export
+env
+export
+export
+env
+export var1=qe var3=uioiu
+echo $_
+echo aaa > bbb
+echo $_
+export
+echo aaaa > ccc
+echo $_
+echo aaaa >> ccc
+echo $_
+export var1=56 var2=78 var4=67
+echo $_
+env
+export
+export var1=45 var2=89 var3=42
+env
+export var1=45 var2=89 var3=42
+echo $_
+export var1=67 var2=90 var3=42
+export
+export var1=32 var2=89 var4=42
+echo $_
+env
+$_
+echo $_
+$_
+export aaa ccc bbb
+echo $_
+aaa
+echo $_
+pwd
+$_
+echo $_
+>>>>>>> origin/chris
+ls
+ls
+rm bbb  ccc 
+ls
+<< 1 cat
+ls -l | cat -e
+ls
+ls -l
+ls -l | cat -e
+ls -l | cat -e
+ls -l | cat -e
+ls
+ls | cat -e
+ls
+cd
+ls
+pwd
+env
+
+env
+env
+env
+env
+env
+env
+env
+env
+env
+env
+env
+env
+env
+env
+env
+env
+ls
+cd
+cd .
+cd ..
+ls 
+
+
+

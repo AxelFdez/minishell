@@ -11,6 +11,8 @@ char	*ft_loop_tild_hyphen(t_parsing *parse, char c)
 	{
 		if (c == '~' && ft_strncmp(tmp->str, "HOME=", 5) == 0)
 			ret = ft_strdup(tmp->str +5);
+		if (c == '_' && ft_strncmp(tmp->str, "_=", 2) == 0)
+			ret = ft_strdup(ft_strrchr(tmp->str, '/'));
 		if (c == '-' && ft_strncmp(tmp->str, "OLDPWD=", 7) == 0)
 		{
 			ret = ft_strdup(tmp->str +7);
@@ -32,6 +34,8 @@ void	ft_update_oldpwd(t_parsing *parse, char *cwd)
 	{
 		if (ft_strnstr(tmp->str, "OLDPWD", 6))
 		{
+			if (!ft_strchr(tmp->str, '='))
+				tmp->str = ft_strjoin_free_s1(tmp->str, "=");
 			old_tmp = ft_strdup(tmp->str);
 			old_tmp[ft_str_chr(old_tmp, '=') + 1] = '\0';
 			free(tmp->str);

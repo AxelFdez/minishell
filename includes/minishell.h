@@ -140,6 +140,10 @@ void	sig_int(int param);
 void	ft_heredoc(t_parsing *parse, t_list **lst);
 int		check_herringbones_input(t_parsing *parse);
 void	check_heredoc(t_parsing *parse);
+char	*ft_get_current_position(void);
+void	ft_handle_shlvl(t_parsing *parse);
+void	ft_handle_underscore(t_parsing *parse);
+void 	ft_replace_underscore_value(t_list *lst, char *s);
 
 
 // void	ft_update_pwd(t_parsing *parse, char *cwd);

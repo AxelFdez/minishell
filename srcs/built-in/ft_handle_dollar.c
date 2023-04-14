@@ -22,7 +22,6 @@ static int	ft_found_var_in_env(t_parsing *parse)
 		tmp = tmp->next;
 		free(parse->s2);
 	}
-	printf("tmp str = %s\n", parse->str_tmp);
 	free(parse->s1);
 	return (1);
 }
@@ -41,6 +40,7 @@ static void	ft_retrieve_var_name(t_parsing *parse)
 		parse->var_name[i] = parse->input[parse->i];
 		i++;
 		parse->i++;
+
 	}
 	parse->var_name[i] = '\0';
 	ft_found_var_in_env(parse);

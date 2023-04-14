@@ -12,7 +12,8 @@ static void	ft_print_env_sorted(t_list *lst)
 	tmp = lst;
 	while (tmp)
 	{
-		ft_printf("declare -x %s\n", tmp->str);
+		if (ft_strncmp(tmp->str, "_=", 2) != 0)
+			ft_printf("declare -x %s\n", tmp->str);
 		tmp = tmp->next;
 	}
 }

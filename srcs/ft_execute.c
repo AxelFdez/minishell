@@ -70,10 +70,7 @@ void	execute_built_in_alone(t_parsing *parse)
 {
 	if (ft_strcmp(parse->lst_cmdline->str, "export") == 0
 		&& ft_lst_strchr_pipe(parse->lst_cmdline) == 1)
-		{
 			parse->ret_value = ft_export(parse);
-			printf("ret value = %d\n", parse->ret_value);
-		}
 	else if (ft_strcmp(parse->lst_cmdline->str, "unset") == 0)
 		ft_unset(parse);
 	else if (ft_strcmp(parse->lst_cmdline->str, "exit") == 0)

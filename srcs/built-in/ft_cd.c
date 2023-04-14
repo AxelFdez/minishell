@@ -21,7 +21,7 @@ static int	ft_handle_tild_hyphen(t_parsing *parse, char c)
 	return (0);
 }
 
-static char	*ft_get_current_position(void)
+char	*ft_get_current_position(void)
 {
 	char	*cwd;
 	char	buffer[4096];
