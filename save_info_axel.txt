@@ -49,7 +49,7 @@ exit : fonctionne seul
 
 A tester :
 - enchainer les redirections droite --OK--
-- cat cat ls
+- cat cat ls --OK--
 - si redirection fermante pas de redirection dans le pipe --OK--
 
 - si ligne trop longue, ecrase le debut --OK--
@@ -59,12 +59,12 @@ A tester :
 - echo bonjour > out | ls --   bonjourls dans out --OK--
 - lexer : probleme pas d'erreur quand meta seul (<<, < etc)
 - signaux dans heredoc segfault
-- >> 1 segfault
+- >> 1 segfault --OK--
 
 
 To chris :
 - $HOME pas de retour a la ligne quand utilisé seul --OK--
 - $+valeur inexistante = segfault
-- lancer minishell sans envrionnement (env -i)
+- lancer minishell sans envrionnement (env -i) --OK--
 - ouvrir un guillemet -> prompt -> fais un segfault si Ctrl-d
 

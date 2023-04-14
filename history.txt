@@ -1137,3 +1137,8 @@ bash
 >> >
 >>>
 |
+$fwefwef
+>> 1
+>> 1
+make
+make fclean
