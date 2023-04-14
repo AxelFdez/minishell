@@ -97,8 +97,9 @@ void	ft_get_cmdline(t_parsing *parse)
 {
 	parse->is_in_str = 0;
 	parse->input = ft_strtrim_free_s1(parse->input, " ");
-	parse->ret_value = ft_check_syntax(parse);
+	// parse->ret_value = ft_check_syntax(parse);
 	ft_parseur(parse);
+	ft_lstprint_from_head(parse->lst_cmdline);
 	
 	ft_handle_underscore(parse);
 

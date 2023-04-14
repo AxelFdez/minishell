@@ -109,3 +109,6 @@ J'ai foiré mon exam mais mon mate m'a aidé a trouver les erreurs...(c'est pour
 
 
 
+save du 14/04 :
+
+- lexer en cours...
