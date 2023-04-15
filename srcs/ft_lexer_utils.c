@@ -1,0 +1,67 @@
+#include "../includes/minishell.h"
+
+void    ft_init_lexer(t_parsing *parse)
+{
+	parse->lex[0] = "<<<";
+	parse->lex[1] = ">>>";
+	parse->lex[2] = "< <";
+	parse->lex[3] = "> >";
+	parse->lex[4] = "<>";
+	parse->lex[5] = "><";
+	parse->lex[6] = "\\";
+	parse->lex[7] = ";";
+	parse->lex[8] = "||";
+	parse->lex[9] = NULL;
+}
+
+void	ft_increment(t_parsing *parse, char c)
+{
+	parse->i++;
+	while (parse->input[parse->i] != c)
+		parse->i++;
+	parse->i++;
+}
+
+int	ft_len(t_parsing *parse)
+{
+	int		j;
+
+	parse->i = 0;
+	j = 0;
+	while (parse->input[parse->i])
+	{
+		if (parse->input[parse->i] == '\"')
+			ft_increment(parse, '\"');
+		else if (parse->input[parse->i] == '\'')
+			ft_increment(parse, '\'');
+		else
+		{
+			j++;
+			parse->i++;
+		}
+	}
+	return (j);
+}
+
+char	*ft_fill(t_parsing *parse, char *s)
+{
+	int	j;
+
+	parse->i = 0;
+	j = 0;
+	while (parse->input[parse->i])
+	{
+		if (parse->input[parse->i] == '\"')
+			ft_increment(parse, '\"');
+		else if (parse->input[parse->i] == '\'')
+			ft_increment(parse, '\'');
+		else
+		{
+			s[j] = parse->input[parse->i];
+			j++;
+			parse->i++;
+		}
+	}
+	s[j] = '\0';
+	return (s);
+}

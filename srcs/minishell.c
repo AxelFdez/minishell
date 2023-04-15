@@ -41,8 +41,8 @@ int	main(int ac, char **av, char **env)
 			ft_quotes(&parse);
 			ft_add_history(&parse);
 			ft_history(&parse);
-			if (ft_check_syntax(&parse) == 0)
-			{puts("AAA");
+			if (ft_lexer(&parse) == 0)
+			{
 				ft_get_cmdline(&parse);
 				parse.env = ft_lst_to_char_tab(parse.lst_env);
 				if (parse.lst_cmdline)

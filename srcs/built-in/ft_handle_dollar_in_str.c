@@ -12,7 +12,7 @@ void	ft_handle_dollar_in_str(t_parsing *parse)
 	parse->str_tmp = ft_substr(parse->input, parse->i - parse->len,
 			parse->len);
 	tmplst = NULL;
-	ft_loop(parse, &tmplst);
+	ft_loop_dollar(parse, &tmplst);
 	ft_replace_value(parse, &tmplst);
 	free(parse->str_tmp);
 	parse->str_tmp = NULL;

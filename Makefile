@@ -10,7 +10,8 @@ SRCS =  srcs/minishell.c \
 		srcs/ft_parsing.c \
 		srcs/ft_error.c \
 		srcs/ft_token.c \
-		srcs/ft_check_syntax.c \
+		srcs/ft_lexer.c \
+		srcs/ft_lexer_utils.c \
 		srcs/ft_initialization.c \
 		srcs/ft_fill_lst.c \
 		srcs/ft_signals.c \

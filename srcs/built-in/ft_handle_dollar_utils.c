@@ -44,7 +44,7 @@ static void	ft_isnot_dollar(t_parsing *parse, t_list **lst)
 	ft_fill_tmplst(parse, lst, parse->i_b - parse->len_b);
 }
 
-void	ft_loop(t_parsing *parse, t_list **lst)
+void	ft_loop_dollar(t_parsing *parse, t_list **lst)
 {
 	while (parse->str_tmp[parse->i_b])
 	{
