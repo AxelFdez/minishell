@@ -45,7 +45,12 @@ int	main(int ac, char **av, char **env)
 			{puts("AAA");
 				ft_get_cmdline(&parse);
 				parse.env = ft_lst_to_char_tab(parse.lst_env);
-				execute_cmd(&parse);
+				if (parse.lst_cmdline)
+					execute_cmd(&parse);
+			 /*MAJ c'est good pour la touche entree sans arg... J'ai mis la condition au dessus
+			 ca a l'air d'etre pas mal...*/
+
+
 				/* Yo, test la cmd suivante : << f | cat >
 				ca ne plante pas...Mais bash execute qd meme le heredoc...
 				Perso je trouve ca bcp plus propre(et plus facile aussi) de le gerer comme ca.
