@@ -1142,3 +1142,10 @@ $fwefwef
 >> 1
 make
 make fclean
+ls
+cd ..
+ls
+rm ) - _
+ls
+cd minishell/
+ls
