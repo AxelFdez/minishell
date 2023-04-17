@@ -44,10 +44,13 @@ int	main(int ac, char **av, char **env)
 			if (ft_unsupported_token(&parse))
 			{
 				ft_get_cmdline(&parse);
-				parse.env = ft_lst_to_char_tab(parse.lst_env);
-				execute_cmd(&parse);
-				ft_lexer(&parse);
-				free_str_tab(parse.env);
+				if (parse.lst_cmdline)
+				{
+					parse.env = ft_lst_to_char_tab(parse.lst_env);
+					execute_cmd(&parse);
+					ft_lexer(&parse);
+					free_str_tab(parse.env);
+				}
 			}
 			/*Salut ;o)
 			Alors j'ai fait en sorte de laisser passer le heredoc...
