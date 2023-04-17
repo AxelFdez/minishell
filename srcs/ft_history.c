@@ -59,6 +59,18 @@ void	ft_print_history(t_parsing *parse)
 	close(parse->fd_history[0]);
 }
 
+void	ft_add_history(t_parsing *parse)
+{
+	if (parse->tmp_input == NULL)
+		add_history(parse->input);
+	else if (ft_strcmp(parse->tmp_input, parse->input) != 0)
+	{
+		add_history(parse->input);
+		free(parse->tmp_input);
+	}
+	parse->tmp_input = ft_strdup(parse->input);
+}
+
 void	ft_history(t_parsing *parse)
 {
 	ft_putstr_fd(parse->input, parse->fd_history[1]);

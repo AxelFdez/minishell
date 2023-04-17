@@ -77,6 +77,8 @@ void	signals_func(void);
 void	sig_int(int param);
 
 //**** execution **************************************************************
+int	ft_main_loop(t_parsing *parse);
+
 int		is_pipe(t_parsing *parse);
 void	execute_cmd(t_parsing *parse);
 void	execute_built_in(t_parsing *parse);
@@ -98,7 +100,7 @@ void	check_heredoc(t_parsing *parse);
 //**** parsing ****************************************************************
 void	ft_strdel_quotes(t_parsing *parse, char *str);
 void	ft_parsing(char *input);
-void	ft_get_cmdline(t_parsing *parse);
+int		ft_get_cmdline(t_parsing *parse);
 void	ft_quotes(t_parsing *parse);
 int		parsing_built_in(t_parsing *parse);
 void	ft_fill_lst(t_list **lst, t_parsing *parse, int start);
@@ -134,6 +136,7 @@ void	ft_unset(t_parsing *parse);
 void	ft_history(t_parsing *parse);
 void	ft_check_history_size(t_parsing *parse);
 void	ft_print_history(t_parsing *parse);
+void	ft_add_history(t_parsing *parse);
 
 //**** ft_cd ******************************************************************
 int		ft_cd(t_parsing *parse);

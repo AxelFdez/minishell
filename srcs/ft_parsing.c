@@ -93,12 +93,15 @@ static void	ft_parseur(t_parsing *parse)
 	}
 }
 
-void	ft_get_cmdline(t_parsing *parse)
+int	ft_get_cmdline(t_parsing *parse)
 {
 	parse->i = 0;
 	parse->is_in_str = 0;
 	parse->input = ft_strtrim_free_s1(parse->input, " ");
 	ft_parseur(parse);
 	ft_lstprint_from_head(parse->lst_cmdline);
-	// ft_handle_underscore(parse);
+	ft_handle_underscore(parse);
+	if (parse->lst_cmdline)
+		return (0);
+	return (1);
 }

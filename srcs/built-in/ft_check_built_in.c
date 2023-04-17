@@ -14,8 +14,8 @@ void	execute_built_in(t_parsing *parse)
 		ft_unset(parse);
 	else if (parse->built_in_cmd == 6)
 		parse->ret_value = ft_cd(parse);
-	// else if (parse->built_in_cmd == 7)
-	// 	ft_exit(parse);
+	else if (parse->built_in_cmd == 7)
+		ft_exit(parse);
 	else if (parse->built_in_cmd == 8)
 		ft_print_history(parse);
 	exit(EXIT_SUCCESS);
