@@ -8,10 +8,7 @@ void    ft_init_lexer(t_parsing *parse)
 	parse->lex[3] = "> >";
 	parse->lex[4] = "<>";
 	parse->lex[5] = "><";
-	parse->lex[6] = "\\";
-	parse->lex[7] = ";";
-	parse->lex[8] = "||";
-	parse->lex[9] = NULL;
+	parse->lex[6] = NULL;
 }
 
 void	ft_increment(t_parsing *parse, char c)
@@ -22,7 +19,7 @@ void	ft_increment(t_parsing *parse, char c)
 	parse->i++;
 }
 
-int	ft_len(t_parsing *parse)
+int	ft_len_str_to_cmp(t_parsing *parse)
 {
 	int		j;
 
@@ -43,7 +40,7 @@ int	ft_len(t_parsing *parse)
 	return (j);
 }
 
-char	*ft_fill(t_parsing *parse, char *s)
+char	*ft_fill_str_to_cmp(t_parsing *parse, char *s)
 {
 	int	j;
 

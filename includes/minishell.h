@@ -43,7 +43,7 @@ typedef struct s_parsing
 	char	*str_tmp;
 	char	var_name[1024];
 	char	c;
-	char	*lex[10];
+	char	*lex[7];
 	char	*meta[6];
 	char	*s1;
 	char	*s2;
@@ -113,8 +113,9 @@ void	rl_replace_line(const char *text, int clear_undo);
 void	ft_error(char *err_mess);
 void    ft_init_lexer(t_parsing *parse);
 void	ft_increment(t_parsing *parse, char c);
-int		ft_len(t_parsing *parse);
-char	*ft_fill(t_parsing *parse, char *s);
+int		ft_len_str_to_cmp(t_parsing *parse);
+char	*ft_fill_str_to_cmp(t_parsing *parse, char *s);
+int		ft_unsupported_token(t_parsing *parse);
 
 
 //**** built-in ***************************************************************

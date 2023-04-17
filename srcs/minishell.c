@@ -41,30 +41,26 @@ int	main(int ac, char **av, char **env)
 			ft_quotes(&parse);
 			ft_add_history(&parse);
 			ft_history(&parse);
-			if (ft_lexer(&parse) == 0)
+			if (ft_unsupported_token(&parse))
 			{
 				ft_get_cmdline(&parse);
 				parse.env = ft_lst_to_char_tab(parse.lst_env);
-				if (parse.lst_cmdline)
-					execute_cmd(&parse);
-			 /*MAJ c'est good pour la touche entree sans arg... J'ai mis la condition au dessus
-			 ca a l'air d'etre pas mal...*/
-
-
-				/* Yo, test la cmd suivante : << f | cat >
-				ca ne plante pas...Mais bash execute qd meme le heredoc...
-				Perso je trouve ca bcp plus propre(et plus facile aussi) de le gerer comme ca.
-				Tu me diras ce que tu en penses...
-				
-				J'ai modifié ft_check_syntax, et ici meme je l'ai mis en condition.
-				Je suis resté sur ma logique de depart finalement...A savoir de check la syntaxe avant 
-				de fill la lst_cmdline...
-
-				Par contre ca plante qd on appuie sur enter...je regarde ca dans le we j'ai plue le temps la...
-				N'hesite pas a me texter ou meme a me tel ;o)
-				Bon week end !!!*/
+				execute_cmd(&parse);
+				ft_lexer(&parse);
 				free_str_tab(parse.env);
 			}
+			/*Salut ;o)
+			Alors j'ai fait en sorte de laisser passer le heredoc...
+			Je te laisse voir ca, par contre avec : '<< f /bin/cat | wc -l >' ca affiche bien le message d'erreur 
+			mais ca crée qd meme un fichier... 
+			J'ai fait aussi une fonction 'ft_unsupported token' pour gerer \ || et ;
+			avec message d'erreur et code de retour.
+			la par contre ca a du sens de ne pas executer..
+			
+			Faut voir si ca complique pas trop les choses de laisser passer heredoc avec une commande 
+			aui contient des erreurs, je pense que ca ne constitue pas une erreur de le gerer sans exec...
+			On verra ca ensemble, j'espere que tu vas trouver les erreurs dont tu parlais hier.
+			Force et honneur ;o)*/
 			ft_lstdel_all(&parse.lst_cmdline);
 			free(parse.input);
 			parse.tmp_ret_value = parse.ret_value;
