@@ -27,3 +27,18 @@ exit
 exit
 exit
 exit 123
+aaa
+aaa"ffffdfdfdfd"'sfsfsfdfreew'
+add "asefwerfew" "asrgfasrvfeqvtrv" 'wrfwrff'
+$USER
+$USER$USER
+$USER $USER
+$USER $USER"$USER"
+$USER$USER"$USER""$USER"
+$USER$USER"$USER"'$USER'
+"$USER$USER"$USER"'$USER'"
+echo $_
+cat
+
+asd
+echo $_

@@ -102,6 +102,6 @@ int	ft_get_cmdline(t_parsing *parse)
 	ft_lstprint_from_head(parse->lst_cmdline);
 	ft_handle_underscore(parse);
 	if (parse->lst_cmdline)
-		return (0);
-	return (1);
+		return (1);
+	return (0);
 }
