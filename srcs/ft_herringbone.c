@@ -31,15 +31,13 @@ void	input_redirection(t_list **parse)
 {
 	int fd;
 	ft_lstdel_current(&(*parse));
-	if (access((*parse)->str, F_OK) != 0)
+	if (access((*parse)->str, F_OK) != 0 || access((*parse)->str, R_OK) != 0)
 	{
 		perror((*parse)->str);
-		exit(EXIT_FAILURE);
-	}
-	if (access((*parse)->str, R_OK) != 0)
-	{
-		perror((*parse)->str);
-		exit(EXIT_FAILURE);
+		sig.return_value = 1;
+		while ((*parse) && ft_strcmp((*parse)->str, "|") != 0)
+			ft_lstdel_current(&(*parse));
+		return;
 	}
 	fd = open((*parse)->str, O_RDONLY);
 	dup2(fd, STDIN_FILENO);
@@ -54,7 +52,13 @@ void	output_redirection(t_list **parse)
 	ft_lstdel_current(&(*parse));
 	fd = open((*parse)->str, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (fd < 0)
+	{
 		perror((*parse)->str);
+		sig.return_value = 1;
+		while ((*parse) && ft_strcmp((*parse)->str, "|") != 0)
+			ft_lstdel_current(&(*parse));
+		return;
+	}
 	dup2(fd, STDOUT_FILENO);
 	close(fd);
 	ft_lstdel_current(&(*parse));
@@ -67,7 +71,13 @@ void	ft_append(t_list **parse)
 	ft_lstdel_current(&(*parse));
 	fd = open((*parse)->str, O_WRONLY | O_CREAT | O_APPEND, 0644);
 	if (fd < 0)
+	{
 		perror((*parse)->str);
+		sig.return_value = 1;
+		while ((*parse) && ft_strcmp((*parse)->str, "|") != 0)
+			ft_lstdel_current(&(*parse));
+		return;
+	}
 	dup2(fd, STDOUT_FILENO);
 	close(fd);
 	ft_lstdel_current(&(*parse));
@@ -112,14 +122,14 @@ void ft_heredoc(t_parsing *parse, t_list **lst)
 	int j = 0;
 	while (1)
 	{
-		puts("AAA");
-		sig.heredoc = 1;
 		if (sig.int_heredoc == 1)
 			{
 				puts("BBB");
 				ft_lstdel_all(&parse->lst_cmdline);
 				break;
 			}
+		puts("AAA");
+		sig.heredoc = 1;
 		temp = readline("> ");
 		if (!temp)
 			break ;

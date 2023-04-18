@@ -1149,3 +1149,98 @@ rm ) - _
 ls
 cd minishell/
 ls
+ls
+cd ..
+ls
+cd minishell/
+ls
+echo $?
+echo $?
+clear
+fadffffff
+echo $?
+fadfad
+make
+fadfad
+afadsf
+echo $?
+ls
+echo $?
+echo $?
+echo $?
+echo $?
+echo 
+echo $?
+< 1
+echo $?
+< env.txt 
+echo $?
+lfafa | ls
+echo $?
+afads | ls
+echo $?
+afads | lfaf
+echo $?
+ls | cat | wc
+echo $?
+ls | cat | wcfasfasd
+echo $?
+ls -la
+ls -ldsad
+ls -ldsasgd
+ls -dgag
+ls -h
+ls -fdgsd
+echo $?
+ls -2
+echo $?
+pwd
+echo $?
+pwdfdasf
+pwd fasd
+export aedfads
+env fewf
+echo $?
+env fwaef
+echo $?
+env fewf
+echo $?
+cdc
+cd ;dsf
+cd dsaf
+echo $?
+cd dgfasd
+echo $?
+cd gwgr
+cd fafa
+echo $?
+export
+<< 2
+echo $?
+touch 1
+chdir 000 1
+chmod 000 1
+>> 1 ls
+$?
+make
+make
+make
+>> 1 > 2 > 3 ls | ls -l
+<<
+<< 1
+<<
+<< 1
+<< 1
+<< 1
+<< 1
+<< 1
+make
+<< 1
+make
+<< 1
+<< 1
+<< 1
+<< 1
+cat
+<< 1
+make

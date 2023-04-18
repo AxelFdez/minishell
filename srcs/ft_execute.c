@@ -70,7 +70,7 @@ void	execute_built_in_alone(t_parsing *parse)
 {
 	if (ft_strcmp(parse->lst_cmdline->str, "export") == 0
 		&& ft_lst_strchr_pipe(parse->lst_cmdline) == 1)
-			parse->ret_value = ft_export(parse);
+			sig.return_value = ft_export(parse);
 	else if (ft_strcmp(parse->lst_cmdline->str, "unset") == 0)
 		ft_unset(parse);
 	else if (ft_strcmp(parse->lst_cmdline->str, "exit") == 0)
@@ -80,7 +80,7 @@ void	execute_built_in_alone(t_parsing *parse)
 		&& (ft_strcmp(parse->lst_cmdline->next->str, "~") == 0)))
 	{
 		check_herringbone(parse);
-		parse->ret_value = ft_cd(parse);
+		sig.return_value = ft_cd(parse);
 	}
 	ft_lstdel_all(&parse->lst_cmdline);
 	return ;
@@ -107,13 +107,27 @@ void error_exec_message(t_parsing *parse)
 	if (parse->command[0][0] == '/')
 	{
 		if (access(parse->command[0], F_OK))
-			ft_printf("minishell: %s: no such file or directory\n",
-				parse->command[0]);
+		{
+			ft_putstr_fd("minishell: ", 2);
+			ft_putstr_fd(parse->command[0], 2);
+			ft_putstr_fd(": no such file or directory\n", 2);
+			sig.return_value = 127;
+		}
 		else
-			ft_printf("minishell: %s: is a directory\n", parse->command[0]);
+		{
+			ft_putstr_fd("minishell: ", 2);
+			ft_putstr_fd(parse->command[0], 2);
+			ft_putstr_fd(": is a directory\n", 2);
+			sig.return_value = 126;
+		}
 	}
 	else
-	ft_printf("minishell: %s: command not found\n", parse->command[0]);
+	{
+		ft_putstr_fd("minishell: ", 2);
+		ft_putstr_fd(parse->command[0], 2);
+		ft_putstr_fd(": command not found\n", 2);
+		sig.return_value = 127;
+	}
 }
 
 void	check_heredoc(t_parsing *parse)
@@ -153,7 +167,7 @@ void	simple_command(t_parsing *parse)
 		parse->built_in_cmd = 0;
 		check_herringbone(parse);
 		if (!parse->lst_cmdline)
-			exit(1);
+			exit(sig.return_value);
 		if (check_builtin_input(parse) == 1)
 			parsing_cmd(parse);
 		else
@@ -167,10 +181,10 @@ void	simple_command(t_parsing *parse)
 			execute_built_in(parse);
 		execve(parse->command[0], parse->command, parse->env);
 		error_exec_message(parse);
-		exit(parse->ret_value);
+		exit(sig.return_value);
 	}
-	waitpid(child, &parse->status, 0);
-	parse->ret_value = parse->status / 256;
+	waitpid(child, &sig.return_value, 0);
+	sig.return_value = sig.return_value / 256;
 	if (parse->heredoc_pfd > 0)
 	{
 		close(parse->heredoc_pfd);
@@ -183,8 +197,8 @@ void execute_cmd(t_parsing *parse)
 {
 	parse->status = 0;
 	sig.heredoc = 0;
+	sig.return_value = 0;
 	built_in_used_alone(parse);
-	//count_heredoc(parse);
 	if (!parse->lst_cmdline)
 		return ;
 	sig.child = 0;

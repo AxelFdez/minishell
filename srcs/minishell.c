@@ -82,7 +82,7 @@ int	main(int ac, char **av, char **env)
 			if (!parse.input)
 			{
 				write(2, "exit\n", 5);
-				return (parse.ret_value);
+				return (1);
 			}
 			ft_quotes(&parse);
 			ft_add_history(&parse);
@@ -90,11 +90,11 @@ int	main(int ac, char **av, char **env)
 			ft_get_cmdline(&parse);
 			parse.env = ft_lst_to_char_tab(parse.lst_env);
 			// if (ft_lexer(&parse) == 0)
-				execute_cmd(&parse);
+			execute_cmd(&parse);
 			free_str_tab(parse.env);
 			ft_lstdel_all(&parse.lst_cmdline);
 			free(parse.input);
-			parse.tmp_ret_value = parse.ret_value;
+			parse.tmp_ret_value = sig.return_value;
 			// system("leaks minishell");
 		}
 	}

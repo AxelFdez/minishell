@@ -63,7 +63,8 @@ static void	is_no_quote_string(t_parsing *parse)
 		if ((parse->input[parse->i] == '\"' || parse->input[parse->i]
 				== '\'') && (parse->input[parse->i +1] != '\0'))
 			ft_handle_quotes(parse);
-
+		if (!parse->input[parse->i])
+			break;
 		parse->len++;
 		parse->i++;
 	}
@@ -99,7 +100,7 @@ void	ft_get_cmdline(t_parsing *parse)
 	parse->input = ft_strtrim_free_s1(parse->input, " ");
 	parse->ret_value = ft_check_syntax(parse);
 	ft_parseur(parse);
-	
+
 	ft_handle_underscore(parse);
 
 }
