@@ -141,7 +141,6 @@ void	check_heredoc(t_parsing *parse)
 void	simple_command(t_parsing *parse)
 {
 	pid_t child;
-
 	check_heredoc(parse);
 	if (!parse->lst_cmdline)
 		return;

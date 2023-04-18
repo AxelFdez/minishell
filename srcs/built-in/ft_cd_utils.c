@@ -28,6 +28,8 @@ void	ft_update_oldpwd(t_parsing *parse, char *cwd)
 	t_list	*tmp;
 	char	*old_tmp;
 
+	if (!cwd)
+		return ;
 	old_tmp = NULL;
 	tmp = parse->lst_env;
 	while (tmp)
@@ -51,6 +53,8 @@ void	ft_update_pwd(t_parsing *parse, char *cwd)
 	t_list	*tmp;
 	char	*pwd_tmp;
 
+	if (!cwd)
+		return ;
 	pwd_tmp = NULL;
 	tmp = parse->lst_env;
 	while (tmp)

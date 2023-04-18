@@ -118,7 +118,7 @@ void    ft_init_lexer(t_parsing *parse);
 void	ft_increment(t_parsing *parse, char c);
 int		ft_len_str_to_cmp(t_parsing *parse);
 char	*ft_fill_str_to_cmp(t_parsing *parse, char *s);
-int		ft_unsupported_token(t_parsing *parse);
+
 
 
 //**** built-in ***************************************************************

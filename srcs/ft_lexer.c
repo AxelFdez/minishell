@@ -12,12 +12,12 @@ static int	ft_check_after_token(char *s)
 		if ((s[i] == '|' || s[i] == '>' || s[i] == '<') && (s[i +1] == '\0'))
 		{
 			ft_putstr(ret);
-			return (0);
+			return (1);
 		}
 
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 static int	ft_check_syntax(t_parsing *parse, char *s)
@@ -31,35 +31,28 @@ static int	ft_check_syntax(t_parsing *parse, char *s)
 	{
 		if (ft_strnstr(s, parse->lex[i], ft_strlen(s)))
 		{
-			ft_printf("%s `%s'\n", err_message, parse->lex[i]);
-			return (0);
+			ft_printf("%s `%c'\n", err_message,
+				parse->lex[i][ft_strlen(parse->lex[i]) -1]);
+			return (1);
 		}
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
-int	ft_unsupported_token(t_parsing *parse)
+static int	ft_unsupported_token(t_parsing *parse, char *s)
 {
-	char	*s;
 	char	*err_message;
-	int		i;
-
-	i = 0;
+	
 	err_message = "minishell: error: `[\\] [;] [||]' unsupported token\n";
-	s = malloc(sizeof(char) * (ft_len_str_to_cmp(parse) + 1));
-	s = ft_fill_str_to_cmp(parse, s);
 	if (ft_strchr(s, '\\') || ft_strchr(s, ';')
 		|| (ft_strnstr(s, "||", ft_strlen(s))))
 	{
 		ft_putstr_fd(err_message, 2);
-		free(s);
-		parse->ret_value = 258;
-		return (0);
+		return (1);
 	}
-	free(s);
 	parse->ret_value = 0;
-	return (1);
+	return (0);
 }
 
 int	ft_lexer(t_parsing *parse)
@@ -69,7 +62,8 @@ int	ft_lexer(t_parsing *parse)
 	s = malloc(sizeof(char) * (ft_len_str_to_cmp(parse) + 1));
 	s = ft_fill_str_to_cmp(parse, s);
 	ft_init_lexer(parse);
-	if (ft_check_after_token(s) == 0 || ft_check_syntax(parse, s) == 0)
+	if (ft_check_syntax(parse, s) || ft_unsupported_token(parse, s)	
+		|| ft_check_after_token(s))
 	{
 		free(s);
 		parse->ret_value = 258;
@@ -77,5 +71,5 @@ int	ft_lexer(t_parsing *parse)
 	}
 	free(s);
 	parse->i = 0;
-	return (parse->ret_value);
+	return (0);
 }

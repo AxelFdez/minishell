@@ -318,3 +318,215 @@ exit 123
 echo $?
 minishell
 echo $?
+sdfgg 
+sfg
+afadfgv
+afadfvf >>
+sfsaf >>>
+fsf >><><><><><
+asrf ><><><><>
+gwetge >>
+gegwerg >>
+><><>
+<<<<<
+<<<<
+<<<<
+<<<<<
+sdf >>>
+<<<<
+<<
+>>
+sdgsdghs >>
+sdfgadg dg
+srf 
+dagadg adfgadfg
+>>>
+<<<<
+<<<
+<<<
+<<<
+<<<
+>>>
+>>
+aerf
+<<<
+srfgf 
+adgadrg ||
+sdfsaf
+asfgasgf
+sadfas >>
+sdgsdt >>
+wtwg sdtgwtg >>
+||
+sfth sfgh
+hsy
+dfgdag
+dafgadg sdgadrg
+adfgadr >>
+dagadg ||
+argadfgerq ;
+adfgadr dafgbadfg adgadrg |
+adfgadrv |a ergg
+<<< agadgg
+<<
+<< efo
+<< ef | vsrt >>
+asdrg dfgadg
+adfgadfg >>
+adgadfg <<
+<< asrgrgvrtgb >>
+<< eof
+><><><><>
+><><>
+<><><
+<<<<
+>>>>>
+fghfh"f>>>>>>"
+>>>
+> >
+<<<
+>>>
+><><><>
+<><><><>
+<>
+><
+||
+|
+< <
+< <<
+<>
+><
+<>
+>>>
+>>
+>>>
+<<<
+dfgadfg
+fdgadfsg safgafsg | adfgadfg | afdgadfg
+fdgadfsg safgafsg | adfgadfg | afdgadfg || adfgag
+echo $USER
+echo $USER >>
+<< f
+echo << f
+dfgsdg
+dfsgdfg
+>>>
+pwd
+export
+export
+cd ~
+export
+cd -
+export
+export
+cd 
+export
+clear
+pwd
+cd -
+pwd
+cd test
+pwd
+ls
+cd test1
+mkdir test2
+cd test2
+pwd
+rm -r ../../test
+pwd
+echo $OLDPWD
+ls
+mkdir 1
+mkdir 1/2
+cd 1
+cd 2
+pwd
+rm -r ../../test
+c..
+cd ..
+cd ..
+pwd
+ls
+cd 1/2
+pwd
+rm -r ../../1
+cd ..
+pwd
+mkdi 1
+mkdir1/2
+cd 1/2
+pwd
+ls
+mkdir 1
+ls
+mkdir 1/2
+cd 1/2/
+pwd
+rm -r ../../1
+cd ..
+cd ..
+cd ..
+pwd
+cd minishell
+mkdir 1
+mkdir 1/2/3
+mkdir 1/2
+cd 1/2/
+pwd
+rm -r ../../1
+cd ..
+pwd
+cd ..
+pwd
+mkdir 1
+mkdir 1/2
+cd 1/2/
+unset OLPWD PWD
+export
+unset OLDPWD
+export
+pwd
+rm -r ../../1
+cd ..
+cd ..
+pwd
+<
+>
+<<
+unset _
+unset _
+env
+export
+env
+unset _
+env
+env
+env
+unset _
+unset _
+env
+mkdir test
+/test
+pwd
+/test
+wefef
+/test
+/test
+/test
+/pouo
+lks sjflkif
+cat | ls
+aaa >
+gherhdfgh
+lgj
+pwd
+export
+dfg"
+
+dgsgh
+dghsdgh'
+sdthsdth
+dsgh
+sdgh
+sghsfh
+

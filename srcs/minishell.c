@@ -17,14 +17,17 @@ int	ft_main_loop(t_parsing *parse)
 		ft_quotes(parse);
 		ft_add_history(parse);
 		ft_history(parse);
-		if (ft_unsupported_token(parse))
+		
+		if (ft_lexer(parse) == 0)
+		{
+
 			if (ft_get_cmdline(parse))
 			{
 				parse->env = ft_lst_to_char_tab(parse->lst_env);
 				execute_cmd(parse);
-				ft_lexer(parse);
 				free_str_tab(parse->env);
 			}
+		}
 		ft_lstdel_all(&parse->lst_cmdline);
 		free(parse->input);
 		parse->tmp_ret_value = parse->ret_value;
