@@ -23,7 +23,6 @@ void	sig_int(int param)
 	else if (sig.heredoc == 1)
 	{
 		sig.int_heredoc = 1;
-		exit(1);
 	}
 	else
 	{
