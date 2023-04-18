@@ -131,7 +131,7 @@ void ft_heredoc(t_parsing *parse, t_list **lst)
 		puts("AAA");
 		sig.heredoc = 1;
 		temp = readline("> ");
-		if (!temp)
+		if (!temp || sig.int_heredoc == 1)
 			break ;
 		if (i == 1)
 		{

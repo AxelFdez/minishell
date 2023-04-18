@@ -90,7 +90,8 @@ int	main(int ac, char **av, char **env)
 			ft_get_cmdline(&parse);
 			parse.env = ft_lst_to_char_tab(parse.lst_env);
 			// if (ft_lexer(&parse) == 0)
-			execute_cmd(&parse);
+			if (parse.lst_cmdline)
+				execute_cmd(&parse);
 			free_str_tab(parse.env);
 			ft_lstdel_all(&parse.lst_cmdline);
 			free(parse.input);
