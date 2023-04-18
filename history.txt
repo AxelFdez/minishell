@@ -1283,3 +1283,17 @@ make
 << 1
 << 1
 << 1
+ls
+mkdir test
+cd test
+mkdir test1
+cd test1/
+rm ../../test
+pwd
+../../test/
+ rm ../../test
+ rm -r ../../test
+pwd
+cd ..
+ls
+clear
