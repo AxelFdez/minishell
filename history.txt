@@ -1184,3 +1184,143 @@ sghsfh
 
 >>>>>>> origin/chris
 << 1
+cd ../../../../..
+pwd
+cd /home/user42
+cd home/axfernan
+pwd
+cd /Users/axfernan/
+pwd
+cd $HOME/
+pwd
+cd $HOME/cursus
+pwd
+unset HOME
+ls
+unset HOME
+unset HOME
+unset HOME
+unset HOME
+env
+unset HOME
+unset HOME
+unset HOME
+unset HOME
+unset HOME
+env
+env
+export
+unset HOME
+env
+export
+env
+export
+unset HOME
+export
+unset HOME USER
+env
+cd .. ..
+cd .. fsdaf
+ls
+cd cursus/
+cd minishell/
+cd .. ..
+ls
+cd ~ ls
+ls
+bash
+cd cdac acacad
+echo $?
+cd /dwdw
+echo $?
+cd -
+echo -n -n -nnnn -nnnnm
+echo a
+echo -n -n -nnnn -nnnnm
+bash
+echo -n -n -nnnn -nnnnm
+
+echo -n -nnn hello -n
+bas
+
+bash
+echo -n -nnn hello -n
+cat /dev/urandom | head
+bash
+cat /dev/urandom | head
+cd fawefawe
+echo $?
+cd $?
+mkdir test
+chmod 000 test
+./test/
+
+touch test1
+chmod 000 test1
+./test1
+bash
+./test1
+echo $?
+ls
+cd minishell/
+ls
+./srcs
+./srcfaf
+ls
+ls -la
+./test1
+./test
+bash
+test
+bash
+bash
+./test1
+./test1
+/test
+/testou
+/test
+pwd
+/testou
+chmod --- testou
+chmod 000 testou
+/testou
+cat bla
+echo $?
+test
+echo $?
+agage
+echo $?
+export test=a
+echo $test
+ls bonjour
+echo $?
+bash
+""
+$?
+""
+""
+""
+""
+echo "\s"
+echo "\\s"
+bash
+echo "12\""
+
+"
+
+echo "\\s"
+echo "\\s
+
+"
+
+cat
+"
+
+
+
+
+
+;s
+ls
+cat
+echo $?
