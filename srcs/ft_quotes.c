@@ -40,6 +40,8 @@ static void	ft_prompt(t_parsing *parse, char c)
 	while (1)
 	{
 		tmp = readline("> ");
+		if (!tmp)
+			break ;
 		parse->prompt = ft_strjoin_free_s1(parse->prompt, tmp);
 		free(tmp);
 		if (ft_found_char(tmp, c))

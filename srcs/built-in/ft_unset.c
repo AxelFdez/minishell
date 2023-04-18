@@ -16,12 +16,12 @@ void	ft_unset(t_parsing *parse)
 			ft_printf("export: `%s': not a valid identifier\n", tmp_cmd->str);
 			parse->ret_value = 1;
 		}
-
 		tmp_env = parse->lst_env;
 		while (tmp_env)
 		{
 			if (!ft_strncmp(tmp_cmd->str, tmp_env->str,
-					ft_str_chr(tmp_env->str, '=')))
+					ft_str_chr(tmp_env->str, '='))
+						&& (!ft_strnstr(tmp_env->str, tmp_cmd->str, 2)))
 				ft_lstdel_actual(&parse->lst_env, tmp_env);
 			tmp_env = tmp_env->next;
 		}

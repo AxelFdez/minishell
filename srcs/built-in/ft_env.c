@@ -4,10 +4,8 @@
 int	ft_env(t_parsing *parse)
 {
 	t_list	*tmp;
-	int		error;
 
 	tmp = parse->lst_env;
-	error = 0;
 	if (parse->lst_cmdline->next == NULL
 		|| ft_strcmp(parse->lst_cmdline->next->str, "|") == 0)
 	{
@@ -20,11 +18,8 @@ int	ft_env(t_parsing *parse)
 	}
 	else
 	{
-		ft_printf("env: `%s' : not a valid identifier\n",
-			parse->lst_cmdline->next->str);
-		error++;
+		ft_printf("env: options & arguments are not permited\n");
+		return (127);
 	}
-	if (error > 0)
-		return (1);
 	return (0);
 }

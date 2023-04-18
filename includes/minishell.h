@@ -52,6 +52,7 @@ typedef struct s_parsing
 	char	*str_tmp;
 	char	var_name[1024];
 	char	c;
+	char	pwd_save[1024];
 	char	*lex[7];
 	char	*meta[6];
 	char	*s1;
@@ -128,7 +129,7 @@ void	ft_init_lexer(t_parsing *parse);
 void	ft_increment(t_parsing *parse, char c);
 int		ft_len_str_to_cmp(t_parsing *parse);
 char	*ft_fill_str_to_cmp(t_parsing *parse, char *s);
-int		ft_unsupported_token(t_parsing *parse);
+
 
 
 //**** built-in ***************************************************************

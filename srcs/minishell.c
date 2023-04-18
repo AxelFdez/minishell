@@ -11,24 +11,28 @@ int	ft_main_loop(t_parsing *parse)
 		if (!parse->input)
 		{
 			write(2, "exit\n", 5);
-			return (127);
+			parse->ret_value = 127;
+			exit (127);
 		}
 		ft_quotes(parse);
 		ft_add_history(parse);
 		ft_history(parse);
-		if (ft_unsupported_token(parse))
+		
+		if (ft_lexer(parse) == 0)
+		{
+
 			if (ft_get_cmdline(parse))
 			{
 				parse->env = ft_lst_to_char_tab(parse->lst_env);
 				execute_cmd(parse);
-				ft_lexer(parse);
 				free_str_tab(parse->env);
 			}
+		}
 		ft_lstdel_all(&parse->lst_cmdline);
 		free(parse->input);
 		parse->tmp_ret_value = sig.return_value;
 	}
-	return (0);
+	return (parse->tmp_ret_value);
 }
 
 int	main(int ac, char **av, char **env)

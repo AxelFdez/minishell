@@ -1,21 +1,5 @@
 #include "../includes/minishell.h"
 
-static void	ft_handle_oldpwd(t_parsing *parse)
-{
-	t_list	*tmp;
-
-	tmp = parse->lst_env;
-	while (tmp)
-	{
-		if (ft_strncmp(tmp->str, "OLDPWD", 6) == 0)
-		{
-			ft_lstdel_actual(&parse->lst_env, tmp);
-			break ;
-		}
-		tmp = tmp->next;
-	}
-	ft_lstadd_back(&parse->lst_env, ft_lstnew(ft_strdup("OLDPWD")));
-}
 
 static void	ft_create_env(t_parsing *parse)
 {
@@ -49,6 +33,8 @@ static void	ft_retrieve_loop(t_parsing *parse, char **env)
 	i = 0;
 	while (env[i])
 	{
+		if (ft_strncmp(env[i], "OLDPWD=", 7) == 0)
+			env[i][ft_str_chr(env[i], '=')] = '\0';
 		if (strncmp(env[i], "_=", 2) == 0)
 		{
 			new = ft_lstnew(ft_strdup("_=minishell"));
@@ -73,7 +59,6 @@ void	ft_retrieve_env(t_parsing *parse, char **env)
 	}
 	ft_retrieve_loop(parse, env);
 	ft_handle_shlvl(parse);
-	ft_handle_oldpwd(parse);
 }
 
 char	**ft_lst_env_to_tab(t_list *lst)
