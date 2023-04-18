@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:21:09 by chmassa           #+#    #+#             */
-/*   Updated: 2023/04/14 10:20:30 by chmassa          ###   ########.fr       */
+/*   Updated: 2023/04/18 10:05:56 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,6 +146,7 @@ void	ft_lstdel_back(t_list **lst);
 void	ft_lstdel_position(t_list **lst, int position);
 void	ft_lstdel_actual(t_list **lst, t_list *tmp);
 void	ft_lstdel_all(t_list **lst);
+void	ft_lstdel_current(t_list **lst);
 //***** lstprint ***************************************************************
 void	ft_lstprint(t_list *lst);
 void	ft_lstprint_from_head(t_list *lst);

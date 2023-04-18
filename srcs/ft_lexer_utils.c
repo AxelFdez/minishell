@@ -1,6 +1,17 @@
 #include "../includes/minishell.h"
 
-static void	ft_increment(t_parsing *parse, char c)
+void    ft_init_lexer(t_parsing *parse)
+{
+	parse->lex[0] = "<<<";
+	parse->lex[1] = ">>>";
+	parse->lex[2] = "< <";
+	parse->lex[3] = "> >";
+	parse->lex[4] = "<>";
+	parse->lex[5] = "><";
+	parse->lex[6] = NULL;
+}
+
+void	ft_increment(t_parsing *parse, char c)
 {
 	parse->i++;
 	while (parse->input[parse->i] != c)
@@ -8,7 +19,7 @@ static void	ft_increment(t_parsing *parse, char c)
 	parse->i++;
 }
 
-static int	ft_len(t_parsing *parse)
+int	ft_len_str_to_cmp(t_parsing *parse)
 {
 	int		j;
 
@@ -29,7 +40,7 @@ static int	ft_len(t_parsing *parse)
 	return (j);
 }
 
-static char	*ft_fill(t_parsing *parse, char *s)
+char	*ft_fill_str_to_cmp(t_parsing *parse, char *s)
 {
 	int	j;
 
@@ -50,27 +61,4 @@ static char	*ft_fill(t_parsing *parse, char *s)
 	}
 	s[j] = '\0';
 	return (s);
-}
-
-int	ft_check_syntax(t_parsing *parse)
-{
-	char	*s;
-
-	s = malloc(sizeof(char) * (ft_len(parse) + 1));
-	s = ft_fill(parse, s);
-	if (ft_strnstr(s, "<<<", ft_strlen(s))
-		|| ft_strnstr(s, ">>>", ft_strlen(s))
-		|| ft_strnstr(s, "> >", ft_strlen(s))
-		|| ft_strnstr(s, "< <", ft_strlen(s))
-		|| ft_strnstr(s, "\\", ft_strlen(s))
-		|| ft_strnstr(s, ";", ft_strlen(s))
-		|| ft_strnstr(s, "||", ft_strlen(s)))
-	{
-		ft_printf("minishell: syntax error near unexpected token `%s'\n", s);
-		free(s);
-		return (258);
-	}
-	free(s);
-	parse->i = 0;
-	return (0);
 }

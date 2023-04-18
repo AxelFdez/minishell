@@ -2,7 +2,7 @@
 
 static char	*ft_return_node_before(t_list *lst)
 {
-	t_list  *tmp;
+	t_list	*tmp;
 
 	tmp = lst;
 	while (tmp)

@@ -40,16 +40,11 @@ static void	ft_create_env(t_parsing *parse)
 	free(var_to_create[1]);
 }
 
-void	ft_retrieve_env(t_parsing *parse, char **env)
+static void	ft_retrieve_loop(t_parsing *parse, char **env)
 {
 	int		i;
 	t_list	*new;
-	if (!*env)
-	{
-		ft_create_env(parse);
-		ft_handle_shlvl(parse);
-		return ;
-	}
+
 	parse->lst_env = NULL;
 	i = 0;
 	while (env[i])
@@ -66,6 +61,17 @@ void	ft_retrieve_env(t_parsing *parse, char **env)
 		}
 		i++;
 	}
+}
+
+void	ft_retrieve_env(t_parsing *parse, char **env)
+{
+	if (!*env)
+	{
+		ft_create_env(parse);
+		ft_handle_shlvl(parse);
+		return ;
+	}
+	ft_retrieve_loop(parse, env);
 	ft_handle_shlvl(parse);
 	ft_handle_oldpwd(parse);
 }

@@ -10,7 +10,8 @@ SRCS =  srcs/minishell.c \
 		srcs/ft_parsing.c \
 		srcs/ft_error.c \
 		srcs/ft_token.c \
-		srcs/ft_check_syntax.c \
+		srcs/ft_lexer.c \
+		srcs/ft_lexer_utils.c \
 		srcs/ft_initialization.c \
 		srcs/ft_fill_lst.c \
 		srcs/ft_signals.c \
@@ -21,10 +22,12 @@ SRCS =  srcs/minishell.c \
 		srcs/ft_pipex.c \
 		srcs/ft_pipex_utils.c \
 		srcs/ft_pipex_utils2.c \
+		srcs/ft_pipex_multi_pipe.c \
 		srcs/ft_herringbone.c \
 		srcs/ft_sort_env.c \
 		srcs/ft_handle_shlvl.c \
 		srcs/ft_handle_underscore.c \
+		srcs/ft_heredoc.c \
 		srcs/built-in/ft_echo.c \
 		srcs/built-in/ft_env.c \
 		srcs/built-in/ft_pwd.c \

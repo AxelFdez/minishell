@@ -85,6 +85,7 @@ SRCS = 	srcs/str/ft_split.c \
 		srcs/linked_list/ft_lstprint.c \
 		srcs/linked_list/ft_lstcpy.c \
 		srcs/linked_list/ft_lst_to_str.c \
+		srcs/linked_list/ft_lstdel_current.c \
 		srcs/linked_list/ft_sortlst_str.c \
 		srcs/linked_list/ft_lst_to_char_tab.c \
 		srcs/linked_list/ft_lst_strcmp.c \

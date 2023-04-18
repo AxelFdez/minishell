@@ -64,7 +64,7 @@ A tester :
 
 To chris :
 - $HOME pas de retour a la ligne quand utilisé seul --OK--
-- $+valeur inexistante = segfault
+- $+valeur inexistante = segfault --OK--
 - lancer minishell sans envrionnement (env -i) --OK--
 - ouvrir un guillemet -> prompt -> fais un segfault si Ctrl-d
 

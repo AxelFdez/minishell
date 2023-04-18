@@ -30,3 +30,10 @@ void	print_list(t_list *lst)
 	}
 	ft_printf("\n");
 }
+
+void	delete_cmd(t_list **list_cmd)
+{
+	while (ft_strcmp((*list_cmd)->str, "|") != 0)
+				ft_lstdel_front(&(*list_cmd));
+			ft_lstdel_front(&(*list_cmd));
+}

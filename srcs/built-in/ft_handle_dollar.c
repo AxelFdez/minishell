@@ -61,7 +61,7 @@ void	ft_handle_dollar(t_parsing *parse)
 	{
 		if (parse->str_tmp == NULL)
 			parse->str_tmp = ft_calloc(1, sizeof(char));
-		ret_itoa = ft_itoa(parse->tmp_ret_value);
+		ret_itoa = ft_itoa(sig.return_value);
 		parse->str_tmp = ft_strjoin_free_s1_s2(parse->str_tmp, ret_itoa);
 		parse->i += 2;
 	}

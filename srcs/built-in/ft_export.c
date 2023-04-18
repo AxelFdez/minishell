@@ -80,8 +80,7 @@ static int	ft_new_var(t_parsing *parse, t_list *tmp)
 }
 
 int	ft_export(t_parsing *parse)
-{puts("EXPORT");
-	// ft_lstprint_from_head(parse->lst_cmdline);
+{
 	t_list	*tmp;
 
 	tmp = parse->lst_cmdline->next;

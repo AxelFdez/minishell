@@ -28,7 +28,7 @@ static void	ft_handle_error(t_parsing *parse)
 void	ft_exit(t_parsing *parse)
 {
 	unsigned long long	ret_atoi;
-
+	puts("AAA");
 	if (parse->lst_cmdline->next == NULL)
 		exit (0);
 	else
