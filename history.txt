@@ -42,3 +42,279 @@ cat
 
 asd
 echo $_
+echo $_
+minishell
+minishell
+env
+cd ~
+pwd
+cd -
+pwd
+echo $?
+exit
+exit
+minishell
+exit 123
+echo $?
+exit iyueqdg
+exit aaa 345
+exit 2344
+./minishell
+exit 123
+echo $?
+exit 123
+exit 678
+./minishell
+exit 123
+echo $?
+minishell
+exit 123
+echo $?
+minishell
+minishell
+exit
+echo $?
+minishell
+minishell
+exit
+echo $?
+minishell
+minishell
+env
+echo $?
+exit
+exit
+minishell
+exit
+echo $?
+env
+minishell
+exit 123
+echo $?
+sdfasf
+exit
+echo $?
+exit 123
+echo $?
+sdf
+sdf
+exit
+echo blablabla
+echo $?
+echo >>>
+echo $?
+<< fin /bin/cat >>
+echo $?
+
+
+re
+greeeeeeee2
+exit 123
+ls
+echo $?
+ls ewre
+echo $?
+ls wrff
+ls erg
+echo $?
+dafgd
+ls wtghg
+echo $?
+ls erg
+ls dgh
+ls etrhbh
+ls gfd
+ls kjg
+ls iuhui
+echo $?
+export
+export qweer
+echo $?
+env oijfg
+echo $?
+env wrgi
+env pojkgo
+echo $?
+env piojkep
+echo $?
+env
+export
+export aaa bbb ccc
+export
+env
+export aaa=42 bbb=12
+export
+env
+export
+cd ~
+pwd
+export
+cd -
+pwd
+mkdir test
+mkdir test/test1
+cd test/test1/
+rm ../../test
+rm -fR ../../test
+pwd
+cd ..
+cd ..
+pwd
+mkdir s1/s2/s3
+ls
+exit
+<~/Desktop/minishell/Makefile cat
+unset HOME 
+cd ~
+echo ~
+bash
+echo aaa"
+fthdfth
+sfghsfths
+fghsfthsfhsfhsfhh'sfghsfghsfh'sthsf
+"
+echo >>>
+echo ">>>"
+echo $USER$USER
+echo $USER$USER"$USER"
+echo aaa kdldf "flejhfkehfrf'frkjhfkrhkjrfrfg'ljhdlkvhjrkljvhrv""hjhjff" "jhkff"
+echo aaa kdldf >> "flejhfkehfrf'frkjhfkrhkjrfrfg'ljhdlkvhjrkljvhrv""hjhjff" | "jhkff"
+echo $USER $HOME $gfhgf
+export E="echo"
+$E heloo
+export var1=kjsdhfksd var-2=iop var3=aaa
+export
+clear
+cat | cat | ls
+cat /dev/urandom | head
+cat | ls
+cat | cat | ls
+exit
+mkdir test
+mkdir test/test1
+cd test/test1
+rm ../../test
+rm -fR ../../test
+cd ~
+pwd
+cd ~
+cd -
+mkdir test
+mkdir test/test1
+ls
+cd test/test1
+pwd
+rm -fR test
+pwd
+echo $OLDPWD
+cd ..
+pwd
+ls
+cd ..
+pwd
+ls
+pwd
+cd test
+pwd
+cd test1
+pwd
+rm -r test
+rm -rf test
+ls
+pwd
+echo $OLDPWD
+ls
+history
+history
+history
+mkdir test
+mkdir test/test1
+cd test/test1/
+pwd
+rm -r ../../test
+pwd
+echo OLDPWD
+cd ..
+cd ~
+cd -
+mkdir test
+mkdir test/test1
+cd test/test1/
+pwd
+echo $OLDPWD
+rm -r ../../test
+echo $OLDPWD
+cd ..
+pwd
+export
+mkdir test
+mkdir test/test1
+ls
+cd test/test1/
+pwd
+export
+pwd
+export
+rm -r ../../test
+pwd
+export
+cd ..
+mkdir test
+mkdir test/test1/test2
+cd test
+ls
+pwd
+mkdir test1
+cd test1
+mkdir test2
+cd test2
+pwd
+export
+ls
+cd test
+cd test1
+cd test2
+cd test3
+pwd
+cd ..
+pwd
+cd ~
+cd -
+cd ~
+cd -
+cd ~
+cd -
+cd ~
+pwd
+cd -
+pwd
+cd ~
+cd -
+ls
+cd test
+cd test1
+cd test2
+pwd
+cd ~
+pwd
+cd -
+echo $OLDPWD
+dfgzdg
+ls
+mkdir test
+cd test/test1
+ls
+cd test2
+pwd
+rm -r ../../../test
+rm -r ../../test
+rm -r ../../../test
+pwd
+cd ..
+jshfjusyf ;
+exit 123
+./minishell
+exit 123
+echo $?
+minishell
+echo $?

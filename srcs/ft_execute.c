@@ -167,6 +167,7 @@ void	simple_command(t_parsing *parse)
 		error_exec_message(parse);
 		exit(parse->ret_value);
 	}
+
 	waitpid(child, &parse->status, 0);
 	parse->ret_value = parse->status / 256;
 	if (parse->heredoc_pfd > 0)

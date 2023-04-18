@@ -43,7 +43,11 @@ int	ft_cd(t_parsing *parse)
 
 	ret = 0;
 	tmp = parse->lst_cmdline;
+	
 	cwd = ft_get_current_position();
+	ft_strcpy(parse->pwd_save, cwd);
+	printf("save PWD = %s\n", parse->pwd_save);
+	
 	if (tmp->next == NULL || ft_strcmp(tmp->next->str, "~") == 0)
 		ret = ft_handle_tild_hyphen(parse, '~');
 	else if (tmp->next == NULL || ft_strcmp(tmp->next->str, "-") == 0)

@@ -11,7 +11,8 @@ int	ft_main_loop(t_parsing *parse)
 		if (!parse->input)
 		{
 			write(2, "exit\n", 5);
-			return (127);
+			parse->ret_value = 127;
+			exit (127);
 		}
 		ft_quotes(parse);
 		ft_add_history(parse);
@@ -28,7 +29,7 @@ int	ft_main_loop(t_parsing *parse)
 		free(parse->input);
 		parse->tmp_ret_value = parse->ret_value;
 	}
-	return (0);
+	return (parse->tmp_ret_value);
 }
 
 int	main(int ac, char **av, char **env)

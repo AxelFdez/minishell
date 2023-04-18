@@ -77,6 +77,5 @@ int	ft_lexer(t_parsing *parse)
 	}
 	free(s);
 	parse->i = 0;
-	parse->ret_value = 0;
-	return (0);
+	return (parse->ret_value);
 }

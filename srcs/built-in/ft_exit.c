@@ -28,9 +28,11 @@ static void	ft_handle_error(t_parsing *parse)
 void	ft_exit(t_parsing *parse)
 {
 	unsigned long long	ret_atoi;
-	puts("AAA");
 	if (parse->lst_cmdline->next == NULL)
+	{
+		write(2, "exit\n", 5);
 		exit (0);
+	}
 	else
 	{	
 		if (ft_str_isdigits(parse->lst_cmdline->next->str) == 1
@@ -45,7 +47,8 @@ void	ft_exit(t_parsing *parse)
 					&& ret_atoi <= 1844674407370955169)
 				|| (parse->lst_cmdline->next->str[0] == '-'
 					&& ret_atoi >= 1844674407370955169))
-			parse->ret_value = ret_atoi % 256;
+				parse->ret_value = ret_atoi % 256;
+			write(2, "exit\n", 5);
 			exit(ret_atoi % 256);
 		}
 	}

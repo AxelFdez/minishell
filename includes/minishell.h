@@ -43,6 +43,7 @@ typedef struct s_parsing
 	char	*str_tmp;
 	char	var_name[1024];
 	char	c;
+	char	pwd_save[1024];
 	char	*lex[7];
 	char	*meta[6];
 	char	*s1;
