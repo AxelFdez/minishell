@@ -38,6 +38,8 @@ void	command_father(t_parsing *parse)
 			sig.return_value = 130;
 		else if (sig.return_value == 3)
 			sig.return_value = 131;
+		else if (sig.return_value == 11)
+			sig.return_value = 127;
 	}
 	if (parse->heredoc_pfd > 0)
 	{

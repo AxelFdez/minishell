@@ -15,7 +15,8 @@ void	ft_error(char *err_mess)
 
 void error_exec_message(t_parsing *parse)
 {
-	if (parse->command[0][0] == '/' || parse->command[0][0] == '.')
+	if (parse->command[0][0] == '/'
+		|| (parse->command[0][0] == '.' && parse->command[0][1] == '/'))
 	{
 		if (access(parse->command[0], F_OK))
 		{

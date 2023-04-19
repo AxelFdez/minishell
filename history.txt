@@ -2448,3 +2448,112 @@ echo $?
 <<
 << 1
 <<
+echo "bip | bip ; coyotte > < \" "
+"
+"
+""
+
+echo "bip | bip ; coyotte > < \" "
+"
+"
+""
+
+\
+
+
+echo "bip | bip ; coyotte > < \" "
+"
+"
+""
+
+
+
+
+
+echo "bip | bip ; coyotte > < \""
+
+
+echo "bip | bip ; coyotte > < \
+
+echo "bip | bip ; coyotte > < \"
+
+echo "bip | bip ; coyotte > < \""
+
+bash
+echo $USER$var\$USER$USER\$USERtest$USER
+$
+$LESS$VAR
+..
+$?
+bash
+..
+echo $>
+..
+echo $?
+dasdas
+.adsf
+bash
+make
+..
+fawefa
+.asfas
+./faadsf
+/fasdfas
+./srcs/
+.faef
+cat | cat | cat | ls
+cat Makefile | grep pr | head -n 5 | hello
+ls | exit
+ls | exit
+bash
+ls | exit
+exit
+exit
+exit
+exit
+exit
+exit
+ls | exit
+sleep 5 | exit
+echo coucou > a | echo salut > b | echo bonjour > c
+cat a
+cat b
+cat c
+< a cat < b < c
+rm b
+< a cat < b < c
+echo bonjour >>> test
+echo $?
+bash
+echo bonjour |;
+echo bonjour > $test w/ test="o1 o2"
+echo bonjour > $test
+ls
+/bin/echo bonjour
+unset PATH
+echo $PATH
+ls
+echo $?
+ls
+echo $?
+bash
+unset PATH
+echo $?
+unset PATH
+ls
+echo $?
+unset "" test
+$?
+unset =
+bash
+echo bonjour > $test
+ls
+rm a  c bonjour 
+echo bonjour > $test
+ls
+rm bonjour 
+ls
+echo bonjour > $test
+ls
+echo bonjour > > out
+echo $?
