@@ -87,7 +87,7 @@ void	signals_func(void);
 void	sig_int(int param);
 
 //**** execution **************************************************************
-int		ft_main_loop(t_parsing *parse);
+void	ft_main_loop(t_parsing *parse);
 int		is_pipe(t_parsing *parse);
 void	execute_cmd(t_parsing *parse);
 void	execute_built_in(t_parsing *parse);

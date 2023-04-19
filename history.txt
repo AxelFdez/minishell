@@ -1324,3 +1324,230 @@ cat
 ls
 cat
 echo $?
+ls
+<< 1
+
+
+echo $?
+ls
+echo $?
+cat
+echo $?
+bash
+make
+cat
+echo $?
+cat
+echo $?
+echo $?
+cat
+echo $?
+echo $?
+bash
+make
+echo $?
+cat
+cat
+cat
+echo $?
+bash
+ps
+ls
+cat
+echo $?
+cat
+cat
+cat
+cat
+echo $?
+defewfg
+echo $?
+cat
+echo $?
+echo $?
+cat
+echo $?
+wgwaerg
+echo $?
+cat
+echo $?
+adgas
+echo $?
+/
+echo $?
+/afwe
+echo $?
+echo $?
+cat
+echo $?
+echo $?
+efweew
+echo $?
+cat
+echo $?
+mak
+cat
+echo $?
+echo $?
+cat
+cat
+cat
+echo $?
+echo $?
+echo $?
+ls
+ls
+ps
+ls
+cat
+echo $?
+ls
+cat
+ls
+cat
+cat
+cat
+cat
+cat
+echo $?
+bash
+cat
+echo $?
+cat
+echo $?
+cat
+echo $?
+make
+cat
+echo $?
+cat
+cat
+
+cat
+cat
+echo $?
+fafasd
+echo $?
+cat
+echo $?
+/dwadw
+echo $?
+/
+echo $?
+cat
+echo $?
+bash
+bash]
+bash
+cat
+echo $?
+cat
+echo $?
+cat
+echo $?
+exit
+cat
+bash
+vwefwe
+echo $?
+/
+echo $?
+cat
+echo $?
+echo cwadwa
+echo $?
+export afew
+export afew=
+export afew=afeaf
+export afew=afeaf'\d
+
+echo $?
+|
+echo $?
+|
+echo $?
+afaef
+echo $?
+/
+echo $?
+aFaefwe
+echo $?
+cafewf
+echo $?
+fkewfewf
+echo $?
+echo $?
+<< 1 cat
+echo $?
+<< 1 cat
+echo $?
+<< 1 ls
+<< 1 ls
+<< 1 cat
+echo $?
+cat
+echo $?
+gwegf
+echo $?
+cat
+echo $?
+|
+echo $?
+|
+echo $?
+fwefew
+echo $?
+gweagweg
+echo $?
+/
+echo $?
+cafwef
+echo $?
+echo $?
+echo $?
+cat
+cat
+<< 1
+echo $?
+echo $?
+echo $?
+echo $?
+echo $?
+fadfas
+echo $?
+echo $?
+echo $?
+echo $?
+echo $?
+echo $?
+|
+echo $?
+cat
+echo $?
+<< 1
+echo $?
+!
+echo $?
+echo $?
+fasfds
+echo $?
+|
+echo $?
+cacws
+echo $?
+|
+echo $?
+>
+echo $?
+ls
+<< 1
+<< 1 cat
+echo $?
+<< 1 2
+cat
+
+wc
+echo $?
+bash
+echo $?
+<< 
