@@ -5,6 +5,7 @@ pid_t cmd1(t_parsing *parse, int *pfd)
 	pid_t child;
 
 	check_heredoc(parse);
+	sig.child = 0;
 	child = fork();
 	if (child == -1)
 		perror("Fork error");
@@ -26,6 +27,7 @@ pid_t cmd2(t_parsing *parse, int *pfd)
 	pid_t child;
 
 	check_heredoc(parse);
+	sig.child = 0;
 	if (!parse->lst_cmdline)
 		return (-1);
 	child = fork();

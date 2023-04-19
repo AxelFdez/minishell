@@ -5,11 +5,10 @@ static int	first_cmd(t_parsing *parse)
 	pid_t	child;
 	int		pfd[2];
 
-	//dprintf (2, "stdin = %d\n", dup(STDIN_FILENO));
-	//system("lsof -c minishell");
 	check_heredoc(parse);
 	if (!parse->lst_cmdline)
 		return (-1);
+	sig.child = 0;
 	pipe(pfd);
 	child = fork();
 	if (child == -1)
@@ -36,6 +35,7 @@ static int	middle_cmd(t_parsing *parse)
 	check_heredoc(parse);
 	if (!parse->lst_cmdline)
 		return (-1);
+	sig.child = 0;
 	pipe(pfd);
 	child = fork();
 	if (child == -1)
@@ -65,6 +65,7 @@ static int	last_cmd(t_parsing *parse)
 	check_heredoc(parse);
 	if (!parse->lst_cmdline)
 		return (-1);
+	sig.child = 0;
 	child = fork();
 	if (child == -1)
 		perror("Fork error");

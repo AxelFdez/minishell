@@ -2273,3 +2273,178 @@ cat
 cat
 
 
+ls
+cd ..
+ls
+cd minishell/
+<< 1
+<< 1
+ls
+ls
+<< 1
+
+<< 1
+ps
+<< 1
+ls
+ls
+<< 2
+ls
+<< 1
+<< 1
+<< 1
+<< 1
+<< 1
+ls
+cat
+<< 1
+<< 1
+cat
+cat
+ls
+cat
+cat
+<< 1
+cat
+cat
+cat
+cat
+<< 1
+<< 1
+<< 1
+ls
+<< 1
+cat
+cat
+<< 1
+<< 
+<< 1
+<< 1
+<< 1
+<< 1
+ps
+<< 1
+<< 1
+cat
+cat
+cat
+cat
+<< 1
+<< 1
+<< 1
+cat
+cat
+cat
+<< 1
+<< 1
+<< 1
+bash
+<< 1
+;s
+ls
+ls
+<< 1
+<< 1
+bash
+<< 1
+echo $?
+<< 1
+echo $?
+<< 1
+echo $?
+bash
+<< 1
+echo $?
+cat
+echo $?
+echo $?
+cat
+echp $?
+echo $?
+cat
+echo $?
+<< 1 cat
+<< 1 cat
+<< 1 cat
+bash
+<< 1
+<< 1 cat
+<< 1 cat
+<< 1 cat
+<< 1 cat
+<< 1 cat
+<< 1 cat
+<< 1 cat
+<< 1 cat
+<< 1
+<< 1
+<< 1
+<< 1
+<< 1 cat
+<< 1 cat
+<< 1
+<< 1 << 2 << 3 cat
+<< 1 << 2 << 3 cat
+<< 1 << 2 << 3 cat
+<< 1 << 2 << 3 cat
+<< 1 << 2 << 3 cat
+<< 1 << 2 cat
+<< 1 << 2 << 3 cat
+<< 1
+<< 1 << 2 << 3 cat
+<< 1 << 2 << 3 cat
+<< 1 << 2 << 3 cat
+<< 1 << 2 << 3 cat > 3
+cat 3
+<< 1 << 2 cat > 1 | ls | wc -l > 2 | << 3 cat
+cat 1
+cat 2
+bash
+<< 1 << 2 cat > 1 | ls > 2 | << 3 cat
+cat 2
+cat 1
+<< 1 << 2 cat > 1 | ls | wc -l > 2 | << 3 cat~
+<< 1 << 2 cat > 1 | ls | wc -l > 2 | << 3 cat~
+<< 1 << 2 cat > 1 | ls | wc -l > 2 | << 3 cat
+cat 2
+ls | wc
+ls | wc -l
+ls | wc -l > 2
+cat 2
+ls | wc -l | cat -e > 2
+cat 2
+ls | wc -l | cat -e > 2 > 3
+cat 2
+cat 3
+ls | wc -l | cat -e > 2 > 3 | ls
+<< 1 << 2 cat > 1 | ls | wc > 2 | << 3 cat
+cat 2
+<< 1 << 2 cat > 1 | ls | wc -l > 2 | << 3 cat
+cat 2
+cat 1
+<< 1 << 2 cat > 1 | ls | wc -l > 2 | << 3 cat
+cat 2
+<< 1 << 2 cat > 1 | ls | wc -l > 2 | << 3 cat
+cat 2
+<< 1 cat > 1 | ls | cat -e | cat -e > 2 | echo coucou
+cat 2
+cat 1
+rm 1 2 3
+rm test 
+/rda
+echo $?
+/afasdf
+echo $?
+env
+ls
+cd ..
+cd minishell/
+;s
+echo $?
+<
+<<
+echo $?
+<<
+<<
+<< 1
+<<

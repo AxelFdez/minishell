@@ -55,6 +55,7 @@ static void	simple_command(t_parsing *parse)
 	check_heredoc(parse);
 	if (!parse->lst_cmdline)
 		return;
+	sig.child = 0;
 	child = fork();
 	if (child < 0)
 		perror("fork error\n");
@@ -64,14 +65,12 @@ static void	simple_command(t_parsing *parse)
 		execute_command_child(parse);
 	}
 	waitpid(child, &parse->status, 0);
-	//dprintf(2, "ret = %d\n", sig.return_value);
 	command_father(parse);
 }
 
 void execute_cmd(t_parsing *parse)
 {
 	sig.heredoc = 0;
-	sig.child = 0;
 	built_in_used_alone(parse);
 	if (!parse->lst_cmdline)
 		return ;

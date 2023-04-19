@@ -28,6 +28,7 @@ SRCS =  srcs/minishell.c \
 		srcs/ft_handle_shlvl.c \
 		srcs/ft_handle_underscore.c \
 		srcs/ft_heredoc.c \
+		srcs/ft_heredoc_utils.c \
 		srcs/built-in/ft_echo.c \
 		srcs/built-in/ft_env.c \
 		srcs/built-in/ft_pwd.c \
@@ -59,8 +60,8 @@ $(NAME): $(OBJECT_FILES)
 
 #	 $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -lreadline
 #	@$(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a $(RLFLAGS) -lreadline
-# @ $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -L /opt/homebrew/Cellar/readline/8.2.1/lib/ -lreadline -fsanitize=address
-	@ $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -L ~/homebrew/Cellar/readline/8.2.1/lib/ -lreadline
+	@ $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -L /opt/homebrew/Cellar/readline/8.2.1/lib/ -lreadline
+#	@ $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -L ~/homebrew/Cellar/readline/8.2.1/lib/ -lreadline
 	@echo "$(GREEN)<<<<< $(NAME) exec file created >>>>>$(DEFAULT)"
 #------------------------------------------------------------------------------
 clean:
