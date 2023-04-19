@@ -1,5 +1,31 @@
 #include "../includes/minishell.h"
 
+int	ft_check_double_pipes(t_list *lst)
+{
+	t_list	*tmp;
+	char	*err_message;
+
+	err_message = "minishell: syntax error near unexpected token";
+	tmp = lst;
+	while (tmp)
+	{
+		if (ft_str_isspaces(tmp->str) == 0)
+		{
+			ft_lstdel_actual(&lst, tmp);
+			tmp = lst;
+		}
+		else if (tmp->next && ft_strcmp(tmp->str, "|") == 0
+			&& ft_strcmp(tmp->next->str, "|") == 0)
+		{
+			ft_printf("%s `%c'\n", err_message, '|');
+			return (1);
+		}
+		else
+			tmp = tmp->next;
+			
+	}
+	return (0);
+}
 static int	ft_check_after_token(char *s)
 {
 	int		i;
@@ -31,8 +57,7 @@ static int	ft_check_syntax(t_parsing *parse, char *s)
 	{
 		if (ft_strnstr(s, parse->lex[i], ft_strlen(s)))
 		{
-			ft_printf("%s `%c'\n", err_message,
-				parse->lex[i][ft_strlen(parse->lex[i]) -1]);
+			ft_printf("%s `%s'\n", err_message, parse->lex[i]);
 			return (1);
 		}
 		i++;

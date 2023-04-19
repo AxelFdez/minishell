@@ -53,7 +53,7 @@ typedef struct s_parsing
 	char	var_name[1024];
 	char	c;
 	char	pwd_save[1024];
-	char	*lex[7];
+	char	*lex[11];
 	char	*meta[6];
 	char	*s1;
 	char	*s2;
@@ -129,6 +129,9 @@ void	ft_init_lexer(t_parsing *parse);
 void	ft_increment(t_parsing *parse, char c);
 int		ft_len_str_to_cmp(t_parsing *parse);
 char	*ft_fill_str_to_cmp(t_parsing *parse, char *s);
+// int		ft_str_is_empty(char *str);
+// int		ft_empty_str_in_lst(char *s);
+int		ft_check_double_pipes(t_list *lst);
 
 
 

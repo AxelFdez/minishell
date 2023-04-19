@@ -59,6 +59,8 @@ SRCS = 	srcs/str/ft_split.c \
 	   	srcs/is/ft_isalnum.c \
 	   	srcs/is/ft_isdigit.c \
 	   	srcs/is/ft_isascii.c \
+	   	srcs/is/ft_isspaces.c \
+	   	srcs/is/ft_str_isspaces.c \
 	   	srcs/tab/ft_nb_digit.c \
 	   	srcs/tab/ft_rev_int_tab.c \
 	   	srcs/tab/ft_sort_int_tab.c \
