@@ -8,7 +8,11 @@ void    ft_init_lexer(t_parsing *parse)
 	parse->lex[3] = "> >";
 	parse->lex[4] = "<>";
 	parse->lex[5] = "><";
-	parse->lex[6] = NULL;
+	parse->lex[6] = ">|";
+	parse->lex[7] = "<|";
+	parse->lex[8] = "|<";
+	parse->lex[9] = "|>";
+	parse->lex[10] = NULL;
 }
 
 void	ft_increment(t_parsing *parse, char c)

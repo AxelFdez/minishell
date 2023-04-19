@@ -16,6 +16,7 @@ void	ft_main_loop(t_parsing *parse)
 		ft_quotes(parse);
 		ft_add_history(parse);
 		ft_history(parse);
+
 		if (ft_lexer(parse) == 0)
 		{
 			if (ft_get_cmdline(parse))

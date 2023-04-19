@@ -58,7 +58,7 @@ void	ft_echo(t_list *tmp, t_parsing *parse)
 
 	nl = 0;
 	tmp = tmp->next;
-	if (tmp != NULL && !ft_check_arg(tmp->str))
+	while (tmp && !ft_check_arg(tmp->str))
 	{
 		tmp = tmp->next;
 		nl = 1;

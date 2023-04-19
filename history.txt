@@ -1184,6 +1184,7 @@ sghsfh
 
 >>>>>>> origin/chris
 << 1
+<<<<<<< HEAD
 cd ../../../../..
 pwd
 cd /home/user42
@@ -1551,3 +1552,419 @@ echo $?
 bash
 echo $?
 << 
+=======
+kjdfkjdfh
+unset HOME
+export
+cd ..
+pwd
+cd 
+cd 
+pwd
+cd -
+cd 
+pwd
+unset _
+env
+cd 
+pwd
+cd 
+pwd
+cd -
+export
+export
+unset HOME
+export
+env
+cd ~
+cd -
+pwd
+export
+unset HOME
+export
+env
+export
+unset HOME USER SHLVL
+export
+env
+cd 
+cd uyhug iuhiuhg iuhgiuh g
+unset ""
+echo $?
+unset ljhfjf
+unset ""
+echo $?
+unset kjhf
+echo $?
+cd kuhgoiutg giohjgoihjoijog goirjgoijgoirjgor
+cd .. kufuif
+pwd
+cd -
+pwd
+export
+pwd
+unset HOME USER PWD SHLVL
+export
+cd 
+echo -n  -nnnnn -nnnnng aaa
+echo -n  -nnnnn -nnnnng aaa
+echo -n  -nnnnn -nnnnng aaa -nnn
+echo -n  -nnnnn -nnnnng aaa -nnn -n -n
+echo q
+echo "test"
+echo "test"abc
+echo "test" abc
+echo abc "test"
+echo |
+echo ;
+echo $USER
+echo $USER"test"
+echo "test"$USER
+echo "$USER"
+echo "'$USER'"
+echo '"$USER"'
+echo $USER$USER
+echo $USERA
+echo $USER$USERA
+echo $USERA$USER
+export TESTA=ec
+export TESTB=ho
+$TESTA$TESTB toto
+$TESTA$TESTB toto
+echo toto
+export TESTA=l
+export TESTB=s
+$TESTA$TESTB
+         
+					
+					
+                  
+				
+| |
+ls | | cat
+ls || cat
+ls | | cat
+ls | ; cat
+ls | | cat
+ls | > cat
+ls |> cat
+ls |< cat
+ec"ho" toto
+ec'"ho"' toto
+echo toto
+echo -n toto
+echo -nnnnnn toto
+echo -nnnnnn  -n -n -n toto
+echo -nnnnnn  -n -ne -n toto
+export
+export je!=toto
+export je{=toto
+export je{toto
+export jetoto
+export
+emv
+env
+export A=1 B=2
+export
+export var1=42 var-2=67 var3=789
+export
+echo $_
+export var1=42 var-2=67 var3=789
+echo $_
+echo aaa bbb ccc
+echo $_
+env
+env ewqew
+cd ..
+ls
+cd minishell
+ls
+cd 
+ls
+cd ~
+ls
+cd ~/Pictures/
+ls
+cd -
+ls
+cd -
+ls
+cd -
+cd 
+ls
+echo "\\s"
+echo "\n"
+''
+"
+
+"
+"
+"
+eweqwe ewqew"
+ls
+exit 8
+exit epoiwqpoe
+exit ewqe ewq ewq
+exit 8 8 8
+exit 512
+cat
+cat
+env
+echo
+ls
+cat
+cat
+exit
+cat
+eewqe
+eewqeewqew
+<< test echo
+<< test echo
+<< test echo
+history
+<< test
+history
+<< test echo
+cat | cat | ls
+
+which cat
+/bin/cat | /bin/cat | ls
+ls | cat ewqew
+ls | cd ehuwoqheuiwquhew
+cd ejwioqjeoiwq | ls
+cd jewqjoewiqw
+echo $?
+cd ewqewq | ls
+echo $?
+ls | cd ewqewq
+echo $?
+/bin/cat
+echo $?
+/bin/cat | ls
+echo $?
+ulimit -n 30
+ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls 
+exit
+export
+env
+ls
+/bin/ld
+/bin/ls
+exit
+cd
+cd goinfre
+ld
+ls
+echo toto > truc
+/bin/cat truc 
+echo toto > truc > truc2 > truc3
+/bin/cat truc3
+/bin/cat truc
+/bin/cat truc2
+echo toto > truc
+echo toto >> truc >> truc2 >> truc3
+/bin/cat truc2
+/bin/cat truc3
+/bin/cat truc1
+/bin/cat truc
+> truc echo toto > truc2
+/bin/cat truc
+/bin/cat truc2
+<< test << test2 << test3 echo
+<< test << test2 << test3 /bin/cat
+<< test /bin/cat << test2
+sleep 5 | ls
+<< test echo
+			
+      
+                  
+     
+    
+  
+ 
+ 
+ 
+ 
+ 
+  
+			
+
+
+
+   
+  
+export TESTA=ec TESTB=ho
+$TESTA$TESTB
+$TESTA$TESTB toto
+export testa=ec testb=ho
+$testa$testb
+$testa$testb toto
+aaa bbb
+echo $HOME tata
+echo "$HOME" "tata"
+echo "$HOME""tata"
+echo "$HOME" "tata"
+cd "$HOME"
+cd "$HOME" toto
+cd $HOME toto
+cd $HOME   toto
+cd $HOMEtoto
+cd $HOME toto
+cd $HOME  toto
+cd $HOME toto
+cd $HOME toto
+cd $HOME toto
+cd $HOME toto
+cd $HOME  toto
+cd $HOME     toto
+export var1=ec var2=ho
+export
+$var1$var2 toto
+dgdtg sdgadg
+echo aaa"bbbb""cccc"ddddddddddddd
+echo $USER$USER
+echo $USER$USERr
+echo $USER$USERr$HOME
+	
+     
+        
+   aaa
+           
+\n\n\n\n\n
+    
+	
+		
+       
+        
+   dededede      
+	
+		dsf   
+    
+     
+dgbdb
+    
+    
+	
+	       
+	    erf
+rgdqrg    
+      
+	
+lkjfhgkjdfg
+ljdhgkjhkg
+dtgsttweh|>
+skjhkjf >|
+dfqer |<
+khf >>|
+srff<<|
+eqrfgf <  <|
+hgf | |
+hgf |    |
+hgf |    | cat
+sf |      |
+sf |      | WQERR
+rf |       |     gr
+rf |   g    |     gr
+export var1="    aaa      bbbb  "
+echo $var1
+echo "$var1"
+echo '$var1'
+echo "'$var1'"
+echo '"$var1"'
+echo $USER$USER
+echo $USER $USER 
+echo $USER $USER 
+echo $USER$USER 
+echo $USER 
+echo $USER $USER 
+echo aaa bbb
+echo aaa $USER
+echo $USER $USER 
+echo $USER $USER
+echo $USER $USER
+echo $USER$USER
+echo |    |
+echo |    | rew
+echo |   f | rew
+jhsgd |   |  po
+jhsgd | i  |  po
+echo $USER $USER
+echo aaa |       	|  rrr
+       
+	
+		
+	
+	
+   	
+dfgdfg 
+sdfvf
+dfgadfg
+dghdgh
+asfsafg
+dgdf 
+           
+rdfgdgf egerg    		
+dfgadfg
+      		
+		
+dfg dafgsdfgh 
+adfgdafg 		fghfghfgh
+t 			 frf
+sdfgsfg
+adfgadfg  asdfgadfg
+afdg 		 srfg
+kjfgjhfg 		 ouhfijhfg
+kjf | 		 | ojfijf
+suh || ouhoiug
+kjrnjg | | ojrgg
+dtg
+dfg |>
+rgg		
+jhgg 	 | 		| ijfi 		|jfi
+khgfd 		 jkhdfj | 		 | jio
+khgfd               jkhdfj |                | jio
+khgfd               jkhdfj |                | jio
+khgfd               jkhdfj |                | jio
+>
+<
+       
+		
+aaa 			 bbbb
+aaa | 			 | fff
+aaa |                       | fff
+aaa 			 kkk
+aaa |                       | fff
+aaa 			 ddd
+aaa 		 ddd
+aaa | 		 | wqq
+		
+		     
+   	
+aaa 		 ppp
+aaa | 			 | ewa
+aaa 			 rrr
+hfr |         | ojoijf
+hfr || ojoijf
+hfr | | ojoijf
+		      
+export a=ec b=ho
+$a$b toto
+lsdjlksfj
+cat
+cat
+>>>>>>> origin/chris
+cat
+ls
+rm cat
+cat
+touch cat
+cat
+bash
+
+
+
+
+
+
+
+git add .
