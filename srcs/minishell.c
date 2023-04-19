@@ -1,6 +1,6 @@
 #include "../includes/minishell.h"
 
-t_sig	sig = {0, 0, 0, 0};
+t_sig	sig = {1, 0, 0, 0, 0};
 
 void	ft_main_loop(t_parsing *parse)
 {

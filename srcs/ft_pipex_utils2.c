@@ -37,3 +37,17 @@ void	delete_cmd(t_list **list_cmd)
 				ft_lstdel_front(&(*list_cmd));
 			ft_lstdel_front(&(*list_cmd));
 }
+
+int ft_lst_strchr_pipe(t_list *list)
+{
+	t_list *temp;
+	temp = list;
+
+	while (temp)
+	{
+		if (ft_strcmp(temp->str, "|") == 0)
+			return (0);
+		temp = temp->next;
+	}
+	return (1);
+}

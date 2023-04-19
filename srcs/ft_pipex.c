@@ -17,12 +17,7 @@ pid_t cmd1(t_parsing *parse, int *pfd)
 		close(pfd[1]);
 		execute_command_child(parse);
 	}
-	if (parse->heredoc_pfd > 0)
-	{
-		close(parse->heredoc_pfd);
-		dup2(parse->fd_stdin, STDIN_FILENO);
-		parse->heredoc_pfd = 0;
-	}
+	command_father(parse);
 	return child;
 }
 
@@ -45,11 +40,7 @@ pid_t cmd2(t_parsing *parse, int *pfd)
 		close(pfd[0]);
 		execute_command_child(parse);
 	}
-	if (parse->heredoc_pfd > 0)
-	{
-		close(parse->heredoc_pfd);
-		dup2(parse->fd_stdin, STDIN_FILENO);
-	}
+	command_father(parse);
 	return (child);
 }
 

@@ -25,6 +25,7 @@ typedef struct s_sig
 	int		heredoc;
 	int		int_heredoc;
 	int		return_value;
+	int		child_heredoc;
 }			t_sig;
 
 typedef struct s_pipex
@@ -107,6 +108,7 @@ void	parsing_command_child(t_parsing *parse);
 void	execute_command_child(t_parsing *parse);
 void	delete_cmd(t_list **list_cmd);
 void	multi_pipes(t_parsing *parse, t_pipex *pipex);
+void	command_father(t_parsing *parse);
 
 //**** parsing ****************************************************************
 void	ft_strdel_quotes(t_parsing *parse, char *str);

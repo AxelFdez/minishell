@@ -1,20 +1,6 @@
 
 #include "../includes/minishell.h"
 
-int ft_lst_strchr_pipe(t_list *list)
-{
-	t_list *temp;
-	temp = list;
-
-	while (temp)
-	{
-		if (ft_strcmp(temp->str, "|") == 0)
-			return (0);
-		temp = temp->next;
-	}
-	return (1);
-}
-
 void	parsing_command_child(t_parsing *parse)
 {
 	parse->built_in_cmd = 0;
@@ -41,12 +27,31 @@ void	execute_command_child(t_parsing *parse)
 	exit(sig.return_value);
 }
 
-void	simple_command(t_parsing *parse)
+void	command_father(t_parsing *parse)
+{
+	if (WIFEXITED(parse->status))
+		sig.return_value = WEXITSTATUS(parse->status);
+	else if (WIFSIGNALED(parse->status))
+	{
+		sig.return_value = WTERMSIG(parse->status);
+		if (sig.return_value == 2)
+			sig.return_value = 130;
+		else if (sig.return_value == 3)
+			sig.return_value = 131;
+	}
+	if (parse->heredoc_pfd > 0)
+	{
+		close(parse->heredoc_pfd);
+		dup2(parse->fd_stdin, STDIN_FILENO);
+		parse->heredoc_pfd = 0;
+	}
+}
+
+static void	simple_command(t_parsing *parse)
 {
 	pid_t child;
-	int		status;
 
-	status = 0;
+	parse->status = 0;
 	check_heredoc(parse);
 	if (!parse->lst_cmdline)
 		return;
@@ -58,28 +63,13 @@ void	simple_command(t_parsing *parse)
 		parsing_command_child(parse);
 		execute_command_child(parse);
 	}
-	waitpid(child, &status, 0);
+	waitpid(child, &parse->status, 0);
 	//dprintf(2, "ret = %d\n", sig.return_value);
-	if (WIFEXITED(status))
-		sig.return_value = WEXITSTATUS(status);
-	else if (WIFSIGNALED(status))
-	{
-		sig.return_value = WTERMSIG(status);
-		if (sig.return_value == 2)
-			sig.return_value = 130;
-		else if (sig.return_value == 3)
-			sig.return_value = 131;
-	}
-	if (parse->heredoc_pfd > 0)
-	{
-		close(parse->heredoc_pfd);
-		dup2(parse->fd_stdin, STDIN_FILENO);
-	}
+	command_father(parse);
 }
 
 void execute_cmd(t_parsing *parse)
 {
-	parse->heredoc_pfd = 0;
 	sig.heredoc = 0;
 	sig.child = 0;
 	built_in_used_alone(parse);

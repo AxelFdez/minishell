@@ -4,10 +4,15 @@ void	sig_quit(int param)
 {
 	(void)param;
 
-	if (sig.child == 0 && sig.heredoc == 0)
+	if (sig.child == 0 && sig.heredoc != 0)
 	{
+		dprintf(2, "AAA");
 		write(1, "^\\Quit: 3\n", 10);
 		sig.return_value = 131;
+	}
+	else if (sig.heredoc == 0)
+	{
+		rl_redisplay();
 	}
 	else
 	{
@@ -21,14 +26,15 @@ void	sig_int(int param)
 {
 	(void)param;
 
-	if (sig.child == 0 && sig.heredoc == 0)
+	if (sig.heredoc == 0 && sig.child != 0)
+	{
+		sig.heredoc = 1;
+		kill(sig.child_heredoc, SIGTERM);
+	}
+	else if (sig.child == 0 && sig.heredoc != 0)
 	{
 		write(2, "^C\n", 3);
 		sig.return_value = 130;
-	}
-	else if (sig.heredoc == 1)
-	{
-		sig.int_heredoc = 1;
 	}
 	else
 	{

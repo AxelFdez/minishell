@@ -77,11 +77,7 @@ static int	last_cmd(t_parsing *parse)
 		execute_command_child(parse);
 	}
 	close(parse->temp_fd);
-	if (parse->heredoc_pfd > 0)
-	{
-		close(parse->heredoc_pfd);
-		dup2(parse->fd_stdin, STDIN_FILENO);
-	}
+	command_father(parse);
 		return (child);
 }
 
