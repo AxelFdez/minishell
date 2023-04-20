@@ -22,6 +22,26 @@ static void	ft_handle_quotes(t_parsing *parse)
 	parse->quote_to_del++;
 }
 
+static void	ft_manage_dollar(t_parsing *parse)
+{
+	while (parse->input[parse->i] == '$' && parse->input[parse->i +1] != ' '
+			&& parse->input[parse->i +1] != '\0')
+	{
+		ft_handle_dollar(parse);
+		while (parse->input[parse->i] == '$' && parse->input[parse->i +1] == '$')
+		{
+			parse->len++;
+			parse->i++;
+		}
+		if (parse->input[parse->i] == ' ')
+		{
+			parse->i--;
+			parse->len--;
+			return ;
+		}
+	}
+}
+
 void	is_no_quote_string(t_parsing *parse)
 {
 	while (parse->input[parse->i] && !is_meta_char(parse->input[parse->i])
@@ -33,22 +53,9 @@ void	is_no_quote_string(t_parsing *parse)
 			    parse->len += 2;
 			    parse->i += 2;
             }
-		while (parse->input[parse->i] == '$' && parse->input[parse->i +1] != ' '
+		if (parse->input[parse->i] == '$' && parse->input[parse->i +1] != ' '
 			&& parse->input[parse->i +1] != '\0')
-		{
-			ft_handle_dollar(parse);
-			while (parse->input[parse->i] == '$' && parse->input[parse->i +1] == '$')
-			{
-				parse->len++;
-				parse->i++;
-			}
-			if (parse->input[parse->i] == ' ')
-			{
-				parse->i--;
-				parse->len--;
-				break ;
-			}
-		}
+			ft_manage_dollar(parse);
 		if ((parse->input[parse->i] == '\"' || parse->input[parse->i]
 				== '\'') && (parse->input[parse->i +1] != '\0'))
 			ft_handle_quotes(parse);

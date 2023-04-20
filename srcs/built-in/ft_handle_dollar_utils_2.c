@@ -37,8 +37,6 @@ void	ft_replace_value(t_parsing *parse, t_list **lst)
 	tmp = *lst;
 	while (tmp)
 	{
-		printf("str = %s\n", tmp->str);
-
 		if (tmp->str[0] == '$')
 		{
 			ret_var_name = ft_found_var(parse, tmp->str);
