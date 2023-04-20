@@ -5,7 +5,7 @@ LIBFT = libft/
 LST = linked_list/
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
-LRFLAGS = -L$(shell ./readline_path.sh)
+LRFLAGS = -L $(shell ./readline_path.sh)
 SRCS =  srcs/minishell.c \
 		srcs/ft_parsing.c \
 		srcs/ft_error.c \
@@ -58,7 +58,7 @@ all: $(NAME)
 $(NAME): $(OBJECT_FILES)
 	@echo "\n"
 	@$(MAKE) -C $(LIBFT)
-	@ $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a $(LRFLAGS) -lreadline
+	$(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a $(LRFLAGS) -lreadline
 	@echo "$(GREEN)<<<<< $(NAME) exec file created >>>>>$(DEFAULT)"
 #------------------------------------------------------------------------------
 clean:
