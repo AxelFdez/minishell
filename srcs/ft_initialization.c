@@ -15,7 +15,7 @@
 void	ft_initialization(t_parsing *parse)
 {
 	parse->lst_cmdline = NULL;
-	parse->non_bl_chars = "=/-@?";
+	parse->non_bl_chars = "=/-@";
 	parse->tmp_input = NULL;
 	parse->i = 0;
 	parse->is_in_str = 0;

@@ -32,7 +32,7 @@ char	*ft_set_str_to_comp(char *s)
 }
 
 static void	ft_is_dollar(t_parsing *parse, t_list **lst)
-{
+{puts("is dollar");
 	while (parse->str_tmp[parse->i_b] && parse->str_tmp[parse->i_b] != ' '
 			&& parse->str_tmp[parse->i_b] != '\"' && parse->str_tmp[parse->i_b]
 			!= '\'' && parse->str_tmp[parse->i_b] != '\n'
@@ -40,6 +40,12 @@ static void	ft_is_dollar(t_parsing *parse, t_list **lst)
 	{
 			parse->len_b++;
 			parse->i_b++;
+		if (parse->str_tmp[parse->i_b] == '?')
+		{
+			parse->len_b++;
+			parse->i_b++;
+			break ;
+		}
 		if (parse->str_tmp[parse->i_b] == '$')
 			break ;
 	}
@@ -65,4 +71,5 @@ void	ft_loop_dollar(t_parsing *parse, t_list **lst)
 		else if (parse->str_tmp[parse->i_b] != '$')
 			ft_isnot_dollar(parse, lst);
 	}
+	ft_lstprint_from_head(*lst);
 }
