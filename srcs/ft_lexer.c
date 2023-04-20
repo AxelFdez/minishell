@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lexer.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:31:31 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/20 11:31:32 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/minishell.h"
 
 int	ft_check_double_pipes(t_list *lst)
@@ -9,8 +21,10 @@ int	ft_check_double_pipes(t_list *lst)
 	tmp = lst;
 	while (tmp)
 	{
-		if (ft_str_isspaces(tmp->str) == 0)
+		if (tmp->next && ft_strcmp(tmp->str, "|") == 0
+			&& ft_str_isspaces(tmp->next->str) == 0)
 		{
+			tmp = tmp->next;
 			ft_lstdel_actual(&lst, tmp);
 			tmp = lst;
 		}
@@ -22,7 +36,6 @@ int	ft_check_double_pipes(t_list *lst)
 		}
 		else
 			tmp = tmp->next;
-
 	}
 	return (0);
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_echo.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:30:38 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/20 11:30:40 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/minishell.h"
 
 static int	ft_check_arg(char *s)
@@ -48,7 +60,7 @@ static void	ft_print_tild(t_parsing *parse)
 
 	tild_ret = ft_loop_tild_hyphen(parse, '~');
 	ft_putstr_fd(tild_ret, 1);
-	
+
 	free(tild_ret);
 }
 

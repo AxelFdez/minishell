@@ -1,8 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_initialization.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:31:19 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/20 11:31:20 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/minishell.h"
 
 void	ft_initialization(t_parsing *parse)
 {
 	parse->lst_cmdline = NULL;
+	parse->non_bl_chars = "=/-@?";
 	parse->tmp_input = NULL;
 	parse->i = 0;
 	parse->is_in_str = 0;

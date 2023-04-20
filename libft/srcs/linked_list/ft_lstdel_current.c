@@ -6,7 +6,7 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 10:05:09 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/18 10:05:39 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/20 11:36:53 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstdel_current(t_list **lst)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	temp = (*lst);
 	if (!(*lst))

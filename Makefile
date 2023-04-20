@@ -5,7 +5,7 @@ LIBFT = libft/
 LST = linked_list/
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
-RLFLAGS = -L /Users/chmassa/.brew/opt/readline/lib
+LRFLAGS = -L$(shell ./readline_path.sh)
 SRCS =  srcs/minishell.c \
 		srcs/ft_parsing.c \
 		srcs/ft_error.c \
@@ -29,6 +29,8 @@ SRCS =  srcs/minishell.c \
 		srcs/ft_handle_underscore.c \
 		srcs/ft_heredoc.c \
 		srcs/ft_check_herringbone.c \
+		srcs/ft_is_quote_string.c \
+		srcs/ft_is_no_quote_string.c \
 		srcs/built-in/ft_echo.c \
 		srcs/built-in/ft_env.c \
 		srcs/built-in/ft_pwd.c \
@@ -53,13 +55,10 @@ all: $(NAME)
 	@$(CC) $(CFLAGS) $(HEADER) -c $< -o $(<:.c=.o)
 	@printf "$(YELLOW)Compiling $(NAME): << $< >>\033[K\r$(DEFAULT)"
 
-
 $(NAME): $(OBJECT_FILES)
 	@echo "\n"
 	@$(MAKE) -C $(LIBFT)
-#	@$(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a $(RLFLAGS) -lreadline
-#	@ $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -L /opt/homebrew/Cellar/readline/8.2.1/lib/ -lreadline
-	@ $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a -L ~/homebrew/Cellar/readline/8.2.1/lib/ -lreadline
+	@ $(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a $(LRFLAGS) -lreadline
 	@echo "$(GREEN)<<<<< $(NAME) exec file created >>>>>$(DEFAULT)"
 #------------------------------------------------------------------------------
 clean:
@@ -78,8 +77,6 @@ fclean: clean
 re: fclean all
 	@echo "$(GREEN)\n<<<<< $(NAME) make re done >>>>>$(DEFAULT)"
 #------------------------------------------------------------------------------
-
-
 #COLORS
 RED = \033[3;31m
 GREEN = \033[3;32m

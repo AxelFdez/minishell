@@ -6,7 +6,7 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 12:11:01 by chmassa           #+#    #+#             */
-/*   Updated: 2023/03/30 23:38:42 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/20 11:37:04 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstdel_front(t_list **lst)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	if (!(*lst))
 		return ;

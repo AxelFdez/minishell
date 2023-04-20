@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_llu.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 17:37:55 by chmassa           #+#    #+#             */
-/*   Updated: 2023/04/06 18:15:39 by chmassa          ###   ########.fr       */
+/*   Updated: 2023/04/20 11:57:07 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 unsigned long long	ft_atoi_llu(const char *str)
 {
 	unsigned long long	nb;
-	int	i;
-	int	sign;
+	int					i;
+	int					sign;
 
 	i = 0;
 	nb = 0;

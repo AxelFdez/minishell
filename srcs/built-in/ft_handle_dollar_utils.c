@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_handle_dollar_utils.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:30:54 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/20 11:30:55 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/minishell.h"
 
 void	ft_fill_tmplst(t_parsing *parse, t_list **lst, int start)
@@ -22,13 +34,13 @@ char	*ft_set_str_to_comp(char *s)
 static void	ft_is_dollar(t_parsing *parse, t_list **lst)
 {
 	while (parse->str_tmp[parse->i_b] && parse->str_tmp[parse->i_b] != ' '
-		&& parse->str_tmp[parse->i_b] != '\"' && parse->str_tmp[parse->i_b]
-		!= '\'' && parse->str_tmp[parse->i_b] != '\n')
+			&& parse->str_tmp[parse->i_b] != '\"' && parse->str_tmp[parse->i_b]
+			!= '\'' && parse->str_tmp[parse->i_b] != '\n'
+			&& !ft_found_char(parse->non_bl_chars, parse->str_tmp[parse->i_b]))
 	{
-		parse->len_b++;
-		parse->i_b++;
-		if (parse->str_tmp[parse->i_b] == '$'
-			|| parse->str_tmp[parse->i_b] == '/')
+			parse->len_b++;
+			parse->i_b++;
+		if (parse->str_tmp[parse->i_b] == '$')
 			break ;
 	}
 	ft_fill_tmplst(parse, lst, parse->i_b - parse->len_b);

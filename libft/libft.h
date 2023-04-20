@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:21:09 by chmassa           #+#    #+#             */
-/*   Updated: 2023/04/19 09:43:33 by chmassa          ###   ########.fr       */
+/*   Updated: 2023/04/20 11:51:53 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_strrev(char *str);
 void	ft_strcpy(char *dst, const char *src);
 int		ft_atoi(const char *str);
-unsigned long long		ft_atoi_llu(const char *str);
+unsigned long long	ft_atoi_llu(const char *str);
 int		ft_atoi_base(const char *str, const char *base);
 int		ft_strncmp(const char *s1, const char *s2,	size_t n);
 int		ft_strcmp(const char *s1, const char *s2);
@@ -84,8 +84,6 @@ int		ft_isdigit(int c);
 int		ft_isprint(int c);
 int		ft_isspaces(char c);
 int		ft_str_isspaces(char *str);
-
-
 //----------------------------------------------------------------------
 //------ to ------------------------------------------------------------
 //----------------------------------------------------------------------
@@ -125,7 +123,6 @@ int		ft_print_x(unsigned int n, char *base);
 int		ft_print_u(unsigned int n);
 int		ft_print_p(unsigned long long int n, char *base);
 int		ft_print_di(int nb);
-
 //-----------------------------------------------------------------------------
 //------ linked lists ---------------------------------------------------------
 //-----------------------------------------------------------------------------
@@ -139,7 +136,6 @@ void	ft_sortlst_str(t_list **lst);
 char	*ft_lst_to_str(t_list *lst);
 char	**ft_lst_to_char_tab(t_list *lst);
 int    ft_lst_strcmp(t_list *lst, char *s);
-
 //***** lstadd *****************************************************************
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_position(t_list **lst, t_list *new, int position);

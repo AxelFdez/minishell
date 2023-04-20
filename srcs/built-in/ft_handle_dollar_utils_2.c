@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_handle_dollar_utils_2.c                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:30:52 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/20 11:30:53 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/minishell.h"
 
 char	*ft_found_var(t_parsing *parse, char *s)
@@ -37,6 +49,8 @@ void	ft_replace_value(t_parsing *parse, t_list **lst)
 	tmp = *lst;
 	while (tmp)
 	{
+		printf("str = %s\n", tmp->str);
+
 		if (tmp->str[0] == '$')
 		{
 			ret_var_name = ft_found_var(parse, tmp->str);
@@ -46,7 +60,7 @@ void	ft_replace_value(t_parsing *parse, t_list **lst)
 				tmp->str = ft_strdup(ret_var_name);
 				free(ret_var_name);
 			}
-			else
+			else if (ft_strlen(tmp->str) > 1)
 				ft_lstdel_actual(lst, tmp);
 		}
 		tmp = tmp->next;

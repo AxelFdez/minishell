@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_handle_dollar.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:30:56 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/20 11:30:57 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/minishell.h"
 
 static int	ft_found_var_in_env(t_parsing *parse)
@@ -34,8 +46,8 @@ static void	ft_retrieve_var_name(t_parsing *parse)
 	parse->i++;
 	while (parse->input[parse->i] && parse->input[parse->i] != '\"'
 		&& parse->input[parse->i] != '\'' && parse->input[parse->i] != ' '
-		&& parse->input[parse->i] != '$' && parse->input[parse->i] != '/'
-		&& parse->input[parse->i] != '=')
+		&& parse->input[parse->i] != '$'
+		&& !ft_found_char(parse->non_bl_chars, parse->input[parse->i]))
 	{
 		parse->var_name[i] = parse->input[parse->i];
 		i++;

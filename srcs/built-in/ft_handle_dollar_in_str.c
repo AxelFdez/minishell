@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_handle_dollar_in_str.c                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:30:51 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/20 11:30:52 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/minishell.h"
 
 void	ft_handle_dollar_in_str(t_parsing *parse)
@@ -26,4 +38,5 @@ void	ft_handle_dollar_in_str(t_parsing *parse)
 	free(parse->str_tmp);
 	parse->str_tmp = NULL;
 	ft_lstdel_all(&tmplst);
+	parse->is_dollar = 0;
 }

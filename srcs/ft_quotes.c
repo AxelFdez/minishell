@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_quotes.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:31:40 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/20 11:31:41 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 
 #include "../includes/minishell.h"
@@ -23,7 +35,7 @@ void	ft_strdel_quotes(t_parsing *parse, char *str)
 			{
 				str[parse->k] = str[parse->k +1];
 				parse->k++;
-			}	
+			}
 		}
 		else
 			parse->j++;
