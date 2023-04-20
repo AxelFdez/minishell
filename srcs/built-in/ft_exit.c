@@ -30,7 +30,7 @@ void	ft_exit(t_parsing *parse)
 	unsigned long long	ret_atoi;
 	if (parse->lst_cmdline->next == NULL)
 	{
-		if (sig.child != 0)
+		if (g_sig.child != 0)
 			write(1, "exit\n", 5);
 		exit (0);
 	}

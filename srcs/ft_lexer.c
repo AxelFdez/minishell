@@ -22,7 +22,7 @@ int	ft_check_double_pipes(t_list *lst)
 		}
 		else
 			tmp = tmp->next;
-			
+
 	}
 	return (0);
 }
@@ -90,7 +90,7 @@ int	ft_lexer(t_parsing *parse)
 		|| ft_check_after_token(s))
 	{
 		free(s);
-		sig.return_value = 258;
+		g_sig.return_value = 258;
 		return (258);
 	}
 	free(s);

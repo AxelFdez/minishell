@@ -1,15 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_signals.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:09:58 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/20 11:19:00 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/minishell.h"
 
 void	sig_quit(int param)
 {
 	(void)param;
-	if (sig.child == 0)
+	if (g_sig.child == 0)
 	{
 		write(1, "^\\Quit: 3\n", 10);
-		sig.return_value = 131;
-		return;
+		g_sig.return_value = 131;
+		return ;
 	}
-	if (sig.heredoc == 0)
+	if (g_sig.heredoc == 0)
 		rl_redisplay();
 	else
 	{
@@ -22,17 +34,17 @@ void	sig_quit(int param)
 void	sig_int(int param)
 {
 	(void)param;
-	if (sig.child == 0)
+	if (g_sig.child == 0)
 	{
 		write(2, "^C\n", 3);
-		sig.return_value = 130;
-		return;
+		g_sig.return_value = 130;
+		return ;
 	}
-	if (sig.heredoc == 0)
+	if (g_sig.heredoc == 0)
 	{
 		write(2, "\n", 1);
-		sig.return_value = 1;
-		kill(sig.child_heredoc, SIGTERM);
+		g_sig.return_value = 1;
+		kill(g_sig.child_heredoc, SIGTERM);
 	}
 	else
 	{
@@ -40,12 +52,12 @@ void	sig_int(int param)
 		rl_on_new_line();
 		rl_replace_line("", 0);
 		rl_redisplay();
-		sig.return_value = 1;
+		g_sig.return_value = 1;
 	}
 }
 
 void	signals_func(void)
 {
-		signal(SIGQUIT, sig_quit);
-		signal(SIGINT, sig_int);
+	signal(SIGQUIT, sig_quit);
+	signal(SIGINT, sig_int);
 }

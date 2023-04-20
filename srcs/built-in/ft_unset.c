@@ -3,7 +3,7 @@
 static void	ft_error_identifier(char *s)
 {
 	ft_printf("export: `%s': not a valid identifier\n", s);
-	sig.return_value = 1;
+	g_sig.return_value = 1;
 }
 
 void	ft_unset(t_parsing *parse)

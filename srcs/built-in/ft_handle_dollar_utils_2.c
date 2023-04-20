@@ -7,7 +7,7 @@ char	*ft_found_var(t_parsing *parse, char *s)
 
 	if (s[0] == '$' && s[1] == '?')
 	{
-		ret = ft_strdup_free(ft_itoa(sig.return_value));
+		ret = ft_strdup_free(ft_itoa(g_sig.return_value));
 		return (ret);
 	}
 	tmp = parse->lst_env;

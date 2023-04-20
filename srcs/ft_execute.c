@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_execute.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 10:44:21 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/20 11:17:28 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
@@ -6,7 +17,7 @@ void	parsing_command_child(t_parsing *parse)
 	parse->built_in_cmd = 0;
 	check_herringbone(parse);
 	if (!parse->lst_cmdline || ft_strcmp(parse->lst_cmdline->str, "|") == 0)
-		exit(sig.return_value);
+		exit(g_sig.return_value);
 	if (check_builtin_input(parse) == 1)
 		parsing_cmd(parse);
 	else
@@ -24,22 +35,22 @@ void	execute_command_child(t_parsing *parse)
 		execute_built_in(parse);
 	execve(parse->command[0], parse->command, parse->env);
 	error_exec_message(parse);
-	exit(sig.return_value);
+	exit(g_sig.return_value);
 }
 
 void	command_father(t_parsing *parse)
 {
 	if (WIFEXITED(parse->status))
-		sig.return_value = WEXITSTATUS(parse->status);
+		g_sig.return_value = WEXITSTATUS(parse->status);
 	else if (WIFSIGNALED(parse->status))
 	{
-		sig.return_value = WTERMSIG(parse->status);
-		if (sig.return_value == 2)
-			sig.return_value = 130;
-		else if (sig.return_value == 3)
-			sig.return_value = 131;
-		else if (sig.return_value == 11)
-			sig.return_value = 127;
+		g_sig.return_value = WTERMSIG(parse->status);
+		if (g_sig.return_value == 2)
+			g_sig.return_value = 130;
+		else if (g_sig.return_value == 3)
+			g_sig.return_value = 131;
+		else if (g_sig.return_value == 11)
+			g_sig.return_value = 127;
 	}
 	if (parse->heredoc_pfd > 0)
 	{
@@ -51,13 +62,13 @@ void	command_father(t_parsing *parse)
 
 static void	simple_command(t_parsing *parse)
 {
-	pid_t child;
+	pid_t	child;
 
 	parse->status = 0;
 	check_heredoc(parse);
 	if (!parse->lst_cmdline)
-		return;
-	sig.child = 0;
+		return ;
+	g_sig.child = 0;
 	child = fork();
 	if (child < 0)
 		perror("fork error\n");
@@ -70,16 +81,16 @@ static void	simple_command(t_parsing *parse)
 	command_father(parse);
 }
 
-void execute_cmd(t_parsing *parse)
+void	execute_cmd(t_parsing *parse)
 {
-	sig.heredoc = 0;
+	g_sig.heredoc = 0;
 	built_in_used_alone(parse);
 	if (!parse->lst_cmdline)
 		return ;
-	sig.return_value = 0;
+	g_sig.return_value = 0;
 	if (ft_lst_strchr_pipe(parse->lst_cmdline) == 0)
 		pipex(parse);
 	else
 		simple_command(parse);
-	return;
+	return ;
 }

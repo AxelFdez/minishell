@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_pipex_utils2.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:08:09 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/20 11:08:50 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/minishell.h"
 
 void	del_parsed_cmd(t_parsing *parse)
@@ -34,15 +46,15 @@ void	print_list(t_list *lst)
 void	delete_cmd(t_list **list_cmd)
 {
 	while (ft_strcmp((*list_cmd)->str, "|") != 0)
-				ft_lstdel_front(&(*list_cmd));
-			ft_lstdel_front(&(*list_cmd));
+		ft_lstdel_front(&(*list_cmd));
+	ft_lstdel_front(&(*list_cmd));
 }
 
-int ft_lst_strchr_pipe(t_list *list)
+int	ft_lst_strchr_pipe(t_list *list)
 {
-	t_list *temp;
-	temp = list;
+	t_list	*temp;
 
+	temp = list;
 	while (temp)
 	{
 		if (ft_strcmp(temp->str, "|") == 0)

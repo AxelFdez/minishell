@@ -1,4 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_pipex_multi_pipe.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 10:58:07 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/20 11:18:42 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/minishell.h"
+
+static void	redirections_in_middle_cmd(t_parsing *parse, int pfd[2])
+{
+	if (parse->redirection_out == 0)
+		dup2(pfd[1], STDOUT_FILENO);
+	if (parse->redirection_in == 0 && parse->heredoc_pfd == 0)
+		dup2(parse->temp_fd, STDIN_FILENO);
+}
 
 static int	first_cmd(t_parsing *parse)
 {
@@ -8,7 +28,7 @@ static int	first_cmd(t_parsing *parse)
 	check_heredoc(parse);
 	if (!parse->lst_cmdline)
 		return (-1);
-	sig.child = 0;
+	g_sig.child = 0;
 	pipe(pfd);
 	child = fork();
 	if (child == -1)
@@ -35,7 +55,7 @@ static int	middle_cmd(t_parsing *parse)
 	check_heredoc(parse);
 	if (!parse->lst_cmdline)
 		return (-1);
-	sig.child = 0;
+	g_sig.child = 0;
 	pipe(pfd);
 	child = fork();
 	if (child == -1)
@@ -44,10 +64,7 @@ static int	middle_cmd(t_parsing *parse)
 	{
 		parsing_command_child(parse);
 		close(pfd[0]);
-		if (parse->redirection_out == 0)
-			dup2(pfd[1], STDOUT_FILENO);
-		if (parse->redirection_in == 0 && parse->heredoc_pfd == 0)
-			dup2(parse->temp_fd, STDIN_FILENO);
+		redirections_in_middle_cmd(parse, pfd);
 		close(parse->temp_fd);
 		close(pfd[1]);
 		execute_command_child(parse);
@@ -60,12 +77,12 @@ static int	middle_cmd(t_parsing *parse)
 
 static int	last_cmd(t_parsing *parse)
 {
-	pid_t child;
+	pid_t	child;
 
 	check_heredoc(parse);
 	if (!parse->lst_cmdline)
 		return (-1);
-	sig.child = 0;
+	g_sig.child = 0;
 	child = fork();
 	if (child == -1)
 		perror("Fork error");
@@ -79,7 +96,7 @@ static int	last_cmd(t_parsing *parse)
 	}
 	close(parse->temp_fd);
 	command_father(parse);
-		return (child);
+	return (child);
 }
 
 void	multi_pipes(t_parsing *parse, t_pipex *pipex)
@@ -101,11 +118,11 @@ void	multi_pipes(t_parsing *parse, t_pipex *pipex)
 	pipex->last_cmd_no = pipex->i;
 	while (pipex->i >= 0)
 	{
-		waitpid(pipex->children[pipex->i],  &sig.return_value, 0);
+		waitpid(pipex->children[pipex->i], &g_sig.return_value, 0);
 		if (pipex->i == pipex->last_cmd_no)
-			pipex->last_cmd_value_return = sig.return_value / 256;
+			pipex->last_cmd_value_return = g_sig.return_value / 256;
 		pipex->i--;
 	}
 	free(pipex->children);
-	sig.return_value = pipex->last_cmd_value_return;
+	g_sig.return_value = pipex->last_cmd_value_return;
 }

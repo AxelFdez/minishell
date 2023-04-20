@@ -2557,3 +2557,19 @@ echo bonjour > $test
 ls
 echo bonjour > > out
 echo $?
+
+ls
+cat
+cat
+ls
+ps
+<< 1
+<< 1
+> 1 > 2 < history.txt wc
+cat 2
+cat 1
+ls | cat -e| cat -e > 2 | < history.txt wc -l > 3
+cat 2
+cat 3
+echo $?
+<< 1 cat

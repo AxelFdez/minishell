@@ -37,7 +37,7 @@ typedef struct s_pipex
 	int		last_cmd_no;
 }			t_pipex;
 
-extern t_sig	sig;
+extern t_sig	g_sig;
 
 typedef struct s_parsing
 {

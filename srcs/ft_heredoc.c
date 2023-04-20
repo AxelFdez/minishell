@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_heredoc.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 10:49:29 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/20 11:17:55 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/minishell.h"
 
 static int	count_heredocs(t_list **lst)
@@ -41,7 +53,7 @@ static char	**chained_heredoc(t_list **lst, t_parsing *parse)
 
 static void	heredoc_while(t_parsing *parse, int pfd[2], char *temp)
 {
-	int j;
+	int	j;
 
 	j = 0;
 	while (1)
@@ -73,10 +85,10 @@ static void	ft_heredoc_father(t_parsing *parse, int pfd[2])
 	int	i;
 
 	i = 0;
-	waitpid(sig.child_heredoc, &parse->heredoc_status, 0);
+	waitpid(g_sig.child_heredoc, &parse->heredoc_status, 0);
 	if (WIFSIGNALED(parse->heredoc_status))
 		ft_lstdel_all(&parse->lst_cmdline);
-	sig.int_heredoc = 0;
+	g_sig.int_heredoc = 0;
 	close(pfd[1]);
 	parse->heredoc_pfd = pfd[0];
 	while (parse->heredoc_tab[i])
@@ -87,20 +99,20 @@ static void	ft_heredoc_father(t_parsing *parse, int pfd[2])
 	free(parse->heredoc_tab);
 }
 
-void ft_heredoc(t_parsing *parse, t_list **lst)
+void	ft_heredoc(t_parsing *parse, t_list **lst)
 {
-	char *temp;
-	int pfd[2];
+	char	*temp;
+	int		pfd[2];
 
 	chained_heredoc(lst, parse);
 	temp = "";
 	pipe(pfd);
-	sig.child_heredoc = fork();
-	if (sig.child_heredoc < 0)
+	g_sig.child_heredoc = fork();
+	if (g_sig.child_heredoc < 0)
 		perror("fork error\n");
-	else if (sig.child_heredoc == 0)
+	else if (g_sig.child_heredoc == 0)
 	{
-		sig.heredoc = sig.child_heredoc;
+		g_sig.heredoc = g_sig.child_heredoc;
 		close(pfd[0]);
 		heredoc_while(parse, pfd, temp);
 	}

@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_pipex.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:09:01 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/20 11:18:52 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/minishell.h"
 
-pid_t cmd1(t_parsing *parse, int *pfd)
+pid_t	cmd1(t_parsing *parse, int *pfd)
 {
-	pid_t child;
+	pid_t	child;
 
 	check_heredoc(parse);
-	sig.child = 0;
+	g_sig.child = 0;
 	child = fork();
 	if (child == -1)
 		perror("Fork error");
@@ -19,15 +31,15 @@ pid_t cmd1(t_parsing *parse, int *pfd)
 		execute_command_child(parse);
 	}
 	command_father(parse);
-	return child;
+	return (child);
 }
 
-pid_t cmd2(t_parsing *parse, int *pfd)
+pid_t	cmd2(t_parsing *parse, int *pfd)
 {
-	pid_t child;
+	pid_t	child;
 
 	check_heredoc(parse);
-	sig.child = 0;
+	g_sig.child = 0;
 	if (!parse->lst_cmdline)
 		return (-1);
 	child = fork();
@@ -63,17 +75,17 @@ void	one_pipe(t_parsing *parse)
 	i = 1;
 	while (i >= 0)
 	{
-		waitpid(children[i],  &sig.return_value, 0);
+		waitpid(children[i], &g_sig.return_value, 0);
 		if (i == 1)
-			last_cmd_value_return = sig.return_value / 256;
+			last_cmd_value_return = g_sig.return_value / 256;
 		i--;
 	}
-	sig.return_value = last_cmd_value_return;
+	g_sig.return_value = last_cmd_value_return;
 }
 
 void	pipex(t_parsing *parse)
 {
-	t_pipex pipex;
+	t_pipex	pipex;
 
 	pipex.children = NULL;
 	pipex.i = 0;
