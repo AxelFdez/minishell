@@ -2635,3 +2635,252 @@ echo "AAAAA$?AAAAAAAAA"
 echo "$-/=@"
 echo "$USER-/=@"
 echo "$USER-/=@"$HOME
+ls
+/bin/ls
+exit
+cat | cat | ls
+/bin/cat | /bin/cat | /bin/ls
+cd ~
+cd
+cd ..
+ls
+exit
+cat | ls | ls | cat | ls | ls |ls | ls | cat | ls | ls |ls | ls | cat | ls | ls |ls | ls | cat | ls | ls |ls | ls | cat | ls | ls |ls | ls | cat | ls | ls |ls | ls | cat | ls | ls
+echo
+echo -n
+echo -nnnnnnnnn -n       -n  -nnnnnnnnn "ok"
+echo -nnnnnnnnn -np       -n  -nnnnnnnnn "ok"
+echo $PATH
+echo $PATH$HOME
+				
+			    		 
+
+        
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+          
+
+
+echo je	suis	LA
+		
+ls | exit | ls
+env
+export
+export test
+export
+export TEST
+export
+env
+export test=
+env
+export
+export test=1=2=3
+env
+exprot
+export
+./minishell
+env
+env | grep SHL
+export test=123 | ls
+env
+ls
+mkdir a
+mkdir 1
+mkdir 1/2
+mkdir 1/2/3
+cd 1/2/3
+ls
+rm ../../../1
+rm -d ../../../1
+rm -f ../../../1
+rm -r ../../../1
+rm -r ../../../../1
+ls
+pwd
+cd ..
+cd ..
+cd ..
+ls
+cd 1
+ls
+cd ..
+ls
+ls
+cp ./minishell ls
+ls
+env
+ls
+env
+exit
+env
+exit
+exit
+exit
+./a.out 
+./a.out 
+echo $?
+cat <
+echo $?
+./buserror 
+echo $?
+cat
+echo $?
+cat
+echo $?
+| ls
+| ls
+| ls
+| ls
+| ls
+| ls
+| ls
+| ls
+| ls
+env
+| ls
+env
+| ls
+|ls
+exit
+| ls
+ls |
+ls || echo test
+ls ||| echo test
+ls | | echo test
+| ls | echo test
+| ls | echo test | echo 123
+| ls
+| ls
+| ls
+| ls
+| echo test
+| ls -l
+| pwd
+| pw
+| ls
+| cd
+| wc
+| ls
+| ls
+| ./minishell
+./minishell | ./minishell
+2004hmilnsi
+shell -> ls
+2004l
+2s004hminishell -> sls
+ls
+2004l
+2004hminishellsl
+ -> ls
+2004l
+2004l
+2004l
+2004l
+mineixsihte
+ll -> 2004hexit
+2004l
+ls
+env
+ls
+cd ..
+ls
+exit
+< cat
+cat
+< cat
+cat <
+ls
+ls
+ls
+ls
+/bin/ls
+rm ls
+ls
+ls -l
+chmod 000 B
+ls -l
+cat Makefile > A > B > C
+cat Makefile > A > B > C > D
+ls
+cat A
+ls -l
+sleep 1 | sleep 5
+sleep 1 | sleep 5 | sleep 1
+ls
+unset PATH
+ls
+export PATH=
+ls
+ls
+ls
+sl
+sl
+ls
+ls
+ls
+ls
+export PATH="a"
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+cd
+unset HOME
+cd
+export HOME=
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd ~
+export HOME=""
+cd ~
+cd
+export PATH=
+cd $PATH
+exit
+export PATH=
+cd $PATH
+cd     
+echo "--$PATH--"
+echo "$PATH"
+echo $PATH
+echo "$PATH"
+echo '$PATH'
+cd '$PATH'
+cd $PATH
+echo $PATH
+echo M$PATHm
+echo M$PATH m
+echo M$PATHm
+export a="     aaa     bbbb    "
+echo $a
+echo "$a"
+export var1=32 var2=90
+echo $_
+exit 513135111131313513518410541543510051683413543131131313003531
+echo "$???????"
+exit 513135111131313513518410541543510051683413543131131313003531
