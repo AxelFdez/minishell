@@ -6,7 +6,7 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:31:35 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 11:31:36 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/20 21:49:02 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_get_cmdline(t_parsing *parse)
 	ft_parseur(parse);
 	if (ft_check_double_pipes(parse->lst_cmdline))
 		return (0);
-	// ft_lstprint_from_head(parse->lst_cmdline);
+	//ft_lstprint_from_head(parse->lst_cmdline);
 	ft_handle_underscore(parse);
 	if (parse->lst_cmdline)
 		return (1);

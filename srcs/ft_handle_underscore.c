@@ -6,7 +6,7 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:31:13 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 11:31:14 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/20 22:31:11 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static void	ft_handle_under_export(t_parsing *parse)
 	}
 	else if (ft_lstsize(parse->lst_cmdline) == 1)
 	{
-		printf("tmp->str = %s\n", parse->lst_cmdline->str);
+		//printf("tmp->str = %s\n", parse->lst_cmdline->str);
 		ft_replace_underscore_value(parse->lst_env, "export");
 
 	}

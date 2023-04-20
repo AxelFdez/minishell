@@ -3458,3 +3458,143 @@ ls
 ls
 export PATH
 ls
+ls
+cat << a << b | cat -e << a << b
+cat << a << b | cat -e << a << b
+cat << a << b | cat -e << a << b
+ls
+unset PATH
+ls
+ls
+unset PATH
+ls
+ls
+ls
+make
+ls
+unset PATH
+ls
+ls
+unset PATH
+ls
+ls
+unset PATH
+ls
+ls
+unset PATH
+ls
+ls
+ls
+export PATH=
+ls
+ls
+export PATH=
+ls
+ls
+export PATH=
+ls
+ls
+export PATH=
+ls
+ls
+ls
+unset PATH
+ls
+ls
+unset PATH
+ls
+export PATH
+ls
+export PATH=
+ls
+ls
+unset PATH
+ls
+export PATH
+ls
+export PATH=
+ls
+export PATH=/bin
+ls
+export a="ls -la"
+$a
+export a="ls -la"
+$?
+export a="ls -la"
+$?
+export a="ls -la"
+$?
+$?
+$?
+export a="ls -la"
+$?
+rfwerwe
+echo $?
+ls
+export a="ls -la"
+$?
+fewwe
+$?
+export a="ls -la"
+$?
+$a
+ls -la
+$a
+export a="ls -la"
+$a
+export a="ls -la"
+$a
+ls
+ls -la
+cat << a << b | cat -e << a << b
+<< 1
+<< 1
+cat << a << b | cat -e << a << b
+cat << a << b | cat -e << a << b
+cat << a << b | cat -e << a << b
+cat << a << b | cat -e << a << b
+cat << a << b | cat -e << a << b | cat -e << 1
+ls
+ls
+export $a="iajfe ejfeo jfeojf"
+$a
+export
+export a="iajfe ejfeo jfeojf"
+$a
+export a="i"ajfe "ejfeo jfeojf"
+bash
+clear
+make re
+ls
+export a="ls -la"
+$a
+export a="ls -la"
+$a
+export a="ls -la"
+$a
+ls
+$HOME
+$PATH
+export a="ls -la"
+$a
+make
+export a="ls -la"
+$a
+export a="ls -la"
+$a
+$?
+echo $?
+$faeffef
+$HOME
+$HOME$USER
+echo $HOME$USER
+export a="ls -la"
+$a
+export a="ls-la"
+$a
+export a="ls -la"
+$a
+export
+$a
+export
+make fclean

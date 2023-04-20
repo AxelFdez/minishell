@@ -6,7 +6,7 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:31:05 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 11:31:06 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/20 20:49:15 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	ft_error(char *err_mess)
 
 void error_exec_message(t_parsing *parse)
 {
+	if (!parse->command[0])
+		return ;
 	if (parse->command[0][0] == '/'
 		|| (parse->command[0][0] == '.' && parse->command[0][1] == '/'))
 	{

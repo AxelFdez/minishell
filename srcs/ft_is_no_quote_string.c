@@ -6,7 +6,7 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:31:22 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 11:31:23 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/20 22:20:36 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void	ft_handle_quotes(t_parsing *parse)
 static void	ft_manage_dollar(t_parsing *parse)
 {
 	while (parse->input[parse->i] == '$' && parse->input[parse->i +1] != ' '
-			&& parse->input[parse->i +1] != '\0')
+			&& parse->input[parse->i + 1] != '\0')
 	{
 		ft_handle_dollar(parse);
 		while (parse->input[parse->i] == '$' && parse->input[parse->i +1] == '$')
@@ -66,14 +66,18 @@ void	is_no_quote_string(t_parsing *parse)
 			    parse->i += 2;
             }
 		if (parse->input[parse->i] == '$' && parse->input[parse->i +1] != ' '
-			&& parse->input[parse->i +1] != '\0')
+			&& parse->input[parse->i + 1] != '\0')
 			ft_manage_dollar(parse);
 		if ((parse->input[parse->i] == '\"' || parse->input[parse->i]
-				== '\'') && (parse->input[parse->i +1] != '\0'))
+				== '\'') && (parse->input[parse->i + 1] != '\0'))
 			ft_handle_quotes(parse);
+		if (!parse->input[parse->i])
+			break ;
 		parse->len++;
 		parse->i++;
 	}
+	//dprintf(2, "str_tmp = %s\n", parse->str_tmp);
 	ft_fill_lst(&parse->lst_cmdline, parse, parse->i - parse->len);
+	//print_list(parse->lst_cmdline);
 	parse->len = 0;
 }
