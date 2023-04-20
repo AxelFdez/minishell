@@ -6,7 +6,7 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:06:54 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 11:07:53 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/20 17:17:35 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,13 @@ static char	**find_path_in_env(t_parsing *parse)
 	while (parse->env[i])
 	{
 		if (ft_strncmp(parse->env[i], "PATH", 4) == 0)
-			path = parse->env[i];
+			path = (parse->env[i] + 5);
 		i++;
 	}
-	path = ft_strtrim(path, "PATH=");
 	if (!path)
 		return (NULL);
+	printf("path = %s\n", path);
 	split = ft_split(path, ':');
-	free(path);
 	i = 0;
 	while (split[i])
 	{

@@ -3276,3 +3276,185 @@ echo "$USER-/=@"$HOME
 agasgasg
 echo $?
 echo $?
+./a.out 
+echo $?
+a.out 
+$?
+exit
+./a.out 
+./a.out 
+echo $?
+export PATH=
+ls
+ls
+ls
+ls
+ls
+l
+sl
+ls
+export PATH=""
+ls
+ls
+ls
+ls
+ls
+export PATH
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+wc
+export PATH=
+ls
+flfe
+fel
+ls
+cd
+ls
+pwd
+ls
+ls -l
+ls
+cd ..
+ls
+export PATH=" "
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+export PATH=""
+as
+ls
+export PATH=
+ls
+
+ls
+sls
+ls
+ls
+ls
+exit
+export PATH=
+ls
+ls
+exit
+export PATH=
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+export PATH=
+ls
+ls
+export PATH=
+ls
+bash
+ls
+ls
+ls
+ls
+ls
+export PATH=
+ls
+env
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+export PATH=
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+/bin/ls
+cat
+ls
+export PATH
+ls
+ls
+export PATH
+ls
+ls
+ls
+export PATH=
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+export PATH=
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+
+mkdir 1 2 3
+chmod 000 2
+ls > 1 > 2 > 3 > 4 | echo test
+rm -f 1 2 3
+rm -rf 1 2 3
+ls
+touch 1 2 3
+chmod 000 2
+ls > 1 > 2 > 3 > 4 | echo test1
+ls
+ls
+ls
+ls
+ls
+export PATH
+ls
+ls
+export PATH
+ls
+ls
+ls
+ls
+export PATH
+ls
+ls
+export PATH
+ls
+
+ls
+export PATH
+ls
