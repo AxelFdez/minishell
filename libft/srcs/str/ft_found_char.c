@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_found_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chmassa <chrisdev427@gmail.com>            +#+  +:+       +#+        */
+/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 14:00:38 by chmassa           #+#    #+#             */
-/*   Updated: 2023/03/08 17:35:35 by chmassa          ###   ########.fr       */
+/*   Updated: 2023/04/19 18:17:09 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_found_char(const char *s, char c)
 {
 	int	i;
 
+	if (!s || !c)
+		return (0);
 	i = 0;
 	while (s[i])
 	{

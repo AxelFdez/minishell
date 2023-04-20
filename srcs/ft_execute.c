@@ -44,6 +44,9 @@ void	execute_command_child(t_parsing *parse)
 void	simple_command(t_parsing *parse)
 {
 	pid_t child;
+	int		status;
+
+	status = 0;
 	check_heredoc(parse);
 	if (!parse->lst_cmdline)
 		return;
@@ -55,8 +58,18 @@ void	simple_command(t_parsing *parse)
 		parsing_command_child(parse);
 		execute_command_child(parse);
 	}
-	waitpid(child, &sig.return_value, 0);
-	sig.return_value = sig.return_value / 256;
+	waitpid(child, &status, 0);
+	//dprintf(2, "ret = %d\n", sig.return_value);
+	if (WIFEXITED(status))
+		sig.return_value = WEXITSTATUS(status);
+	else if (WIFSIGNALED(status))
+	{
+		sig.return_value = WTERMSIG(status);
+		if (sig.return_value == 2)
+			sig.return_value = 130;
+		else if (sig.return_value == 3)
+			sig.return_value = 131;
+	}
 	if (parse->heredoc_pfd > 0)
 	{
 		close(parse->heredoc_pfd);
@@ -67,13 +80,12 @@ void	simple_command(t_parsing *parse)
 void execute_cmd(t_parsing *parse)
 {
 	parse->heredoc_pfd = 0;
-	parse->status = 0;
 	sig.heredoc = 0;
-	sig.return_value = 0;
 	sig.child = 0;
 	built_in_used_alone(parse);
 	if (!parse->lst_cmdline)
 		return ;
+	sig.return_value = 0;
 	if (ft_lst_strchr_pipe(parse->lst_cmdline) == 0)
 		pipex(parse);
 	else

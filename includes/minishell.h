@@ -55,6 +55,7 @@ typedef struct s_parsing
 	char	pwd_save[1024];
 	char	*lex[11];
 	char	*meta[6];
+	char	*non_bl_chars;
 	char	*s1;
 	char	*s2;
 	char	*tmp_input;
@@ -87,7 +88,7 @@ void	signals_func(void);
 void	sig_int(int param);
 
 //**** execution **************************************************************
-int		ft_main_loop(t_parsing *parse);
+void	ft_main_loop(t_parsing *parse);
 int		is_pipe(t_parsing *parse);
 void	execute_cmd(t_parsing *parse);
 void	execute_built_in(t_parsing *parse);
@@ -132,6 +133,10 @@ char	*ft_fill_str_to_cmp(t_parsing *parse, char *s);
 // int		ft_str_is_empty(char *str);
 // int		ft_empty_str_in_lst(char *s);
 int		ft_check_double_pipes(t_list *lst);
+void	is_quote_string(t_parsing *parse, char c);
+void	is_no_quote_string(t_parsing *parse);
+
+
 
 
 

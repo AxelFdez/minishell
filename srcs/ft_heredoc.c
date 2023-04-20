@@ -65,6 +65,7 @@ void ft_heredoc(t_parsing *parse, t_list **lst)
 		if (sig.int_heredoc == 1)
 			{
 				//puts("BBB");
+				sig.return_value = 1;
 				ft_lstdel_all(&parse->lst_cmdline);
 				break;
 			}

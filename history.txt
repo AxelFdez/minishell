@@ -1184,6 +1184,375 @@ sghsfh
 
 >>>>>>> origin/chris
 << 1
+<<<<<<< HEAD
+cd ../../../../..
+pwd
+cd /home/user42
+cd home/axfernan
+pwd
+cd /Users/axfernan/
+pwd
+cd $HOME/
+pwd
+cd $HOME/cursus
+pwd
+unset HOME
+ls
+unset HOME
+unset HOME
+unset HOME
+unset HOME
+env
+unset HOME
+unset HOME
+unset HOME
+unset HOME
+unset HOME
+env
+env
+export
+unset HOME
+env
+export
+env
+export
+unset HOME
+export
+unset HOME USER
+env
+cd .. ..
+cd .. fsdaf
+ls
+cd cursus/
+cd minishell/
+cd .. ..
+ls
+cd ~ ls
+ls
+bash
+cd cdac acacad
+echo $?
+cd /dwdw
+echo $?
+cd -
+echo -n -n -nnnn -nnnnm
+echo a
+echo -n -n -nnnn -nnnnm
+bash
+echo -n -n -nnnn -nnnnm
+
+echo -n -nnn hello -n
+bas
+
+bash
+echo -n -nnn hello -n
+cat /dev/urandom | head
+bash
+cat /dev/urandom | head
+cd fawefawe
+echo $?
+cd $?
+mkdir test
+chmod 000 test
+./test/
+
+touch test1
+chmod 000 test1
+./test1
+bash
+./test1
+echo $?
+ls
+cd minishell/
+ls
+./srcs
+./srcfaf
+ls
+ls -la
+./test1
+./test
+bash
+test
+bash
+bash
+./test1
+./test1
+/test
+/testou
+/test
+pwd
+/testou
+chmod --- testou
+chmod 000 testou
+/testou
+cat bla
+echo $?
+test
+echo $?
+agage
+echo $?
+export test=a
+echo $test
+ls bonjour
+echo $?
+bash
+""
+$?
+""
+""
+""
+""
+echo "\s"
+echo "\\s"
+bash
+echo "12\""
+
+"
+
+echo "\\s"
+echo "\\s
+
+"
+
+cat
+"
+
+
+
+
+
+;s
+ls
+cat
+echo $?
+ls
+<< 1
+
+
+echo $?
+ls
+echo $?
+cat
+echo $?
+bash
+make
+cat
+echo $?
+cat
+echo $?
+echo $?
+cat
+echo $?
+echo $?
+bash
+make
+echo $?
+cat
+cat
+cat
+echo $?
+bash
+ps
+ls
+cat
+echo $?
+cat
+cat
+cat
+cat
+echo $?
+defewfg
+echo $?
+cat
+echo $?
+echo $?
+cat
+echo $?
+wgwaerg
+echo $?
+cat
+echo $?
+adgas
+echo $?
+/
+echo $?
+/afwe
+echo $?
+echo $?
+cat
+echo $?
+echo $?
+efweew
+echo $?
+cat
+echo $?
+mak
+cat
+echo $?
+echo $?
+cat
+cat
+cat
+echo $?
+echo $?
+echo $?
+ls
+ls
+ps
+ls
+cat
+echo $?
+ls
+cat
+ls
+cat
+cat
+cat
+cat
+cat
+echo $?
+bash
+cat
+echo $?
+cat
+echo $?
+cat
+echo $?
+make
+cat
+echo $?
+cat
+cat
+
+cat
+cat
+echo $?
+fafasd
+echo $?
+cat
+echo $?
+/dwadw
+echo $?
+/
+echo $?
+cat
+echo $?
+bash
+bash]
+bash
+cat
+echo $?
+cat
+echo $?
+cat
+echo $?
+exit
+cat
+bash
+vwefwe
+echo $?
+/
+echo $?
+cat
+echo $?
+echo cwadwa
+echo $?
+export afew
+export afew=
+export afew=afeaf
+export afew=afeaf'\d
+
+echo $?
+|
+echo $?
+|
+echo $?
+afaef
+echo $?
+/
+echo $?
+aFaefwe
+echo $?
+cafewf
+echo $?
+fkewfewf
+echo $?
+echo $?
+<< 1 cat
+echo $?
+<< 1 cat
+echo $?
+<< 1 ls
+<< 1 ls
+<< 1 cat
+echo $?
+cat
+echo $?
+gwegf
+echo $?
+cat
+echo $?
+|
+echo $?
+|
+echo $?
+fwefew
+echo $?
+gweagweg
+echo $?
+/
+echo $?
+cafwef
+echo $?
+echo $?
+echo $?
+cat
+cat
+<< 1
+echo $?
+echo $?
+echo $?
+echo $?
+echo $?
+fadfas
+echo $?
+echo $?
+echo $?
+echo $?
+echo $?
+echo $?
+|
+echo $?
+cat
+echo $?
+<< 1
+echo $?
+!
+echo $?
+echo $?
+fasfds
+echo $?
+|
+echo $?
+cacws
+echo $?
+|
+echo $?
+>
+echo $?
+ls
+<< 1
+<< 1 cat
+echo $?
+<< 1 2
+cat
+
+wc
+echo $?
+bash
+echo $?
+<< 
+=======
 kjdfkjdfh
 unset HOME
 export
@@ -1583,5 +1952,631 @@ $a$b toto
 lsdjlksfj
 cat
 cat
+<<<<<<< HEAD
 cat
 cat
+=======
+>>>>>>> origin/chris
+cat
+ls
+rm cat
+cat
+touch cat
+cat
+bash
+
+
+
+
+
+
+
+git add .
+>>>>>>> origin/axel
+wghsfgh
+cat
+dfkhgskjhbf
+adfgadg
+echo tata et toto
+echo $USER et toto
+echo $USER$USER et toto
+fhnfen
+echo $USER "$USER" '$USER'
+echo '$USER'
+echo '$USER'
+ echo $USER "$USER" '$USER'
+echo "'$USER'"
+echo '"$USER"'
+echo aaa"bbbbb""ccccc"
+echo aaa"bbbbb" "ccccc"
+echo aaa "bbbbb" "ccccc"
+export var="   aaa      bbb   "
+echo $var
+echo "$var"
+echo aaaaa"bbbbbbbbbbb"
+echo aaaaa"bbbbbbbbbbb$"
+echo aaaaa"bbbbbbbbbbb$"
+echo aaaaa"bbbbbb$bbbbb$"
+echo aaaaa"bbbbbb$bbbbb$"
+echo aaaaa"bbbbbbbbbbb$"
+echo aaaaa"bbbbbbbbbbb$$"
+echo aaaaa"bbbbb$$bbbbbb"
+echo aaaaa bbbbbbbbbbb$
+echo aaaaa bbbbb$bbbbbb
+echo "jjjj$"
+echo "aaa$"
+echo 'aaa$'
+echo "AAA$"
+echo "AAA$"
+echo "HHHHH$"
+echo "OOO$"
+echo "iiiii$"
+echo "SSSS$"
+echo "SSSS$" AAA$
+echo "SSSS$" AAA$RR
+echo "WWW$"
+<<
+>>
+echo "EEE$"
+echo "TTT$"
+echo "WWW$"
+echo "RRR$"
+echo "WWW$"
+echo WWW$
+"fdfdfd"
+echo "WWW$"
+echo "QQQ$"
+echo "QQQ$USER"
+echo "QQQ$USER"
+echo "QQQ$USER$"
+echo "UUU$"
+echo aaa"$USER$"
+echo aaa"$$"
+echo aaa"eeeee$"
+echo "eeeee$"
+echo aaa"$$"
+echo aaa
+echo aaa$
+echo aaa"bbb$"
+echo aaa "bbb$"
+echo aaa "$USERbbb$"
+echo aaa "$USER$"
+echo aaa "$USER$"
+echo "$USER$"
+echo "$USER$"
+echo "$USER$""AAAAAAA$"
+echo "$USER$""$RTY"
+echo "aaa$$aaaaaaaa"
+echo "aaa$$USER"
+echo "aaa$$$$$$USER"
+clear
+   
+			
+Un wiki est une application web qui permet la création, la modification et l'illustration collaboratives de pages à l'intérieur d'un site web. Il utilise un langage de balisage et son contenu est modifiable au moyen d’un navigateur web. C'est un logiciel de gestion de contenu, dont la structure implicite est minimale, tandis que la structure explicite se met en place progressivement en fonction des besoins des usagers.
+
+Le premier wiki, créé en 1995 par Ward Cunningham pour réaliser la section d’un site sur la programmation informatique, fut appelé WikiWikiWeb. En 2021, selon Alexa Internet, le site géré par wiki le plus consulté est Wikipédia1.
+
+Définition du terme « wiki »
+
+Signalisation Wiki Wiki à l'aéroport international d'Honolulu.
+Le mot hawaïen wikiwiki signifie en français « rapide »2, « vite »3 ou « informel »4. Il a été choisi par Ward Cunningham lorsqu'il créa le premier wiki, qu'il appela WikiWikiWeb5. Il utilisa l'expression « wiki wiki », un redoublement qui signifie « très rapide », « très vite »6, parce que c'est le premier terme hawaïen qu'il apprit lorsqu'il dut prendre un bus à la sortie de l'aéroport5, et qu'au moment de créer son site, il voulait un terme amusant pour dire rapide. Dans l'URL du site apparaissait uniquement le terme « wiki », ce qui a probablement poussé les visiteurs à l'appeler ainsi6. Pour l'OQLF le terme « wiki » est un nom commun qui s'accorde au pluriel7.
+
+Le journal The Economist relève que le mot wiki peut être lu comme l'acronyme de « What I Know Is » (littéralement : « ce que je sais est » ou « voici ce que je sais »)8. Le concours de création littéraire et artistique Dis-moi dix mots a sélectionné le mot « wiki » pour son édition de 2014-20159 et en donne une définition.
+
+Fonctionnement technique
+Un wiki fonctionne grâce à un moteur de wiki : c'est un logiciel installé sur le système hôte
+echo Un wiki est une application web qui permet la création, la modification et l'illustration collaboratives de pages à l'intérieur d'un site web. Il utilise un langage de balisage et son contenu est modifiable au moyen d’un navigateur web. C'est un logiciel de gestion de contenu, dont la structure implicite est minimale, tandis que la structure explicite se met en place progressivement en fonction des besoins des usagers.
+
+Le premier wiki, créé en 1995 par Ward Cunningham pour réaliser la section d’un site sur la programmation informatique, fut appelé WikiWikiWeb. En 2021, selon Alexa Internet, le site géré par wiki le plus consulté est Wikipédia1.
+
+Définition du terme « wiki »
+
+Signalisation Wiki Wiki à l'aéroport international d'Honolulu.
+Le mot hawaïen wikiwiki signifie en français « rapide »2, « vite »3 ou « informel »4. Il a été choisi par Ward Cunningham lorsqu'il créa le premier wiki, qu'il appela WikiWikiWeb5. Il utilisa l'expression « wiki wiki », un redoublement qui signifie « très rapide », « très vite »6, parce que c'est le premier terme hawaïen qu'il apprit lorsqu'il dut prendre un bus à la sortie de l'aéroport5, et qu'au moment de créer son site, il voulait un terme amusant pour dire rapide. Dans l'URL du site apparaissait uniquement le terme « wiki », ce qui a probablement poussé les visiteurs à l'appeler ainsi6. Pour l'OQLF le terme « wiki » est un nom commun qui s'accorde au pluriel7.
+
+Le journal The Economist relève que le mot wiki peut être lu comme l'acronyme de « What I Know Is » (littéralement : « ce que je sais est » ou « voici ce que je sais »)8. Le concours de création littéraire et artistique Dis-moi dix mots a sélectionné le mot « wiki » pour son édition de 2014-20159 et en donne une définition.
+
+Fonctionnement technique
+Un wiki fonctionne grâce à un moteur de wiki : c'est un logiciel installé sur le système hôte
+echo "Salut test" > fichier1
+< fichier1|cat
+echo "cou"cou
+echo "cou$HOME-$USERp%mm"
+echo $HOME@
+echo $HOMEl
+echo $HOME
+echo "$USER$"
+echo "$USER$EEE"
+echo "$USER$?EEE"
+echo "$USER-$USER"
+echo "$USER-$USER"
+<< $HOME cat
+< < FIN cat
+< fichier1 > A > B > C
+echo coucou""salut
+echo coucou"" salut
+echo coucou ""salut
+echo coucou "" salut
+echo coucou "A" salut
+echo coucou "" salut
+ho””co
+echo ho””co
+echo A"B"C"D"E"F
+
+echo A"B"C"D"E"F
+
+
+echo A"B"C"D"E"F
+
+
+"
+env
+pwd
+unset PWD
+env
+export PWD
+env
+pwd
+env
+export PWD=P
+pwd
+env
+env
+cd ..
+env
+export
+cd /
+pwd
+touch test | cat << FIN > 1 | cat << DOC > 2
+chmod 777 2
+ls
+echo "$USER-$USER"
+echo "$USER?$USER"
+echo "$USER$?$USER"
+echo $USER?$USER
+echo $USER=$USER
+echo $USER-$USER
+echo $USER?$USER
+echo $USER?$USER $?
+echo $USER$?
+echo $USER$?$USER
+echo $USER$?EEEE
+echo "$USER$?EEEE"
+echo "AAAA$"
+echo "AAAA$-"
+echo "AAAA$="
+echo "AAAA$?"
+echo AAAA$?
+echo "AAAA$?"
+echo "AAAA$?"
+echo "AAAA$="
+echo "AAAA$-"
+echo aaaa$=
+echo aaaa$-
+echo "aaaa$-"
+echo "aaaa$="
+echo aaa$U
+echo aaa$=
+echo "aaaa"$USER"$USER"
+echo "aaaa-$USER-$USER"
+echo "aaaa-$USrER-$USER"
+echo "$?"
+echo $?
+echo "AAA$?"
+echo AAA$?
+echo "AAA$?"
+echo "AAA$?"
+echo "AAA$?"
+echo "AAA$?"
+echo "AAA$?"
+echo "AAA$?"
+echo "AAA$?"
+$USER
+"$USER"
+echo "$USER$?"
+echo "$USER$USER"
+echo "$USER$?"
+echo "$USER$?"
+echo "$USER$?"
+echo "$USER$?"
+echo "$USER-$?"
+echo "$USER-$?" $USER-toto
+echo "$USER-$?" $USER?toto
+echo "$USER-$?" $USER=toto
+echo "$USER=$?" $USER=toto
+echo "$USER$$?" $USER=toto
+echo AAAA"$USER$$?" $USER=toto
+echo "AAAAAA$"
+echo "AAAAAA$USER$?"
+echo "AAAAAA$USER-$?"
+echo AAAAAA$USER-$?
+echo "" AAA
+echo ""AAA
+echo " "AAA
+echo " " AAA
+Echo "AB$@@B”
+"
+echo $=
+echo $/
+echo "$/"
+echo "$="
+echo $=
+echo $=sdgh
+echo $/sdgh
+echo $=
+echo $=
+echo $USER$USER
+echo $USER $USER
+echo $=
+echo $=
+echo $=oiu
+echo $=dtgh
+echo $=dtgh
+echo $=dtgh
+echo $?egegetgetg
+echo $/egegetgetg
+echo $=egegetgetg
+echo $=asdrg
+echo $/asdrg
+echo $?asdrg
+echo $?srfsrfg
+echo $-srfsrfg
+echo $@srfsrfg
+echo "$-srfsrfg"
+echo $-dgdtg
+echo $-adrgadfg
+echo $@adrgadfg
+echo "$-ert"
+echo "$/ert"
+echo "$@ert"
+echo "$-ert"
+echo "$-drg"
+echo "$-asrfg"
+echo "$=asrfg"
+echo "$-dsgh"
+echo "$-sth"
+echo "$=sth"
+echo "$-kjhf"
+echo "$USER-$USER"
+echo $USER-$USER
+echo $USER@$USER
+echo "$USER@$USER"
+echo $USER-$USER
+echo $USER@$USER
+echo $USER/$USER
+echo $USER=$USER
+echo $USER$?$USER
+echo "$USER$?$USER"
+echo "$USER$?$USER" $-dfgdfg
+echo $-shsfgh
+echo $-adfgadg
+echo $/adfgadg
+echo $=dfgdsrg
+echo $/dfgdsrg
+echo "$/dfgdsrg"
+echo "$USER@asfd"
+echo "$-djgijg"
+echo "$-kjhf"
+echo "$-asrsrf"
+echo "$@asrsrf"
+echo "$@asrsrf$ "
+echo "$-ldkjgnlkjngtg"
+echo "$-dgdfgdgfbg"
+echo $-dgdfgdgfbg
+echo $-dgdfgdgfbg-$USER-$?
+echo $?
+echo "$?"
+echo $?
+echo $-dgdfgdgfbg
+echo $-dg
+echo "$-dg"
+echo $?
+echo "$?"
+echo $-dgdfgdgfbg-$USER-$?
+echo $USER
+echo $USER-
+echo $USER-$USER
+echo $USER$USER
+echo $USER$$USER
+echo $USER$$$$$USER
+echo $USER@-$USER
+echo lksjljflsdfj lsdjflskdjflksdjflksdjf
+echo "$USER-$USER" $USER@$USER
+echo "$USER-$USER"
+echo "$USER-$USER"
+echo "$USER"
+echo "$USER-$USER"
+echo "$-sdgsdgh"
+echo "$USER"
+echo $USER
+echo "$USER"
+echo "$USER$USER-$USER@$USEr"
+echo "$USER$USER-$USER@$USER"
+echo "$USER$USER-$USER@$USER"
+echo "$USER"
+echo "$USER"
+echo "$USER"
+echo $USER
+echo $USER
+echo $USER-$USER@$USER "$USER-$USER"
+echo $USER-$USER@$USER "$USER-$USER"
+echo $USER?$USER
+echo $USER?$USER?
+echo $USER
+echo $USER?
+echo "$USER?"
+echo "$USER"
+echo $USER?$USER
+echo "$USER?$USER"
+echo "$USER?$USER"
+echo $USER?$USER
+echo "$USER$USER"
+echo $USER$USER
+echo $USER?$USER
+echo "$USER?$USER"
+echo "$USER-$USER"
+echo $USER?USER
+echo $USER$USER
+echo $USER?$USER
+echo "$USER?$USER"
+echo "$USER-$USER"
+echo "$USER-$USER"
+echo "$USER?$USER"
+echo $USER?$USER
+echo $USER? $USER
+echo $USER-?$HOME
+echo $USER
+echo $USER-?$HOME
+echo ""
+echo "" AAA
+echo ""AAA
+echo "?"AAA
+echo ""AAA
+echo "" AAA
+echo ""AAA
+echo "" AAA
+argadfg
+adfgadf  sbadfbg
+echo ""AAA
+echo "" AAA
+echo ""      AAA
+echo ""  A    AAA
+echo ""  "A    AAA"
+echo ""  A    AAA
+echo ""  "A    AAA"
+echo "A    AAA"
+echo A    AAA
+echo "A    AAA"
+echo aaaaa       aaaaaaaa
+echo aaaa    aaaaaaa
+echo "aaaa    aaaaaaa"
+export a="    ddd        dddddddddd"
+echo $a
+echo "$a"
+echo aaa      aaaaaaa
+echo "" AAA
+echo " " AAA
+echo "/" AAA
+echo "" AAA
+echo "" aaa
+echo "" AAA
+echo "" AAA
+echo "" AAA
+echo "" AAA
+ 
+aaa     		aaaaa
+echo aaa     		aaaaa
+echo aaaa       aaaaaa
+echo aaaaa            aaaaaaaaa
+echo "aaaaa            aaaaaaaaa"
+export var="     hdjhdsuhd       "
+echo $var
+echo "$var"
+echo "" AAA
+echo "" AAA
+echo ""AAA
+echo "" AAA
+echo aaa | 		| bbb
+echo aaa | 		 | bbb
+echo "" AAA
+echo ""AAA
+    
+		
+			
+echo $USER@$USER-$USER/$USER=$USER
+echo $USER@$USER-$USER/$USER=$USER?$USER
+echo $?
+echo $USER
+echo $USER$USER
+echo "$USER$USER"
+echo $USER$USER
+echo $USER?USER
+echo $USER?$USER
+echo $USER$USER
+echo $USER$
+echo $USER$$$
+echo $USER/
+echo $USER
+echo $USERr
+echo "$USER$"
+echo $USER$
+echo $USER$USER
+echo $USER$$USER
+echo "$USER$$USER"
+echo $USER$
+echo "$USER$USER"
+echo "$USER$$$$$USER"
+echo"$USER"
+echo "$USER"
+echo "$USER$"
+echo "$USER$USER"
+echo "$USER$USER"
+echo "$USER$$USER"
+echo $USER$$USER
+echo $USER$USER
+echo $USER$$USER
+echo "$USER$$USER"
+echo "$USER/////$USER"
+echo $USER$$$$$$USER
+echo $USER$
+echo $USER$$$$
+echo $USER$$$$///
+echo $USER$
+echo $USER$$
+echo $USER$$$$USER
+echo $USER$$$$USER
+echo "$USER$$$$USER"
+echo $USER$$$$USER
+echo "$USER$$$$USER"
+echo "$USER///$USER"
+echo "$USER===$USER"
+echo "$USER///$USER"
+echo "$USER$USER"
+echo "$USER"
+echo "$USER"
+echo "$USER$USER"
+echo "$USER$$USER"
+echo "$USER$$$USER"
+echo "$USER$$$USER"
+echo "$USER$$$USER"
+echo "$USER$$$USER"
+echo "$USER$USER"
+echo "$USER-=/?$USER"
+echo "$USER-=/?$$$USER"
+echo "$USER$$$USER"
+echo "$USER$$$USER"
+echo "$USER$$$$$USER"
+echo "$USER$$$$USER"
+echo "$USER$$USER"
+echo "$USER$USER"
+echo "$USER$$$$$$$USER"
+echo "$USER$USER"
+echo "$USER$USER"
+echo "$USER$$USER"
+echo "$USER$$$USER"
+echo "$USER$$$$USER"
+echo "$USER$$USER"
+echo "$USER$$$$$USER"
+echo "$USER$$$$$USER"
+echo "$USER$$$$$USER"
+echo "$USER$$$$$USER"
+echo "$USER$$$$$USER"
+echo "$USER$$$$$USER"
+echo "$USER$$$$$USER"
+echo "$USER$$$$$USER"
+echo "$USER$$$$$USER"
+echo "$USER$$$$$USER"
+echo "$USER$$$$$USER"
+echo "$USER$$$$$USER"
+echo "$USER$$$$$USER"
+parse->i_b
+echo "$USER$$$USER"
+echo $USER$$$USER
+echo "$USER$$$USER"
+echo $USER$$$USER
+echo "$USER$$$USER"
+echo "$USER$$$USER"
+echo $USER$$$USER
+echo $USER$$$USER
+echo $USER$$$USER
+echo $USER$USER
+echo $USER$$USER
+echo "$USER$$USER"
+asdfgadg
+echo "$USER$$$HOME"
+echo $USER$$$HOME
+echo $USER/-?$HOME
+echo "$USER/-?$HOME"
+echo "" AAA
+echo ""AAA
+echo AAA AAA
+echo AAA""AAA
+echo AAA "" | cat -e
+echo "" AAA
+echo ||
+echo | |
+echo | | yui
+echo | 			| yui
+aaa 			 bbb
+				
+echo $USER$USER
+echo $USER-=?$USER
+echo $USER$$$$$$$$$$USER
+echo "$USER$$$$$$$$$$USER"
+echo $-AAAA
+echo $/AAAA
+echo $@AAAA
+echo "$@AAAA"
+echo "$AAAA"
+echo "$AAAA"
+echo "$$$$$$"
+echo "bip bip | bip ; cccc < >\" "
+dghdfthg
+gshfsgh
+"
+echo "$-AAA"
+echo "$-AAA"
+echo $-AAA
+echo "$-AAA"
+echo "$-AAA"
+echo "$-AAA"
+echo "$-AAA"
+echo "$-AAA"
+echo "$-AAA"
+echo "$-AAA"
+echo "$$AAA"
+echo "$-AAA"
+echo $-AAA
+echo $-AAA
+echo $-AAAA
+echo $///AAAA
+echo aaa " " bbb
+echo aaa "" bbb
+echo aaa  bbb
+echo aaa bbb
+echo aaa   bbb
+echo aaa "" bbb
+echo aaa "		" bbb
+echo aaa "    " bbb
+echo aaa "    " bbb
+echo "aaa "    " bbb"
+echo "aaa    "
+echo "    aaa"
+echo " aaa"
+echo "   AAAA"
+echo "    AAAAA"
+export a="   aaa      aaaaaa   " b="    bbbb      bbb  "
+export
+echo $a
+echo $a $b
+echo "$a $b"
+echo "$a" "$b"
+echo "$a"
+echo "$b"
+echo aaa "aaa     aaa"
+echo "aaa     aaa"
+echo aaa "aaa     aaa"
+echo "aaa     aaa" aaa
+echo aaa "aaa     aaa"
+echo aaa "aaa     aaa"
+echo aaa "aaa     aaa"
+echo aaa"aaa     aaa"
+echo aaa "aaa     aaa"
+echo aaa "aaa     aaa"
+echo aaa"aaa     aaa"
+echo aaa"aaa     aaa" "     aaaaaa"
+echo AAA "" AAA
+echo AAA "    " AAA
+echo $USER$USER
+echo $USER=$USER
+echo $USER-$USER
+echo $USER?$USER
+echo aaa
+echo ""
+echo aaa "    aaa      aaaaa"
+echo aaa"    aaa      aaaaa"
+    
+		
+	
+dfdfg 
+say hello

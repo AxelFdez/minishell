@@ -9,8 +9,10 @@ int	ft_check_double_pipes(t_list *lst)
 	tmp = lst;
 	while (tmp)
 	{
-		if (ft_str_isspaces(tmp->str) == 0)
+		if (tmp->next && ft_strcmp(tmp->str, "|") == 0
+			&& ft_str_isspaces(tmp->next->str) == 0)
 		{
+			tmp = tmp->next;
 			ft_lstdel_actual(&lst, tmp);
 			tmp = lst;
 		}
@@ -22,7 +24,6 @@ int	ft_check_double_pipes(t_list *lst)
 		}
 		else
 			tmp = tmp->next;
-			
 	}
 	return (0);
 }
@@ -65,10 +66,10 @@ static int	ft_check_syntax(t_parsing *parse, char *s)
 	return (0);
 }
 
-static int	ft_unsupported_token(t_parsing *parse, char *s)
+static int	ft_unsupported_token(char *s)
 {
 	char	*err_message;
-	
+
 	err_message = "minishell: error: `[\\] [;] [||]' unsupported token\n";
 	if (ft_strchr(s, '\\') || ft_strchr(s, ';')
 		|| (ft_strnstr(s, "||", ft_strlen(s))))
@@ -76,7 +77,6 @@ static int	ft_unsupported_token(t_parsing *parse, char *s)
 		ft_putstr_fd(err_message, 2);
 		return (1);
 	}
-	parse->ret_value = 0;
 	return (0);
 }
 
@@ -87,11 +87,11 @@ int	ft_lexer(t_parsing *parse)
 	s = malloc(sizeof(char) * (ft_len_str_to_cmp(parse) + 1));
 	s = ft_fill_str_to_cmp(parse, s);
 	ft_init_lexer(parse);
-	if (ft_check_syntax(parse, s) || ft_unsupported_token(parse, s)	
+	if (ft_check_syntax(parse, s) || ft_unsupported_token(s)
 		|| ft_check_after_token(s))
 	{
 		free(s);
-		parse->ret_value = 258;
+		sig.return_value = 258;
 		return (258);
 	}
 	free(s);

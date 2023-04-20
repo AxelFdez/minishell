@@ -10,7 +10,7 @@ void	ft_unset(t_parsing *parse)
 {
 	t_list	*tmp_cmd;
 	t_list	*tmp_env;
-	
+
 	tmp_cmd = parse->lst_cmdline->next;
 	tmp_env = parse->lst_env;
 	if (tmp_cmd == NULL)

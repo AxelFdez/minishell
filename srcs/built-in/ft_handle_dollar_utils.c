@@ -22,13 +22,13 @@ char	*ft_set_str_to_comp(char *s)
 static void	ft_is_dollar(t_parsing *parse, t_list **lst)
 {
 	while (parse->str_tmp[parse->i_b] && parse->str_tmp[parse->i_b] != ' '
-		&& parse->str_tmp[parse->i_b] != '\"' && parse->str_tmp[parse->i_b]
-		!= '\'' && parse->str_tmp[parse->i_b] != '\n')
+			&& parse->str_tmp[parse->i_b] != '\"' && parse->str_tmp[parse->i_b]
+			!= '\'' && parse->str_tmp[parse->i_b] != '\n'
+			&& !ft_found_char(parse->non_bl_chars, parse->str_tmp[parse->i_b]))
 	{
-		parse->len_b++;
-		parse->i_b++;
-		if (parse->str_tmp[parse->i_b] == '$'
-			|| parse->str_tmp[parse->i_b] == '/')
+			parse->len_b++;
+			parse->i_b++;
+		if (parse->str_tmp[parse->i_b] == '$')
 			break ;
 	}
 	ft_fill_tmplst(parse, lst, parse->i_b - parse->len_b);

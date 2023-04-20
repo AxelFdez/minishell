@@ -34,8 +34,8 @@ static void	ft_retrieve_var_name(t_parsing *parse)
 	parse->i++;
 	while (parse->input[parse->i] && parse->input[parse->i] != '\"'
 		&& parse->input[parse->i] != '\'' && parse->input[parse->i] != ' '
-		&& parse->input[parse->i] != '$' && parse->input[parse->i] != '/'
-		&& parse->input[parse->i] != '=')
+		&& parse->input[parse->i] != '$'
+		&& !ft_found_char(parse->non_bl_chars, parse->input[parse->i]))
 	{
 		parse->var_name[i] = parse->input[parse->i];
 		i++;
