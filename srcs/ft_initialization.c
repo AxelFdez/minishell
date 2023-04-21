@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_initialization.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:31:19 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 11:31:20 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 10:18:22 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	ft_initialization(t_parsing *parse)
 {
 	parse->lst_cmdline = NULL;
 	parse->non_bl_chars = "=/-@";
-	parse->tmp_input = NULL;
 	parse->i = 0;
 	parse->is_in_str = 0;
 	parse->len = 0;

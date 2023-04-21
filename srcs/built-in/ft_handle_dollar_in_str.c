@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_handle_dollar_in_str.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:30:51 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 11:30:52 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 10:15:36 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ void	ft_handle_dollar_in_str(t_parsing *parse)
 			parse->len);
 	tmplst = NULL;
 	ft_loop_dollar(parse, &tmplst);
-	
-
 	ft_replace_value(parse, &tmplst);
 	free(parse->str_tmp);
 	parse->str_tmp = NULL;

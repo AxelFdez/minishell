@@ -6,7 +6,7 @@
 /*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:31:35 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 18:58:18 by chmassa          ###   ########.fr       */
+/*   Updated: 2023/04/21 11:34:57 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,43 +27,12 @@ static void	ft_parseur(t_parsing *parse)
 		else if (parse->input[parse->i] == '\'')
 			is_quote_string(parse, '\'');
 		else if (!is_meta_char(parse->input[parse->i])
-			&& parse->input[parse->i] != ' ')
+			&& parse->input[parse->i] != ' ' && parse->input[parse->i] != '\t')
 			is_no_quote_string(parse);
 		else
 			parse->i++;
 	}
 }
-
-
-
-// static void	ft_split_cmd(t_list *lst)
-// {
-// 	t_list	*tmp;
-// 	t_list	*new;
-// 	int		i;
-// 	int		position;
-
-// 	tmp = lst;
-// 	i = 0;
-// 	position = 1;
-// 	while (tmp)
-// 	{
-// 		while (tmp->str[i])
-// 		{
-// 			if (tmp->str[i] == ' ' && tmp->str[i +1] == '-')
-// 			{
-// 				new = ft_lstnew(ft_strdup(tmp->str + (i + 1)));
-// 				ft_lstadd_position(&lst, new, position);
-// 				tmp->str[i] = '\0';
-// 				break ;
-// 			}
-// 			i++;
-// 		}
-// 		position++;
-// 		i = 0;
-// 		tmp = tmp->next;
-// 	}
-// }
 
 int	ft_get_cmdline(t_parsing *parse)
 {
@@ -77,12 +46,10 @@ int	ft_get_cmdline(t_parsing *parse)
 		return (0);
 	}
 	ft_parseur(parse);
-
 	if (ft_check_double_pipes(parse->lst_cmdline))
 		return (0);
-	// ft_split_cmd(parse->lst_cmdline);
-	ft_lstprint_from_head(parse->lst_cmdline);
 	ft_handle_underscore(parse);
+	ft_lstprint_from_head(parse->lst_cmdline);
 	if (parse->lst_cmdline)
 		return (1);
 	return (0);

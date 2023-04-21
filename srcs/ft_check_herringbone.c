@@ -6,7 +6,7 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 10:48:38 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 11:31:04 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/20 21:28:06 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	check_heredoc(t_parsing *parse)
 {
+	if (!parse->lst_cmdline)
+		return ;
 	parse->redirection_in = 0;
 	parse->heredoc_pfd = 0;
 	while (check_herringbones_input(parse) == 0

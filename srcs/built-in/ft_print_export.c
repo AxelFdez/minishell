@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_export.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:30:57 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 11:30:58 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 10:52:22 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ static t_list	*ft_env_cpy(t_list **lst)
 void	ft_print_export(t_parsing *parse)
 {
 	t_list	*envcpy;
+
 	envcpy = ft_env_cpy(&parse->lst_env);
 	ft_sort_env(&envcpy);
 	ft_print_env_sorted(envcpy);

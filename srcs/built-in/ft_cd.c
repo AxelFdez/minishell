@@ -6,7 +6,7 @@
 /*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:30:34 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 19:55:19 by chmassa          ###   ########.fr       */
+/*   Updated: 2023/04/21 12:06:10 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ static int	ft_handle_tild_hyphen(t_parsing *parse, char c)
 	}
 	if (ft_strlen(ret) == 0)
 	{
-		ft_printf("%s\n", ret);
+		free(ret);
 		return (0);
 	}
 	if (chdir(ret) != 0)
 	{
-		ft_printf("cd: %s: No such file or directory\n", ret);
+		ft_printf("minishell: cd: %s: No such file or directory\n", ret);
 		free(ret);
 		return (1);
 	}
@@ -61,7 +61,6 @@ int	ft_cd(t_parsing *parse)
 	ret = 0;
 	tmp = parse->lst_cmdline;
 	cwd = ft_get_current_position();
-	
 	if (tmp->next == NULL || ft_strcmp(tmp->next->str, "~") == 0)
 		ret = ft_handle_tild_hyphen(parse, '~');
 	else if (tmp->next == NULL || ft_strcmp(tmp->next->str, "-") == 0)
@@ -73,7 +72,7 @@ int	ft_cd(t_parsing *parse)
 		return (1);
 	}
 	if (!cwd)
-		return(0);
+		return (0);
 	ft_update_oldpwd(parse, cwd);
 	cwd = ft_get_current_position();
 	ft_update_pwd(parse, cwd);

@@ -28,6 +28,7 @@ static void	ft_handle_error(t_parsing *parse)
 void	ft_exit(t_parsing *parse)
 {
 	unsigned long long	ret_atoi;
+
 	if (parse->lst_cmdline->next == NULL)
 	{
 		write(2, "exit\n", 5);
@@ -38,8 +39,8 @@ void	ft_exit(t_parsing *parse)
 		if (ft_str_isdigits(parse->lst_cmdline->next->str) == 1
 			&& ft_lstsize(parse->lst_cmdline) > 2)
 			ft_printf("minishell: exit: too many arguments\n");
-		else if (ft_str_isdigits(parse->lst_cmdline->next->str) == 0 || 
-			ft_strlen(parse->lst_cmdline->next->str) > 19)
+		else if (ft_str_isdigits(parse->lst_cmdline->next->str) == 0
+			|| ft_strlen(parse->lst_cmdline->next->str) > 19)
 			ft_handle_error(parse);
 		else
 		{

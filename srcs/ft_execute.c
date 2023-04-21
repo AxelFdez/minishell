@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_execute.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 10:44:21 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 11:17:28 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 10:50:27 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,16 @@ void	command_father(t_parsing *parse)
 	else if (WIFSIGNALED(parse->status))
 	{
 		g_sig.return_value = WTERMSIG(parse->status);
-		if (g_sig.return_value == 2)
-			g_sig.return_value = 130;
-		else if (g_sig.return_value == 3)
-			g_sig.return_value = 131;
-		else if (g_sig.return_value == 11)
-			g_sig.return_value = 127;
+		if (g_sig.return_value == 2 || g_sig.return_value == 3
+			|| g_sig.return_value == 6
+			|| g_sig.return_value == 10 || g_sig.return_value == 11)
+		{
+			if (g_sig.return_value == 10)
+				write(2, "Bus error: 10\n", 14);
+			else if (g_sig.return_value == 11)
+				write(2, "Segmentation fault: 11\n", 23);
+			g_sig.return_value += 128;
+		}
 	}
 	if (parse->heredoc_pfd > 0)
 	{

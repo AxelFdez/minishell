@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_handle_underscore.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:31:13 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 11:31:14 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 10:20:24 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,16 +64,11 @@ static void	ft_handle_under_export(t_parsing *parse)
 		free(str);
 	}
 	else if (ft_lstsize(parse->lst_cmdline) == 1)
-	{
-		printf("tmp->str = %s\n", parse->lst_cmdline->str);
 		ft_replace_underscore_value(parse->lst_env, "export");
-
-	}
 }
 
 void	ft_handle_underscore(t_parsing *parse)
 {
-
 	if (ft_lst_strcmp(parse->lst_cmdline, "|") == 1
 		|| ft_lst_strcmp(parse->lst_cmdline, "<") == 1
 		|| ft_lst_strcmp(parse->lst_cmdline, "<<") == 1)

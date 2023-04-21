@@ -3,14 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:31:05 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 11:31:06 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 10:51:28 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "../includes/minishell.h"
 
@@ -19,14 +17,12 @@ void	ft_error(char *err_mess)
 	write (2, "Error\n", 6);
 	ft_putstr_fd(err_mess, 2);
 	g_sig.return_value = 1;
-	// return ;
-	// if (parse->lst_cmdline)
-	// 	ft_lstdel_all(&parse->lst_cmdline);
-	// exit (EXIT_FAILURE);
 }
 
 void error_exec_message(t_parsing *parse)
 {
+	if (!parse->command[0])
+		return ;
 	if (parse->command[0][0] == '/'
 		|| (parse->command[0][0] == '.' && parse->command[0][1] == '/'))
 	{

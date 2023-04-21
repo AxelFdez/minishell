@@ -6,7 +6,7 @@
 /*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:31:31 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 20:00:11 by chmassa          ###   ########.fr       */
+/*   Updated: 2023/04/21 10:12:57 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	ft_check_double_pipes(t_list *lst)
 	}
 	return (0);
 }
+
 static int	ft_check_after_token(char *s)
 {
 	int		i;
@@ -53,7 +54,6 @@ static int	ft_check_after_token(char *s)
 			ft_putstr(ret);
 			return (1);
 		}
-
 		i++;
 	}
 	return (0);

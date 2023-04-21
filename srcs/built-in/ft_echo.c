@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_echo.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:30:38 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 11:30:40 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:02:48 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,19 @@ static void	ft_print_var(t_parsing *parse, char *s)
 		return ;
 	}
 	i = 0;
-	str = ft_strtrim(s, " ");
+	str = ft_strtrim(s, " \t");
 	while (str[i])
 	{
+		if (str[i] == '\t')
+		{
+			write (1, " ", 1);
+			while (str[i] == '\t')
+				i++;
+		}
 		write (1, &str[i], 1);
 		if (str[i] == ' ')
 			while (str[i] == ' ')
 				i++;
-		else
 			i++;
 	}
 	free(str);
@@ -60,7 +65,6 @@ static void	ft_print_tild(t_parsing *parse)
 
 	tild_ret = ft_loop_tild_hyphen(parse, '~');
 	ft_putstr_fd(tild_ret, 1);
-
 	free(tild_ret);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_handle_dollar.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:30:56 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 11:30:57 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 10:52:41 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ static void	ft_retrieve_var_name(t_parsing *parse)
 		parse->var_name[i] = parse->input[parse->i];
 		i++;
 		parse->i++;
-
 	}
 	parse->var_name[i] = '\0';
 	ft_found_var_in_env(parse);

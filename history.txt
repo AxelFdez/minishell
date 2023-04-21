@@ -3527,6 +3527,7 @@ exit 513135111131313513518410541543510051683413543131131313003531
 agasgasg
 echo $?
 echo $?
+<<<<<<< HEAD
 >>>>>>> origin/axel
 echo "$USER$????"
 exit 513135111131313513518410541543510051683413543131131313003531
@@ -4140,3 +4141,608 @@ cd
 | cat | ls
 | cat | ls
 | cat | ls
+=======
+./a.out 
+echo $?
+a.out 
+$?
+exit
+./a.out 
+./a.out 
+echo $?
+export PATH=
+ls
+ls
+ls
+ls
+ls
+l
+sl
+ls
+export PATH=""
+ls
+ls
+ls
+ls
+ls
+export PATH
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+wc
+export PATH=
+ls
+flfe
+fel
+ls
+cd
+ls
+pwd
+ls
+ls -l
+ls
+cd ..
+ls
+export PATH=" "
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+export PATH=""
+as
+ls
+export PATH=
+ls
+
+ls
+sls
+ls
+ls
+ls
+exit
+export PATH=
+ls
+ls
+exit
+export PATH=
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+export PATH=
+ls
+ls
+export PATH=
+ls
+bash
+ls
+ls
+ls
+ls
+ls
+export PATH=
+ls
+env
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+export PATH=
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+/bin/ls
+cat
+ls
+export PATH
+ls
+ls
+export PATH
+ls
+ls
+ls
+export PATH=
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+export PATH=
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+
+mkdir 1 2 3
+chmod 000 2
+ls > 1 > 2 > 3 > 4 | echo test
+rm -f 1 2 3
+rm -rf 1 2 3
+ls
+touch 1 2 3
+chmod 000 2
+ls > 1 > 2 > 3 > 4 | echo test1
+ls
+ls
+ls
+ls
+ls
+export PATH
+ls
+ls
+export PATH
+ls
+ls
+ls
+ls
+export PATH
+ls
+ls
+export PATH
+ls
+
+ls
+export PATH
+ls
+ls
+cat << a << b | cat -e << a << b
+cat << a << b | cat -e << a << b
+cat << a << b | cat -e << a << b
+ls
+unset PATH
+ls
+ls
+unset PATH
+ls
+ls
+ls
+make
+ls
+unset PATH
+ls
+ls
+unset PATH
+ls
+ls
+unset PATH
+ls
+ls
+unset PATH
+ls
+ls
+ls
+export PATH=
+ls
+ls
+export PATH=
+ls
+ls
+export PATH=
+ls
+ls
+export PATH=
+ls
+ls
+ls
+unset PATH
+ls
+ls
+unset PATH
+ls
+export PATH
+ls
+export PATH=
+ls
+ls
+unset PATH
+ls
+export PATH
+ls
+export PATH=
+ls
+export PATH=/bin
+ls
+export a="ls -la"
+$a
+export a="ls -la"
+$?
+export a="ls -la"
+$?
+export a="ls -la"
+$?
+$?
+$?
+export a="ls -la"
+$?
+rfwerwe
+echo $?
+ls
+export a="ls -la"
+$?
+fewwe
+$?
+export a="ls -la"
+$?
+$a
+ls -la
+$a
+export a="ls -la"
+$a
+export a="ls -la"
+$a
+ls
+ls -la
+cat << a << b | cat -e << a << b
+<< 1
+<< 1
+cat << a << b | cat -e << a << b
+cat << a << b | cat -e << a << b
+cat << a << b | cat -e << a << b
+cat << a << b | cat -e << a << b
+cat << a << b | cat -e << a << b | cat -e << 1
+ls
+ls
+export $a="iajfe ejfeo jfeojf"
+$a
+export
+export a="iajfe ejfeo jfeojf"
+$a
+export a="i"ajfe "ejfeo jfeojf"
+bash
+clear
+make re
+ls
+export a="ls -la"
+$a
+export a="ls -la"
+$a
+export a="ls -la"
+$a
+ls
+$HOME
+$PATH
+export a="ls -la"
+$a
+make
+export a="ls -la"
+$a
+export a="ls -la"
+$a
+$?
+echo $?
+$faeffef
+$HOME
+$HOME$USER
+echo $HOME$USER
+export a="ls -la"
+$a
+export a="ls-la"
+$a
+export a="ls -la"
+$a
+export
+$a
+export
+make fclean
+>>>>>>> origin/axel
+export
+echo $USER=$USER
+echo $USER = $USER
+export a="ls -la"
+export
+$a
+echo "" AAA
+echo ""AAA
+echo lsfkjglkfs
+echo dddd
+echo $USER
+export v=42
+echo v
+echo $v
+env
+ls
+export var1="   aaa      bbbbbbb    " var2=42 var-3=ert var4=op
+export
+echo $var1
+echo "$var1"
+<< fin | cat > out
+cat out
+<< fin cat > out
+<< a << b << c >> out
+echo aaaaa"
+bbbbbbbb
+vvvvvvvv
+ccccc
+ddd
+eee
+dd
+hhhjjj
+fgfgh
+hg
+hg
+hj
+gjh'fhrhy
+hrhjeyhjewryhj'ryjheyjetjyjetyjyyj
+'$USER'
+$USER
+"
+export a=ec b=ho
+$a$b toto
+export var="ls -la"
+$var
+clear
+mkdir a
+mkdir a/b
+mkdir a/b/c
+cd a/b/c/
+rm -rf ../../../a
+cd ..
+cd ..
+cd ..
+pwd
+cd ~
+pwd
+cd -
+pwd
+ls
+cd a/
+mkdir b
+mkdir b/c
+cd b/c/
+rm -rf ../../../a
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+cd ~
+cd ~
+cd -
+cd -
+cd -
+cd
+cd
+pwd
+pwd
+echo aaa
+echo aaa
+cd ..
+cd ..
+echo aaa
+echo aaa
+echo "aaaa"
+echo "ljdhfgkjhkjrg"
+echo "ljdhfgkjhkjrg"
+echo aaa
+echo bbb
+echo eee
+echo eee
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo bbb
+echo hhh
+echo aaa
+echo aaa
+echo aaa
+echo bbb
+echo bbb
+echo bbb
+cd ..
+cd ..
+cd ..
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+cd 
+dc
+ethwyh
+wtrhwn
+wtrhwn
+ethwyh
+echo aaa
+echo aaa
+echo aaa
+cd ..
+cd ..
+cd ..
+cd -
+export var1=42 var2="aaa       bbbbb     " var3=salut
+export
+unset var1 var2 var3
+export
+unset HOME
+cd 
+export HOME
+cd
+export HOME=
+cd
+unset HOME
+cd
+cd
+cd
+export HOME=
+cd
+cd
+cd
+cd
+echo aaa
+echo aaa
+echo bbb
+echo bbb
+echo bbb
+echo bbb
+echo aaa
+echo aaa
+echo aaa
+echo bbb
+echo bbb
+echo bbb 
+cd ..
+cd ..
+cd ..
+cd ..
+echo aaa
+echo bbb
+echo bbb
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+unset HOME
+cd
+cd
+cd
+export HOME
+cd
+cd
+cd
+export HOME=
+cd
+cd
+cd
+cd
+cd
+export HOME=kshrgfksjhgjkhdsgk
+cd
+exit 513135111131313513518410541543510051683413543131131313003531
+echo "kjhfgkdjfhg  dlhgkdjfhgkdjhgkdfj dfgdgh"
+echo aaa      sssss        wwwwwww 
+echo "aaa      sssss        wwwwwww" 
+./minishell
+ksjfkjafhgfdb
+echo $?
+adfgadfghsdgh
+exit
+exit
+exit
+daflgkjadlfkg
+exit
+gg
+fghyjumj
+yhjetyjetyj
+exit
+ehh
+fyhjyhj
+echo $?
+exit
+ls       -la
+ls		-la
+ls      -la
+ls		-la
+ls		-la
+ls		-la
+ls		-la
+ls		-la
+ls		-la
+ls		-la
+echo "ksdjfjsdfsdfj   skdjfsdjflsdijf"
+echo "ksdjfjsdfsdfj   skdjfsdjflsdijf""sdhsdh"
+echo "aaaa""sssssss"
+echo "aaa     cccc"
+echo "aaa		cccc"
+echo aaa		bbb
+echo aaa          bbb
+aaa         cccc
+ls	-la
+ls	-la
+ls		-la
+ls		-la
+ls		-la
+					
+ls		-la
+ls		-la
+ls		-la
+echo "ggg			fff"
+export var="aaa	bbb	ddd"
+export
+echo $var
+echo "$var"
+export var="aaa    bbb     ddd"
+echo $var
+export var2="   aaaaa      aaaaaaaa    aaaa" var3="	ssss		jkjkji		bhjkhk"
+export
+echo $var2
+echo $var3
+export var1="   aaa     aaa       aaa" var2="	aaa		bbb	bbb"
+echo $var1
+echo $var2
+echo "		hhh		hkkjhj"
+echo 		hhh		hkkjhj
+export var="		aaa		aaa		aaa"
+echo $var
+echo "$var"
+export var="		aaa		bbb		ccc		"
+echo $var
+export var="		aaa		aaa		"
+echo $var
+export var="		hhh		hhh		hhhhh"
+echo $var
+export var="		aaa			bbb		bbb	"
+echo $var
+export var="		aaaaa		bbbb    bbbbb	jijd		"
+echo $var
+echo "$var"
+export var="		cccc		    cggc		ctctc	"
+echo $var
+echo "$var"
