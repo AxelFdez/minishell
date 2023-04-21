@@ -6,7 +6,7 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 12:11:48 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/21 12:20:16 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:26:27 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void	ft_handle_error(t_parsing *parse)
 	exit(255);
 }
 
-static void	exit_without_arg(t_parsing *parse)
+static void	exit_without_arg(void)
 {
 	write(2, "exit\n", 5);
 	exit (0);
@@ -48,7 +48,7 @@ void	ft_exit(t_parsing *parse)
 	unsigned long long	ret_atoi;
 
 	if (parse->lst_cmdline->next == NULL)
-		exit_without_arg(parse);
+		exit_without_arg();
 	else
 	{
 		if (ft_str_isdigits(parse->lst_cmdline->next->str) == 1

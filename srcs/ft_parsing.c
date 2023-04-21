@@ -6,7 +6,7 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:31:35 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/21 12:15:26 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 13:45:24 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,12 @@ int	ft_get_cmdline(t_parsing *parse)
 		return (0);
 	}
 	ft_parseur(parse);
+	if (ft_strcmp(parse->lst_cmdline->str, "|") == 0)
+	{
+		ft_printf("minishell: syntax error near unexpected token `|'\n");
+		g_sig.return_value = 258;
+		return (0);
+	}
 	if (ft_check_double_pipes(parse->lst_cmdline))
 		return (0);
 	ft_handle_underscore(parse);

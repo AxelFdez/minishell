@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_initialization.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:31:19 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/21 10:18:22 by chmassa          ###   ########.fr       */
+/*   Updated: 2023/04/21 12:32:33 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ void	ft_initialization(t_parsing *parse)
 	parse->fd_stdin = STDIN_FILENO;
 	parse->fd_stdout = STDOUT_FILENO;
 	parse->heredoc_pfd = 0;
-	parse->fd_history[1] = open("history.txt",
+	parse->fd_history[1] = open(".history",
 			O_RDWR | O_CREAT | O_APPEND, 0644);
 	if (parse->fd_history[1] < 0)
-		perror("history.txt");
+		perror(".history");
 }

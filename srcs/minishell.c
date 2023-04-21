@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:11:04 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/21 12:07:07 by chmassa          ###   ########.fr       */
+/*   Updated: 2023/04/21 13:43:40 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void	ft_main_loop(t_parsing *parse)
 				parse->env = ft_lst_to_char_tab(parse->lst_env);
 				execute_cmd(parse);
 				free_str_tab(parse->env);
-				ft_lstdel_all(&parse->lst_cmdline);
 			}
+			ft_lstdel_all(&parse->lst_cmdline);
 		}
 		free(parse->input);
 	}
