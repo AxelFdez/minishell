@@ -6,7 +6,7 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:30:36 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 11:30:38 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:05:35 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	execute_built_in(t_parsing *parse)
 {
 	if (parse->built_in_cmd == 1)
 		g_sig.return_value = ft_env(parse);
-	// else if (parse->built_in_cmd == 2)
-	// 	parse->ret_value = ft_export(parse);
 	else if (parse->built_in_cmd == 3)
 		g_sig.return_value = ft_pwd();
 	else if (parse->built_in_cmd == 4)
@@ -65,8 +63,6 @@ int	parsing_built_in(t_parsing *parse)
 	{
 		if (ft_strcmp(tmp->str, "env") == 0 || ft_strcmp(tmp->str, "ENV") == 0)
 			return (1);
-		if (ft_strcmp(tmp->str, "export") == 0)
-			return (2);
 		if (ft_strcmp(tmp->str, "pwd") == 0 || ft_strcmp(tmp->str, "PWD") == 0)
 			return (3);
 		if (ft_strcmp(tmp->str, "echo") == 0)

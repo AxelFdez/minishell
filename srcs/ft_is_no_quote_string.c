@@ -6,7 +6,7 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:31:22 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 22:20:36 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 11:38:16 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,12 @@ static void	ft_manage_dollar(t_parsing *parse)
 void	is_no_quote_string(t_parsing *parse)
 {
 	while (parse->input[parse->i] && !is_meta_char(parse->input[parse->i])
-		&& parse->input[parse->i] != ' ')
+		&& parse->input[parse->i] != ' ' && parse->input[parse->i] != '\t')
 	{
 		if (parse->input[parse->i] == '$'
 			&& ft_found_char(parse->non_bl_chars, parse->input[parse->i +1]))
-            {
-			    parse->len += 2;
+			{
+				parse->len += 2;
 			    parse->i += 2;
             }
 		if (parse->input[parse->i] == '$' && parse->input[parse->i +1] != ' '
@@ -76,8 +76,6 @@ void	is_no_quote_string(t_parsing *parse)
 		parse->len++;
 		parse->i++;
 	}
-	//dprintf(2, "str_tmp = %s\n", parse->str_tmp);
 	ft_fill_lst(&parse->lst_cmdline, parse, parse->i - parse->len);
-	//print_list(parse->lst_cmdline);
 	parse->len = 0;
 }

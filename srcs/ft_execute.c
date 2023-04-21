@@ -6,7 +6,7 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 10:44:21 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 16:09:04 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 11:54:20 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,9 @@ void	command_father(t_parsing *parse)
 	else if (WIFSIGNALED(parse->status))
 	{
 		g_sig.return_value = WTERMSIG(parse->status);
-		if (g_sig.return_value == 2 || g_sig.return_value == 3 || g_sig.return_value == 6
-			|| g_sig.return_value == 10 || g_sig.return_value == 11)
+		if (g_sig.return_value == 2 || g_sig.return_value == 3
+			|| g_sig.return_value == 6 || g_sig.return_value == 10
+			|| g_sig.return_value == 11)
 		{
 			if (g_sig.return_value == 10)
 				write(2, "Bus error: 10\n", 14);

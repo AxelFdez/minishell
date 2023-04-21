@@ -3598,3 +3598,59 @@ export
 $a
 export
 make fclean
+ls
+norm
+find / -type f -name "*.log" -exec grep -q "error" {} \; -print | sort -r | head -n 10 | xargs -I{} sh -c 'echo -n {}; echo -n ": "; tail -n 1 {}'
+ls -R / | grep ".txt" | awk '{printf("%s %s",$1,$2); system("cat " $1 "/" $2 " | sed \"s/line/LINE/g\"")}'
+ls /path/to/directory | while read file
+do
+    if [ -f "/path/to/directory/$file" ]
+    then
+        echo "$file is a file"
+    else
+        echo "$file is a directory"
+    fi
+done
+grep -Rl "pattern" /path/to/directory | xargs sed -i 's/pattern/replacement/g'
+ls -1 ~/cursus/ | awk '{ print NR ": " $0 }' | sort -rk2 | awk '{ $1="" ; print }'
+bash
+ls -1 ../../ | awk '{ print NR ": " $0 }' | sort -rk2 | awk '{ $1="" ; print }'
+ls -1 ../../ | awk '{ print NR ": " $0 }' | sort -rk2
+grep -E -o "\b[[:alnum:]]{4,}\b" ./to_do.txt | sort | uniq -c | sort -rn
+>
+|
+| ls
+norminette srcs/ft_error.
+norminette srcs/ft_error.c
+norminette srcs/ft_error.c
+norminette srcs/ft_error.c
+ls 	-la
+ls 	-l
+ls 	-l
+ls -l
+ls               -l
+ls	-l
+ls -l
+ls -l
+ls -l
+ls 	-l
+ls -l
+ls 	-l
+ls	-l
+ls	-l
+ls	-l
+ls -l
+
+ls 	 -l
+ls	-l
+ls	-l
+ls	-l
+ls	-l
+ls	-l
+ls	-l
+ls	-l
+ls	-l
+ls		    -l
+history
+ls	-l
+		  

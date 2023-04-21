@@ -6,7 +6,7 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:31:35 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 21:49:02 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 11:34:58 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	ft_parseur(t_parsing *parse)
 		else if (parse->input[parse->i] == '\'')
 			is_quote_string(parse, '\'');
 		else if (!is_meta_char(parse->input[parse->i])
-			&& parse->input[parse->i] != ' ')
+			&& parse->input[parse->i] != ' ' && parse->input[parse->i] != '\t')
 			is_no_quote_string(parse);
 		else
 			parse->i++;
@@ -38,7 +38,7 @@ int	ft_get_cmdline(t_parsing *parse)
 {
 	parse->i = 0;
 	parse->is_in_str = 0;
-	parse->input = ft_strtrim_free_s1(parse->input, " ");
+	parse->input = ft_strtrim_free_s1(parse->input, " \t");
 	if (!ft_str_isspaces(parse->input))
 	{
 		free(parse->input);

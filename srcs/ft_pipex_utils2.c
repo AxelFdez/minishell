@@ -6,7 +6,7 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:08:09 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 21:27:00 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 10:07:49 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	print_list(t_list *lst)
 	}
 	while (lst != NULL)
 	{
-		dprintf(2, "[%s] ", lst->str);
+		ft_putstr_fd(lst->str, 2);
 		lst = lst->next;
 	}
 	ft_printf("\n");

@@ -6,7 +6,7 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 18:45:04 by chmassa           #+#    #+#             */
-/*   Updated: 2023/04/20 11:50:26 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 11:53:49 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ int	ft_isspaces(char c)
 {
 	if (c == '\n' || c == '\t' || c == ' ' || c == '\r'
 		|| c == '\v' || c == '\f')
-	return (1);
+		return (1);
 	return (0);
 }

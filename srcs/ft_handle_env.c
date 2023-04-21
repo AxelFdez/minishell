@@ -6,7 +6,7 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:31:10 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 11:31:11 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 09:57:43 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void	ft_retrieve_loop(t_parsing *parse, char **env)
 	{
 		if (ft_strncmp(env[i], "OLDPWD=", 7) == 0)
 			env[i][ft_str_chr(env[i], '=')] = '\0';
-		if (strncmp(env[i], "_=", 2) == 0)
+		if (ft_strncmp(env[i], "_=", 2) == 0)
 		{
 			new = ft_lstnew(ft_strdup("_=minishell"));
 			ft_lstadd_back(&parse->lst_env, new);
