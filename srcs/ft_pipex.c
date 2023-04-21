@@ -1,198 +1,99 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_pipex.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:09:01 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/20 11:18:52 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/minishell.h"
+
+pid_t	cmd1(t_parsing *parse, int *pfd)
+{
+	pid_t	child;
+
+	check_heredoc(parse);
+	g_sig.child = 0;
+	child = fork();
+	if (child == -1)
+		perror("Fork error");
+	else if (child == 0)
+	{
+		close(pfd[0]);
+		parsing_command_child(parse);
+		if (parse->redirection_out == 0)
+			dup2(pfd[1], STDOUT_FILENO);
+		close(pfd[1]);
+		execute_command_child(parse);
+	}
+	command_father(parse);
+	return (child);
+}
+
+pid_t	cmd2(t_parsing *parse, int *pfd)
+{
+	pid_t	child;
+
+	check_heredoc(parse);
+	g_sig.child = 0;
+	if (!parse->lst_cmdline)
+		return (-1);
+	child = fork();
+	if (child == -1)
+		perror("Fork error");
+	else if (child == 0)
+	{
+		close(pfd[1]);
+		parsing_command_child(parse);
+		if (parse->redirection_in == 0)
+			dup2(pfd[0], STDIN_FILENO);
+		close(pfd[0]);
+		execute_command_child(parse);
+	}
+	command_father(parse);
+	return (child);
+}
 
 void	one_pipe(t_parsing *parse)
 {
-	pid_t	child;
 	int		pfd[2];
+	int		children[2];
+	int		last_cmd_value_return;
+	int		i;
 
+	last_cmd_value_return = 0;
 	pipe(pfd);
-	child = fork();
-	if (child == -1)
-		perror("Fork error");
-	else if (child == 0)
-	{
-		dup2(pfd[1], STDOUT_FILENO);
-		close(pfd[0]);
-		if (parse->built_in_cmd > 0)
-			execute_built_in(parse);;
-		execve(parse->command[0], parse->command, parse->env);
-		perror("command not found");
-	}
-	dup2(pfd[0], STDIN_FILENO);
+	children[0] = cmd1(parse, pfd);
+	delete_cmd(&parse->lst_cmdline);
+	children[1] = cmd2(parse, pfd);
+	close(pfd[0]);
 	close(pfd[1]);
-	wait(NULL);
-	check_herringbone(parse);
-	if (parse->built_in_cmd > 0)
+	i = 1;
+	while (i >= 0)
 	{
-		int i = 0;
-		while (i < parse->lst_target + 1)
-		{
-			parse->built_in_cmd = 0;
-			ft_lstdel_front(&parse->lst_cmdline);
-			i++;
-		}
+		waitpid(children[i], &g_sig.return_value, 0);
+		if (i == 1)
+			last_cmd_value_return = g_sig.return_value / 256;
+		i--;
 	}
-	if (check_builtin_input(parse) == 1)
-			parsing_cmd(parse);
-	else
-		parse->built_in_cmd = parsing_built_in(parse);
-	parse->last_pipe = 1;
-	if (parse->built_in_cmd > 0)
-		execute_built_in(parse);
-	execve(parse->command[0], parse->command, parse->env);
-	perror("command not found");
-}
-
-int	first_pipe(t_parsing *parse, int temp_fd)
-{
-	pid_t	child;
-	int		pfd[2];
-
-	pipe(pfd);
-	child = fork();
-	if (child == -1)
-		perror("Fork error");
-	else if (child == 0)
-	{
-		dup2(pfd[1], STDOUT_FILENO);
-		close(pfd[0]);
-		if (parse->built_in_cmd > 0)
-			execute_built_in(parse);
-		execve(parse->command[0], parse->command, parse->env);
-		perror("command not found");
-	}
-	wait(NULL);
-	if (parse->built_in_cmd > 0)
-	{
-		int i = 0;
-		while (i < parse->lst_target + 1)
-		{
-			parse->built_in_cmd = 0;
-			ft_lstdel_front(&parse->lst_cmdline);
-			i++;
-		}
-	}
-	temp_fd = pfd[0];
-	close(pfd[1]);
-	return (temp_fd);
-}
-
-int	middle_pipe(t_parsing *parse, int pipe_temp)
-{
-	pid_t	child;
-	int		pfd[2];
-
-	pipe(pfd);
-	child = fork();
-	if (child == -1)
-		perror("Fork error");
-	else if (child == 0)
-	{
-		dup2(pipe_temp, STDIN_FILENO);
-		dup2(pfd[1], STDOUT_FILENO);
-		close(pfd[0]);
-		if (parse->built_in_cmd > 0)
-			execute_built_in(parse);
-		execve(parse->command[0], parse->command, parse->env);
-		perror("command not found");
-	}
-	wait(NULL);
-	if (parse->built_in_cmd > 0)
-	{
-		int i = 0;
-		while (i < parse->lst_target + 1)
-		{
-			parse->built_in_cmd = 0;
-			ft_lstdel_front(&parse->lst_cmdline);
-			i++;
-		}
-	}
-	close(pipe_temp);
-	pipe_temp = pfd[0];
-	close(pfd[1]);
-	return (pipe_temp);
-}
-
-void	last_pipe(t_parsing *parse, int temp_fd)
-{
-	pid_t	child;
-	int		pfd[2];
-
-	pipe(pfd);
-	child = fork();
-	if (child == -1)
-		perror("Fork error");
-	else if (child == 0)
-	{
-		dup2(temp_fd, STDIN_FILENO);
-		dup2(pfd[1], STDOUT_FILENO);
-		close(pfd[0]);
-		if (parse->built_in_cmd > 0)
-			execute_built_in(parse);
-		execve(parse->command[0], parse->command, parse->env);
-		perror("command not found");
-	}
-	dup2(pfd[0], STDIN_FILENO);
-	close(temp_fd);
-	close(pfd[1]);
-	wait(NULL);
-	if (parse->built_in_cmd > 0)
-	{
-		int i = 0;
-		while (i < parse->lst_target + 1)
-		{
-			parse->built_in_cmd = 0;
-			ft_lstdel_front(&parse->lst_cmdline);
-			i++;
-		}
-	}
-	if (check_builtin_input(parse) == 1)
-		parsing_cmd(parse);
-	else
-		parse->built_in_cmd = parsing_built_in(parse);
-	parse->last_pipe = 1;
-	if (parse->built_in_cmd > 0)
-			execute_built_in(parse);
-	execve(parse->command[0], parse->command, parse->env);
-	perror("command not found");
+	g_sig.return_value = last_cmd_value_return;
 }
 
 void	pipex(t_parsing *parse)
 {
-	int		i;
-	int		sep;
-	int		temp_fd;
+	t_pipex	pipex;
 
-	parse->last_pipe = 0;
-	sep = count_pipe_until_sep(parse->lst_cmdline);
-	if (check_builtin_input(parse) == 1)
-		ft_lstdel_front(&parse->lst_cmdline);
-	if (sep == 1)
+	pipex.children = NULL;
+	pipex.i = 0;
+	pipex.last_cmd_value_return = 0;
+	pipex.last_cmd_no = 0;
+	pipex.sep = count_pipe(parse->lst_cmdline);
+	if (pipex.sep == 1)
 		one_pipe(parse);
 	else
-	{
-		temp_fd = 0;
-		temp_fd = first_pipe(parse, temp_fd);
-		i = 0;
-		while (i < (sep - 2))
-		{
-			check_herringbone(parse);
-			if (check_builtin_input(parse) == 1)
-				parsing_cmd(parse);
-			else
-				parse->built_in_cmd = parsing_built_in(parse);
-			if (check_builtin_input(parse) == 1)
-				ft_lstdel_front(&parse->lst_cmdline);
-			temp_fd = middle_pipe(parse, temp_fd);
-			i++;
-		}
-		check_herringbone(parse);
-		if (check_builtin_input(parse) == 1)
-			parsing_cmd(parse);
-		else
-			parse->built_in_cmd = parsing_built_in(parse);
-		if (check_builtin_input(parse) == 1)
-			ft_lstdel_front(&parse->lst_cmdline);
-		last_pipe(parse, temp_fd);
-	}
+		multi_pipes(parse, &pipex);
 }

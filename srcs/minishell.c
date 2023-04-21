@@ -1,17 +1,45 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minishell.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:11:04 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/21 13:43:40 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/minishell.h"
 
-static void	ft_retrieve_env(t_parsing *parse, char **env)
-{
-	int		i;
-	t_list	*new;
+t_sig	g_sig = {1, 0, 0, 0, 0};
 
-	parse->lst_env = NULL;
-	i = 0;
-	while (env[i])
+void	ft_main_loop(t_parsing *parse)
+{
+	while (1)
 	{
-		new = ft_lstnew(ft_strdup(env[i]));
-		ft_lstadd_back(&parse->lst_env, new);
-		i++;
+		g_sig.child = 1;
+		g_sig.heredoc = 1;
+		parse->input = readline("minishell -> ");
+		if (!parse->input)
+		{
+			write(2, "exit\n", 5);
+			exit(127);
+		}
+		ft_quotes(parse);
+		ft_add_history(parse);
+		ft_history(parse);
+		if (ft_lexer(parse) == 0)
+		{
+			if (ft_get_cmdline(parse))
+			{
+				parse->env = ft_lst_to_char_tab(parse->lst_env);
+				execute_cmd(parse);
+				free_str_tab(parse->env);
+			}
+			ft_lstdel_all(&parse->lst_cmdline);
+		}
+		free(parse->input);
 	}
 }
 
@@ -20,39 +48,16 @@ int	main(int ac, char **av, char **env)
 	t_parsing	parse;
 
 	(void)av;
-	parse.env = env;
 	if (ac == 1)
 	{
-		ft_initialization(&parse);
+		tcgetattr(STDIN_FILENO, &parse.term);
+		parse.term.c_lflag &= ~ECHOCTL;
+		tcsetattr(STDIN_FILENO, TCSAFLUSH, &parse.term);
+		signals_func();
 		ft_retrieve_env(&parse, env);
-		while (1)
-		{
-			signal(SIGQUIT, SIG_IGN);
-			signals_();
-			parse.input = readline("\033[3;36mminishell ->\033[0m ");
-			ft_quotes(&parse);
-			add_history(parse.input);
-			//if (ft_check_syntax(&parse))
-				ft_get_cmdline(&parse);
-			if (parse.lst_cmdline)
-			{
-				if (parse.lst_cmdline)
-				{
-					execute_cmd(&parse);
-					ft_lstdel_all(&parse.lst_cmdline);
-				}
-			}
-			//system("leaks minishell");
-			parse.tmp_ret_value = parse.ret_value;
-			if (parse.str_tmp)
-				free(parse.str_tmp);
-		}
+		ft_initialization(&parse);
+		ft_check_history_size(&parse);
+		ft_main_loop(&parse);
 	}
-	puts("end");
-	system("leaks minishell");
 	return (0);
 }
-// RED = \033[1;31m
-// GREEN = \033[1;32m
-// YELLOW = \033[1;33m
-// DEFAULT = \033[0m

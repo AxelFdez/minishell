@@ -1,13 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_env.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:30:41 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/21 12:11:31 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/minishell.h"
 
 int	ft_env(t_parsing *parse)
 {
 	t_list	*tmp;
-	int		error;
 
 	tmp = parse->lst_env;
-	error = 0;
-	if (parse->lst_cmdline->next == NULL)
+	if (parse->lst_cmdline->next == NULL
+		|| ft_strcmp(parse->lst_cmdline->next->str, "|") == 0)
 	{
 		while (tmp)
 		{
@@ -18,11 +29,8 @@ int	ft_env(t_parsing *parse)
 	}
 	else
 	{
-		ft_printf("env: `%s' : not a valid identifier\n",
-			parse->lst_cmdline->next->str);
-		error++;
+		ft_printf("env: options & arguments are not permited\n");
+		return (127);
 	}
-	if (error > 0)
-		return (1);
 	return (0);
 }

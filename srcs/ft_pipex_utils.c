@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_pipex_utils.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:06:54 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/20 22:21:36 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/minishell.h"
 
 static char	**find_path_in_env(t_parsing *parse)
@@ -7,12 +19,16 @@ static char	**find_path_in_env(t_parsing *parse)
 	char	**split;
 
 	i = 0;
-	while (ft_strstr(parse->env[i], "PATH") == NULL)
+	path = NULL;
+	while (parse->env[i])
+	{
+		if (ft_strncmp(parse->env[i], "PATH", 4) == 0)
+			path = (parse->env[i] + 5);
 		i++;
-	path = parse->env[i];
-	path = ft_strtrim(path, "PATH=");
+	}
+	if (!path)
+		return (NULL);
 	split = ft_split(path, ':');
-	free(path);
 	i = 0;
 	while (split[i])
 	{
@@ -23,20 +39,21 @@ static char	**find_path_in_env(t_parsing *parse)
 	return (split);
 }
 
-char	*path_of_command(t_parsing *parse)
+static char	*env_path_command(t_parsing *parse)
 {
 	int		i;
 	int		j;
 	char	**split;
 
 	split = find_path_in_env(parse);
+	if (!split || !split[0])
+		return (NULL);
 	i = 0;
 	while (access(split[i], F_OK) != 0)
 	{
 		i++;
 		if (split[i] == 0)
 		{
-			perror("command not found");
 			j = 0;
 			while (j < i)
 			{
@@ -44,24 +61,20 @@ char	*path_of_command(t_parsing *parse)
 				j++;
 			}
 			free(split);
-			return (NULL);
+			return (parse->command[0]);
 		}
 	}
 	return (split[i]);
 }
 
-void	cmd_lst_to_tab(t_parsing *parse)
+static void	cmd_lst_to_tab(t_parsing *parse)
 {
 	int		i;
-	t_list *temp;
-	t_list *temp2;
+	t_list	*temp;
 
 	temp = parse->lst_cmdline;
-	temp2 = parse->lst_cmdline;
 	i = 0;
-	while (temp && ft_strchr(temp->str, '|') == NULL
-		&& ft_strchr(temp->str, '<') == NULL
-		&& ft_strchr(temp->str, '>') == NULL)
+	while (temp && ft_strcmp(temp->str, "|") != 0)
 	{
 		i++;
 		temp = temp->next;
@@ -72,37 +85,28 @@ void	cmd_lst_to_tab(t_parsing *parse)
 		perror("error malloc");
 	i = 0;
 	parse->lst_target = 0;
-	while (temp2 && ft_strchr(temp2->str, '|') == NULL
-		&& ft_strchr(temp2->str, '<') == NULL
-		&& ft_strchr(temp2->str, '>') == NULL)
+	temp = parse->lst_cmdline;
+	while (temp && ft_strcmp(temp->str, "|") != 0)
 	{
-		parse->command[i] = ft_strdup(temp2->str);
+		parse->command[i] = ft_strdup(temp->str);
 		i++;
 		parse->lst_target++;
-		temp2 = temp2->next;
+		temp = temp->next;
 	}
 	parse->command[i] = 0;
 }
 
 void	parsing_cmd(t_parsing *parse)
 {
-	int i;
-
-	i = 0;
 	cmd_lst_to_tab(parse);
-	if (access(parse->command[0], F_OK))
-		parse->command[0] = path_of_command(parse);
-	while (i < parse->lst_target)
-	{
-		ft_lstdel_front(&parse->lst_cmdline);
-		i++;
-	}
-		// ft_lstprint_from_head(parse->lst_cmdline);
-		// exit(EXIT_FAILURE);
-	//printf("ret = %d\n", parse->lst_target);
+	if (access(parse->command[0], F_OK) && access(parse->command[0], X_OK))
+		parse->command[0] = env_path_command(parse);
+	if (!parse->command[0])
+		ft_printf("minishell: %s: no such file or directory\n",
+			parse->lst_cmdline->str);
 }
 
-int	count_pipe_until_sep(t_list *list)
+int	count_pipe(t_list *list)
 {
 	t_list	*temp;
 	int		count;
@@ -113,10 +117,6 @@ int	count_pipe_until_sep(t_list *list)
 	{
 		if (temp->str[0] == '|')
 			count++;
-		if (temp->str[0] == '<' && temp->str[0] == '>')
-		{
-			return (count);
-		}
 		temp = temp->next;
 	}
 	return (count);

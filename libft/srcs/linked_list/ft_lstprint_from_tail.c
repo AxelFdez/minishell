@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint_from_tail.c                                  :+:      :+:    :+:   */
+/*   ft_lstprint_from_tail.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chmassa <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 12:12:15 by chmassa           #+#    #+#             */
-/*   Updated: 2023/01/05 15:21:00 by chmassa          ###   ########.fr       */
+/*   Updated: 2023/04/21 10:11:52 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,16 @@ void	ft_lstprint_from_tail(t_list *lst)
 	t_list	*tmp;
 	int		node;
 
-	node = ft_lstsize(lst);;
-
+	node = ft_lstsize(lst);
 	if (!lst)
 	{
-		puts("Empty list");
+		ft_printf("Empty list\n");
 		return ;
 	}
 	tmp = ft_lstlast(lst);
-	while(tmp)
+	while (tmp)
 	{
-		printf("node[%d] value|%s|\n", node, tmp->str);
+		ft_printf("node[%d] value|%s|\n", node, tmp->str);
 		tmp = tmp->prev;
 		node--;
 	}

@@ -1,11 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_initialization.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:31:19 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/21 12:32:33 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/minishell.h"
 
 void	ft_initialization(t_parsing *parse)
 {
 	parse->lst_cmdline = NULL;
+	parse->non_bl_chars = "=/-@";
 	parse->i = 0;
+	parse->is_in_str = 0;
 	parse->len = 0;
-	parse->dollar = 0;
 	parse->str_tmp = NULL;
 	parse->quote_to_del = 0;
 	parse->meta[0] = "<";
@@ -16,5 +29,12 @@ void	ft_initialization(t_parsing *parse)
 	parse->meta[5] = NULL;
 	parse->ret_value = 0;
 	parse->tmp_ret_value = 0;
-	
+	parse->is_dollar = 0;
+	parse->fd_stdin = STDIN_FILENO;
+	parse->fd_stdout = STDOUT_FILENO;
+	parse->heredoc_pfd = 0;
+	parse->fd_history[1] = open(".history",
+			O_RDWR | O_CREAT | O_APPEND, 0644);
+	if (parse->fd_history[1] < 0)
+		perror(".history");
 }

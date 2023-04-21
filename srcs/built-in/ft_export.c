@@ -1,14 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_export.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:30:47 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/20 11:30:48 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/minishell.h"
-
-static char	*ft_set_str_to_comp(char *s2)
-{
-	char	*s1;
-
-	s1 = ft_strdup(s2);
-	if (ft_strchr(s1, '='))
-		s1[ft_str_chr(s1, '=')] = '\0';
-	return (s1);
-}
 
 static int	ft_var_is_exist(t_parsing *parse, t_list *tmp)
 {
@@ -41,6 +43,8 @@ static int	ft_check_var_syntax(char *s)
 	int		i;
 	char	*var;
 
+	if ((ft_strlen(s) == 0) || (s[0] >= '0' && s[0] <= '9'))
+		return (0);
 	var = ft_strdup(s);
 	if (ft_strchr(var, '='))
 		var[ft_str_chr(var, '=')] = '\0';
@@ -77,7 +81,7 @@ static int	ft_new_var(t_parsing *parse, t_list *tmp)
 		}
 		else
 		{
-			ft_printf("export: `%s' : not a valid identifier\n", tmp->str);
+			ft_printf("export: `%s': not a valid identifier\n", tmp->str);
 			error++;
 		}
 		tmp = tmp->next;
@@ -89,10 +93,8 @@ static int	ft_new_var(t_parsing *parse, t_list *tmp)
 
 int	ft_export(t_parsing *parse)
 {
-	//int		error;
 	t_list	*tmp;
 
-	//error = 0;
 	tmp = parse->lst_cmdline->next;
 	if (tmp == NULL)
 	{

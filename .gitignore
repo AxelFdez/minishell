@@ -2,3 +2,4 @@ lst.a
 libft.a
 minishell
 *.o
+history.txt

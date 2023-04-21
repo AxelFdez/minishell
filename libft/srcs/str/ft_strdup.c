@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chmassa <chrisdev427@gmail.com>            +#+  +:+       +#+        */
+/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 08:02:58 by chmassa           #+#    #+#             */
-/*   Updated: 2022/10/24 08:25:43 by chmassa          ###   ########.fr       */
+/*   Updated: 2023/04/06 14:43:39 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,3 @@ char	*ft_strdup(const char *s1)
 	}
 	return (str);
 }
-/*
-int main(void)
-{
-	char	str[] = "Bonjour tout le monde !";
-	char	*strcpy;
-
-	strcpy = ft_strdup(str);
-
-	printf("%s\n", strcpy);
-
-
-	return (0);
-}*/

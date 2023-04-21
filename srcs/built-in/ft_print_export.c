@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_export.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:30:57 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/21 10:52:22 by chmassa          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/minishell.h"
 
 static void	ft_print_env_sorted(t_list *lst)
@@ -12,7 +24,8 @@ static void	ft_print_env_sorted(t_list *lst)
 	tmp = lst;
 	while (tmp)
 	{
-		ft_printf("declare -x %s\n", tmp->str);
+		if (ft_strncmp(tmp->str, "_=", 2) != 0)
+			ft_printf("declare -x %s\n", tmp->str);
 		tmp = tmp->next;
 	}
 }

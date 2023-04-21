@@ -1,44 +1,80 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_cd.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:30:34 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/21 12:06:10 by chmassa          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/minishell.h"
 
-static char	*ft_found_home(t_parsing *parse)
+static int	ft_handle_tild_hyphen(t_parsing *parse, char c)
 {
-	t_list	*tmp;
 	char	*ret;
 
 	ret = NULL;
-	tmp = parse->lst_env;
-	while (tmp)
+	ret = ft_loop_tild_hyphen(parse, c);
+	if (c == '~' && !ret)
 	{
-		if (ft_strnstr(tmp->str, "HOME", 4))
-			ret = ft_strdup(tmp->str +5);
-		tmp = tmp->next;
+		ft_putstr_fd("minishell: cd: HOME not set\n", 2);
+		return (1);
 	}
-	return (ret);
+	if (ft_strlen(ret) == 0)
+	{
+		free(ret);
+		return (0);
+	}
+	if (chdir(ret) != 0)
+	{
+		ft_printf("minishell: cd: %s: No such file or directory\n", ret);
+		free(ret);
+		return (1);
+	}
+	free(ret);
+	return (0);
+}
+
+char	*ft_get_current_position(void)
+{
+	char	*cwd;
+	char	buffer[4096];
+
+	cwd = getcwd(buffer, sizeof(buffer));
+	if (!cwd)
+	{
+		perror("cd: error retrieving current directory");
+		return (NULL);
+	}
+	return (cwd);
 }
 
 int	ft_cd(t_parsing *parse)
 {
 	t_list	*tmp;
-	char	*ret;
+	char	*cwd;
+	int		ret;
 
-	ret = NULL;
+	ret = 0;
 	tmp = parse->lst_cmdline;
+	cwd = ft_get_current_position();
 	if (tmp->next == NULL || ft_strcmp(tmp->next->str, "~") == 0)
-	{
-		ret = ft_found_home(parse);
-		if (chdir(ret) != 0)
-		{
-			perror("cd: ");
-			free(ret);
-			return (1);
-		}
-		free(ret);
-	}
+		ret = ft_handle_tild_hyphen(parse, '~');
+	else if (tmp->next == NULL || ft_strcmp(tmp->next->str, "-") == 0)
+		ret = ft_handle_tild_hyphen(parse, '-');
 	else if (chdir(tmp->next->str) != 0)
 	{
 		write (2, "cd: ", 4);
 		perror(tmp->next->str);
 		return (1);
 	}
-	return (0);
+	if (!cwd)
+		return (0);
+	ft_update_oldpwd(parse, cwd);
+	cwd = ft_get_current_position();
+	ft_update_pwd(parse, cwd);
+	return (ret);
 }

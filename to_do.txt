@@ -1,5 +1,0 @@
-1, Checker les leaks dans la fonction ft_handle_dollar, avec la commande $USER par exemple.
-2, Passer les built in en type int pour la valeur de retour ($?). OK
-3, Gerer le $?, variable global ok, voir comment recup la valeur et la print avec les commandes '$?' et 'echo $?' OK
-
-Paufiner ft_export ; analyser le nom de la variable (jusqu'a '=')... OK
