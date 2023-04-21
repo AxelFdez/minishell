@@ -57,8 +57,8 @@ A tester :
 - si unset PATH, error message = no such file or directory --OK--
 - ls ne marche plus si export a nouveau le PATH --OK--
 - echo bonjour > out | ls --   bonjourls dans out --OK--
-- lexer : probleme pas d'erreur quand meta seul (<<, < etc)
-- signaux dans heredoc segfault
+- lexer : probleme pas d'erreur quand meta seul (<<, < etc) --OK--
+- signaux dans heredoc segfault --OK--
 - >> 1 segfault --OK--
 
 
@@ -66,5 +66,5 @@ To chris :
 - $HOME pas de retour a la ligne quand utilisé seul --OK--
 - $+valeur inexistante = segfault --OK--
 - lancer minishell sans envrionnement (env -i) --OK--
-- ouvrir un guillemet -> prompt -> fais un segfault si Ctrl-d
+- ouvrir un guillemet -> prompt -> fais un segfault si Ctrl-d --OK--
 

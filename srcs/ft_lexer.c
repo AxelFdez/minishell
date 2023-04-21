@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lexer.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:31:31 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/20 20:00:11 by chmassa          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/minishell.h"
 
 int	ft_check_double_pipes(t_list *lst)
@@ -54,6 +66,11 @@ static int	ft_check_syntax(t_parsing *parse, char *s)
 
 	i = 0;
 	err_message = "minishell: syntax error near unexpected token";
+	if (s[0] == '|')
+	{
+		ft_printf("%s `%s'\n", err_message, "|");
+		return (1);
+	}
 	while (parse->lex[i])
 	{
 		if (ft_strnstr(s, parse->lex[i], ft_strlen(s)))
@@ -91,7 +108,7 @@ int	ft_lexer(t_parsing *parse)
 		|| ft_check_after_token(s))
 	{
 		free(s);
-		sig.return_value = 258;
+		g_sig.return_value = 258;
 		return (258);
 	}
 	free(s);

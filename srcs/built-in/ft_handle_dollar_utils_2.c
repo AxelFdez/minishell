@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_handle_dollar_utils_2.c                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:30:52 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/20 11:30:53 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/minishell.h"
 
 char	*ft_found_var(t_parsing *parse, char *s)
@@ -7,7 +19,7 @@ char	*ft_found_var(t_parsing *parse, char *s)
 
 	if (s[0] == '$' && s[1] == '?')
 	{
-		ret = ft_strdup_free(ft_itoa(sig.return_value));
+		ret = ft_strdup_free(ft_itoa(g_sig.return_value));
 		return (ret);
 	}
 	tmp = parse->lst_env;

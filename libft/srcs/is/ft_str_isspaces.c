@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str_isspaces.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 09:43:10 by chmassa           #+#    #+#             */
-/*   Updated: 2023/04/19 09:43:51 by chmassa          ###   ########.fr       */
+/*   Updated: 2023/04/20 11:54:41 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_str_isspaces(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!str)

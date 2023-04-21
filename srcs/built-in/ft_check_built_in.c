@@ -1,24 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_check_built_in.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:30:36 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/20 11:30:38 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/minishell.h"
 
 void	execute_built_in(t_parsing *parse)
 {
 	if (parse->built_in_cmd == 1)
-		sig.return_value = ft_env(parse);
+		g_sig.return_value = ft_env(parse);
 	// else if (parse->built_in_cmd == 2)
 	// 	parse->ret_value = ft_export(parse);
 	else if (parse->built_in_cmd == 3)
-		sig.return_value = ft_pwd();
+		g_sig.return_value = ft_pwd();
 	else if (parse->built_in_cmd == 4)
 		ft_echo(parse->lst_cmdline, parse);
 	else if (parse->built_in_cmd == 5)
 		ft_unset(parse);
 	else if (parse->built_in_cmd == 6)
-		sig.return_value = ft_cd(parse);
+		g_sig.return_value = ft_cd(parse);
 	else if (parse->built_in_cmd == 7)
 		ft_exit(parse);
 	else if (parse->built_in_cmd == 8)
 		ft_print_history(parse);
-	exit(sig.return_value);
+	exit(g_sig.return_value);
 }
 
 int check_builtin_input(t_parsing *parse)
@@ -76,7 +88,7 @@ void	execute_built_in_alone(t_parsing *parse)
 {
 	if (ft_strcmp(parse->lst_cmdline->str, "export") == 0
 		&& ft_lst_strchr_pipe(parse->lst_cmdline) == 1)
-			sig.return_value = ft_export(parse);
+			g_sig.return_value = ft_export(parse);
 	else if (ft_strcmp(parse->lst_cmdline->str, "unset") == 0)
 		ft_unset(parse);
 	else if (ft_strcmp(parse->lst_cmdline->str, "exit") == 0)
@@ -86,7 +98,7 @@ void	execute_built_in_alone(t_parsing *parse)
 		&& (ft_strcmp(parse->lst_cmdline->next->str, "~") == 0)))
 	{
 		check_herringbone(parse);
-		sig.return_value = ft_cd(parse);
+		g_sig.return_value = ft_cd(parse);
 	}
 	ft_lstdel_all(&parse->lst_cmdline);
 	return ;

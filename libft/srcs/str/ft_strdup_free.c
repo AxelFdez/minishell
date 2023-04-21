@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup_free.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 14:44:34 by chmassa           #+#    #+#             */
-/*   Updated: 2023/04/06 14:48:15 by chmassa          ###   ########.fr       */
+/*   Updated: 2023/04/20 11:57:28 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ char	*ft_strdup_free(const char *s1)
 		}
 		str[i] = '\0';
 	}
-    free((char *)s1);
+	free((char *)s1);
 	return (str);
 }

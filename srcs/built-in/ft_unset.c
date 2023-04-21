@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_unset.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:31:01 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/20 11:31:02 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/minishell.h"
 
 static void	ft_error_identifier(char *s)
 {
 	ft_printf("export: `%s': not a valid identifier\n", s);
-	sig.return_value = 1;
+	g_sig.return_value = 1;
 }
 
 void	ft_unset(t_parsing *parse)

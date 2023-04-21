@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_pipex_utils.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:06:54 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/20 11:07:53 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/minishell.h"
 
 static char	**find_path_in_env(t_parsing *parse)
@@ -16,7 +28,7 @@ static char	**find_path_in_env(t_parsing *parse)
 	}
 	path = ft_strtrim(path, "PATH=");
 	if (!path)
-		return NULL;
+		return (NULL);
 	split = ft_split(path, ':');
 	free(path);
 	i = 0;
@@ -51,7 +63,7 @@ static char	*env_path_command(t_parsing *parse)
 				j++;
 			}
 			free(split);
-			return (parse->command[0]);;
+			return (parse->command[0]);
 		}
 	}
 	return (split[i]);
@@ -60,7 +72,7 @@ static char	*env_path_command(t_parsing *parse)
 static void	cmd_lst_to_tab(t_parsing *parse)
 {
 	int		i;
-	t_list *temp;
+	t_list	*temp;
 
 	temp = parse->lst_cmdline;
 	i = 0;
@@ -88,12 +100,12 @@ static void	cmd_lst_to_tab(t_parsing *parse)
 
 void	parsing_cmd(t_parsing *parse)
 {
-
 	cmd_lst_to_tab(parse);
 	if (access(parse->command[0], F_OK) && access(parse->command[0], X_OK))
 		parse->command[0] = env_path_command(parse);
 	if (!parse->command[0])
-		ft_printf("minishell: %s: no such file or directory\n", parse->lst_cmdline->str);
+		ft_printf("minishell: %s: no such file or directory\n",
+			parse->lst_cmdline->str);
 }
 
 int	count_pipe(t_list *list)

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_handle_dollar.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:30:56 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/20 11:30:57 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/minishell.h"
 
 static int	ft_found_var_in_env(t_parsing *parse)
@@ -61,7 +73,7 @@ void	ft_handle_dollar(t_parsing *parse)
 	{
 		if (parse->str_tmp == NULL)
 			parse->str_tmp = ft_calloc(1, sizeof(char));
-		ret_itoa = ft_itoa(sig.return_value);
+		ret_itoa = ft_itoa(g_sig.return_value);
 		parse->str_tmp = ft_strjoin_free_s1_s2(parse->str_tmp, ret_itoa);
 		parse->i += 2;
 	}

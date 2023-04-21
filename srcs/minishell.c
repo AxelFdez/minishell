@@ -1,12 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minishell.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 11:11:04 by axfernan          #+#    #+#             */
+/*   Updated: 2023/04/20 11:17:21 by axfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/minishell.h"
 
-t_sig	sig = {0, 0, 0, 0};
+t_sig	g_sig = {1, 0, 0, 0, 0};
 
 void	ft_main_loop(t_parsing *parse)
 {
 	while (1)
 	{
-		sig.child = 1;
+		g_sig.child = 1;
+		g_sig.heredoc = 1;
 		parse->input = readline("minishell -> ");
 		if (!parse->input)
 		{
@@ -16,7 +29,6 @@ void	ft_main_loop(t_parsing *parse)
 		ft_quotes(parse);
 		ft_add_history(parse);
 		ft_history(parse);
-
 		if (ft_lexer(parse) == 0)
 		{
 			if (ft_get_cmdline(parse))
@@ -34,6 +46,7 @@ void	ft_main_loop(t_parsing *parse)
 int	main(int ac, char **av, char **env)
 {
 	t_parsing	parse;
+
 	(void)av;
 	if (ac == 1)
 	{
@@ -48,7 +61,3 @@ int	main(int ac, char **av, char **env)
 	}
 	return (0);
 }
-// RED = \033[1;31m
-// GREEN = \033[1;32m
-// YELLOW = \033[1;33m
-// DEFAULT = \033[0m
