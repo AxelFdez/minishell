@@ -6,7 +6,7 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:31:18 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/21 12:01:32 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:10:30 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,14 +73,12 @@ void	ft_print_history(t_parsing *parse)
 
 void	ft_add_history(t_parsing *parse)
 {
-	if (parse->tmp_input == NULL)
-		add_history(parse->input);
-	else if (ft_strcmp(parse->tmp_input, parse->input) != 0)
+	if (ft_strcmp(parse->tmp_input, parse->input) != 0)
 	{
 		add_history(parse->input);
-		free(parse->tmp_input);
+		parse->tmp_input[0] = '\0';
 	}
-	parse->tmp_input = ft_strdup(parse->input);
+	ft_strcpy(parse->tmp_input, parse->input);
 }
 
 void	ft_history(t_parsing *parse)

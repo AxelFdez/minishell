@@ -3272,10 +3272,876 @@ echo "AAAAA$?AAAAAAAAA"
 echo "$-/=@"
 echo "$USER-/=@"
 echo "$USER-/=@"$HOME
+<<<<<<< HEAD
+ls
+/bin/ls
+exit
+cat | cat | ls
+/bin/cat | /bin/cat | /bin/ls
+cd ~
+cd
+cd ..
+ls
+exit
+cat | ls | ls | cat | ls | ls |ls | ls | cat | ls | ls |ls | ls | cat | ls | ls |ls | ls | cat | ls | ls |ls | ls | cat | ls | ls |ls | ls | cat | ls | ls |ls | ls | cat | ls | ls
+echo
+echo -n
+echo -nnnnnnnnn -n       -n  -nnnnnnnnn "ok"
+echo -nnnnnnnnn -np       -n  -nnnnnnnnn "ok"
+echo $PATH
+echo $PATH$HOME
+				
+			    		 
+
+        
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+          
+
+
+echo je	suis	LA
+		
+ls | exit | ls
+env
+export
+export test
+export
+export TEST
+export
+env
+export test=
+env
+export
+export test=1=2=3
+env
+exprot
+export
+./minishell
+env
+env | grep SHL
+export test=123 | ls
+env
+ls
+mkdir a
+mkdir 1
+mkdir 1/2
+mkdir 1/2/3
+cd 1/2/3
+ls
+rm ../../../1
+rm -d ../../../1
+rm -f ../../../1
+rm -r ../../../1
+rm -r ../../../../1
+ls
+pwd
+cd ..
+cd ..
+cd ..
+ls
+cd 1
+ls
+cd ..
+ls
+ls
+cp ./minishell ls
+ls
+env
+ls
+env
+exit
+env
+exit
+exit
+exit
+./a.out 
+./a.out 
+echo $?
+cat <
+echo $?
+./buserror 
+echo $?
+cat
+echo $?
+cat
+echo $?
+| ls
+| ls
+| ls
+| ls
+| ls
+| ls
+| ls
+| ls
+| ls
+env
+| ls
+env
+| ls
+|ls
+exit
+| ls
+ls |
+ls || echo test
+ls ||| echo test
+ls | | echo test
+| ls | echo test
+| ls | echo test | echo 123
+| ls
+| ls
+| ls
+| ls
+| echo test
+| ls -l
+| pwd
+| pw
+| ls
+| cd
+| wc
+| ls
+| ls
+| ./minishell
+./minishell | ./minishell
+2004hmilnsi
+shell -> ls
+2004l
+2s004hminishell -> sls
+ls
+2004l
+2004hminishellsl
+ -> ls
+2004l
+2004l
+2004l
+2004l
+mineixsihte
+ll -> 2004hexit
+2004l
+ls
+env
+ls
+cd ..
+ls
+exit
+< cat
+cat
+< cat
+cat <
+ls
+ls
+ls
+ls
+/bin/ls
+rm ls
+ls
+ls -l
+chmod 000 B
+ls -l
+cat Makefile > A > B > C
+cat Makefile > A > B > C > D
+ls
+cat A
+ls -l
+sleep 1 | sleep 5
+sleep 1 | sleep 5 | sleep 1
+ls
+unset PATH
+ls
+export PATH=
+ls
+ls
+ls
+sl
+sl
+ls
+ls
+ls
+ls
+export PATH="a"
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+ls
+cd
+unset HOME
+cd
+export HOME=
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd ~
+export HOME=""
+cd ~
+cd
+export PATH=
+cd $PATH
+exit
+export PATH=
+cd $PATH
+cd     
+echo "--$PATH--"
+echo "$PATH"
+echo $PATH
+echo "$PATH"
+echo '$PATH'
+cd '$PATH'
+cd $PATH
+echo $PATH
+echo M$PATHm
+echo M$PATH m
+echo M$PATHm
+export a="     aaa     bbbb    "
+echo $a
+echo "$a"
+export var1=32 var2=90
+echo $_
+exit 513135111131313513518410541543510051683413543131131313003531
+echo "$???????"
+exit 513135111131313513518410541543510051683413543131131313003531
+=======
 >>>>>>> origin/chris
 agasgasg
 echo $?
 echo $?
+<<<<<<< HEAD
+>>>>>>> origin/axel
+echo "$USER$????"
+exit 513135111131313513518410541543510051683413543131131313003531
+exit 513135111131313513518410541543510051683413543131131313003531
+exit 123
+exit 123
+exit 513135111131313513518410541543510051683413543131131313003531
+exit @#$
+exit 123
+exit 67838432
+exit 18446744073709551615
+pwd
+mkdir a
+mkdir a/b
+mkdir a/b/c
+cd a/b/c/
+pwd
+rm -fR a
+pwd
+cd ..
+cd c/
+rm -fR ../../../a
+wpd
+pwd
+cd ..
+mkdir a
+mkdir a/b
+mkdir a/b/c
+cd a/b/c/
+rm -fR ../../../a
+cd ..
+mkdir a
+mkdir a/b
+mkdir a/b/c
+rm -fR ../../../a
+cd ..
+pwd
+cd minishell
+ls
+rm -fR ../../../a
+pwd
+cd a/b/c/
+rm -fR ../../../a
+cd ..
+pwd
+cd ..
+cd ..
+cd ..
+pwd
+ls
+cd a/
+pwd
+mkdir b
+cd b
+pwd
+rm -fR ../../a
+cd ..
+pwd
+cd ..
+cd ..
+pwd
+cd ..
+ls
+mkdir a
+mkdir a/b
+mkdir a/b/c
+cd a/b/c/
+rm -fR ../../../a
+pwd
+cd ..
+ls
+cd a/
+mkdir b
+cd b
+pwd
+rm -fR ../../a
+cd ..
+cd ..
+cd ..
+mkdir a
+mkdir a/b
+cd a/b/
+rm -fR ../../a
+cd ..
+cd ..
+<< fin cat > out
+cat out
+export PATH=
+ls
+ls
+ls
+env
+pwd
+mkdir a
+mkdir a/b
+mkdir a/b/c
+mkdir a
+mkdir a/b
+mkdir a/b/c
+cd a/b/c/
+rm -fR ../../../a
+cd 
+pwd
+cd Desktop
+pwd
+cd minishell
+ls
+cd a
+ls
+mkdir b
+mkdir b/c
+cd b/c/
+pwd
+rm -r ../../../a
+rm -r ../../a
+rm -rf ../../../a
+cd ..
+cd ..
+pwd
+mkdir b
+mkdir b/c
+mkdir b/c/d
+cd b/c/d/
+rm -rf ../../../a
+cd ..
+pwd
+cd c
+cd ..
+cd ..
+cd ..
+pwd
+ls
+cd a
+ls
+cd b/c/d/
+rm -rf ../../../../a
+cd ..
+cd ..
+cd ..
+pwd
+cd a
+mkdir b
+mkdir b/c
+cd b/c/
+rm -rf ../../../a
+pwd
+cd ..
+cd ..
+cd ..
+export
+cd -
+ls
+cd a
+mkdir b
+mkdir b/c
+cd b/c/
+rm -rf ../../../a
+cd ..
+cd ..
+cd ..
+pwd
+cd a
+mkdir b
+mkdir b/c
+cd b/c/
+pwd
+rm -rf ../../../a
+cd ..
+cd hui
+cd ..
+cd ..
+cd ..
+pwd
+cd ..
+cd minishell
+pwd
+cd desktop/minishell
+pwd
+cd a
+pwd
+mkdir b
+mkdir b/c
+cd b/c/
+rm -rf ../../../a
+cd ..
+cd ..
+cd ..
+pwd
+ls
+cd a
+mkdir b
+mkdir b/c
+cd b/c/
+rm -rf ../../../a
+cd ..
+cd ..
+cd ..
+clear
+ls
+ls --
+bash
+ls --la
+bash
+ls-la
+ls-
+ls .-
+ls "."[
+ls "."
+ls ((
+ls "ls
+"
+ls "''''''''e"
+ls "''''''''e             "
+export test="eee            "
+export 
+env
+bash
+echo "'$test2'"
+echo "'$test'"
+bash
+clear
+env env=e
+env =e
+=
+=$
+<< < <
+<< e<e <
+<< e<e <e
+bash
+<< e<e <e
+<< e<e <e
+cat << e << f
+cat << e << f
+cat << e << f < > r
+bash
+cat << e << f < > r
+cat r
+clear
+echo $$
+echo $""$
+echo $"f"$
+echo "$f"$
+echo "$f"$$
+echo "$f"$$$
+echo "$f"$$$$$$
+echo "$f"$3$$$$$
+echo "$f"$f
+echo "$f"$ $
+echo "$f"$q$
+echo "$f"$q$'
+echo "$f"$q$\
+echo "$f"$q$"\"
+echo f "3"
+echo 'f "3"'
+echo 'f "3"''
+'
+echo jj
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bash
+ls
+!
+!q
+echo $!
+bash
+export $$
+env
+clear
+bash $$
+ls
+bash
+echo $-fef
+$$
+echo $$
+echo ~
+bash
+ls
+echo $~
+echo $ ~
+echo '$ '~
+echo '$ '$test
+env
+echo $PAGER
+echo ''$PAGER
+bash
+echo '' $PAGER
+echo $PAGER''$PAGER
+echo ''$PAGER
+echo '' $PAGER
+echo '' ''$PAGER
+echo '' 'r'$PAGER
+echo f''$PAGER
+"""'"
+ls """'"
+$USER"""'"
+export cmd="ls -la"
+$cmd
+ls -la
+clear
+export cmd="ls -la"
+$cmd
+ls -la
+"ls -la"
+bash
+clear
+export p="ec"
+export c="ho"
+$p$c
+$p$c toto
+$p$c toto'$'
+echo ''$PAGER
+echo '' $PAGER
+echo ''g$PAGER
+echo d''$PAGER
+clear
+leaks minishell
+1
+<< e
+<< e
+<< e
+bash
+<< e
+<
+< e
+< f
+< ls
+<< e
+<<
+<<
+< Makefile
+< Makefile
+< Makefile
+bash
+clear
+ls
+./minishell
+ls
+clear
+ls
+;
+';'
+echo';'
+echo ';'
+echo' ;'
+echo' ;'
+bash
+clear
+echo" ~"
+bash
+export tot='echo" ~"'
+$tot
+bash
+export tot='echo ~"'
+$tot
+clear
+<<<>>
+<<<f>>
+<<< test e>>
+<<< test e>>e
+<<< test e>f>e
+<<c< test e>f>e
+ls
+cat f
+cat e
+bash
+ls
+export cmd="ls -la"
+echo $cmd
+$cmd
+ls -la
+export a="echo"
+$a
+$a op
+$a op tr
+export a=ls b =-la
+$a$b
+export
+export a=ls b=-la
+$a$b
+export a=ls b= -la
+export a=ls b=" -la"
+$a$b
+export a=ls b=-la
+$a $b
+export t=aaa bbb ccc
+export
+export t="aaa bbb ccc"
+$cmd
+echo $cmd
+$cmd
+export cmd="ls -la"
+$cmd
+echo "ls -la"
+echo ls -la
+export a="ls -la"
+$a
+export
+export a="ls -la"
+export a="ls -la"
+export a="ls -la"
+export
+export a="ls -la"
+export
+export a=ec b=ho
+$a$b toto
+export a=ls b=" -la"
+$a$b toto
+export a=ls b="-la"
+$a $b toto
+"ls"
+$a $b
+export d="ls -la"
+export
+$d
+export chevron='>'
+env
+echo salut $chevron out
+ls
+cat out 
+export d="ls -la"
+$d
+export a=ec b=ho
+$a$b tata
+export a=ls b="-la"
+$a $b
+$"$"
+echo $"$"
+echo "$"$
+echo "$USER$?$USER"
+echo "$USER$???????????$USER"
+echo "$USER-$USER"
+echo "$-DDDDDDDD"
+aaa"
+gsfhsdgh
+sdthsfgh
+sfghsf
+gh'''sfghsfh
+fghsfhs'sfghjfhjj"
+<< f
+<< f
+cat << a << b | cat -e << a << b
+cat << a << b | cat -e << a << b
+cat << a << b << v << r
+cat << a << b | cat << a << b
+ls
+cat << a << b | cat << a << b
+cat << a << b | cat << c << f
+cat << a << b | cat -e << a << b
+unset HOME
+export HOME=
+cd 
+cd 
+cd 
+cd 
+cd ~
+pwd
+cd 
+cd 
+cd 
+export HOME
+cd
+cd
+cd
+cd
+cd
+cd
+export
+export HOME=werr
+cd 
+cd 
+cd 
+cd 
+cd 
+unset HOME
+export HOME=
+cd
+ cd
+cd 
+cd 
+unset HOME
+cd 
+cd 
+cd 
+cd 
+export HOME
+cd
+cd
+cd
+cd
+cd
+cd
+unset HOME
+cd
+cd
+cd
+cd
+export HOME=
+cd
+cd
+cd 
+unset HOME
+cd
+cd
+export HOME=
+cd
+cd
+export HOME=uioodfj
+cd
+unset HOME
+cd
+echo $?
+export HOME=
+cd
+echo $?
+export HOME=ffff
+cd
+echo $?
+export HOME=aaaaa
+cd
+cd
+pwd
+cd
+cd 
+pwd
+export HOME=rrr
+cd
+export HOME=ddddddd
+cd
+export HOME=d
+cd
+export HOME=q
+cd
+export HOME=qgregvtgb
+cd
+cd
+export HOME=
+cd
+export HOME=qqqqqqq
+cd
+export HOME=
+cd
+export HOME=kjhf
+cd
+export HOME=
+cd
+export HOME
+cd
+export HOME=
+cd
+export HOME
+cd
+export HOME=
+cd
+export HOME=
+export HOME=
+cd
+export HOME=jofkjhbkjf
+cd
+cd
+export HOME=
+cd
+export HOME
+cd
+export HOME=ljhdj
+cd
+export HOME=
+cd
+export HOME=ergg
+cd
+export
+env
+export HOME=ergg
+cd
+export HOME=ohfojhf
+cd
+export HOME=
+cd
+cd
+export HOME
+cd
+export HOME=oihfkuj
+cd
+export HOME=ljkfkf
+cd
+cd
+export
+cd
+export HOME=
+cd
+export HOME=khjgfr
+cd
+export HOME
+cd
+| cat | ls
+| cat | ls
+| cat | ls
+| cat | ls
+=======
 ./a.out 
 echo $?
 a.out 
@@ -3598,6 +4464,7 @@ export
 $a
 export
 make fclean
+<<<<<<< HEAD:.history
 ls
 norm
 find / -type f -name "*.log" -exec grep -q "error" {} \; -print | sort -r | head -n 10 | xargs -I{} sh -c 'echo -n {}; echo -n ": "; tail -n 1 {}'
@@ -3654,3 +4521,287 @@ ls		    -l
 history
 ls	-l
 		  
+=======
+>>>>>>> origin/axel
+export
+echo $USER=$USER
+echo $USER = $USER
+export a="ls -la"
+export
+$a
+echo "" AAA
+echo ""AAA
+echo lsfkjglkfs
+echo dddd
+echo $USER
+export v=42
+echo v
+echo $v
+env
+ls
+export var1="   aaa      bbbbbbb    " var2=42 var-3=ert var4=op
+export
+echo $var1
+echo "$var1"
+<< fin | cat > out
+cat out
+<< fin cat > out
+<< a << b << c >> out
+echo aaaaa"
+bbbbbbbb
+vvvvvvvv
+ccccc
+ddd
+eee
+dd
+hhhjjj
+fgfgh
+hg
+hg
+hj
+gjh'fhrhy
+hrhjeyhjewryhj'ryjheyjetjyjetyjyyj
+'$USER'
+$USER
+"
+export a=ec b=ho
+$a$b toto
+export var="ls -la"
+$var
+clear
+mkdir a
+mkdir a/b
+mkdir a/b/c
+cd a/b/c/
+rm -rf ../../../a
+cd ..
+cd ..
+cd ..
+pwd
+cd ~
+pwd
+cd -
+pwd
+ls
+cd a/
+mkdir b
+mkdir b/c
+cd b/c/
+rm -rf ../../../a
+cd ..
+cd ..
+cd ..
+cd ..
+cd ..
+cd ~
+cd ~
+cd -
+cd -
+cd -
+cd
+cd
+pwd
+pwd
+echo aaa
+echo aaa
+cd ..
+cd ..
+echo aaa
+echo aaa
+echo "aaaa"
+echo "ljdhfgkjhkjrg"
+echo "ljdhfgkjhkjrg"
+echo aaa
+echo bbb
+echo eee
+echo eee
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo bbb
+echo hhh
+echo aaa
+echo aaa
+echo aaa
+echo bbb
+echo bbb
+echo bbb
+cd ..
+cd ..
+cd ..
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+echo aaa
+cd 
+dc
+ethwyh
+wtrhwn
+wtrhwn
+ethwyh
+echo aaa
+echo aaa
+echo aaa
+cd ..
+cd ..
+cd ..
+cd -
+export var1=42 var2="aaa       bbbbb     " var3=salut
+export
+unset var1 var2 var3
+export
+unset HOME
+cd 
+export HOME
+cd
+export HOME=
+cd
+unset HOME
+cd
+cd
+cd
+export HOME=
+cd
+cd
+cd
+cd
+echo aaa
+echo aaa
+echo bbb
+echo bbb
+echo bbb
+echo bbb
+echo aaa
+echo aaa
+echo aaa
+echo bbb
+echo bbb
+echo bbb 
+cd ..
+cd ..
+cd ..
+cd ..
+echo aaa
+echo bbb
+echo bbb
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+cd
+unset HOME
+cd
+cd
+cd
+export HOME
+cd
+cd
+cd
+export HOME=
+cd
+cd
+cd
+cd
+cd
+export HOME=kshrgfksjhgjkhdsgk
+cd
+exit 513135111131313513518410541543510051683413543131131313003531
+echo "kjhfgkdjfhg  dlhgkdjfhgkdjhgkdfj dfgdgh"
+echo aaa      sssss        wwwwwww 
+echo "aaa      sssss        wwwwwww" 
+./minishell
+ksjfkjafhgfdb
+echo $?
+adfgadfghsdgh
+exit
+exit
+exit
+daflgkjadlfkg
+exit
+gg
+fghyjumj
+yhjetyjetyj
+exit
+ehh
+fyhjyhj
+echo $?
+exit
+ls       -la
+ls		-la
+ls      -la
+ls		-la
+ls		-la
+ls		-la
+ls		-la
+ls		-la
+ls		-la
+ls		-la
+echo "ksdjfjsdfsdfj   skdjfsdjflsdijf"
+echo "ksdjfjsdfsdfj   skdjfsdjflsdijf""sdhsdh"
+echo "aaaa""sssssss"
+echo "aaa     cccc"
+echo "aaa		cccc"
+echo aaa		bbb
+echo aaa          bbb
+aaa         cccc
+ls	-la
+ls	-la
+ls		-la
+ls		-la
+ls		-la
+					
+ls		-la
+ls		-la
+ls		-la
+echo "ggg			fff"
+export var="aaa	bbb	ddd"
+export
+echo $var
+echo "$var"
+export var="aaa    bbb     ddd"
+echo $var
+export var2="   aaaaa      aaaaaaaa    aaaa" var3="	ssss		jkjkji		bhjkhk"
+export
+echo $var2
+echo $var3
+export var1="   aaa     aaa       aaa" var2="	aaa		bbb	bbb"
+echo $var1
+echo $var2
+echo "		hhh		hkkjhj"
+echo 		hhh		hkkjhj
+export var="		aaa		aaa		aaa"
+echo $var
+echo "$var"
+export var="		aaa		bbb		ccc		"
+echo $var
+export var="		aaa		aaa		"
+echo $var
+export var="		hhh		hhh		hhhhh"
+echo $var
+export var="		aaa			bbb		bbb	"
+echo $var
+export var="		aaaaa		bbbb    bbbbb	jijd		"
+echo $var
+echo "$var"
+export var="		cccc		    cggc		ctctc	"
+echo $var
+echo "$var"
+>>>>>>> origin/chris:history.txt

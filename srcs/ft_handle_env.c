@@ -6,12 +6,11 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:31:10 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/21 09:57:43 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:11:01 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
-
 
 static void	ft_create_env(t_parsing *parse)
 {

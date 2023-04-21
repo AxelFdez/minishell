@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lexer_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:31:29 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 11:31:30 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 10:13:12 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-void    ft_init_lexer(t_parsing *parse)
+void	ft_init_lexer(t_parsing *parse)
 {
 	parse->lex[0] = "<<<";
 	parse->lex[1] = ">>>";

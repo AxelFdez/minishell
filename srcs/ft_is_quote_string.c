@@ -3,21 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_quote_string.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:31:27 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 11:31:28 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 10:17:19 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-void	is_quote_string(t_parsing *parse, char c)
+static void	ft_vars_init(t_parsing *parse)
 {
 	parse->i++;
 	parse->len++;
 	parse->quote_to_del++;
 	parse->is_in_str = 1;
+}
+
+void	is_quote_string(t_parsing *parse, char c)
+{
+	ft_vars_init(parse);
 	while (parse->input[parse->i])
 	{
 		if (parse->input[parse->i] == '$'

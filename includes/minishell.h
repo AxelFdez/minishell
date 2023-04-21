@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:32:08 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 11:59:43 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:06:36 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ typedef struct s_parsing
 	char			*non_bl_chars;
 	char			*s1;
 	char			*s2;
-	char			*tmp_input;
+	char			tmp_input[1024];
 	int				len;
 	int				len_b;
 	int				quote_to_del;

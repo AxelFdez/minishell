@@ -6,11 +6,9 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:31:40 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 11:31:41 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:11:15 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "../includes/minishell.h"
 

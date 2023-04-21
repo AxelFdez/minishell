@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cd.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:30:34 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 11:30:35 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:06:10 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,14 @@ static int	ft_handle_tild_hyphen(t_parsing *parse, char c)
 		ft_putstr_fd("minishell: cd: HOME not set\n", 2);
 		return (1);
 	}
+	if (ft_strlen(ret) == 0)
+	{
+		free(ret);
+		return (0);
+	}
 	if (chdir(ret) != 0)
 	{
-		perror("cd: ");
+		ft_printf("minishell: cd: %s: No such file or directory\n", ret);
 		free(ret);
 		return (1);
 	}
@@ -41,7 +46,7 @@ char	*ft_get_current_position(void)
 	cwd = getcwd(buffer, sizeof(buffer));
 	if (!cwd)
 	{
-		perror("getcwd");
+		perror("cd: error retrieving current directory");
 		return (NULL);
 	}
 	return (cwd);
@@ -66,6 +71,8 @@ int	ft_cd(t_parsing *parse)
 		perror(tmp->next->str);
 		return (1);
 	}
+	if (!cwd)
+		return (0);
 	ft_update_oldpwd(parse, cwd);
 	cwd = ft_get_current_position();
 	ft_update_pwd(parse, cwd);

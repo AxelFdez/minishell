@@ -6,7 +6,7 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:30:36 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/21 12:05:35 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:17:05 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,23 +31,7 @@ void	execute_built_in(t_parsing *parse)
 	exit(g_sig.return_value);
 }
 
-int check_builtin_input(t_parsing *parse)
-{
-	char	*tmp;
-	tmp = parse->lst_cmdline->str;
-	if (ft_strcmp(tmp, "env") == 0 || ft_strcmp(tmp, "ENV") == 0
-		|| ft_strcmp(tmp, "export") == 0 || ft_strcmp(tmp, "pwd") == 0
-		|| ft_strcmp(tmp, "PWD") == 0 || ft_strcmp(tmp, "echo") == 0
-		|| ft_strcmp(tmp, "unset") == 0 || ft_strcmp(tmp, "cd") == 0
-		|| ((ft_strcmp(tmp, "cd") == 0 && (ft_strcmp(tmp, "~"))))
-		|| ft_strcmp(tmp, "exit") == 0 || ft_strcmp(tmp, "history") == 0)
-	{
-		return (0);
-	}
-	return (1);
-}
-
-int	parsing_built_in(t_parsing *parse)
+static void	command_length(t_parsing *parse)
 {
 	t_list	*tmp;
 
@@ -58,6 +42,13 @@ int	parsing_built_in(t_parsing *parse)
 		parse->lst_target++;
 		tmp = tmp->next;
 	}
+}
+
+int	parsing_built_in(t_parsing *parse)
+{
+	t_list	*tmp;
+
+	command_length(parse);
 	tmp = parse->lst_cmdline;
 	while (tmp)
 	{
@@ -69,7 +60,8 @@ int	parsing_built_in(t_parsing *parse)
 			return (4);
 		if (ft_strcmp(tmp->str, "unset") == 0)
 			return (5);
-		if ((ft_strcmp(tmp->str, "cd") == 0) || (ft_strcmp(tmp->str, "cd") == 0 && (ft_strcmp(tmp->next->str, "~") == 0)))
+		if ((ft_strcmp(tmp->str, "cd") == 0) || (ft_strcmp(tmp->str, "cd") == 0
+				&& (ft_strcmp(tmp->next->str, "~") == 0)))
 			return (6);
 		if (ft_strcmp(tmp->str, "exit") == 0)
 			return (7);
@@ -91,7 +83,7 @@ void	execute_built_in_alone(t_parsing *parse)
 		ft_exit(parse);
 	else if ((ft_strcmp(parse->lst_cmdline->str, "cd") == 0)
 		|| (ft_strcmp(parse->lst_cmdline->str, "cd") == 0
-		&& (ft_strcmp(parse->lst_cmdline->next->str, "~") == 0)))
+			&& (ft_strcmp(parse->lst_cmdline->next->str, "~") == 0)))
 	{
 		check_herringbone(parse);
 		g_sig.return_value = ft_cd(parse);
@@ -106,12 +98,12 @@ void	built_in_used_alone(t_parsing *parse)
 
 	built_in_found = 0;
 	if (ft_lst_strchr_pipe(parse->lst_cmdline) == 0)
-		return;
-		if (ft_strcmp(parse->lst_cmdline->str, "export") == 0
-			|| ft_strcmp(parse->lst_cmdline->str, "unset") == 0
-			|| ft_strcmp(parse->lst_cmdline->str, "cd") == 0
-			|| ft_strcmp(parse->lst_cmdline->str, "exit") == 0)
-			built_in_found = 1;
+		return ;
+	if (ft_strcmp(parse->lst_cmdline->str, "export") == 0
+		|| ft_strcmp(parse->lst_cmdline->str, "unset") == 0
+		|| ft_strcmp(parse->lst_cmdline->str, "cd") == 0
+		|| ft_strcmp(parse->lst_cmdline->str, "exit") == 0)
+		built_in_found = 1;
 	if (built_in_found == 1)
 		execute_built_in_alone(parse);
 }

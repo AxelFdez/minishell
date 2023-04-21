@@ -6,7 +6,7 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:31:22 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/21 11:38:16 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:10:37 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,11 @@ static void	ft_handle_quotes(t_parsing *parse)
 static void	ft_manage_dollar(t_parsing *parse)
 {
 	while (parse->input[parse->i] == '$' && parse->input[parse->i +1] != ' '
-			&& parse->input[parse->i + 1] != '\0')
+		&& parse->input[parse->i + 1] != '\0')
 	{
 		ft_handle_dollar(parse);
-		while (parse->input[parse->i] == '$' && parse->input[parse->i +1] == '$')
+		while (parse->input[parse->i] == '$'
+			&& parse->input[parse->i +1] == '$')
 		{
 			parse->len++;
 			parse->i++;
@@ -61,10 +62,10 @@ void	is_no_quote_string(t_parsing *parse)
 	{
 		if (parse->input[parse->i] == '$'
 			&& ft_found_char(parse->non_bl_chars, parse->input[parse->i +1]))
-			{
-				parse->len += 2;
-			    parse->i += 2;
-            }
+		{
+			parse->len += 2;
+			parse->i += 2;
+		}
 		if (parse->input[parse->i] == '$' && parse->input[parse->i +1] != ' '
 			&& parse->input[parse->i + 1] != '\0')
 			ft_manage_dollar(parse);

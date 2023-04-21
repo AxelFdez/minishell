@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lexer.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:31:31 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 11:31:32 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 10:12:57 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	ft_check_double_pipes(t_list *lst)
 	}
 	return (0);
 }
+
 static int	ft_check_after_token(char *s)
 {
 	int		i;
@@ -53,7 +54,6 @@ static int	ft_check_after_token(char *s)
 			ft_putstr(ret);
 			return (1);
 		}
-
 		i++;
 	}
 	return (0);
@@ -66,6 +66,11 @@ static int	ft_check_syntax(t_parsing *parse, char *s)
 
 	i = 0;
 	err_message = "minishell: syntax error near unexpected token";
+	if (s[0] == '|')
+	{
+		ft_printf("%s `%s'\n", err_message, "|");
+		return (1);
+	}
 	while (parse->lex[i])
 	{
 		if (ft_strnstr(s, parse->lex[i], ft_strlen(s)))

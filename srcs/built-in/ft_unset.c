@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_unset.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:31:01 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/20 11:31:02 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 10:51:49 by chmassa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_unset(t_parsing *parse)
 		{
 			if (!ft_strncmp(tmp_cmd->str, tmp_env->str,
 					ft_str_chr(tmp_env->str, '='))
-						&& (!ft_strnstr(tmp_env->str, tmp_cmd->str, 2)))
+				&& (!ft_strnstr(tmp_env->str, tmp_cmd->str, 2)))
 			{
 				ft_lstdel_actual(&parse->lst_env, tmp_env);
 				break ;

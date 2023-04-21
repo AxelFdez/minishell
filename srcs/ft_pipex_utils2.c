@@ -6,7 +6,7 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:08:09 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/21 10:07:49 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:16:45 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,23 @@ int	ft_lst_strchr_pipe(t_list *list)
 		if (ft_strcmp(temp->str, "|") == 0)
 			return (0);
 		temp = temp->next;
+	}
+	return (1);
+}
+
+int	check_builtin_input(t_parsing *parse)
+{
+	char	*tmp;
+
+	tmp = parse->lst_cmdline->str;
+	if (ft_strcmp(tmp, "env") == 0 || ft_strcmp(tmp, "ENV") == 0
+		|| ft_strcmp(tmp, "export") == 0 || ft_strcmp(tmp, "pwd") == 0
+		|| ft_strcmp(tmp, "PWD") == 0 || ft_strcmp(tmp, "echo") == 0
+		|| ft_strcmp(tmp, "unset") == 0 || ft_strcmp(tmp, "cd") == 0
+		|| ((ft_strcmp(tmp, "cd") == 0 && (ft_strcmp(tmp, "~"))))
+		|| ft_strcmp(tmp, "exit") == 0 || ft_strcmp(tmp, "history") == 0)
+	{
+		return (0);
 	}
 	return (1);
 }

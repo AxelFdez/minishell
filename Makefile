@@ -58,7 +58,7 @@ all: $(NAME)
 $(NAME): $(OBJECT_FILES)
 	@echo "\n"
 	@$(MAKE) -C $(LIBFT)
-	@$(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a $(LRFLAGS) -lreadline -fsanitize=address
+	@$(CC) $(CFLAGS) $(HEADER) -o $(NAME) $(SRCS) libft/libft.a $(LRFLAGS) -lreadline #-fsanitize=address
 	@echo "$(GREEN)<<<<< $(NAME) exec file created >>>>>$(DEFAULT)"
 #------------------------------------------------------------------------------
 clean:
