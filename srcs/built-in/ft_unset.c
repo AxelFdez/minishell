@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "../../includes/minishell.h"
 
 static void	ft_error_identifier(char *s)
@@ -18,31 +19,43 @@ static void	ft_error_identifier(char *s)
 	g_sig.return_value = 1;
 }
 
+static void	ft_env_loop(t_parsing *parse, char *s1)
+{
+	char	*s2;
+	t_list	*tmp_env;
+
+	tmp_env = parse->lst_env;
+	while (tmp_env)
+	{
+		s2 = ft_set_str_to_comp(tmp_env->str);
+		if (ft_strcmp(s1, s2) == 0)
+		{
+			ft_lstdel_actual(&parse->lst_env, tmp_env);
+			free(s2);
+			return ;
+		}
+		tmp_env = tmp_env->next;
+		free(s2);
+	}
+}
+
 void	ft_unset(t_parsing *parse)
 {
 	t_list	*tmp_cmd;
-	t_list	*tmp_env;
+	char	*s1;
 
 	tmp_cmd = parse->lst_cmdline->next;
-	tmp_env = parse->lst_env;
 	if (tmp_cmd == NULL)
+		return ;
+	if (ft_strcmp(tmp_cmd->str, "_") == 0)
 		return ;
 	while (tmp_cmd)
 	{
+		s1 = ft_set_str_to_comp(tmp_cmd->str);
 		if (ft_strlen(tmp_cmd->str) == 0)
 			ft_error_identifier(tmp_cmd->str);
-		tmp_env = parse->lst_env;
-		while (tmp_env)
-		{
-			if (!ft_strncmp(tmp_cmd->str, tmp_env->str,
-					ft_str_chr(tmp_env->str, '='))
-				&& (!ft_strnstr(tmp_env->str, tmp_cmd->str, 2)))
-			{
-				ft_lstdel_actual(&parse->lst_env, tmp_env);
-				break ;
-			}
-			tmp_env = tmp_env->next;
-		}
+		ft_env_loop(parse, s1);
+		free(s1);
 		tmp_cmd = tmp_cmd->next;
 	}
 }

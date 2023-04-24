@@ -4849,3 +4849,9 @@ cvavcasvgngfngfngvcsvdsvvsdv
 
 bash
 cwvevwvfcevsewvsvsdvvcsv
+ls
+cd ..
+ls
+cd minishell/
+ls
+make fclean
