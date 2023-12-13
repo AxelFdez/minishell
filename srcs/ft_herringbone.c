@@ -6,7 +6,7 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 10:50:00 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/21 14:03:26 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/12/13 10:22:17 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 void	input_redirection(t_list **parse)
 {
+	int fd;
 	ft_lstdel_current(&(*parse));
-	if (access((*parse)->str, F_OK) != 0 || access((*parse)->str, R_OK) != 0)
+	fd = open((*parse)->str, O_RDONLY);
+	if (access((*parse)->str, F_OK) != 0 || access((*parse)->str, R_OK) != 0 || fd < 0)
 	{
 		perror((*parse)->str);
 		g_sig.return_value = 1;
@@ -23,6 +25,7 @@ void	input_redirection(t_list **parse)
 			ft_lstdel_current(&(*parse));
 		return ;
 	}
+	dup2(fd, STDIN_FILENO);
 	ft_lstdel_front(&(*parse));
 }
 
@@ -68,8 +71,9 @@ void	redirection_while(t_parsing *parse)
 {
 	if (ft_strcmp(parse->lst_cmdline->str, "<") == 0)
 	{
-		parse->redirection_in = 1;
 		input_redirection(&parse->lst_cmdline);
+		if (g_sig.return_value != 1)
+			parse->redirection_in = 1;
 	}
 	else if (ft_strcmp(parse->lst_cmdline->str, ">") == 0)
 	{

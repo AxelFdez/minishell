@@ -6,7 +6,7 @@
 /*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:09:58 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/21 15:18:11 by axfernan         ###   ########.fr       */
+/*   Updated: 2023/12/13 09:51:04 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ void	sig_quit(int param)
 		g_sig.return_value = 131;
 		return ;
 	}
-	if (g_sig.heredoc == 0)
-		rl_redisplay();
-	else
-		rl_redisplay();
+	rl_redisplay();
 }
 
 void	sig_int(int param)

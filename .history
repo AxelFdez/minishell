@@ -4855,3 +4855,115 @@ ls
 cd minishell/
 ls
 make fclean
+ls -l < 1 < 2
+ls -l cd echo coucou
+ls -l cat -e
+ls
+ls
+env
+ls
+./minishell
+$$
+$$USER
+cat
+cat
+$$
+$$$$$$$$$$
+$$$$$$$$$
+$$$
+$$$$$$$$
+$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$ $$ $$
+$$$
+$ $$ $ $$ $$
+$
+$$
+$
+$$
+$USER$$
+$USER$
+$USER $
+echo $$$$$$$$$$$$$USER
+echo $$
+<< 1
+cat | cat | ls
+<< 1
+<< 1
+bash
+cat
+cat
+cat
+<< 1
+<< 1
+<< 1
+ls
+"$(AAA)ls"
+ls
+"$(AAA)ls"
+"$(AAA)ls"
+"$AAAls"
+"$AAA"ls
+echo coucou > 1
+ls
+< 1 " wc -l
+
+< 1 | wc -l
+
+< 1 wc -l
+
+< 1 | wc -l
+bash
+< 1
+< 1
+< 1
+bash
+< 1
+< 1
+< 1
+< 1
+echo $?
+< 1
+echo $?
+< 1 | wc
+< 2
+< 2
+< 2
+< 2 | wc
+< 1 wc
+bash
+< 1 wc
+< 1 wc -l
+< 1 ls
+< 1 wc
+ls
+< 1 wc
+< 1 wc
+< 1 | wc
+< 1
+< 1 wc
+< 1 | wc
+< 1
+< 1 | wc
+< 1 | wc
+< 2 | wc
+< 1 | wc
+< 2 | wc
+touch 3
+vim 3
+< 3 | wc
+< 3 wc
+./3 
+ls
+bash 3
+sh 3
+cat 3
+gcc 3
+ls
+mv 3 3.c
+gcc 3.c
+./a.out 
+./a.out 
+./a.out 
+bash
+< 1 | < 2 | < 1

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chmassa <chmassa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: axfernan <axfernan@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:32:08 by axfernan          #+#    #+#             */
-/*   Updated: 2023/04/21 12:06:36 by chmassa          ###   ########.fr       */
+/*   Updated: 2023/11/23 16:01:49 by axfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,6 @@ typedef struct s_parsing
 }				t_parsing;
 
 //**** signals ****************************************************************
-void	handle_signals(int sig);
-void	signals_(int heredoc);
 void	signals_func(void);
 void	sig_int(int param);
 //**** execution **************************************************************
